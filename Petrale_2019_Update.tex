@@ -1,0 +1,1059 @@
+\documentclass[12pt,]{article}
+%\usepackage{lmodern}  Melissa removed to deal with font rendering issue
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+
+%Melissa removed the following section to deal with font rendering issue
+%\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+%  \usepackage[T1]{fontenc}
+%  \usepackage[utf8]{inputenc}
+%%\else % if luatex or xelatex
+%  \ifxetex
+%    \usepackage{mathspec}
+%  \else
+%    \usepackage{fontspec}
+%  \fi
+%  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+%  \newcommand{\euro}{€}
+%%%%%%\fi
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={Status of Petrale sole (Eopsetta jordani) along the US west coast in 2019},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Status of Petrale sole (\emph{Eopsetta jordani}) along the US west coast
+in 2019}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+
+% This file contains all of the LaTeX packages you may need to compile the document
+% Documentation for each package can be found onlines
+\usepackage{tabularx}                                             % table environment providing flexibility
+\usepackage{caption}                                              % for creating captions  
+\usepackage{longtable}                                            % allows tables to span multiple pages
+\usepackage{tabu}
+\usepackage{rotating}                                             % allows for sideways tables
+%\usepackage{float}                                                % floating environments; may not need in rmarkdown
+\usepackage{placeins}                                             % keeps floats from moving
+\usepackage{floatrow}                                             % package to put table captions at the top
+\floatsetup[table]{capposition = top}                             % line to put captions at the top of pander tables
+\usepackage{indentfirst}                                          % indents first paragraph of a section
+\usepackage{mdwtab}                                               % continued float multi-page figure
+\usepackage{enumerate}                                            % create lists
+\usepackage{hyperref}                                             % highlight cross references
+\hypersetup{colorlinks=true, urlcolor=blue, linktoc=page, linkcolor=blue, citecolor=blue} %define referencing colors
+%\usepackage{makebox}                                             % make boxes around text
+\usepackage[usenames,dvipsnames]{xcolor}                          % color name options
+%\usepackage[space]{grffile}                                      % spaces in file name path
+\usepackage{soul}                                                 % highlight text
+\usepackage{enumitem}                                             % numbered lists
+%\usepackage{lineno}                                               % Line numbers; comment out for final
+\usepackage{upquote}                                              % produce grave accent in latex
+\usepackage{verbatim}                                             % produces verbatim results
+\usepackage{fancyvrb}                                             % verbatim in a box
+%\usepackage{draftwatermark}                                      % places Draft watermark in background; comment out for final
+\usepackage{textcomp}                                             % fixes error with packages interfering
+\usepackage{lscape}                                               % rotate pages - to allow for landscape longtables
+%\pdfinterwordspaceon                                             % fix loss of inter word spacing
+\usepackage{cmap}                                                 % fix mapping characters to unicode
+\RequirePackage[linewidth = 1]{pdfcomment}                        % pdf comments
+\RequirePackage[l2tabu, orthodox]{nag}                            % checks packages related to the accessibility?
+%\usepackage[inline]{showlabels}                                   % show table and figure labels; comment out for final
+%\RequirePackage[tagged]{accessibilityMeta}
+
+
+%\linenumbers                                                      % specify use of line numbers
+
+
+\definecolor{light-gray}{gray}{.85}                               % define light-gray as a color
+%\usepackage[tagged]{accessibility-meta}
+
+ 
+%\showlabels[\color{mred}]{label}
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\begin{document}
+\maketitle
+
+
+\begin{center}
+\thispagestyle{empty}
+
+
+\vspace{.5cm}
+
+\includegraphics{petrale_sole}~\\[0.5cm]
+%\pdftooltip{\includegraphics{Sebastes_alutus}}{This is a fish.}
+
+
+
+Chantel R. Wetzel\textsuperscript{1}\\
+
+
+\vspace{.5cm}
+
+\small
+\textsuperscript{1}Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725 Montlake Boulevard East, Seattle, Washington 98112\\
+
+\vspace{.3cm}
+
+
+
+
+
+\vspace{1cm}
+
+\vfill
+June 2019
+
+
+\vspace{.3cm}
+%Bottom of the page
+%{\large \today}
+
+\newpage
+
+\vspace{3cm}
+
+Please cite as:\\
+
+Wetzel, C.R. 2019. TITLE. Pacific Fishery Management Council, 7700 Ambassador Place NE, Suite 200, Portland, OR 97220. 
+
+\vspace{3cm}
+
+\maketitle
+
+
+
+
+
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\end{center}
+
+{
+\setcounter{tocdepth}{4}
+\tableofcontents
+}
+\setlength{\parskip}{5mm plus1mm minus1mm} \pagebreak
+
+\setcounter{page}{1} \renewcommand{\thefigure}{\alph{figure}}
+\renewcommand{\thetable}{\alph{table}}
+
+\section*{Executive Summary}\label{executive-summary}
+\addcontentsline{toc}{section}{Executive Summary}
+
+\subsection*{Stock}\label{stock}
+\addcontentsline{toc}{subsection}{Stock}
+
+This assessment reports the status of the Petrale sole
+(\emph{Eopsetta jordani}) off US coast of California, Oregon, and
+Washington using data through 2018.
+
+\subsection*{Landings}\label{landings}
+\addcontentsline{toc}{subsection}{Landings}
+
+Harvest of Petrale sole first began off the US west coast in 1876.
+
+Petrale sole are a desirable market species and discarding has
+historically been low.
+
+\begin{table}[ht]
+\centering
+\caption{Landings (mt) for the past 10 years for Petrale sole by source.} 
+\label{tab:Exec_catch}
+\begin{tabular}{l>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}}
+  \hline
+Year & Winter (N) & Summer (N) & Winter (S) & Summer (S) & Total Landings \\ 
+  \hline
+2009 & 846.71 & 641.75 & 469.66 & 250.38 & 2208.49 \\ 
+  2010 & 258.09 & 292.34 & 77.60 & 120.95 & 748.98 \\ 
+  2011 & 221.60 & 423.11 & 39.59 & 77.70 & 762.00 \\ 
+  2012 & 406.05 & 477.71 & 124.46 & 107.63 & 1115.85 \\ 
+  2013 & 509.04 & 1007.26 & 130.10 & 278.35 & 1924.74 \\ 
+  2014 & 852.90 & 860.31 & 273.40 & 354.19 & 2340.80 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{Petrale_2019_Update_files/figure-latex/unnamed-chunk-12-1.pdf}
+\caption{Landings of Petrale sole by the Northern and Southern winter
+and summer fleets of the US west coast. \label{fig:Exec_catch1}}
+\end{figure}
+
+\FloatBarrier
+
+\subsection*{Data and Assessment}\label{data-and-assessment}
+\addcontentsline{toc}{subsection}{Data and Assessment}
+
+This an update assessment for Petrale sole, which was last assessed in
+2013 and updated in 2015. The update assessment was conducted using the
+length- and age-structured modeling software Stock Synthesis (version
+3.30.03.XX). The coastwide population was modeled allowing separate
+growth and mortality parameters for each sex (a two-sex model) from 1876
+to 2019 and forecasted beyond 2019.
+
+\subsection*{Stock Biomass}\label{stock-biomass}
+\addcontentsline{toc}{subsection}{Stock Biomass}
+
+The predicted spawning output from the base model \ldots{}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of spawning output trajectory (circles
+and line: median; light broken lines: 95\% credibility intervals) for
+the base assessment model. \label{fig:Spawnbio_all}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of relative spawning output (depletion)
+(circles and line: median; light broken lines: 95\% credibility
+intervals) for the base assessment model. \label{fig:RelDeplete_all}}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\caption{Recent trend in estimated spawning output (mt) and estimated relative spawning output (depletion).} 
+\label{tab:SpawningDeplete_mod1}
+\begin{tabular}{l>{\centering}p{1.3in}>{\centering}p{1.2in}>{\centering}p{1in}>{\centering}p{1.2in}}
+  \hline
+Year & Spawning Output (mt) & \~{} 95\% Confidence Interval & Estimated Depletion & \~{} 95\% Confidence Interval \\ 
+  \hline
+2010 & 3448 & 2895 - 4001 & 0.102 & 0.073 - 0.131 \\ 
+  2011 & 4396 & 3691 - 5101 & 0.130 & 0.094 - 0.167 \\ 
+  2012 & 5957 & 5020 - 6895 & 0.177 & 0.128 - 0.225 \\ 
+  2013 & 7887 & 6641 - 9133 & 0.234 & 0.171 - 0.297 \\ 
+  2014 & 9514 & 7942 - 11086 & 0.282 & 0.207 - 0.358 \\ 
+  2015 & 10531 & 8672 - 12390 & 0.313 & 0.229 - 0.396 \\ 
+  2016 & 12329 & 10225 - 14433 & 0.366 & 0.273 - 0.458 \\ 
+  2017 & 13910 & 11567 - 16254 & 0.413 & 0.314 - 0.512 \\ 
+  2018 & 15401 & 12797 - 18005 & 0.457 & 0.352 - 0.562 \\ 
+  2019 & 16841 & 13924 - 19758 & 0.500 & 0.388 - 0.612 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\subsection*{Recruitment}\label{recruitment}
+\addcontentsline{toc}{subsection}{Recruitment}
+
+Recruitment deviations were estimated for the entire assessment
+period\ldots{}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
+\caption{Time-series of estimated Petrale sole recruitments for the base
+model with 95\% confidence or credibility intervals.
+\label{fig:Recruits_all}}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\caption{Recent estimated trend in recruitment and estimated recruitment deviations determined from the base model. The recruitment deviations for 2016 and 2017 were fixed at zero within the model.} 
+\label{tab:Recruit_mod1}
+\begin{tabular}{>{\centering}p{.8in}>{\centering}p{1.0in}>{\centering}p{1.4in}>{\centering}p{1.0in}>{\centering}p{1.4in}}
+  \hline
+Year & Estimated Recruitment & \~{} 95\% Confidence Interval & Estimated Recruitment Devs. & \~{} 95\% Confidence Interval \\ 
+  \hline
+2010 & 9787 & 6190 - 15473 & -0.144 & -0.509 - 0.220 \\ 
+  2011 & 9683 & 5721 - 16387 & -0.209 & -0.654 - 0.236 \\ 
+  2012 & 13760 & 7506 - 25228 & 0.067 & -0.467 - 0.601 \\ 
+  2013 & 12874 & 5985 - 27695 & -0.060 & -0.789 - 0.668 \\ 
+  2014 & 14272 & 6300 - 32334 & -0.000 & -0.784 - 0.784 \\ 
+  2015 & 14418 & 6351 - 32730 & 0.000 & -0.784 - 0.784 \\ 
+  2016 & 14621 & 6422 - 33289 & 0.000 & -0.784 - 0.784 \\ 
+  2017 & 14760 & 6470 - 33673 & 0.000 & -0.784 - 0.784 \\ 
+  2018 & 14867 & 6506 - 33972 & 0.000 & -0.784 - 0.784 \\ 
+  2019 & 14953 & 6534 - 34219 & 0.000 & -0.784 - 0.784 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\subsection*{Exploitation Status}\label{exploitation-status}
+\addcontentsline{toc}{subsection}{Exploitation Status}
+
+The spawning output of Petrale sole\ldots{}
+
+\begin{table}[ht]
+\centering
+\caption{Recent trend in spawning potential ratio (1-SPR)/(1-SPR50) and summary exploitation rate for age 3+ biomass for Petrale sole.} 
+\label{tab:SPR_Exploit_mod1}
+\begin{tabular}{l>{\centering}p{0.9in}>{\centering}p{1.2in}>{\centering}p{1.2in}>{\centering}p{1.2in}}
+  \hline
+Year & (1-SPR)/ (1-SPR50\%) & \~{} 95\% Confidence Interval & Exploitation Rate & \~{} 95\% Confidence Interval \\ 
+  \hline
+2009 & 0.847 & 0.793 - 0.900 & 0.278 & 0.236 - 0.319 \\ 
+  2010 & 0.672 & 0.583 - 0.762 & 0.099 & 0.080 - 0.117 \\ 
+  2011 & 0.581 & 0.487 - 0.674 & 0.063 & 0.052 - 0.074 \\ 
+  2012 & 0.592 & 0.503 - 0.682 & 0.074 & 0.061 - 0.086 \\ 
+  2013 & 0.656 & 0.572 - 0.739 & 0.110 & 0.092 - 0.128 \\ 
+  2014 & 0.654 & 0.571 - 0.736 & 0.124 & 0.103 - 0.145 \\ 
+  2015 & 0.006 & 0.004 - 0.008 & 0.001 & 0.000 - 0.001 \\ 
+  2016 & 0.005 & 0.004 - 0.007 & 0.000 & 0.000 - 0.001 \\ 
+  2017 & 0.005 & 0.003 - 0.006 & 0.000 & 0.000 - 0.000 \\ 
+  2018 & 0.004 & 0.003 - 0.005 & 0.000 & 0.000 - 0.000 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SPR3_ratiointerval.png}
+\caption{Estimated relative spawning potential ratio (1-SPR)/(1-SPR30\%)
+for the base model. One minus SPR is plotted so that higher exploitation
+rates occur on the upper portion of the y-axis. The management target is
+plotted as a red horizontal line and values above this reflect harvests
+in excess of the overfishing proxy based on the SPR30\% harvest rate.
+The last year in the time-series is 2018. \label{fig:SPR_all}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SPR4_phase.png}
+\caption{Phase plot of estimated (1-SPR)/(1-SPR30\%) vs.~depletion
+(B/Btarget) for the base case model. The red circle indicates 2018
+estimated status and exploitation for Petrale sole.
+\label{fig:Phase_all}}
+\end{figure}
+
+\FloatBarrier
+
+\subsection*{Ecosystem Considerations}\label{ecosystem-considerations}
+\addcontentsline{toc}{subsection}{Ecosystem Considerations}
+
+\subsection*{Reference Points}\label{reference-points}
+\addcontentsline{toc}{subsection}{Reference Points}
+
+This stock assessment estimates that the spawning output of Petrale sole
+is above the management target. Due to reduced landing and the large
+2008 year-class, an increasing trend in spawning output was estimated in
+the base model. The estimated depletion in 2019 is 50.0\% (\(\sim\) 95\%
+asymptotic interval: \(\pm\) 38.8\%-61.2\%), corresponding to an
+unfished spawning output of 16,841 mt (\(\sim\) 95\% asymptotic
+interval: 13,924-19,758 mt). Unfished age 3+ biomass was estimated to be
+53,873.7 mt in the base model. The target spawning output based on the
+biomass target (\(SB_{25\%}\)) is 8,423.3 mt, with an equilibrium catch
+of 2,729.5 mt. Equilibrium yield at the proxy \(F_{MSY}\) harvest rate
+corresponding to \(SPR_{30\%}\) is 2,702.4 mt. Estimated MSY catch is at
+a 2,742.2 spawning output of 7,323.1 mt (21.7\% depletion)
+
+\begin{table}[ht]
+\centering
+\caption{Summary of reference 
+                                      points and management quantities for the 
+                                      base case.} 
+\label{tab:Ref_pts_mod1}
+\begin{tabular}{>{\raggedright}p{4.1in}>{\centering}p{.65in}>{\centering}p{1.4in}}
+  \hline
+\textbf{Quantity} & \textbf{Estimate} & \textbf{$\sim$95\%  Confidence Interval} \\ 
+  \hline
+Unfished spawning output (mt) & 33693.4 & 27542.4 - 39844.4 \\ 
+  Unfished age 3+ biomass (mt) & 53873.7 & 45675.1 - 62072.3 \\ 
+  Unfished recruitment (R0, thousands) & 15430.6 &  9369.1 - 21492.1 \\ 
+  Spawning output(2019 mt) & 16841.1 &   13924 - 19758.2 \\ 
+  Relative spawning output (depletion) (2019) & 0.5 &   0.388 -   0.612 \\ 
+  \textbf{$\text{Reference points based on } \mathbf{SB_{25\%}}$} &  &  \\ 
+  Proxy spawning output ($B_{25\%}$) & 8423.3 &  6885.6 -  9961.1 \\ 
+  SPR resulting in $B_{25\%}$ ($SPR_{B25\%}$) & 0.274 &   0.251 -   0.297 \\ 
+  Exploitation rate resulting in $B_{25\%}$ & 0.166 &   0.147 -   0.186 \\ 
+  Yield with $SPR_{B25\%}$ at $B_{25\%}$ (mt) & 2729.5 &  2472.1 -  2986.8 \\ 
+  \textbf{\textit{Reference points based on SPR proxy for MSY}} &  &  \\ 
+  Spawning output & 9329.8 &  7316.9 - 11342.7 \\ 
+  $SPR_{30\%}$ & 0.3 &  \\ 
+  Exploitation rate corresponding to $SPR_{30\%}$ & 0.151 &   0.125 -   0.178 \\ 
+  Yield with $SPR_{30\%}$ at $SB_{SPR}$ (mt) & 2702.4 &  2414.6 -  2990.2 \\ 
+  \textbf{\textit{Reference points based on estimated MSY values}} &  &  \\ 
+  Spawning output at $MSY$ ($SB_{MSY}$) & 7323.1 &  5504.8 -  9141.4 \\ 
+  $SPR_{MSY}$ & 0.242 &    0.18 -   0.304 \\ 
+  Exploitation rate at $MSY$ & 0.187 &   0.157 -   0.216 \\ 
+  $MSY$ (mt)  & 2742.2 &  2502.5 -    2982 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\subsection*{Management Performance}\label{management-performance}
+\addcontentsline{toc}{subsection}{Management Performance}
+
+Exploitation rates on Petrale sole\ldots{}
+
+\begin{table}[ht]
+\centering
+\caption{Recent trend in total catch and  
+                              landings (mt) relative to the management guidelines. 
+                              Estimated total catch reflect the landings 
+                              plus the model estimated discarded biomass based on discard rate data.} 
+\label{tab:mnmgt_perform}
+\scalebox{0.9}{
+\begin{tabular}{>{\raggedleft}p{0.5in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}}
+  \hline
+Year & OFL (mt; ABC prior to 2011) & ACL (mt; OY prior to 2011) & Total Landings (mt) & Estimated Total Catch (mt) \\ 
+  \hline
+\text{2009} & 2,811 & 2433 & 2208 & 2323 \\ 
+  \text{2010} & 2,751 & 1200 & 749 & 914 \\ 
+  \text{2011} & 1,021 & 976 & 762 & 781 \\ 
+  \text{2012} & 1,275 & 1160 & 1116 & 1135 \\ 
+  \text{2013} & 2,711 & 2592 & 1925 & 1954 \\ 
+  \text{2014} & 2,774 & 2652 & 2341 & 2361 \\ 
+  \text{2015} & 3,073 & 2816 & 10 & 10 \\ 
+  \text{2016} & 3,208 & 2910 & 10 & 10 \\ 
+  \text{2017} & 3,208 & 3,136 & 10 & 10 \\ 
+  \text{2018} & 3,152 & 3,013 & 10 & 10 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\FloatBarrier
+
+\subsection*{Unresolved Problems and Major
+Uncertainties}\label{unresolved-problems-and-major-uncertainties}
+\addcontentsline{toc}{subsection}{Unresolved Problems and Major
+Uncertainties}
+
+\begin{enumerate}
+
+\item The current data for Petrale sole weighted according to the Francis weighting...  
+
+
+\end{enumerate}
+
+\subsection*{Decision Table}\label{decision-table}
+\addcontentsline{toc}{subsection}{Decision Table}
+
+Model uncertainty has been described by the estimated uncertainty within
+the base model and by the sensitivities to different model structure.
+
+\begin{table}[ht]
+\centering
+\caption{Projections of potential OFL (mt) and ABC (mt) and the estimated spawning output and relative depletion based on ABC removals.  The 2019 and 2020 
+                                               removals are set at the harvest limits currently set by management of XXX mt per year.} 
+\label{tab:OFL_projection}
+\begin{tabular}{>{\raggedleft}p{0.5in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.6in}>{\centering}p{1.1in}}
+  \hline
+Year & OFL & ABC & Spawning Output (mt) & Relative Depletion \\ 
+  \hline
+2019 & 4834 & 4640 & 16841 & 0.500 \\ 
+  2020 & 4396 & 4219 & 15401 & 0.457 \\ 
+  2021 & 4036 & 3873 & 14183 & 0.421 \\ 
+  2022 & 3750 & 3599 & 13192 & 0.392 \\ 
+  2023 & 3532 & 3389 & 12412 & 0.368 \\ 
+  2024 & 3367 & 3231 & 11814 & 0.351 \\ 
+  2025 & 3244 & 3113 & 11362 & 0.337 \\ 
+  2026 & 3152 & 3025 & 11020 & 0.327 \\ 
+  2027 & 3082 & 2958 & 10758 & 0.319 \\ 
+  2028 & 3028 & 2906 & 10554 & 0.313 \\ 
+  2029 & 2986 & 2865 & 10394 & 0.308 \\ 
+  2030 & 2952 & 2832 & 10266 & 0.305 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\begin{table}[ht]
+\centering
+\caption{Decision table summary of 10-year 
+                                             projections beginning in 2021 
+                                             for alternate states of nature based on 
+                                             an axis of uncertainty for the base model. The removals in 2019 and 2020 were set at the defined management 
+                                             specification of XXX mt for each year assuming full attainment.
+                                             The range of natural mortality values corresponded to the 12.5 and 87.5th quantile
+                                             from the uncertainty around final spawning biomass.
+                                             Columns range over low, mid, and high
+                                             states of nature, and rows range over different 
+                                             assumptions of catch levels. The SPR50 catch stream is based on the equilibrium yield applying the SPR50 harvest rate.} 
+\label{tab:Decision_table_mod1}
+\scalebox{0.85}{
+\begin{tabular}{l|cc|>{\centering}p{.7in}c|>{\centering}p{.7in}c|>{\centering}p{.7in}c}
+   \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{} 
+                               & \multicolumn{2}{c}{\textbf{States of nature}} 
+                               & \multicolumn{2}{c}{} \\
+  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.04725} 
+                               & \multicolumn{2}{c}{M = 0.054} 
+                               &  \multicolumn{2}{c}{M = 0.0595} \\
+ \hline
+ & Year & Catch & Spawning Output & Depletion (\%) & Spawning Output & Depletion (\%) & Spawning Output & Depletion (\%) \\ 
+  \hline
+ & 2019 & 4340 & 3944 & 62.9 & 5741 & 83.3 & 7505 & 96.8 \\ 
+   & 2020 & 4229 & 3909 & 62.4 & 5745 & 83.4 & 7542 & 97.3 \\ 
+   & 2021 & 4108 & 3858 & 61.6 & 5723 & 83.1 & 7546 & 97.3 \\ 
+  ABC & 2022 & 3984 & 3784 & 60.4 & 5666 & 82.2 & 7503 & 96.8 \\ 
+   & 2023 & 3862 & 3695 & 59.0 & 5586 & 81.1 & 7427 & 95.8 \\ 
+   & 2024 & 3748 & 3600 & 57.4 & 5494 & 79.7 & 7332 & 94.6 \\ 
+   & 2025 & 3644 & 3502 & 55.9 & 5395 & 78.3 & 7226 & 93.2 \\ 
+   & 2026 & 3551 & 3404 & 54.3 & 5292 & 76.8 & 7113 & 91.8 \\ 
+   & 2027 & 3467 & 3308 & 52.8 & 5188 & 75.3 & 6996 & 90.3 \\ 
+   & 2028 & 3389 & 3213 & 51.3 & 5084 & 73.8 & 6879 & 88.7 \\ 
+   \hline
+ & 2019 & 1822 & 3944 & 62.9 & 5741 & 83.3 & 7505 & 96.8 \\ 
+   & 2020 & 1822 & 4022 & 64.2 & 5857 & 85.0 & 7654 & 98.7 \\ 
+   & 2021 & 1822 & 4083 & 65.1 & 5946 & 86.3 & 7768 & 100.2 \\ 
+  SPR50 & 2022 & 1822 & 4117 & 65.7 & 5996 & 87.0 & 7830 & 101.0 \\ 
+   & 2023 & 1822 & 4131 & 65.9 & 6016 & 87.3 & 7852 & 101.3 \\ 
+   & 2024 & 1822 & 4133 & 65.9 & 6017 & 87.3 & 7848 & 101.2 \\ 
+   & 2025 & 1822 & 4125 & 65.8 & 6004 & 87.1 & 7824 & 100.9 \\ 
+   & 2026 & 1822 & 4110 & 65.6 & 5979 & 86.8 & 7786 & 100.4 \\ 
+   & 2027 & 1822 & 4090 & 65.3 & 5947 & 86.3 & 7736 & 99.8 \\ 
+   & 2028 & 1822 & 4067 & 64.9 & 5908 & 85.8 & 7679 & 99.1 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\FloatBarrier
+
+\subsection*{Research and Data Needs}\label{research-and-data-needs}
+\addcontentsline{toc}{subsection}{Research and Data Needs}
+
+There are many areas of research that could be undertaken to benefit the
+understanding and assessment of Petrale sole. Below, are issues that are
+considered of importance.
+
+\begin{enumerate}
+
+\item \textbf{Natural mortality}: 
+
+\item \textbf{Steepness}: 
+
+\item \textbf{Basin-wide understanding of stock structure, biology, connectivity, and distribution:} 
+
+\end{enumerate}
+
+\begin{sidewaystable}[ht]
+\centering
+\caption{Base model results summary.} 
+\label{tab:base_summary}
+\scalebox{0.6}{
+\begin{tabular}{r>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}}
+  \hline
+Quantity & 2010 & 2011 & 2012 & 2013 & 2014 & 2015 & 2016 & 2017 & 2018 & 2019 \\ 
+  \hline
+OFL (mt) & 2,751 & 1,021 & 1,275 & 2,711 & 2,774 & 3,073 & 3,208 & 3,208 & 3,152 & 1 \\ 
+  ACL (mt) & 1200 & 976 & 1160 & 2592 & 2652 & 2816 & 2910 & 3,136 & 3,013 & 1 \\ 
+  Landings (mt) &  749 &  762 & 1116 & 1925 & 2341 &   10 &   10 &   10 &   10 &  \\ 
+  Total Est. Catch (mt) &  914 &  781 & 1135 & 1954 & 2361 &   10 &   10 &   10 &   10 &  \\ 
+   \hline
+(1-$SPR$)(1-$SPR_{50\%}$) & 0.672 & 0.581 & 0.592 & 0.656 & 0.654 & 0.006 & 0.005 & 0.005 & 0.004 &  \\ 
+   \hline
+Exploitation rate & 0.099 & 0.063 & 0.074 & 0.110 & 0.124 & 0.001 & 0.000 & 0.000 & 0.000 &  \\ 
+  Age 3+ biomass (mt) &  9271.69 & 12406.50 & 15359.80 & 17730.40 & 18994.80 & 19707.20 & 22306.10 & 24807.50 & 27178.10 & 29422.30 \\ 
+   \hline
+Spawning Output &  3448 &  4396 &  5957 &  7887 &  9514 & 10531 & 12329 & 13910 & 15401 & 16841 \\ 
+  ~95\% CI & 2895 - 4001 & 3691 - 5101 & 5020 - 6895 & 6641 - 9133 & 7942 - 11086 & 8672 - 12390 & 10225 - 14433 & 11567 - 16254 & 12797 - 18005 & 13924 - 19758 \\ 
+   \hline
+Relative Depletion & 0.102 & 0.130 & 0.177 & 0.234 & 0.282 & 0.313 & 0.366 & 0.413 & 0.457 & 0.500 \\ 
+  ~95\% CI & 0.073 - 0.131 & 0.094 - 0.167 & 0.128 - 0.225 & 0.171 - 0.297 & 0.207 - 0.358 & 0.229 - 0.396 & 0.273 - 0.458 & 0.314 - 0.512 & 0.352 - 0.562 & 0.388 - 0.612 \\ 
+   \hline
+Recruits &  9787 &  9683 & 13760 & 12874 & 14272 & 14418 & 14621 & 14760 & 14867 & 14953 \\ 
+  ~95\% CI & 6190 - 15473 & 5721 - 16387 & 7506 - 25228 & 5985 - 27695 & 6300 - 32334 & 6351 - 32730 & 6422 - 33289 & 6470 - 33673 & 6506 - 33972 & 6534 - 34219 \\ 
+   \hline
+\end{tabular}
+}
+\end{sidewaystable}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
+\caption{Equilibrium yield curve for the base case model. Values are
+based on the 2018 fishery selectivity and with steepness fixed at 0.89.
+\label{fig:Yield_all}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+
+\setcounter{figure}{0} \setcounter{table}{0}
+
+\pagenumbering{arabic}
+
+\section{Introduction}\label{introduction}
+
+\subsection{Distribution and Stock
+Structure}\label{distribution-and-stock-structure}
+
+\subsection{Historical and Current
+Fishery}\label{historical-and-current-fishery}
+
+\subsection{Summary of Management History and
+Performance}\label{summary-of-management-history-and-performance}
+
+\subsection{Fisheries off Canada and
+Alaska}\label{fisheries-off-canada-and-alaska}
+
+\section{Data}\label{data}
+
+Data used in the Petrale sole assessment are summarized in Figure
+\ref{fig:data_plot}. A description of each data source is provided
+below.
+
+\subsection{Fishery-Independent Data}\label{fishery-independent-data}
+
+\subsubsection{Northwest Fisheries Science Center (NWFSC) Shelf-Slope
+Survey}\label{northwest-fisheries-science-center-nwfsc-shelf-slope-survey}
+
+\subsubsection{Northwest Fisheries Science Center (NWFSC) Slope
+Survey}\label{northwest-fisheries-science-center-nwfsc-slope-survey}
+
+\subsubsection{Triennial Shelf Survey}\label{triennial-shelf-survey}
+
+The Triennial shelf survey was first conducted by the AFSC in 1977 and
+spanned the time-frame from 1977-2004. The survey's design and sampling
+methods are most recently described in Weinberg et al.
+(\protect\hyperlink{ref-weinberg_estimation_2002}{2002}). Its basic
+design was a series of equally-spaced transects from which searches for
+tows in a specific depth range were initiated. The survey design has
+changed slightly over the period of time. In general, all of the surveys
+were conducted in the mid-summer through early fall: the 1977 survey was
+conducted from early July through late September; the surveys from 1980
+through 1989 ran from mid-July to late September; the 1992 survey
+spanned from mid-July through early October; the 1995 survey was
+conducted from early June to late August; the 1998 survey ran from early
+June through early August; and the 2001 and 2004 surveys were conducted
+in May-July.
+
+Haul depths ranged from 91-457 m during the 1977 survey with no hauls
+shallower than 91 m. The surveys in 1980, 1983, and 1986 covered the
+West Coast south to \(36.8^\circ\) N latitude and a depth range of
+55-366 m. The surveys in 1989 and 1992 covered the same depth range but
+extended the southern range to \(34.5^\circ\) N (near Point Conception).
+From 1995 through 2004, the surveys covered the depth range 55-500 m and
+surveyed south to \(34.5^\circ\) N. In the final year of the Triennial
+series, 2004, the NWFSC's Fishery Resource and Monitoring division
+(FRAM) conducted the survey and followed very similar protocols as the
+AFSC.
+
+Although the Triennial shelf survey was used in the 2011 assessment, it
+was not used in the final base model for the current assessment for a
+number of reasons. First, there were concerns regarding the varying
+sampling and targeting of specific species by year across the
+time-series. Secondly, the Triennial shelf survey targeted the shelf of
+the West Coast and would not be expected to sample well slope species
+such as Petrale sole. There were limited observations of Petrale sole
+relative to other surveys (e.g.~NWFSC shelf-slope survey) and the length
+and age distributions varied in such a manner that would indicate either
+poor sampling of Petrale sole or inconsistent sampling of the
+population.
+
+\subsection{Fishery-Dependent Data}\label{fishery-dependent-data}
+
+\subsubsection{Commercial Fishery
+Landings}\label{commercial-fishery-landings}
+
+\textbf{Washington}
+
+\textbf{Oregon}
+
+\textbf{California}
+
+\subsubsection{Discards}\label{discards}
+
+Data on discards of Petrale sole are available from two different data
+sources. The earliest source is referred to as the Pikitch data and
+comes from a study organized by Ellen Pikitch that collected trawl
+discards from 1985-1987 (Pikitch et al.
+\protect\hyperlink{ref-pikitch_evaluation_1988}{1988}). The northern and
+southern boundaries of the study were \(48^\circ 42^\prime\) N latitude
+and \(42^\circ 60^\prime\) N latitude respectively, which is primarily
+within the Columbia INPFC area (Pikitch et al.
+\protect\hyperlink{ref-pikitch_evaluation_1988}{1988}, Rogers and
+Pikitch \protect\hyperlink{ref-rogers_numerical_1992}{1992}).
+Participation in the study was voluntary and included vessels using
+bottom, midwater, and shrimp trawl gears. Observers of normal fishing
+operations on commercial vessels collected the data, estimated the total
+weight of the catch by tow, and recorded the weight of species retained
+and discarded in the sample. Results of the Pikitch data were obtained
+from John Wallace (personal communication, NWFSC, NOAA) in the form of
+ratios of discard weight to retained weight of Petrale sole and
+sex-specific length frequencies. Discard estimates are shown in Table
+\ref{tab:Discard}.
+
+The second source is from the West Coast Groundfish Observer Program
+(WCGOP). This program is part of the NWFSC and has been recording
+discard observations since 2003. Table \ref{tab:Discard} shows the
+discard ratios (discarded/(discarded + retained)) of Petrale sole from
+WCGOP. Since 2011, when the trawl rationalization program was
+implemented, observer coverage rates increased to nearly 100\% for all
+the limited entry trawl vessels in the program and discard rates
+declined compared to pre-2011 rates. Discard rates were obtained for
+both the catch-share and the non-catch share sector for Petrale sole. A
+single discard rate was calculated by weighting discard rates based on
+the commercial landings by each sector. Coefficient of variations were
+calculated for the non-catch shares sector and pre-catch share years by
+bootstrapping vessels within ports because the observer program randomly
+chooses vessels within ports to be observed. Post-ITQ, all catch-share
+vessels have 100\% observer coverage and discarding is assumed to be
+known.
+
+\subsubsection{Fishery Length and Age
+Data}\label{fishery-length-and-age-data}
+
+\paragraph{Commercial Fishery}\label{commercial-fishery}
+
+\begin{centering}
+
+Input effN = $N_{\text{trips}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $<$ 44
+
+Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $\geq$ 44
+
+\end{centering}
+
+\subsubsection{Historical Commercial Catch-Per-Unit
+Effort}\label{historical-commercial-catch-per-unit-effort}
+
+\subsection{Biological Data}\label{biological-data}
+
+\subsubsection{Natural Mortality}\label{natural-mortality}
+
+\subsubsection{Sex Ratio, Maturation, and
+Fecundity}\label{sex-ratio-maturation-and-fecundity}
+
+\subsubsection{Length-Weight
+Relationship}\label{length-weight-relationship}
+
+\subsubsection{Growth (Length-at-Age)}\label{growth-length-at-age}
+
+\subsubsection{Ageing Precision and
+Bias}\label{ageing-precision-and-bias}
+
+\subsection{History of Modeling Approaches Used for This
+Stock}\label{history-of-modeling-approaches-used-for-this-stock}
+
+\subsubsection{Previous Assessments}\label{previous-assessments}
+
+\section{Assessment}\label{assessment}
+
+\subsection{General Model Specifications and
+Assumptions}\label{general-model-specifications-and-assumptions}
+
+Stock Synthesis version 3.30.03.XX was used to estimate the parameters
+in the model. R4SS, version 1.XX.X, along with R version 3.3.2 were used
+to investigate and plot model fits. A summary of the data sources used
+in the model (details discussed above) is shown in Figure
+\ref{fig:data_plot}.
+
+\subsubsection{Changes Between the 2015 Update Assessment Model and
+Current
+Model}\label{changes-between-the-2015-update-assessment-model-and-current-model}
+
+\subsubsection{Summary of Fleets and
+Areas}\label{summary-of-fleets-and-areas}
+
+\subsubsection{Other Specifications}\label{other-specifications}
+
+\subsubsection{Modeling Software}\label{modeling-software}
+
+The STAT team used Stock Synthesis version 3.30.03.XX developed by
+Dr.~Richard Methot at the NWFSC (Methot and Wetzel
+\protect\hyperlink{ref-methot_stock_2013}{2013}). This most recent
+version was used because it included improvements and corrections to
+older versions.
+
+\subsubsection{Priors}\label{priors}
+
+\subsubsection{Data Weighting}\label{data-weighting}
+
+\subsubsection{Estimated and Fixed
+Parameters}\label{estimated-and-fixed-parameters}
+
+\subsubsection{Key Assumptions and Structural
+Choices}\label{key-assumptions-and-structural-choices}
+
+\subsubsection{Bridging Analysis}\label{bridging-analysis}
+
+\subsubsection{Convergence}\label{convergence}
+
+\subsection{Base Model Results}\label{base-model-results}
+
+\subsubsection{Parameter Estimates}\label{parameter-estimates}
+
+\subsubsection{Fits to the Data}\label{fits-to-the-data}
+
+\subsubsection{Population Trajectory}\label{population-trajectory}
+
+\subsubsection{Uncertainty and Sensitivity
+Analyses}\label{uncertainty-and-sensitivity-analyses}
+
+\subsubsection{Retrospective Analysis}\label{retrospective-analysis}
+
+\subsubsection{Historical Analysis}\label{historical-analysis}
+
+\subsubsection{Likelihood Profiles}\label{likelihood-profiles}
+
+\subsubsection{Reference Points}\label{reference-points-1}
+
+\section{Harvest Projections and Decision
+Tables}\label{harvest-projections-and-decision-tables}
+
+\section{Regional Management
+Considerations}\label{regional-management-considerations}
+
+\section{Research Needs}\label{research-needs}
+
+There are many areas of research that could be improved to benefit the
+understanding and assessment of Petrale sole. Below, are issues that are
+considered of importance.
+
+\begin{enumerate}
+
+\item \textbf{Natural mortality}: 
+
+
+
+\end{enumerate}
+
+\section{Acknowledgments}\label{acknowledgments}
+
+Many people were instrumental in the successful completion of this
+assessment and their contribution is greatly appreciated.
+
+\newpage
+
+\FloatBarrier
+
+\section{Figures}\label{figures}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/catch2 landings stacked.png}
+\caption{Total catches Petrale sole through 2016. \label{fig:Catch}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/data_plot2.png}
+\caption{Summary of data sources used in the base model.
+\label{fig:data_plot}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bio1_sizeatage.png}
+\caption{Estimated length-at-age for male and female for Petrale sole
+with estimated CV. \label{fig:sizeatage}}
+\end{figure}
+
+\FloatBarrier 
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
+\caption{Estimated time-series of recruitment for Petrale sole.
+\label{fig:recruits}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/recdevs2_withbars.png}
+\caption{Estimated time-series of recruitment deviations for Petrale
+sole. \label{fig:recdevs}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png}
+\caption{Length compositions aggregated across time by fleet. Labels
+`retained' and `discard' indicate retained or discarded samples for each
+fleet. Panels without this designation represent the whole catch. The
+Triennial shelf survey length data were not used in the final model, but
+the implied model fits are shown. \label{fig:length_agg}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit__aggregated_across_time.png}
+\caption{Age compositions aggregated across time by fleet. The Triennial
+shelf survey age data were not used in the final model, but the implied
+model fits are shown. \label{fig:age_agg}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
+\caption{Estimated time-series of spawning output trajectory (circles
+and line: median; light broken lines: 95\% credibility intervals) for
+Petrale sole. \label{fig:ssb}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts1_Total_biomass_(mt).png}
+\caption{Estimated time-series of total biomass for Petrale sole.
+\label{fig:total_bio}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of relative spawning output (depletion)
+(circles and line: median; light broken lines: 95\% credibility
+intervals) for Petrale sole. \label{fig:depl}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SR_curve2.png}
+\caption{Estimated recruitment (red circles) and the assumed
+stock-recruit relationship (black line). The green line shows the effect
+of the bias correction for the lognormal distribution
+\label{fig:stock_recruit_curve}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SPR3_ratiointerval.png}
+\caption{Estimated spawning potential ratio (1-SPR)/(1-SPR30\%) for the
+base-case model. One minus SPR is plotted so that higher exploitation
+rates occur on the upper portion of the y-axis. The management target is
+plotted as a red horizontal line and values above this reflect harvests
+in excess of the overfishing proxy based on the SPR30\% harvest rate.
+The last year in the time series is 2018. \label{fig:SPR}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
+\caption{Equilibrium yield curve for the base case model. Values are
+based on the 2018 fishery selectivity and with steepness fixed at 0.89.
+\label{fig:yield}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\color{black}
+
+\section{References}\label{references}
+
+\renewcommand{\thepage}{}
+
+\hypertarget{refs}{}
+\hypertarget{ref-methot_stock_2013}{}
+Methot, R.D., and Wetzel, C.R. 2013. Stock synthesis: A biological and
+statistical framework for fish stock assessment and fishery management.
+Fisheries Research \textbf{142}: 86--99. doi:
+\href{https://doi.org/10.1016/j.fishres.2012.10.012}{10.1016/j.fishres.2012.10.012}.
+
+\hypertarget{ref-pikitch_evaluation_1988}{}
+Pikitch, E.K., Erickson, D.L., and Wallace, J.R. 1988. An evaluation of
+the effectiveness of trip limits as a management tool. Northwest; Alaska
+Fisheries Center, National Marine Fisheries Service NWAFC Processed
+Report. Available from
+\url{https://www.afsc.noaa.gov/Publications/ProcRpt/PR1988-27.pdf}
+{[}accessed 28 February 2017{]}.
+
+\hypertarget{ref-rogers_numerical_1992}{}
+Rogers, J.B., and Pikitch, E.K. 1992. Numerical definition of groundfish
+assemblages caught off the coasts of Oregon and Washington using
+commercial fishing strategies. Canadian Journal of Fisheries and Aquatic
+Sciences \textbf{49}(12): 2648--2656.
+
+\hypertarget{ref-weinberg_estimation_2002}{}
+Weinberg, J.R., Rago, P.J., Wakefield, W.W., and Keith, C. 2002.
+Estimation of tow distance and spatial heterogeneity using data from
+inclinometer sensors: An example using a clam survey dredge. Fisheries
+Research \textbf{55}(1--3): 49--61. doi:
+\href{https://doi.org/10.1016/S0165-7836(01)00292-2}{10.1016/S0165-7836(01)00292-2}.
+
+\end{document}

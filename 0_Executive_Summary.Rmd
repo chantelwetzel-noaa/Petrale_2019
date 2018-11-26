@@ -1,0 +1,233 @@
+
+#Executive Summary{-}
+
+##Stock{-}
+This assessment reports the status of the `r spp` (\emph{`r spp.sci`})  off  US coast of California, Oregon, and Washington using data through `r Dat_end_mod1`.  
+
+
+##Landings{-}
+Harvest of `r spp` first began off the US west coast in `r Dat_start_mod1`.  
+
+`r spp` are a desirable market species and discarding has historically been low.  
+
+
+<!-- ***********CATCH TABLE************************************************ -->
+```{r, results='asis'}
+    #CSV: './txt_files/Exec_catch_summary.csv'
+    print(Exec_catch.table, include.rownames = FALSE, caption.placement = 'top')
+```
+<!-- ***********END EXECUTIVE SUMMARY CATCH FIGURES AND TABLES************* -->
+
+
+\FloatBarrier
+
+<!-- ***********BEGIN EXECUTIVE SUMMARY CATCH FIGURES AND TABLES*********** -->
+<!-- ***********CATCH FIGURES********************************************** -->
+```{r, fig.cap= paste('Landings of' ,spp, ' by the Northern and Southern winter and summer fleets of the US west coast. \\label{fig:Exec_catch1}',sep=' ')}
+    Plot_catch(Catch_df = Exec_region1_catch)
+
+```
+
+\FloatBarrier
+
+##Data and Assessment{-}
+This an update assessment for `r spp`, which was last assessed in 2013 and updated in 2015.  The update assessment was conducted using the length- and age-structured modeling software Stock Synthesis (version 3.30.03.XX).  The coastwide population was modeled allowing separate growth and mortality parameters for each sex (a two-sex model) from `r Dat_start_mod1` to `r LastYR` and forecasted beyond `r LastYR`.
+
+
+<!--Map of assessment region: (Figure \ref{fig:assess_region_map}).  
+ 
+![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map}](Figures/assess_region_map.png)  \FloatBarrier  -->
+
+
+##Stock Biomass{-}
+The predicted spawning output from the base model ...
+
+<!--BEGIN  EXECUTIVE SUMMARY SPAWNING BIOMASS AND DEPLETE TABLES AND FIGURES-->
+```{r, results='asis'}
+    # Select which file to use for the recuitment figure, depending on if you have one model or multiple models
+    spawn.file  = ifelse(fecund=='numbers',
+                           'r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png',
+                           'r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png')
+    Bratio.file = 'r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png' 
+
+```
+
+![Estimated time-series of spawning output trajectory (circles and line: median; light broken lines: 95% credibility intervals) for the base assessment model.  \label{fig:Spawnbio_all}](`r spawn.file`)
+
+
+![Estimated time-series of relative spawning output (depletion) (circles and line: median; light broken lines: 95% credibility intervals) for the base assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
+
+<!--BEGIN  EXECUTIVE SUMMARY SPAWNING BIOMASS AND DEPLETE TABLES AND FIGURES-->
+```{r, results='asis'}
+    # Print spawning biomass table(s)
+    print(Spawn_Deplete_mod1.table, include.rownames = FALSE, caption.placement = 'top')
+
+```
+
+\FloatBarrier
+
+
+##Recruitment{-}
+Recruitment deviations were estimated for the entire assessment period... 
+
+<!-- ***********BEGIN EXECUTIVE SUMMARY RECRUITMENT TABLES AND FIGURES***** -->
+```{r, results='asis'}
+   recruit.file  = 'r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png'
+```
+
+![Time-series of estimated `r spp` recruitments for the base model with 95% confidence or credibility intervals. \label{fig:Recruits_all}](`r recruit.file`)
+
+```{r, results='asis'}
+   print(Recruit_mod1.table, include.rownames = FALSE, caption.placement = 'top')
+   recruit.file  = 'r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png'
+  
+```
+
+\FloatBarrier
+
+
+##Exploitation Status{-}
+The spawning output of `r spp`...
+
+
+<!-- ***********BEGIN EXECUTIVE SUMMARY EXPLOITATION AND******************* -->
+<!-- ***********SPRratio TABLE AND FIGURES********************************* -->
+```{r, results='asis'}
+   # Print exploitation and SPRratio tables depending on how many models there are
+     print(SPRratio_Exploit_mod1.table, include.rownames = FALSE, caption.placement = 'top')
+
+   # select the files for the SPR and phase plots depending on the number of models
+     SPR.file   = 'r4ss/plots_mod1/SPR3_ratiointerval.png'
+     Phase.file = 'r4ss/plots_mod1/SPR4_phase.png' 
+```
+
+\FloatBarrier
+
+![Estimated relative spawning potential ratio (1-SPR)/(1-SPR30%) for the base model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR30% harvest rate. The last year in the time-series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
+
+
+![Phase plot of estimated (1-SPR)/(1-SPR30%) vs. depletion (B/Btarget) for the base case model. The red circle indicates 2018 estimated status and exploitation for `r spp`. \label{fig:Phase_all}](`r Phase.file`)
+
+\FloatBarrier
+
+
+##Ecosystem Considerations{-}
+
+
+##Reference Points{-}
+
+This stock assessment estimates that the spawning output of `r spp` is `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the management target. Due to reduced landing and the large 2008 year-class, an increasing trend in spawning output was estimated in the base model. The estimated depletion in `r LastYR` is `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`), corresponding to an unfished spawning output of `r paste(prettyNum(Spawn_mod1,big.mark=","), fecund_unit,sep=' ')` ($\sim$ 95% asymptotic interval: `r paste(prettyNum(Spawn_mod1_CI,big.mark=","), fecund_unit, sep=' ')`).  Unfished age `r min_age` biomass was estimated to be `r prettyNum(Ref_pts_mod1[2,2],big.mark=",")` mt in the base model. The target spawning output based on the biomass target ($SB_{25\%}$) is `r paste(prettyNum(format(Ref_pts_mod1[7,2],0),big.mark=","), fecund_unit,sep=' ')`, with an equilibrium catch of `r prettyNum(format(Ref_pts_mod1[10,2],0),big.mark=",")` mt. Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to $SPR_{30\%}$ is `r prettyNum(format(Ref_pts_mod1[15,2],0),big.mark=",")` mt. Estimated MSY catch is at a `r prettyNum(format(Ref_pts_mod1[20,2],0),big.mark=",")` spawning output of `r paste(prettyNum(format(Ref_pts_mod1[17,2],0),big.mark=","), fecund_unit,sep=' ')` (`r paste0(round(100 * as.numeric(Ref_pts_mod1[17,2])/as.numeric(Ref_pts_mod1[1,2]),1), "%")` depletion)
+
+
+<!-- ***********BEGIN EXECUTIVE SUMMARY REFERENCE POINT TABLES************* -->
+```{r, results='asis'}
+   # Print reference point tables
+     print(Ref_pts_mod1.table, include.rownames = FALSE, caption.placement = 'top',
+           sanitize.text.function = function(x){x})
+```
+<!-- ***********END EXECUTIVE SUMMARY REFERENCE POINT TABLES*************** --> 
+
+\FloatBarrier
+
+
+##Management Performance{-}
+Exploitation rates on `r spp`...
+
+<!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE******* --> 
+```{r, results='asis'}
+    # Edit file: './txt_files/Exec_mngmt_performance.csv'
+    print(mngmnt.table, include.rownames = FALSE, caption.placement = 'top', 
+          sanitize.text.function = function(x){x}, scalebox = .9)
+```
+<!-- ***********END EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE********* -->
+\FloatBarrier
+
+
+##Unresolved Problems and Major Uncertainties{-}
+
+\begin{enumerate}
+
+\item The current data for `r spp` weighted according to the Francis weighting...  
+
+
+\end{enumerate}
+
+##Decision Table{-}    
+
+Model uncertainty has been described by the estimated uncertainty within the base model and by the sensitivities to different model structure. 
+
+
+<!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
+
+```{r, results='asis'}   
+    # Print OFL table 
+      print(OFL.table, include.rownames = FALSE, caption.placement = 'top')
+```
+
+\FloatBarrier
+
+```{r, results='asis'}   
+   # Edit text file(s): ./txt_files/DecisionTable_mod1 ,  
+    print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
+          caption.placement = 'top', 
+          hline.after = c(-1, 0, 10, nrow(decision_mod1.table)), 
+          scalebox = .85)
+```
+
+
+\FloatBarrier
+
+##Research and Data Needs{-} 
+
+There are many areas of research that could be undertaken to benefit the understanding and assessment of `r spp`. Below, are issues that are considered of importance.
+
+\begin{enumerate}
+
+\item \textbf{Natural mortality}: 
+
+\item \textbf{Steepness}: 
+
+\item \textbf{Basin-wide understanding of stock structure, biology, connectivity, and distribution:} 
+
+\end{enumerate}
+
+
+<!-- ***********BEGIN EXECUTIVE SUMMARY RESULTS SUMMARY TABLE --> 
+```{r, results='asis'}
+   # Edit file: ./txt_files/Exec_basemodel_summary.csv and the Summary Results 
+   # section in R code R_exec_summary_figs_tables.R
+
+   print(base_summary.table, 
+       include.rownames = FALSE, 
+       caption.placement = 'top',
+       floating.environment = 'sidewaystable', 
+       sanitize.text.function = function(x){x}, 
+       scalebox = .6, 
+       align = TRUE, 
+       hline.after = c(-1, 0, 4, 5, 7, 9, 11, nrow(base_summary.table)))
+```
+
+\FloatBarrier
+
+<!-- ***********Yield curve table****************************************** -->
+```{r, results='asis'}
+   # Select the file to use for the yield curve depending on the number of models
+     yield.file  = 'r4ss/plots_mod1/yield1_yield_curve.png'
+    
+```
+<!-- ***********Edit caption based on fixed params************************* -->
+
+![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness fixed at `r print(mod1$parameters[mod1$parameters$Label == "SR_BH_steep","Value"],2)`. \label{fig:Yield_all}](`r yield.file`)
+
+
+\FloatBarrier
+
+<!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
+
+
+<!--************RESET FIGURE & TABLE NUMBERS FOR THE DOCUMENT'S MAIN BODY** -->
+\newpage
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}

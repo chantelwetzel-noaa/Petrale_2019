@@ -1,0 +1,265 @@
+---
+title: ""
+author: ""
+date: ""
+output: 
+  pdf_document:
+     keep_tex: yes
+     includes:
+      in_header: header.tex
+---
+<!-- ************************************************************************************************--> 
+<!-- **********************************BEGIN APPENDICES**********************************************--> 
+<!-- ************************************************************************************************--> 
+\FloatBarrier
+\newpage
+
+
+
+<!-- ************************************DATA FITS************************************************--> 
+#Appendix A. Detailed Fit to Length Composition Data 
+<!--\renewcommand{\thepage}{A-\arabic{page}}
+\setcounter{page}{1}-->
+
+
+```{r, results='asis'}
+
+plot.vec = c(1, 5:8, 12, 16, 20, 24, 28,32)
+plot.vec = c(1, 5:8, 12, 16, 24, 28, 32)
+
+for (a in 1:length(plot.vec)){
+
+  cat('\n![', LenComp_mod1[plot.vec[a],caption_col], ' \\label{fig:length_fits}](r4ss/plots_mod1/', LenComp_mod1[plot.vec[a], path_col], ')\n', sep='')
+  
+}
+
+```
+
+\FloatBarrier
+
+#Appendix B. Detailed Fit to Age Composition Data 
+
+```{r, results='asis'}
+
+plot.vec = c(1:2, 6, 10, 14, 18, 23)
+plot.vec = c(1:2, 6, 10, 25)
+name.vec = c("")
+
+for (a in 1:length(plot.vec)){
+
+  cat('\n![', AgeComp_mod1[plot.vec[a],caption_col], ' \\label{fig:age_fits}](r4ss/plots_mod1/', AgeComp_mod1[plot.vec[a], path_col], ')\n', sep='')
+  
+}
+
+```
+
+
+\FloatBarrier
+
+#Appendix C. Description of CPUE and Triennial Data
+
+Data on catch-per-unit-effort (CPUE) in mt/hr from the domestic fishery were combined for the INPFC Vancouver and Columbia areas Gunderson [-@gunderson_population_1977].  Although these data reflect catch rates for the US fleet, the highest catch rates coincided with the beginning of removals by the foreign fleet.  This suggests that, barring unaccounted changes in fishing efficiency during this period, the level of abundance was high at that time. The estimated index of abundance is shown in Table \ref{tab:CPUE_Summary} and Figure \ref{fig:Excluded_Indices}.
+
+The Triennial shelf survey index of abundance was estimated based on the data using the VAST delta-GLMM model.  The estimated index of abundance is shown in Table \ref{tab:CPUE_Summary} and Figure \ref{fig:Excluded_Indices}.  The lognormal distribution with random strata-year had the lowest AIC and was chosen as the final model.  The index shows a decline in abundance in the early years of the time-series and abundance remaining flat for the latter years.  
+
+Triennial shelf survey length and age compositions were expanded based upon the survey stratification.  The number of tows with length data ranged from 17 in 1986 to 81 in 1998 (Table \ref{tab:TriennialLengths}).  Ages were read using surface reading methods until 1989 when the break-and-burn method replaced surface reads as the best method to age `r spp`.  Unfortunately, surface reading of `r spp` otoliths results in significant underestimates of age.  Due to this, these otoliths were excluded from analysis.  The available ages from the Triennial shelf survey and the number of tows where otoliths were collected are shown in Table \ref{tab:Triennial_Ages}.  The expanded length  and age frequencies from this survey are shown in Figures \ref{fig:Tri_Length} and  \ref{fig:Tri_Age}, respectively.
+
+Including the fishery CPUE or the Triennial survey data in the final base model had only negligible changes in the stock size and status (Figures \ref{fig:Excluded_Data_ssb} and \ref{fig:Excluded_Data_depl}). 
+
+<!-- ********************************************************************** -->
+<!-- ***********************CPUE   Indices Table*************************** --> 
+<!-- ********************************************************************** -->
+
+```{r, results = 'asis'}
+# Commercial CPUE Index First
+survey.list = list()
+
+cpue.yr = 1956:1973
+cpue = c(0.40, 0.30, 0.32, 0.29, 0.28, 0.31, 0.29, 0.34, 0.35, 0.55, 0.47, 0.30, 0.17, 0.178, 0.175, 0.2034, 0.1984, 0.1144)
+cpue.sd = rep(0.40, length(cpue))
+cpue.matrix = as.data.frame(cbind( cpue, cpue.sd))
+colnames(cpue.matrix) = c("Obs", "SE")
+survey.list[[1]] =  cpue.matrix
+rownames(survey.list[[1]]) = cpue.yr
+
+grab = mod1$cpue[mod1$cpue$Name == "Triennial", c("Obs", "SE") ]
+survey.list[[2]] = grab
+rownames(survey.list[[2]]) = mod1$cpue[mod1$cpue$Name == "Triennial", "Yr" ]
+colnames(survey.list[[2]]) = c("Obs", "SE")
+
+names(survey.list) = c("CPUE", "Triennial")
+
+Rows = unique(unlist(lapply(survey.list, rownames)))
+Rows = sort(as.numeric(Rows))
+Index_Summary = matrix("-", nrow = length(Rows), ncol = 4,
+                       dimnames=list(Rows, sapply(survey.list, colnames)))
+
+mat.names = NULL
+for(i in seq_along(survey.list)){
+  if(i==1) { ind = 1:2  }
+  if(i!=1) { ind = ind+2}
+  Index_Summary[rownames(survey.list[[i]]), ind] = cbind(print(survey.list[[i]]$Obs, digits = ifelse(i == 1, 2, 0)), 
+                                                         print(survey.list[[i]]$SE,  digits = 2)) 
+  mat.names = c(mat.names, "Obs", "SE")
+}
+
+
+Index_Summary = cbind(rownames(Index_Summary), Index_Summary)
+
+# Index of abundance summary, create table
+hlines = c(-1, 0, nrow(Index_Summary))
+addtorow = list()
+addtorow$pos = list(0,0)
+addtorow$command = c(" & \\multicolumn{2}{c}{Fishery CPUE} &  \\multicolumn{2}{c}{Triennial} \\\\\n",
+                     "Year & Obs & SE & Obs & SE \\\\\n")
+
+# Index of abundance summary, create table   
+Index_summary.table = xtable(Index_Summary, 
+                             caption = c('Summary of the fishery CPUE
+                                         and the Triennial shelf survey indices not used in the stock
+                                         assessment.'),
+                             label = 'tab:CPUE_Summary',
+                             digits = 2)    
+# Add alignment  
+align(Index_summary.table) = c('l',
+                               '>{\\centering}p{.5in}',
+                               '>{\\centering}p{.7in}',
+                               '>{\\centering}p{.7in}',
+                               '>{\\centering}p{.7in}',
+                               '>{\\centering}p{.7in}')  
+
+# Print index summary table
+print(Index_summary.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      hline.after = hlines,
+      add.to.row = addtorow,
+      include.colnames = FALSE,
+      sanitize.text.function = function(x){x})
+```
+
+
+\FloatBarrier
+
+
+<!-- ********************* Triennial **************************** --> 
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/TriennialLengthSampleSize.csv')
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of Triennial shelf survey length samples. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for shelf/slope rockfish species was 2.43 fish per tow.'),
+                           label = 'tab:TriennialLengths',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+# NEED TO FIGURE OUT HOW TO APPLY LONGTABLE HERE
+
+```
+
+\FloatBarrier
+
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/TriennialAgeSampleSize.csv')
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of Triennial shelf survey age samples. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for shelf/slope rockfish species was 2.43 fish per tow.'),
+                           label = 'tab:Triennial_Ages',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
+\FloatBarrier
+
+![Fishery CPUE and Triennial shelf survey indices of abundance for  `r spp`. The fishery CPUE was based on Gunderson 1977 and the Triennial shelf survey index was estimated using VAST. \label{fig:Excluded_Indices}](Figures/Index_Data_2.png)
+
+\FloatBarrier
+
+![Triennial shelf survey length frequency distributions for `r spp`. \label{fig:Tri_Length}](r4ss/plots_mod1/comp_lendat_bubflt5mkt0.png)
+
+\FloatBarrier
+
+
+![Triennial shelf survey age frequency distributions for `r spp`. \label{fig:Tri_Age}](r4ss/plots_mod1/comp_agedat_bubflt5mkt0.png)
+
+\FloatBarrier
+
+![Plot comparison of spawning output when either the fishery CPUE or the Triennial shelf survey data are included in the base model for `r spp`. \label{fig:Excluded_Data_ssb}](Figures/ExcludedData_ssb.png)
+
+\FloatBarrier
+
+![Plot comparison of relative spawning output (depletion) when either the fishery CPUE or the Triennial shelf survey data are included in the base model for `r spp`. \label{fig:Excluded_Data_depl}](Figures/ExcludedData_depl.png)
+
+\FloatBarrier
+
+\newpage
+
+
+<!-- ************************************AUXILARY FILES************************************************ --> 
+#Appendix D. SSC Groundfish Subcommittee Discussion Regarding Steepness
+
+The `r spp` base model is highly sensitive to steepness.  In the final base model the profile over steepness is flat across a wide range of potential values.  The flat profile over steepness was in contrast to the  previous assessment model from 2011 where the likelihood was minimized at a value of 0.40.  The change in perceived information regarding steepness between this and the last assessment is due to the new data since 2011, the updated data weighting approach, and minor changes in model structure.  Given the lack of information regarding steepness, preliminary models explored using the mean of the 2017 steepness prior, the approach endorsed by the SSC when there is not information regarding steepness for a specific stock.  However, using the steepness prior of 0.72 resulted in `r spp` being estimated near unfished conditions, a result that was in strong contrast to the previous assessment which estimated the stock size at 19.1% of unfished stock size in 2011.  Due to concerns of plausibility, the STAT team presented an initial model to the STAR panel for review using an intermediate steepness value of 0.50.  This value was selected because the resulting spawning output was encapsulated within the uncertainty from when steepness was assumed to be 0.40, the previous assessment value, and 0.72, the current mean of the steepness prior.  Over the course of the week of the STAR panel after many discussions both the STAR panel and the STAT team agreed that in the absence of information regarding steepness the base model should use the mean of the prior.  However, upon review by the SSC, it was concluded that the results of the assessment model were implausible when the steepness prior of 0.72 was used.  In particular, the value of catchability for `r spp` from the NWFSC shelf-slope survey was 0.05, far below that for other rockfish species observed off the US west coast.  The SSC requested additional model exploration be done and reviewed at the SSC Groundfish Subcommittee (GFSC) September 28, 2017 meeting regarding steepness and re-examining the information provided by the Triennial shelf survey.   
+
+Preliminary models included the Triennial shelf survey but it was removed from the final base model during the STAR panel due to model lack of fit to this data-set which was in contrast to all other available data and concerns that this survey did not sample a representative subset of the population off the US west coast.  Additionally, the estimates of spawning output and depletion with and without the Triennial survey data, given the value of steepness, were negligible indicating that the other sources of information were the more influential data in the model.  However, profiles over steepness from preliminary models which included the Triennial shelf survey indicated that the index of abundance supported low steepness values (there was no information from the length or age composition data). The perceived information regarding steepness from this index of abundance is due to a change in the abundance index between the first two data points of the survey, 1980 and 1983, which are higher than the subsequent years that drop to lower abundance levels from 1986 to 2004 (final year of the survey).  A profile over steepness values when the Triennial shelf survey was used as a single time-series resulted in a profile that had a local minimum at 0.75 with global minimum occurring at a steepness value of 0.27 (Figure \ref{fig:Tri_Profile}).  The estimated stock status when assuming a steepness value of 0.27, a value that is far lower than any other estimated steepness value for a US west coast groundfish stock, was less that 10% of the unfished spawning output in 2017.  The STAT team and the SSC GFSC agreed that this was not a plausible based upon other estimated steepness values from US west coast groundfish.  
+
+The models explored regarding steepness either using the mean of the prior or the value supported by the Triennial shelf survey index led to quite different estimates of depletion for `r spp` in 2017.  Given the insufficient information to estimate steepness within the model an alternative approach for determining steepness was proposed by Dr. Owen Hamel during the SSC GFSC webinar held on September 28, 2017.  The subcommittee notes state:
+
+*The GFSC therefore concluded that the available data are insufficient to estimate steepness. It is usual in this situation to base the assessment on the mean of the prior for steepness (0.72), but this value leads to an unrealistically low estimate of survey catchability (i.e. model A [fixing steepness at 0.27]), and the prior is rather diffuse with comparable support for values anywhere between 0.4 and 1.0. Dr. Hamel provided a way to account for uncertainty in steepness that the GFSC recommends be adopted. This involves calculating current ending spawning output biomass for steepness values ranging from 0.25 to 0.95 in increments of 0.05 and assuming each value to be equally plausible). The expected (i.e., arithmetic mean) ending spawning output is 5,364 million eggs, which corresponds most closely to a steepness value of 0.5 (5,296 million eggs for the run in the profile). Thus, the model in which steepness is set to 0.5 represents the expected ending spawning output given steepness values between 0.225 and 0.975 are considered equally likely.*
+
+*The GFSC therefore recommends that the base model be revised to fix steepness to 0.5. The final base model should be retuned, checked by jittering, and presented to the SSC for final approval and adoption.*
+
+The STAT team agreed with the recommendation to fix steepness at 0.50 for the `r spp` base model.
+
+![Profile over steepness with the inclusion of the Triennial shelf survey when treated as a single time-series for `r spp`. \label{fig:Tri_Profile}](Figures/triennial_piner_panel_h.png)
+
+\FloatBarrier
+
+<!-- ************************************AUXILARY FILES************************************************ --> 
+#Appendix E. List of Auxiliary Files Available
+
+The listed files are also available as auxiliary files to accompany the assessment document:
+
+\begin{enumerate}
+  \item Numbers at age for female and male `r spp` (POPnatagef.csv and POPnatagem.csv)
+  \item The `r spp` Stock Synthesis 3.30 model files
+  
+  \begin{enumerate}
+    \item 2017pop.dat
+    \item 2017pop.ctl
+    \item forecast.ss
+    \item starter.ss
+  \end{enumerate}
+\end{enumerate}
+
+\newpage

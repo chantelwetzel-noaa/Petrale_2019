@@ -1,0 +1,75 @@
+
+<!-- *************************************************************************** -->
+<!-- ************************ASSESSMENT DESCRIPTION***************************** -->
+<!-- *************************************************************************** -->
+#Assessment
+
+##General Model Specifications and Assumptions
+Stock Synthesis version 3.30.03.XX was used to estimate the parameters in the model. R4SS, version 1.XX.X, along with R version 3.3.2 were used to investigate and plot model fits. A summary of the data sources used in the model (details discussed above) is shown in Figure \ref{fig:data_plot}.
+
+
+###Changes Between the 2015 Update Assessment Model and Current Model
+
+
+###Summary of Fleets and Areas
+
+
+###Other Specifications
+
+###Modeling Software
+The STAT team used Stock Synthesis version 3.30.03.XX developed by Dr. Richard Methot at the NWFSC [@methot_stock_2013]. This most recent version was used because it included improvements and corrections to older versions.  
+
+
+###Priors
+
+
+
+###Data Weighting
+
+
+###Estimated and Fixed Parameters
+
+
+
+
+
+###Key Assumptions and Structural Choices
+
+
+###Bridging Analysis
+
+
+###Convergence
+
+
+
+
+<!-- ************************************************************************* -->
+<!-- *********************BASE MODEL RESULTS********************************** -->
+<!-- ************************************************************************* -->
+##Base Model Results
+
+
+###Parameter Estimates
+
+
+###Fits to the Data
+
+
+###Population Trajectory
+
+
+###Uncertainty and Sensitivity Analyses
+
+
+
+###Retrospective Analysis
+
+
+###Historical Analysis
+
+
+###Likelihood Profiles
+
+
+###Reference Points

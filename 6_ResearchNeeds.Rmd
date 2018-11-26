@@ -1,0 +1,11 @@
+<!-- ****************************RESEARCH NEEDS**************************** -->
+#Research Needs
+There are many areas of research that could be improved to benefit the understanding and assessment of `r spp`. Below, are issues that are considered of importance.
+
+\begin{enumerate}
+
+\item \textbf{Natural mortality}: 
+
+
+
+\end{enumerate}
