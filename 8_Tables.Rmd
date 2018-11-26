@@ -1,0 +1,1432 @@
+
+<!-- ====================================================================== -->
+<!-- ****************************            ****************************** --> 
+<!-- ****************************BEGIN TABLES****************************** --> 
+<!-- ****************************             ***************************** --> 
+<!-- ======================================================================--> 
+  
+#Tables
+<!-- ********************************************************************** --> 
+<!-- *********************Commercial landings TABLE 1********************** --> 
+<!-- ********************************************************************** --> 
+```{r, results = 'asis'}
+n = unique(mod1$catch$Fleet)
+catch = NULL
+for (i in n){
+  ind = mod1$catch$Fleet == n[i]
+  catch = cbind(catch, mod1$catch[ind,"Obs"])
+} 
+
+catch = cbind(unique(mod1$catch$Yr), catch)
+
+# only use catches from 1918 forward
+catch = catch[1:40, ]
+
+colnames(catch) = c('Year',
+                           'Winter North',
+                           'Summer North',
+                           'Winter South', 
+                           'Summer South')
+
+# Index of abundance summary, create table   
+Catch_AllYrs = xtable(catch, 
+                      caption = c('Landings for each fleet for the modeled years.'),
+                      label = 'tab:Comm_Catch',
+                      digits = 1)    
+
+# Add alignment  
+align(Catch_AllYrs) = c('l',
+                        '>{\\centering}p{.5in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}')  
+
+print(Catch_AllYrs,
+      include.rownames=FALSE,
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+``` 
+
+
+```{r, results = 'asis'}
+n = unique(mod1$catch$Fleet)
+catch = NULL
+for (i in n){
+  ind = mod1$catch$Fleet == n[i]
+  catch = cbind(catch, mod1$catch[ind,"Obs"])
+} 
+
+catch = cbind(unique(mod1$catch$Yr), catch)
+
+# only use catches from 1918 forward
+catch = catch[41:80, ]
+
+colnames(catch) = c('Year',
+                           'Winter North',
+                           'Summer North',
+                           'Winter South', 
+                           'Summer South')
+
+
+# Index of abundance summary, create table   
+Catch_AllYrs = xtable(catch, 
+                      digits = 1)    
+
+# Add alignment  
+align(Catch_AllYrs) = c('l',
+                        '>{\\centering}p{.5in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}')  
+
+
+print(Catch_AllYrs,
+      include.rownames=FALSE,
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+``` 
+
+
+```{r, results = 'asis'}
+n = unique(mod1$catch$Fleet)
+catch = NULL
+for (i in n){
+  ind = mod1$catch$Fleet == n[i]
+  catch = cbind(catch, mod1$catch[ind,"Obs"])
+} 
+
+catch = cbind(unique(mod1$catch$Yr), catch)
+
+# only use catches from 1918 forward
+catch = catch[81:120, ]
+
+colnames(catch) = c('Year',
+                           'Winter North',
+                           'Summer North',
+                           'Winter South', 
+                           'Summer South')
+
+Catch_AllYrs = xtable(catch, 
+                      digits = 1)    
+
+# Add alignment  
+align(Catch_AllYrs) = c('l',
+                        '>{\\centering}p{.5in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}')  
+
+
+print(Catch_AllYrs,
+      include.rownames=FALSE,
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+``` 
+
+```{r, results = 'asis'}
+n = unique(mod1$catch$Fleet)
+catch = NULL
+for (i in n){
+  ind = mod1$catch$Fleet == n[i]
+  catch = cbind(catch, mod1$catch[ind,"Obs"])
+} 
+
+catch = cbind(unique(mod1$catch$Yr), catch)
+
+# only use catches from 1918 forward
+catch = catch[41:80, ]
+
+colnames(catch) = c('Year',
+                           'Winter North',
+                           'Summer North',
+                           'Winter South', 
+                           'Summer South')
+
+
+# Index of abundance summary, create table   
+Catch_AllYrs = xtable(catch, 
+                      digits = 1)    
+
+# Add alignment  
+align(Catch_AllYrs) = c('l',
+                        '>{\\centering}p{.5in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}')  
+
+
+print(Catch_AllYrs,
+      include.rownames=FALSE,
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+``` 
+
+
+```{r, results = 'asis'}
+n = unique(mod1$catch$Fleet)
+catch = NULL
+for (i in n){
+  ind = mod1$catch$Fleet == n[i]
+  catch = cbind(catch, mod1$catch[ind,"Obs"])
+} 
+
+catch = cbind(unique(mod1$catch$Yr), catch)
+
+# only use catches from 1918 forward
+catch = catch[121:144, ]
+
+colnames(catch) = c('Year',
+                           'Winter North',
+                           'Summer North',
+                           'Winter South', 
+                           'Summer South')
+
+Catch_AllYrs = xtable(catch, 
+                      digits = 1)    
+
+# Add alignment  
+align(Catch_AllYrs) = c('l',
+                        '>{\\centering}p{.5in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}',
+                        '>{\\centering}p{.75in}')  
+
+
+print(Catch_AllYrs,
+      include.rownames=FALSE,
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+``` 
+
+
+<!-- ********************************************************************** --> 
+<!-- **************** History of Regulations TABLE 2 ********************** --> 
+<!-- ********************************************************************** --> 
+
+
+
+<!-- ********************************************************************** --> 
+<!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE******* -->
+<!-- *************************    TABLE 3 ********************************* -->
+
+```{r, results='asis'}
+  mngmnt = read.csv('./txt_files/ESF_Exec_mngmt_performance.csv')
+  find.yr = as.numeric(substring(mngmnt$Year, 7, 10))
+  temp.manage = cbind(mngmnt, find.yr)
+  mngmnt = temp.manage[temp.manage$find.yr < LastYR, -dim(temp.manage)[2]]
+
+  # Add the total landings and totality mortality
+  totdead = print(aggregate(kill_bio ~ Yr, FUN = sum, mod1$catch[mod1$catch$Yr>=min(find.yr),])$kill_bio,digits = 0)
+  landings  = print(aggregate(Obs ~ Yr, FUN = sum, mod1$catch[mod1$catch$Yr>=min(find.yr),])$Obs, digits = 0)
+  mngmnt = cbind(mngmnt, landings, totdead)
+
+  colnames(mngmnt) = c('Year',
+                     'OFL (mt; ABC prior to 2011)',  
+                     'ACL (mt; OY prior to 2011)', 
+                     'Total landings (mt)',
+                     'Estimated total catch (mt)')
+
+  # Print management performance table - will have to edit the text file and 
+  mngmnt.table2 = xtable(mngmnt, 
+                      caption=c('Recent trend in estimated total catch relative to management guidelines. The estimated total catch includes the total landings plus the model estimated discard mortality based upon discard rate data.'), 
+                      label='tab:mnmgt_perform_tables')
+    
+  # Add alignment
+  align(mngmnt.table2) = c('l',
+                        '>{\\raggedleft}p{0.5in}',
+                        '>{\\centering}p{1.0in}',
+                        '>{\\centering}p{1.0in}', 
+                        '>{\\centering}p{1.1in}',
+                        '>{\\centering}p{1.1in}') 
+  
+
+  print(mngmnt.table2, 
+          include.rownames = FALSE, 
+          caption.placement = 'top', 
+          sanitize.text.function = function(x){x})
+```
+
+<!-- ********************************************************************** -->
+<!-- ***********************Survey Strata  Table*************************** --> 
+<!-- ********************************************************************** -->
+
+```{r, results = 'asis'}
+
+Strata = read.csv('./txt_files/Strata.csv')
+
+colnames(Strata) = c('',
+                     'Early Triennial',
+                     'Late Triennial',
+                     'NWFS Shelf-Slope')
+
+# Index of abundance summary, create table   
+Strata.table = xtable(Strata, 
+                           caption = c('Description of the data used to create the indices, the modeling platform used to generate the estimates, and the model configuration.'),
+                           label = 'tab:strata')
+                          
+# Add alignment  
+align(Strata.table) = c('l',
+                             '>{\\centering}p{1.10in}',
+                             '>{\\centering}p{1.10in}',
+                             '>{\\centering}p{1.10in}',
+                             '>{\\centering}p{1.10in}')  
+
+# Print commercial length sample numbers
+print(Strata.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+
+```
+
+<!-- ********************************************************************** -->
+<!-- ***********************Survey Indices Table*************************** --> 
+<!-- ********************************************************************** --> 
+
+```{r, results = 'asis'}
+names = unique(mod1$cpue$Fleet_name)
+
+survey.list = list()
+for(i in 1:length(names)){
+  grab = mod1$cpue[mod1$cpue$Fleet_name == names[i], c("Obs", "SE") ]
+  survey.list[[i]] = grab
+  rownames(survey.list[[i]]) = mod1$cpue[mod1$cpue$Fleet_name == names[i], "Yr" ]
+  colnames(survey.list[[i]]) = c("Obs", "SE")
+}
+names(survey.list) = names
+
+Rows = unique(unlist(lapply(survey.list, rownames)))
+Rows = sort(as.numeric(Rows))
+Index_Summary = matrix("-", nrow = length(Rows), ncol = 2*length(names),
+                       dimnames=list(Rows, sapply(survey.list, colnames)))
+
+mat.names = NULL
+for(i in seq_along(survey.list)){
+  if(i==1) { ind = 1:2  }
+  if(i!=1) { ind = ind+2}
+  Index_Summary[rownames(survey.list[[i]]), ind] = cbind(print(survey.list[[i]]$Obs, digits = 0), 
+                                                         print(survey.list[[i]]$SE,  digits = 2)) 
+  mat.names = c(mat.names, "Obs", "SE")
+}
+
+
+Index_Summary = cbind(rownames(Index_Summary), Index_Summary)
+
+# Index of abundance summary, create table
+hlines = c(-1, 0, nrow(Index_Summary))
+addtorow = list()
+addtorow$pos = list(0,0)
+addtorow$command = c(" & \\multicolumn{2}{c}{POP} &  \\multicolumn{2}{c}{AFSC Slope} & \\multicolumn{2}{c}{NWFSC Slope} & \\multicolumn{2}{c}{NWFSC Shelf-Slope} \\\\\n",
+                     "Year & Obs & SE & Obs & SE & Obs & SE & Obs & SE \\\\\n")
+Index_summary.table = xtable(Index_Summary, 
+                             caption = c('Summary of the fishery-independent biomass/abundance
+                                         time-series used in the stock
+                                         assessment.  The standard error includes the input annual standard error and model estimated added variance.'),
+                             label = 'tab:Index_Summary',
+                             digits = 2)    
+# Add alignment  
+align(Index_summary.table) = c('l',
+                               '>{\\centering}p{.4in}',
+                               '>{\\centering}p{.5in}', 
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.5in}',
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.5in}', 
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.5in}',
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.5in}',
+                               '>{\\centering}p{.3in}')  
+
+# Print index summary table
+print(Index_summary.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      hline.after = hlines,
+      add.to.row = addtorow,
+      include.colnames = FALSE,
+      sanitize.text.function = function(x){x})
+```
+
+
+\FloatBarrier
+
+<!-- ********************************************************************** -->
+<!-- *******************Design Based Index Table*************************** --> 
+<!-- ********************************************************************** -->
+
+```{r, results = 'asis'}
+design.based = read.csv('./txt_files/DesignBasedEstimates.csv')
+colnames(design.based) = c('Year',
+                          'Obs',
+                          'SE',
+                          'Obs',
+                          'SE',
+                          'Obs',
+                          'SE',
+                          'Obs',
+                          'SE')
+
+
+# Index of abundance summary, create table
+hlines = c(-1, 0, nrow(design.based))
+addtorow = list()
+addtorow$pos = list(0,0)
+addtorow$command = c(" & \\multicolumn{2}{c}{Winter N} &  \\multicolumn{2}{c}{Winter S} & \\multicolumn{2}{c}{Triennial} & \\multicolumn{2}{c}{NWFSC Shelf-Slope} \\\\\n",
+                     "Year & Obs & SE & Obs & SE & Obs & SE & Obs & SE \\\\\n")
+Design.Based.table = xtable(design.based, 
+                             caption = c('Summary of the design-based estimates of fishery-independent biomass/abundance
+                                         time-series.'),
+                             label = 'tab:Design_Based',
+                             digits = 2)    
+# Add alignment  
+align(Design.Based.table) = c('l',
+                               '>{\\centering}p{.4in}',
+                               '>{\\centering}p{.6in}', 
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.6in}',
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.6in}', 
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.6in}',
+                               '>{\\centering}p{.3in}')  
+
+# Print index summary table
+print(Design.Based.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      hline.after = hlines,
+      add.to.row = addtorow,
+      include.colnames = FALSE,
+      sanitize.text.function = function(x){x})
+```
+
+\FloatBarrier
+
+<!-- ********************************************************************** -->
+<!--  ************Fishery-independent biological sampling TABLES*********** -->
+<!-- ********************************************************************** -->
+
+
+<!-- *******************NWFSC Combo Survey********************************* -->
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/NWFSCComboLengthSampleSize.csv')
+
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of NWFSC shelf-slope survey length samples used in the stock assessment. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for flatfish species was 3.09 fish per tow.'),
+                           label = 'tab:NWcombo_Lengths',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
+
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/NWFSCComboAgeSampleSize.csv')
+Fish_Length = Fish_Length[,-1]
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of NWFSC shelf-slope survey age samples used in the stock assessment. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for flatfish species was 3.09 fish per tow.'),
+                           label = 'tab:NWcombo_Ages',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
+
+
+<!-- **********************Triennial Survey****************************** -->
+```{r, results = 'asis'}
+Fish_Length =  read.csv('./txt_files/TriennialLengthSampleSize.csv')
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of Triennial survey length samples used in the stock assessment. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for flatfish species was 3.09 fish per tow.'),
+                           label = 'tab:Triennial_Lengths',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+# NEED TO FIGURE OUT HOW TO APPLY LONGTABLE HERE
+
+```
+
+
+
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/TriennialAgeSampleSize.csv')
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of NWFSC slope survey age samples used in the stock assessment. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for flatfish species was 3.09 fish per tow.'),
+                           label = 'tab:Triennial_Ages',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
+
+<!-- ********************************************************************** --> 
+<!-- *******************Commercial Discards TABLES************************* --> 
+<!-- ********************************************************************** --> 
+  
+```{r, results = 'asis'}
+n = unique(mod1$discard$Fleet)
+
+discard = NULL
+for (i in n){
+  ind = mod1$discard$Fleet == n[i]
+  discard = rbind(discard, cbind(mod1$discard$Yr[ind], mod1$discard$Name[ind], 
+                                 print.numeric(mod1$discard[ind,"Obs"], digits = 3), 
+                                 print.numeric(mod1$discard$Std_in[ind], digits = 3)))
+} 
+
+#Discard = cbind(mod1$discard$Yr, 
+#                c(rep("Pikitch",3), "Management Restrictions",rep("WCGOP", length(mod1$discard$Yr)-4)),
+#                print(mod1$discard$Obs, digits = 3), 
+#                print(mod1$discard$Std_in, digits = 3))
+
+colnames(discard) = c('Year',
+                      'Source',
+                      'Discard Rate',
+                      'Standard Error')
+
+value = ifelse(mod1$discard_spec$units[1] == 2, "discard rates", "total discard")
+Discard.table = xtable(discard, 
+                       caption = paste('Summary of', value,'used in the model by each data source. The 1992 value was based on management restrictions that are assumed to have resulted in increased discarding relative to the earlier years with data.'),
+                       label = 'tab:Discard',
+                       digits = 3)    
+# Add alignment  
+align(Discard.table) = c('l',
+                         '>{\\centering}p{.75in}',
+                         '>{\\centering}p{1.1in}',
+                         '>{\\centering}p{.75in}',
+                         '>{\\centering}p{1.1in}')  
+
+# Print index summary table
+print(Discard.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+```
+
+
+<!-- ********************************************************************** -->
+<!--  ************Fishery dependent biological sampling TABLES************* -->
+<!-- ********************************************************************** -->
+
+<!-- ********************** Fishery ****************************** -->  
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/FisheryLength_N.csv')
+# manually split table across pages because I could not get longtable to work
+Fish_Length = Fish_Length[1:35, ]
+colnames(Fish_Length) = c('Year',
+                          'Trips',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of commercial fishery length samples used in the stock assessment (continued on next page). Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
+                           label = 'tab:Comm_Lengths',
+                           digits = 0)    
+
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+#Print commercial length sample numbers
+print(Fish_Length.table,
+      include.rownames=FALSE,
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+
+``` 
+
+
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/FisheryLength_N.csv')
+# manually split table across pages because I could not get longtable to work
+Fish_Length = Fish_Length[36:dim(Fish_Length)[1], ]
+colnames(Fish_Length) = c('Year',
+                          'Trips',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           #caption = c('Summary of commercial fishery length samples used in the stock assessment. Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
+                           #label = 'tab:Comm_Lengths',
+                           digits = 0)    
+
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+#Print commercial length sample numbers
+print(Fish_Length.table,
+      include.rownames=FALSE,
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+
+``` 
+\FloatBarrier
+
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/FisheryAges_N.csv')
+colnames(Fish_Length) = c('Year',
+                          'Trips',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of commercial fishery age samples used in the stock assessment. Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
+                           label = 'tab:Comm_Ages',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+\FloatBarrier
+
+
+
+
+<!-- ====================================================================== --> 
+<!-- ******************   Ageing Error Table ************************ --> 
+<!-- ====================================================================== --> 
+
+```{r , results = 'asis'}
+  #Age.Error = cbind(mod1$age_error_mean$type1[1:31], mod1$age_error_sd$type1[1:31], 
+  #                  c(mod1$age_error_mean$type1[32:61], " "), c(mod1$age_error_sd$type1[32:61], " "))
+
+  x = 1:17
+  Age.Error = cbind(mod1$age_error_mean[x,1],
+                    print.numeric(mod1$age_error_mean[x,3], digits = 1), print.numeric(mod1$age_error_sd[x,3], digits = 2), 
+                    print.numeric(mod1$age_error_mean[x,4], digits = 1), print.numeric(mod1$age_error_sd[x,4], digits = 2),
+                    print.numeric(mod1$age_error_mean[x,5], digits = 1), print.numeric(mod1$age_error_sd[x,5], digits = 2),
+                    print.numeric(mod1$age_error_mean[x,6], digits = 1), print.numeric(mod1$age_error_sd[x,6], digits = 2),
+                    print.numeric(mod1$age_error_mean[x,8], digits = 1), print.numeric(mod1$age_error_sd[x,8], digits = 2),
+                    print.numeric(mod1$age_error_mean[x,9], digits = 1), print.numeric(mod1$age_error_sd[x,9], digits = 2))
+                    
+  colnames(Age.Error) = c("True Age", 
+                          "Mean Age", "SD of Age", 
+                          "Mean Age", "SD of Age", 
+                          "Mean Age", "SD of Age", 
+                          "Mean Age", "SD of Age", 
+                          "Mean Age", "SD of Age", 
+                          "Mean Age", "SD of Age")
+  
+ hlines = c(-1, 0, nrow(Age.Error))
+ addtorow = list()
+ addtorow$pos = list(0,0)
+ addtorow$command = c(" & \\multicolumn{2}{c}{Age Error 1} &  \\multicolumn{2}{c}{Age Error 2} & \\multicolumn{2}{c}{Age Error 3} & \\multicolumn{2}{c}{Age Error 4} & \\multicolumn{2}{c}{Age Error 5} & \\multicolumn{2}{c}{Age Error 6} \\\\\n",
+                     "True Age & Mean & SD & Mean &  SD  & Mean &  SD & Mean & SD & Mean &  SD & Mean &  SD \\\\\n" )
+
+
+  # Index of abundance summary, create table    
+  AgeError.table = xtable(Age.Error, 
+                          caption = c('Estimated ageing error used in the assessment model'),
+                             label = 'tab:Age_Error')    
+# Add alignment  
+align(AgeError.table) = c('l',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}',
+                          '>{\\centering}p{0.5in}')  
+
+# Print index summary table
+print(AgeError.table, 
+      add.to.row = addtorow,
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
+
+
+\FloatBarrier
+
+<!-- ====================================================================== -->
+<!-- ********************BASE-CASE MODEL 1 TABLES************************** --> 
+<!-- **REPEAT THIS SECTION AND EDIT AS NEEDED IF YOU HAVE MULTIPLE MODELS** --> 
+<!-- ====================================================================== -->
+
+<!-- ***********Model Setup TABLE*********************************************** -->
+```{r, results = 'asis'}
+ 
+  Model.Setup = read.csv('./txt_files/Model_Setup.csv')
+  colnames(Model.Setup) = c("Model Specification", "Base Model")
+
+  Model.Setup.Table = xtable(Model.Setup, 
+                      caption = c(paste0('Specifications of the base model for ', spp, '.')),
+                      label = 'tab:Model_setup')
+
+  align(Model.Setup.Table) = c('l',
+                        '>{\\raggedright}p{3in}', 
+                        '>{\\centering}p{2in}')
+
+  print(Model.Setup.Table, include.rownames = FALSE, caption.placement = 'top', 
+          sanitize.text.function = function(x){x}, scalebox = .9)
+
+```
+\FloatBarrier
+
+  
+<!-- ***********Francis Weights Table******************************* --> 
+```{r, results = 'asis'}
+
+# Read in/organize sensitivity file, change column names, caption
+harmonic = read.csv('./txt_files/FrancisWeights.csv')
+
+colnames(harmonic) = c('Fleet', 
+                          'Lengths', 
+                          'Ages')
+
+# Create sensitivities table
+Harmonic.table = xtable(harmonic, 
+                           caption = c('Data weights applied when using Francis data weighting in the base model. The data weights were acquired after a single model weighting iteration.'),
+                           label = 'tab:francis',
+                           digits = 3)
+
+
+align(Harmonic.table) = c('l', 
+                             '>{\\raggedright}p{2in}',
+                             '>{\\centering}p{.7in}',
+                             '>{\\centering}p{.7in}')
+
+
+
+print(Harmonic.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+```
+<!-- ---------------------------------------------------------------------- -->
+ \FloatBarrier 
+
+  
+  
+<!-- ***********MODEL 1 PARAMETERS***************************************** --> 
+\begin{landscape}
+```{r, results='asis'}
+  mod_params = mod1$parameters[-c(grep('Recr',mod1$parameters$Label),
+                                grep('Impl',mod1$parameters$Label)),
+                             (names(mod1$parameters) %in%
+                                c("Num","Label","Value","Phase","Min",
+                                  "Max","Status","Parm_StDev",
+                                  "Pr_type","Prior","Pr_SD"))]  
+
+  mod_params[,'Value'] = as.numeric(mod_params[,'Value'])
+# Convert values is males are estimated as an offset from females
+  if (parm.offset == TRUE){
+    convert = c('Value', 'Min', 'Max')
+    mod_params[mod_params$Label == 'NatM_p_1_Mal_GP_1',convert] = mod_params[mod_params$Label == 'NatM_p_1_Fem_GP_1',convert] * 
+      exp(mod_params[mod_params$Label == 'NatM_p_1_Mal_GP_1', convert])
+    mod_params[mod_params$Label == 'L_at_Amin_Mal_GP_1',convert] = mod_params[mod_params$Label == 'L_at_Amin_Fem_GP_1',convert] * 
+      exp(mod_params[mod_params$Label == 'L_at_Amin_Mal_GP_1', convert])
+    mod_params[mod_params$Label == 'L_at_Amax_Mal_GP_1',convert] = mod_params[mod_params$Label == 'L_at_Amax_Fem_GP_1',convert] * 
+      exp(mod_params[mod_params$Label == 'L_at_Amax_Mal_GP_1', convert])
+    mod_params[mod_params$Label == 'VonBert_K_Mal_GP_1',convert] = mod_params[mod_params$Label == 'VonBert_K_Fem_GP_1',convert] * 
+      exp(mod_params[mod_params$Label == 'VonBert_K_Mal_GP_1', convert])
+    mod_params[mod_params$Label == 'CV_young_Mal_GP_1',convert] = mod_params[mod_params$Label == 'CV_young_Fem_GP_1',convert] * 
+      exp(mod_params[mod_params$Label == 'CV_young_Mal_GP_1', convert])
+    mod_params[mod_params$Label == 'CV_old_Mal_GP_1',convert] = mod_params[mod_params$Label == 'CV_old_Fem_GP_1',convert] * 
+      exp(mod_params[mod_params$Label == 'CV_old_Mal_GP_1', convert])
+    
+    
+    convert = c('Min', 'Max')
+    mod_params[mod_params$Label == 'NatM_p_1_Mal_GP_1',convert]  = round(mod_params[mod_params$Label == 'NatM_p_1_Mal_GP_1', convert], digits = 1)
+    mod_params[mod_params$Label == 'L_at_Amin_Mal_GP_1',convert] = round(mod_params[mod_params$Label == 'L_at_Amin_Mal_GP_1', convert], digits = 0)
+    mod_params[mod_params$Label == 'L_at_Amax_Mal_GP_1',convert] = round(mod_params[mod_params$Label == 'L_at_Amax_Mal_GP_1', convert], digits = 0)
+    mod_params[mod_params$Label == 'VonBert_K_Mal_GP_1',convert] = round(mod_params[mod_params$Label == 'VonBert_K_Mal_GP_1', convert], digits = 2)
+    mod_params[mod_params$Label == 'CV_young_Mal_GP_1',convert]  = round(mod_params[mod_params$Label == 'CV_young_Mal_GP_1', convert], digits = 2)
+    mod_params[mod_params$Label == 'CV_old_Mal_GP_1',convert]    = round(mod_params[mod_params$Label == 'CV_old_Mal_GP_1', convert], digits = 2)
+  }
+
+# Combine bounds into one column
+mod_params$Min = paste('(', mod_params$Min, ', ', mod_params$Max, ')', sep='')
+
+
+# Combine prior info to one column
+mod_params$PR_type = ifelse(mod_params$Pr_type == 'No_prior' , 'None',
+                            paste(mod_params$Pr_type,' (', mod_params$Prior, 
+                                  ', ', mod_params$Pr_SD, ')', sep = ''))
+
+# Set long value to scientific notation
+mod_params[mod_params$Label == "Wtlen_1_Fem",3] = format(mod_params[mod_params$Label == "Wtlen_1_Fem",3], scientific = TRUE)
+mod_params[mod_params$Label == "Wtlen_1_Mal",3] = format(as.numeric(mod_params[mod_params$Label == "Wtlen_1_Mal",3]), scientific = TRUE)
+mod_params[mod_params$Label == "Eggs_scalar_Fem",3] = format(as.numeric(mod_params[mod_params$Label == "Eggs_scalar_Fem",3]), scientific = TRUE)
+mod_params[mod_params$Label == "L_at_Amax_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "L_at_Amax_Mal_GP_1",3]), 4)
+mod_params[mod_params$Label == "VonBert_K_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "VonBert_K_Mal_GP_1",3]), 3)
+mod_params[mod_params$Label == "CV_old_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "CV_old_Mal_GP_1",3]), 3)
+
+
+# Relabel some paramters
+mod_params[mod_params$Label == "CV_young_Fem_GP_1",2] = "SD_young_Fem_GP_1"
+mod_params[mod_params$Label == "CV_old_Fem_GP_1",2]   = "SD_old_Fem_GP_1"
+mod_params[mod_params$Label == "CV_young_Mal_GP_1",2] = "SD_young_Mal_GP_1"
+mod_params[mod_params$Label == "CV_old_Mal_GP_1",2]   = "SD_old_Mal_GP_1"
+
+
+# Remove the max, prior and prior sd columns
+drops = c('Max', 'Prior', 'Pr_type', 'Pr_SD', 'Num')
+mod_params = mod_params[, !(names(mod_params) %in% drops)]
+
+# Add column names
+colnames(mod_params) = c(#'No.',
+                         'Parameter',
+                         'Value',
+                         'Phase',
+                         'Bounds',
+                         'Status',
+                         'SD',
+                         'Prior (Exp.Val, SD) ')
+
+# Model 1 model parameters
+mod_params.table = xtable(mod_params, 
+                          caption=c(paste('List of parameters used in
+                                          the base model, including estimated 
+                                          values and standard deviations (SD), 
+                                          bounds (minimum and maximum), 
+                                          estimation phase (negative values indicate
+                                          not estimated), status (indicates if 
+                                          parameters are near bounds, and prior type
+                                          information (mean, SD).'
+                                          , sep='')), 
+                          label='tab:model_params',
+                          digits = c(0,0,3,0,2,0,2,0))  
+
+# Add alignment  
+align(mod_params.table) = c('llrcccll')
+
+# Add "continued on next page"" footnote   
+addtorow          <- list()
+addtorow$pos      <- list()
+addtorow$pos[[1]] <- c(0)
+addtorow$command  <- c(paste("\\hline \n",
+                             "\\endhead \n",
+                             "\\hline \n",
+                             "\\multicolumn{3}{l}",
+                             "{\\footnotesize Continued on next page} \n",
+                             "\\endfoot \n",
+                             "\\endlastfoot \n",sep=""))
+
+
+
+# Print Model 1 parameters
+print(mod_params.table, 
+      include.rownames = FALSE,
+      caption.placement = 'top',
+      tabular.environment = 'longtable',
+      floating = FALSE,
+      add.to.row = addtorow)
+```
+\end{landscape}
+
+\newpage
+<!-- ---------------------------------------------------------------------- -->
+
+\FloatBarrier
+
+<!-- ***********JITTER TABLE*********************************************** --> 
+```{r, results = 'asis'}
+# Replace values in file and read in - values for all models in 1 table  
+jitter = read.csv('./txt_files/JitterTable.csv')  
+
+# Create model 1 jitter table
+jitter.table = xtable(jitter, 
+                      caption = c('Results from 50 jitters from the base model.'),
+                      label = 'tab:jitter')
+
+align(jitter.table) = c('l',
+                        '>{\\raggedright}p{2in}', 
+                        '>{\\centering}p{1in}')
+
+
+# Print jitter table (all models)    
+print(jitter.table, 
+      include.rownames = FALSE, 
+      caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\FloatBarrier  
+  
+
+
+<!-- ***********Likelihood TABLE*********************************************** -->
+```{r, results='asis'}
+  Like = round(mod1$likelihoods_used[c(1, 4:9, 11:13),1],2)
+  
+  xx = c("Total", "Survey", "Discard", "Mean-body weight data", "Length-frequency data", "Age-frequency data", "Recruitment", "Forecast Recruitment", "Parameter Priors", "Parameter Softbounds")
+  Like = cbind(xx, Like)
+  Like = as.data.frame(Like)
+  colnames(Like) = c("Likelihood Component", "Value")
+  
+  Like.table = xtable(Like, 
+                      caption=c('Likelihood components from the base model'), 
+                          label='tab:like',
+                          digits = c(0,0, 2))  
+  
+  align(Like.table) = c('l',
+                        '>{\\raggedright}p{2in}',
+                        '>{\\centering}p{1.0in}')  
+
+# Print index summary table
+print(Like.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
+\FloatBarrier
+
+<!-- **********Derived Quantities Table******************************* --> 
+```{r, results= 'asis'}
+
+
+# Extract reference points table data
+  mod = mod1
+  
+  # Rbind all of the data for the big summary reference table  
+  x = 1:3
+  Ref_pts = rbind (
+    SSB_Unfished    = mod$derived_quants[grep('SSB_un',                   mod$derived_quants$Label)[1], x],
+    TotBio_Unfished = mod$derived_quants[grep('Totbio_un',                  mod$derived_quants$Label), x],
+    Recr_Unfished   = mod$derived_quants[grep('Recr_un',                 mod$derived_quants$Label), x],
+    SPB_lastyr      = mod$derived_quants[grep(paste0('SSB_', LastYR),    mod$derived_quants$Label), x],
+    Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), x],
+    Refpt_sB        = c(NA, NA, NA),
+    SSB_Btgt        = mod$derived_quants[grep('SSB_Btgt',      mod$derived_quants$Label), x],
+    SPR_Btgt        = mod$derived_quants[grep('SPR_Btgt',      mod$derived_quants$Label), x],
+    Fstd_Btgt       = mod$derived_quants[grep('Fstd_Btgt',     mod$derived_quants$Label), x],
+    TotYield_Btgt   = mod$derived_quants[grep('Dead_Catch_Btgt', mod$derived_quants$Label), x],
+    Refpt_SPR       = c(NA, NA, NA),
+    SSB_SPRtgt      = mod$derived_quants[grep('SSB_SPR', mod$derived_quants$Label), x],
+    SPR_proxy       = c('SPR_proxy', SPR.target, NA),
+    Fstd_SPRtgt     = mod$derived_quants[grep('Fstd_SPR',     mod$derived_quants$Label), x],
+    TotYield_SPRtgt = mod$derived_quants[grep('Dead_Catch_SPR', mod$derived_quants$Label), x],
+    Refpts_MSY      = c(NA, NA, NA),
+    SSB_MSY         = mod$derived_quants[grep('SSB_MSY', mod$derived_quants$Label), x],
+    SPR_MSY         = mod$derived_quants[grep('SPR_MSY', mod$derived_quants$Label), x],
+    Fstd_MSY        = mod$derived_quants[grep('Fstd_MSY', mod$derived_quants$Label), x],
+    TotYield_MSY    = mod$derived_quants[grep('Dead_Catch_MSY', mod$derived_quants$Label), x] 
+  )
+  
+  #Ref_pts         = Ref_pts[, 1:3]
+  Ref_pts$Value   = as.numeric(Ref_pts$Value)
+  Ref_pts$StdDev  = as.numeric(Ref_pts$StdDev)
+  Ref_pts$Value1  = ifelse(Ref_pts$Value >= 1, as.character(round(Ref_pts$Value, 1)), 
+                           as.character(round(Ref_pts$Value, 3)))   
+        
+  Ref_pts$lowerCI  = Ref_pts$Value + qnorm(0.025) * Ref_pts$StdDev
+  
+  Ref_pts$upperCI  = Ref_pts$Value - qnorm(0.025) * Ref_pts$StdDev
+
+  Which = which(Ref_pts$Label=="Recr_unfished")
+  logint  <- sqrt(log(1+(Ref_pts[Which,"StdDev"]/Ref_pts[Which, "Value"])^2))
+  Ref_pts[Which, "lowerCI"] <- exp(log(Ref_pts[Which, "Value"]) + qnorm(0.025)*logint)
+  Ref_pts[Which, "upperCI"] <- exp(log(Ref_pts[Which, "Value"]) + qnorm(0.975)*logint)
+  
+  Ref_pts$lowerCI1 = ifelse(Ref_pts$lowerCI >= 1, as.character(round(Ref_pts$lowerCI, 1)), 
+                            as.character(round(Ref_pts$lowerCI, 3))) 
+  
+  Ref_pts$upperCI1 = ifelse(Ref_pts$upperCI>=1, as.character(round(Ref_pts$upperCI, 1)), 
+                            as.character(round(Ref_pts$upperCI, 3))) 
+  
+  Ref_pts$CI1      = paste0(print.numeric(Ref_pts$lowerCI1, digits = 3), ' - ', print.numeric(Ref_pts$upperCI1, digits = 3))
+        
+  Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
+                     paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
+                    'Unfished recruitment (R0, thousands)',
+                     paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
+                     paste('Depletion (', LastYR,')',sep=''),
+                    '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
+                    'Proxy spawning output ($B_{25\\%}$)',
+                    'SPR resulting in $B_{25\\%}$ ($SPR_{B25\\%}$)',
+                    'Exploitation rate resulting in $B_{25\\%}$',
+                    'Yield with $SPR_{B25\\%}$ at $B_{25\\%}$ (mt)',
+                    '\\textbf{\\textit{Reference points based on SPR proxy for MSY}}',
+                    'Spawning output',
+                    '$SPR_{proxy}$',
+                    'Exploitation rate corresponding to $SPR_{proxy}$',
+                    'Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt)',
+                    '\\textbf{\\textit{Reference points based on estimated MSY values}}',
+                    'Spawning output at $MSY$ ($SB_{MSY}$)',
+                    '$SPR_{MSY}$',
+                    'Exploitation rate at $MSY$',
+                    '$MSY$ (mt) ')
+        
+  Ref_pts = cbind(Quantity, Ref_pts[, c(4, 9)])
+  Ref_pts[c(6, 11, 13, 16), 3] = ''
+  Ref_pts[c(6, 11, 16), 2] = ''
+  colnames(Ref_pts) = c('\\textbf{Quantity}', '\\textbf{Estimate}', 
+                        '\\textbf{\\~95\\%  Confidence Interval}')
+
+
+  # =============================================================================
+  # Create reference point table(s)----------------------------------------------
+  Ref_pts.table = xtable(Ref_pts, 
+                              caption=c('Summary of reference 
+                                        points and management quantities for the 
+                                        base case.'), 
+                              label='tab:Ref_pts', digits = 3)  
+  # Add alignment      
+  align(Ref_pts.table) = c('l',
+                                '>{\\raggedright}p{4.1in}',
+                                '>{\\centering}p{.65in}',
+                                '>{\\centering}p{1.4in}')  
+  
+ print(Ref_pts.table, include.rownames = FALSE, caption.placement = 'top',
+           sanitize.text.function = function(x){x})
+
+```
+
+\newpage
+
+\FloatBarrier
+
+\pagebreak
+
+<!-- *********************TIME SERIES TABLE************************* --> 
+```{r, results='asis'}
+
+ind = mod1$timeseries$Yr >= Dat_start_mod1 & mod1$timeseries$Yr <= LastYR
+Year = mod1$timeseries$Yr[ind]
+Bio_all = mod1$timeseries$Bio_all[ind]
+SpawningB = as.numeric(print( mod1$timeseries$SpawnBio[ind], digits = 0))
+SummaryBio = mod1$timeseries$Bio_smry[ind]
+Depletion = print(SpawningB / SpawningB[1], digits = 2)
+Recruits = print(mod1$timeseries$Recruit_0[ind], digits =0 )
+
+
+Tot.Mortality = aggregate(kill_bio ~ Yr, FUN = sum, mod1$catch)$kill_bio
+Tot.Mortality = Tot.Mortality[2:length(Tot.Mortality)]
+SPR = as.numeric(print(mod1$derived_quants[grep('SPRratio', mod1$derived_quants$Label), 'Value'],digits = 2) )* SPR.target
+SPR = c( SPR[1:length(Tot.Mortality)], "-")
+#SPR = c( SPR[1:length(Tot.Mortality)],  rep("-", Project_lastyr-LastYR))
+Exploited = c( as.numeric(print(Tot.Mortality / SummaryBio[1:length(Tot.Mortality)], digits = 3)), "-" ) #, rep("-", Project_lastyr-LastYR))
+
+Tot.Mortality = c( print(Tot.Mortality, 0), "-") #, rep("-", Project_lastyr-LastYR))
+
+
+# Bind all the columns together for the table
+Timeseries = data.frame(Year, 
+                        prettyNum(round(Bio_all,0), big.mark = ","), 
+                        prettyNum(SpawningB, big.mark = ","),
+                        prettyNum(round(SummaryBio,0), big.mark = ","),
+                        Depletion, 
+                        prettyNum(Recruits,big.mark = ","),
+                        Tot.Mortality,
+                        SPR,
+                        Exploited)
+
+# Add colulmn names    
+colnames(Timeseries)=c('Year', 
+                       'Total biomass (mt)', 
+                       'Spawning output (million eggs)',
+                       paste('Summary biomass', min_age),
+                       'Relative biomass', 
+                       'Age-0 recruits', 
+                       'Estimated total catch (mt)',
+                       '1-SPR',
+                       'Exploit. rate')
+#'Relative exploitation rate')
+
+# Make year a factor so you don't have a decimal   
+Timeseries$Year = as.factor(Timeseries$Year)
+
+# Create the time series table
+Timeseries.table = xtable(Timeseries, 
+                          caption = c('Time-series of population estimates from the base model.'),
+                          label='tab:Timeseries_mod1',
+                          digits = c(0,0,0,0,0,0,0,0,2,3))   
+
+# Add alignment
+align(Timeseries.table) = c('l',
+                            'c',
+                            '>{\\centering}p{.5in}',
+                            '>{\\centering}p{.65in}',
+                            '>{\\centering}p{.6in}',
+                            '>{\\centering}p{.6in}',
+                            '>{\\centering}p{.5in}',
+                            '>{\\centering}p{.60in}',
+                            '>{\\centering}p{.45in}',
+                            'c')
+
+
+# Print timeseries of population estimates table
+print(Timeseries.table, 
+      include.rownames = FALSE, 
+      caption.placement = 'top',
+      tabular.environment = 'longtable', 
+      align=TRUE, 
+      floating = FALSE, 
+      size="\\fontsize{11pt}{11pt}\\selectfont",
+      add.to.row = list(pos = list(0), 
+                        command = '\\hline \\endhead '))
+```
+
+<!-- ---------------------------------------------------------------------- -->
+  
+\FloatBarrier
+
+
+<!-- ***********MODEL 1 SENSITIVITY TABLE(S)******************************* --> 
+```{r, results = 'asis'}
+
+# Read in/organize sensitivity file, change column names, caption
+Sens_model1 = read.csv('./txt_files/Sensitivity1.csv')
+
+colnames(Sens_model1) = c('Label', 
+                          'Base', 
+                          'Harmonic weights',
+                          'Steepness = 0.40', 
+                          'Steepness = 0.72',
+                          'Old Maturity',
+                          'Old Fecundity',
+                          '2008 Recruitment')
+
+# Create sensitivities table
+Sens_model1.table = xtable(Sens_model1, 
+                           caption = c('Sensitivity of the base model'),
+                           label = 'tab:Sensitivity1',
+                           digits = 3)
+
+
+# Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+# You can change this easily to have variable columns width after you know how many
+# colunns your final table has
+align(Sens_model1.table) = c('l', 'l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+
+
+# Print model 1 sensitivity table
+print(Sens_model1.table, 
+      include.rownames = FALSE,             
+      caption.placement = 'top',
+      floating.environment = 'sidewaystable',
+      scalebox = .9)
+
+```
+<!-- ---------------------------------------------------------------------- -->
+ \FloatBarrier 
+ 
+ <!-- ***********MODEL 1 SENSITIVITY TABLE 2******************************* --> 
+```{r, results = 'asis'}
+
+# Read in/organize sensitivity file, change column names, caption
+Sens_model1 = read.csv('./txt_files/Sensitivity2.csv')
+
+colnames(Sens_model1) = c('Label', 
+                          'Base',
+                          'Include Triennial',
+                          'Only Triennial',
+                          'Include CPUE', 
+                          'Canadian Data', 
+                          'WA Research Lengths', 
+                          'OR Special Projects')
+
+# Create sensitivities table
+Sens_model1.table = xtable(Sens_model1, 
+                           caption = c('Sensitivity of the base model'),
+                           label = 'tab:Sensitivity2',
+                           digits = 2)
+
+
+# Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+# You can change this easily to have variable columns width after you know how many
+# colunns your final table has
+align(Sens_model1.table) = c('l', 'l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+
+
+# Print model 1 sensitivity table
+print(Sens_model1.table, 
+      include.rownames = FALSE,             
+      caption.placement = 'top',
+      floating.environment = 'sidewaystable',
+      scalebox = .9)
+
+```
+<!-- ---------------------------------------------------------------------- -->
+ \FloatBarrier 
+ 
+<!-- ***********Harmonic Weights Table******************************* --> 
+```{r, results = 'asis'}
+
+# Read in/organize sensitivity file, change column names, caption
+harmonic = read.csv('./txt_files/HarmonicWeights.csv')
+
+colnames(harmonic) = c('Fleet', 
+                          'Lengths', 
+                          'Ages')
+
+# Create sensitivities table
+Harmonic.table = xtable(harmonic, 
+                           caption = c('Data weights applied when using harmonic data weighting.'),
+                           label = 'tab:harm',
+                           digits = 3)
+
+
+align(Harmonic.table) = c('l', 
+                             '>{\\raggedright}p{2in}',
+                             '>{\\centering}p{.7in}',
+                             '>{\\centering}p{.7in}')
+
+
+
+print(Harmonic.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+```
+<!-- ---------------------------------------------------------------------- -->
+ \FloatBarrier 
+
+
+
+<!-- ***********MODEL 1 HARVEST PROJECTIONS TABLE************************** --> 
+\newpage
+```{r, results = 'asis'}
+# Pull OFL contribution and subset years
+# Extract OFLs for next 10 years for each model
+Fore_Table = read.csv('./txt_files/OFL_forecast.csv')
+#OFLcatch = mod1$derived_quants[grep('OFLCatch', mod1$derived_quants$Label), ]
+#OFLcatchyrs = OFLcatch[OFLcatch$Label >= paste('OFLCatch_', Project_firstyr, sep = '') &
+#                         OFLcatch$Label <= paste('OFLCatch_', Project_lastyr, sep = ''), ]
+
+# Pull forecasted landings and subset years
+#ForecastC = mod1$derived_quants[mod1$derived_quants$Label>= paste0('ForeCatch_', Project_firstyr) & 
+#                    mod1$derived_quants$Label<= paste0('ForeCatch_', Project_lastyr), "Value"]
+#ForecastC = mod1$timeseries[, grepl('Yr|retain[(]B[)]', names(mod1$timeseries))]
+#if (dim(ForecastC)[2] >= 3) { ForecastC$total = rowSums(ForecastC[, -1]) }
+#if (dim(ForecastC)[2] == 2) { ForecastC$total = ForecastC[, -1] }
+#ForecastCyrs = subset(ForecastC, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
+
+# Pull Age 5+ biomass and subset years
+#Age5biomass = mod1$timeseries[, c('Yr', 'Bio_smry')]
+#Age5biomassyrs = subset(Age5biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
+
+
+# Pull spawning biomass and subset years
+#SpawningB = mod1$derived_quants[grep('SPB', mod1$derived_quants$Label), ]
+#SpawningB = SpawningB[c(-1, -2), ]
+#SpawningByrs = SpawningB[SpawningB$Label >= paste('SPB_', Project_firstyr, sep = '') &
+#                           SpawningB$Label <= paste('SPB_', Project_lastyr, sep = ''), ]
+
+# Pull depletion and subset years
+#Depletion = mod1$derived_quants[grep('Bratio', mod1$derived_quants$Label), ]
+#Depletion = Depletion[c(-1, -2), ]
+#Depletionyrs = Depletion[Depletion$Label >= paste('Bratio_', Project_firstyr, sep = '') &
+#                           Depletion$Label <= paste('Bratio_', Project_lastyr, sep = ''), ]
+
+# Combine the data for the forecast table
+#Forecast_mod1 = as.data.frame(cbind(seq(Project_firstyr, Project_lastyr, 1),
+#                                    OFLcatchyrs$Value,
+#                                    ForecastC, #yrs$total,
+#                                    Age5biomassyrs$Bio_smry,
+#                                    SpawningByrs$Value,
+#                                    Depletionyrs$Value))
+# Add column names
+Forecast_mod1 = Fore_Table
+colnames(Forecast_mod1)=c('Year',
+                          'OFL (mt)',
+                          'ACL (mt)',
+                          #'Age 3+ biomass (mt)',
+                          'Spawning Output',
+                          'Depletion (%)')
+
+# Make sure year is a factor, so you don't get decimals
+Forecast_mod1$Year = as.factor(Forecast_mod1$Year)
+
+# Create the forecast table
+Forecast_mod1.table = xtable(Forecast_mod1,
+                             caption = c('Projection of potential
+                                         OFL, spawning biomass, and depletion for the
+                                         base case model. The removals in 2017 and 2018 
+                                         were set at the defined management specification of 281 mt for each year assuming full attainment.'),
+                             label = 'tab:Forecast_mod1',
+                             digits = c(0,0,0,0,0,1))
+# Add alignment
+align(Forecast_mod1.table) = c('l',
+                               'c',
+                               #'>{\\centering}p{1in}',
+                               '>{\\centering}p{1in}',
+                               '>{\\centering}p{1in}',
+                               '>{\\centering}p{1in}',
+                               '>{\\centering}p{1in}')
+
+# Print model 1 forecast table
+print(Forecast_mod1.table,
+      include.rownames = FALSE,
+      caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+\FloatBarrier
+
+
+<!-- ********************************************************************** -->
+<!-- ************************MODEL 2 TABLES******************************** --> 
+<!-- ********************************************************************** -->
+```{r, results = 'asis'}
+
+# Read in decision table file
+  decision_mod1 = read.csv('./txt_files/DecisionTable_mod1.csv')
+       colnames(decision_mod1) = c('', 
+                                   'Year',  
+                                   'Catch',	
+                                   'Spawning Output',	
+                                   'Depletion (%)', 
+                                   'Spawning Output',	
+                                   'Depletion (%)',	
+                                   'Spawning Output',	
+                                   'Depletion (%)')
+      
+       decision_mod1.table = xtable(decision_mod1, 
+                                    caption = c(paste('Decision table summary of 10-year 
+                                             projections beginning in ', LastYR+2,' 
+                                             for alternate states of nature based on 
+                                             an axis of uncertainty for the base model. The removals in 2017 and 2018 
+                                             were set at the defined management specification of 281 mt for each year assuming full attainment.
+                                             Columns range over low, mid, and high
+                                             states of nature over natural mortality, and rows range over different 
+                                             assumptions of catch levels. An entry of "--" 
+                                             indicates that the stock is driven to very low 
+                                             abundance under the particular scenario.', sep = '')), 
+                                     label='tab:Decision_table_mod1_back',
+                                     digits = c(0,0,0,0,0,1,0,1,0,1))
+      
+    # Assign alignment and add the header columns
+        align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
+    
+        addtorow <- list()
+        addtorow$pos <- list()
+        addtorow$pos[[1]] <- -1
+        addtorow$pos[[2]] <- -1
+        addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
+                               & \\multicolumn{2}{c}{\\textbf{States of nature}} 
+                               & \\multicolumn{2}{c}{} \\\\\n', 
+                               ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.04725} 
+                               & \\multicolumn{2}{c}{M = 0.054} 
+                               &  \\multicolumn{2}{c}{M = 0.0595} \\\\\n')
+        
+    print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
+          caption.placement = 'top', 
+          hline.after = c(-1, 0, 10, nrow(decision_mod1.table)), 
+          scalebox = .85)
+
+
+```
+<!-- ********************************************************************** -->
+<!-- ************************MODEL 3 TABLES******************************** --> 
+<!-- ********************************************************************** -->
+  
+  
+  
+<!-- ====================================================================== --> 
+<!-- *************************          *********************************** --> 
+<!-- *************************END TABLES*********************************** --> 
+<!-- *************************          *********************************** --> 
+<!-- ====================================================================== --> 
+  \clearpage
+  

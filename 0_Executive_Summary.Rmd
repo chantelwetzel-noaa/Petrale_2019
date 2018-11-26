@@ -2,13 +2,11 @@
 #Executive Summary{-}
 
 ##Stock{-}
-This assessment reports the status of the `r spp` (\emph{`r spp.sci`})  off  US coast of California, Oregon, and Washington using data through `r Dat_end_mod1`.  
+This assessment reports the status of the `r spp` (\emph{`r spp.sci`})  off  U.S. coast of California, Oregon, and Washington using data through `r Dat_end_mod1`.  While petrale sole are modeled as a single stock, the spatial aspects of the coast-wide population are addressed through geographic separation of data sources/fleets where possible. There is currently no genetic evidence suggesting distinct biological stocks of petrale sole off the U.S. coast. The limited tagging data available to describe adult movement suggests that petrale sole may have some homing ability for deep water spawning sites but also have the ability to move long distances between spawning sites, inter-spawning season, as well as seasonally.
 
 
 ##Landings{-}
-Harvest of `r spp` first began off the US west coast in `r Dat_start_mod1`.  
-
-`r spp` are a desirable market species and discarding has historically been low.  
+While records do not exist, the earliest catches of `r spp` are reported in `r Dat_start_mod1` in California and 1884 in Oregon. In this assessment, fishery removals have been divided among 4 fleets: 1) winter North trawl, 2) summer North trawl, 3) winter South trawl, and 4) summer South trawl. Landings for the North fleet are defined as fish landed in Washington and Oregon ports. Landings for the South fleet are defined as fish landed in California ports. Recent annual catches during 1981-2014 range between 749-2,903 mt (Table XX, Figure XX). Petrale sole are caught nearly exclusively by trawl fleets; non-trawl gears contribute less than 3% of the catches. Based on the 2005 assessment, annual catch limits (ACLs) were reduced to 2499 mt for 2007-2008. Following the 2009 assessment ACLs were further reduced to a low of 976 mt for 2011 and have subsequently increased to a high value of 3,136 for 2017. From the inception of the fishery through the war years, the vast majority of catches occurred between March and October (the summer fishery), when the stock is dispersed over the continental shelf. The post-World War II period witnessed a steady decline in the amount and proportion of annual catches occurring during the summer months (March-October). Conversely, `r spp` catch during the winter season (November-February), when the fishery targets spawning aggregations, has exhibited a steadily increasing trend since the 1940s. From the mid-1980s through the early 2000s, catches during the winter months were roughly equivalent to or exceeded catches throughout the remainder of the year, whereas during the past 10 years the relative catches during the winter and summer have been more variable across years (Figure XX). `r spp` are a desirable market species and discarding has historically been low.
 
 
 <!-- ***********CATCH TABLE************************************************ -->
@@ -31,12 +29,32 @@ Harvest of `r spp` first began off the US west coast in `r Dat_start_mod1`.
 \FloatBarrier
 
 ##Data and Assessment{-}
-This an update assessment for `r spp`, which was last assessed in 2013 and updated in 2015.  The update assessment was conducted using the length- and age-structured modeling software Stock Synthesis (version 3.30.03.XX).  The coastwide population was modeled allowing separate growth and mortality parameters for each sex (a two-sex model) from `r Dat_start_mod1` to `r LastYR` and forecasted beyond `r LastYR`.
+This an update assessment for `r spp`, which was last assessed in 2013 and updated in 2015.  The update assessment was conducted using the length- and age-structured modeling software Stock Synthesis (version 3.30.03.XX).  The coastwide population was modeled allowing separate growth and mortality parameters for each sex (a two-sex model)  with the fishing year beginning on November 1 and ending on October 31.  The  fisheries are structured seasonally based on winter (November to February) and summer (March to October) fishing seasons due to the development and growth of the wintertime fishery, which began in the 1950s. In recent decades wintertime catches have often exceed summertime catches. The fisheries modeled as the North Winter and North Summer, where the north includes both Washington and Oregon, and South Winter and South Summer encompasses California fisheries. 
 
+The model includes catch, length- and age-frequency data from the trawl fleets as well as standardized winter fishery catch-per-unit-effort (CPUE) indices. Biological data are derived from both port and on-board observer sampling programs. The National Marine Fisheries Service (NMFS) early (1980, 1983, 1986, 1989, 1992) and late (1995, 1998, 2001, and 2004) Triennial bottom trawl survey and the Northwest Fisheries Science Center (NWFSC) trawl survey (2003-2018) relative biomass indices and biological sampling provide fishery independent information on relative trend and demographics of the `r spp` stock.
 
 <!--Map of assessment region: (Figure \ref{fig:assess_region_map}).  
  
 ![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map}](Figures/assess_region_map.png)  \FloatBarrier  -->
+
+##Updated Data{-}
+The base stock assessment model structure is consistent with the 2013 assessment and the 2015 update, except as noted here. Additions to the model include 1) landings data for 2015 - 2018, 2) commercial composition data (age and length) for 2015 - 2018, 3) NWFSC groundfish trawl survey index for 2015 - 2018, and 4) age and length composition data from the NWFSC groundfish trawl survey. 
+
+Modifications from the previous assessment model include:
+
+\begin{enumerate}
+
+\item Survey indices were calculated using VAST.
+
+\item Length-weight relationship parameters estimated outside of the stock assessment model from the NWFSC groundfish trawl survey data up to 2018 and input as fixed values.
+
+\item Early commercial age data for OR and WA were not combined, consistent with the 2011 assessment.
+
+\item Fitting using SS v.3.30.XX. 
+
+\item Model tuning to re-weight data. 
+
+\end{enumerate}
 
 
 ##Stock Biomass{-}
