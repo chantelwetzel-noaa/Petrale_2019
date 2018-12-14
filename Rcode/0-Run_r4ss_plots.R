@@ -65,6 +65,7 @@ n_models = 1
 # By default, you can only work in the directory containing the project
 # Set the directory here if you're getting errors
 if (Sys.info()["user"] == "Chantel.Wetzel") {
+  setwd('C:/Users/chantell.Wetzel/Documents/GitHub/Petrale_2019')
   setwd('C:/Users/Chantel.Wetzel/Documents/GitHub/Petrale_2019')
 }
 

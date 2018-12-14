@@ -426,7 +426,7 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
   Ref_pts$upperCI1 = ifelse(Ref_pts$upperCI>=1, as.character(round(Ref_pts$upperCI,dig1)), 
                             as.character(round(Ref_pts$upperCI, dig3))) 
   
-  Ref_pts$CI1      = paste0(print.numeric(Ref_pts$lowerCI1, digits = dig3), ' - ', print.numeric(Ref_pts$upperCI1, digits = dig3))
+  #Ref_pts$CI1      = paste0(print.numeric(Ref_pts$lowerCI1, digits = dig3), ' - ', print.numeric(Ref_pts$upperCI1, digits = dig3))
         
   Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
                      paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
@@ -449,11 +449,13 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
                     'Exploitation rate at $MSY$',
                     '$MSY$ (mt) ')
         
-  Ref_pts = cbind(Quantity, Ref_pts[, c(4, 9)])
-  Ref_pts[c(6, 11, 13, 16), 3] = ''
-  Ref_pts[c(6, 11, 16), 2] = ''
+  #Ref_pts = cbind(Quantity, Ref_pts[, c(4, 9)])
+  Ref_pts = cbind(Quantity, Ref_pts$Value1, Ref_pts$lowerCI1, Ref_pts$upperCI1)
+  Ref_pts[c(6, 11, 13, 16), 2:4] = ''
+  #Ref_pts[c(6, 11, 16), 2] = ''
   colnames(Ref_pts) = c('\\textbf{Quantity}', '\\textbf{Estimate}', 
-                        '\\textbf{$\\sim$95\\%  Confidence Interval}')
+                        '\\textbf{$\\sim$2.5\\%  Confidence Interval}',
+                        '\\textbf{$\\sim$97.5\\%  Confidence Interval}')
   assign(paste('Ref_pts_', mod_area, sep = ''), Ref_pts)
 
 
@@ -470,7 +472,8 @@ Ref_pts_mod1.table = xtable(Ref_pts_mod1,
 align(Ref_pts_mod1.table) = c('l',
                               '>{\\raggedright}p{4.1in}',
                               '>{\\centering}p{.65in}',
-                              '>{\\centering}p{1.4in}')  
+                              '>{\\centering}p{.65in}',
+                              '>{\\centering}p{.65in}')  
 
 
 #=============================================================================
