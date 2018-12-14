@@ -288,6 +288,127 @@ print(Strata.table,
 
 ```
 
+
+```{r, results = 'asis'}
+
+Strata = read.csv('./txt_files/nwfsc_strata.csv')
+Strata = cbind(Strata[,1], Strata[,3:6])
+
+Strata[,1] = c("Shallow Vancouver", "Shallow Columbia", "Shallow Eureka", "Shallow Monterey", "Shallow Conception", 
+               "Mid Vancouver", "Mid Columbia", "Mid Eureka", "Mid Monterey", "Mid Conception",
+               "Deep Van/Col/Eur", "Deep Montery", "Deep Conception")
+
+colnames(Strata) = c('Strata',
+                     'Depth Lower Bound',
+                     'Depth Upper Bound',
+                     'Latitude South',
+                     'Latitude North')
+
+
+
+# Index of abundance summary, create table   
+Strata.table = xtable(Strata, 
+                           caption = c('Description of the strata used to create the indices for the NWFSC Shelf-Slope survey.'),
+                           label = 'tab:strata_nwfsc')
+                          
+# Add alignment  
+align(Strata.table) = c('l',
+                        '>{\\raggedright}p{1.5in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}')#,
+                        #'>{\\centering}p{0.50in}')  
+
+print(Strata.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+
+```
+
+
+
+```{r, results = 'asis'}
+
+Strata = read.csv('./txt_files/tri_early_strata.csv')
+Strata = cbind(Strata[,1], Strata[,3:6])
+
+Strata[,1] = c("Shallow Vancouver", "Shallow Columbia", "Shallow Eureka", "Shallow Monterey", "Shallow Conception", 
+               "Mid Vancouver", "Mid Columbia", "Mid Eureka", "Mid Monterey", "Mid Conception",
+               "Deep Van/Col/Eur", "Deep Montery", "Deep Conception")
+
+colnames(Strata) = c('Strata',
+                     'Depth Lower Bound',
+                     'Depth Upper Bound',
+                     'Latitude South',
+                     'Latitude North')
+
+
+
+# Index of abundance summary, create table   
+Strata.table = xtable(Strata, 
+                           caption = c('Description of the strata used to create the indices for the NWFSC Shelf-Slope survey.'),
+                           label = 'tab:strata_nwfsc')
+                          
+# Add alignment  
+align(Strata.table) = c('l',
+                        '>{\\raggedright}p{1.5in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}')#,
+                        #'>{\\centering}p{0.50in}')  
+
+print(Strata.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+
+```
+
+
+
+```{r, results = 'asis'}
+
+Strata = read.csv('./txt_files/tri_late_strata.csv')
+Strata = cbind(Strata[,1], Strata[,3:6])
+
+Strata[,1] = c("Shallow Van/Col", "Shallow Eureka", "Shallow Mon/Con", 
+               "Deep Van/Col", "Deep Eureka", "Deep Mon/Con")
+
+colnames(Strata) = c('Strata',
+                     'Depth Lower Bound',
+                     'Depth Upper Bound',
+                     'Latitude South',
+                     'Latitude North')
+
+
+
+# Index of abundance summary, create table   
+Strata.table = xtable(Strata, 
+                           caption = c('Description of the strata used to create the indices for the Triennial Late (1995-2004) survey.'),
+                           label = 'tab:strata_trilate')
+                          
+# Add alignment  
+align(Strata.table) = c('l',
+                        '>{\\raggedright}p{1.5in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}',
+                        '>{\\centering}p{0.50in}')#,
+                        #'>{\\centering}p{0.50in}')  
+
+print(Strata.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+
+```
+
 <!-- ********************************************************************** -->
 <!-- ***********************Survey Indices Table*************************** --> 
 <!-- ********************************************************************** --> 
