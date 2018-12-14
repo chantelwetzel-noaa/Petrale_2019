@@ -3,7 +3,7 @@ title: 'Status of Petrale sole (*Eopsetta jordani*) along the US west coast in 2
 author: ''
 date: ''
 output:
-  word_document:
+  pdf_document:
     fig_caption: yes
     highlight: haddock
     includes:
