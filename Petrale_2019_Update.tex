@@ -1269,6 +1269,41 @@ Shallow Vancouver &  55 & 100 & 47.00 & 49.00 \\
 
 \begin{table}[ht]
 \centering
+\caption{Description of the strata used to create the indices for the Triennial Early (1980 - 1992) survey.} 
+\label{tab:strata_tri_early}
+\begin{tabular}{>{\raggedright}p{1.5in}>{\centering}p{0.50in}>{\centering}p{0.50in}>{\centering}p{0.50in}>{\centering}p{0.50in}}
+  \hline
+Strata & Depth Lower Bound & Depth Upper Bound & Latitude South & Latitude North \\ 
+  \hline
+Shallow Van/Col &  55 & 100 & 43.00 & 49.00 \\ 
+  Shallow Eureka &  55 & 100 & 40.50 & 43.00 \\ 
+  Shallow Mon/Con &  55 & 100 & 34.50 & 40.50 \\ 
+  Deep Van/Col/Eur & 100 & 400 & 40.50 & 49.00 \\ 
+  Deep Mon/Con & 100 & 400 & 34.50 & 40.50 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Description of the strata used to create the indices for the Triennial Late (1995-2004) survey.} 
+\label{tab:strata_tri_late}
+\begin{tabular}{>{\raggedright}p{1.5in}>{\centering}p{0.50in}>{\centering}p{0.50in}>{\centering}p{0.50in}>{\centering}p{0.50in}}
+  \hline
+Strata & Depth Lower Bound & Depth Upper Bound & Latitude South & Latitude North \\ 
+  \hline
+Shallow Van/Col &  55 & 100 & 43.00 & 49.00 \\ 
+  Shallow Eureka &  55 & 100 & 40.50 & 43.00 \\ 
+  Shallow Mon/Con &  55 & 100 & 34.50 & 40.50 \\ 
+  Deep Van/Col & 100 & 500 & 43.00 & 49.00 \\ 
+  Deep Eureka & 100 & 500 & 40.50 & 43.00 \\ 
+  Deep Mon/Con & 100 & 500 & 34.50 & 40.50 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
 \caption{Summary of the fishery-independent biomass/abundance
                                          time-series used in the stock
                                          assessment.  The standard error includes the input annual standard error and model estimated added variance.} 
@@ -1929,44 +1964,46 @@ V1 & V2 & V3 & V4 & V5 & V6 & V7 & V8 & V9 & V10 & V11 & V12 & V13 \\
 
 \begin{table}[ht]
 \centering
-\caption{Specifications of the base model for Petrale sole.} 
+\caption{Specifications of the model for Petrale sole.} 
 \label{tab:Model_setup}
 \scalebox{0.9}{
-\begin{tabular}{>{\raggedright}p{3in}>{\centering}p{2in}}
+\begin{tabular}{>{\raggedright}p{3in}>{\centering}p{4in}}
   \hline
 Model Specification & Base Model \\ 
   \hline
-Starting year & 1918 \\ 
+Starting year & 1876 \\ 
    &  \\ 
   \underline{Population characteristics} &  \\ 
-  Maximum age & 60 \\ 
+  Maximum age & 40 \\ 
   Gender & 2 \\ 
-  Population lengths & 5-50 cm by 1 cm bins \\ 
+  Population lengths & 4-78 cm by 2 cm bins \\ 
   Summary biomass (mt) & Age 3+ \\ 
    &  \\ 
   \underline{Data characteristics} &  \\ 
-  Data lengths & 11-47 cm by 1 cm bins \\ 
-  Data ages & 1-40 ages \\ 
-  Minimum age for growth calculations & 3 \\ 
-  Maximum age for growth calculations & 20 \\ 
-  First mature age & 0 \\ 
-  Starting year of estimated recruitment & 1940 \\ 
+  Data lengths & 12-62 cm by 2 cm bins \\ 
+  Data ages & 1-17 ages \\ 
+  Minimum age for growth calculations & 2 \\ 
+  Maximum age for growth calculations & 17 \\ 
+  First mature age & 3 \\ 
+  Starting year of estimated recruitment & 1959 \\ 
    &  \\ 
   \underline{Fishery characteristics} &  \\ 
-  Fishing mortality method & Discrete \\ 
-  Maximum F & 0.9 \\ 
-  Catchability & Analytical estimate \\ 
-  Fishery selectivity & Double Normal \\ 
-  At-Sea Hake selectivity & Double Normal \\ 
-  POP survey selectivity & Logistic \\ 
-  Triennial survey & Double Normal \\ 
-  AFSC slope survey & Double Normal \\ 
-  NWFSC slope survey & Double Normal \\ 
+  Fishing mortality method & Hybrid \\ 
+  Maximum F & 3 \\ 
+  Catchability - Fishery & Power \\ 
+  Catchability - Survey & Analytical estimate \\ 
+  Winter North selectivity & Double Normal \\ 
+  Summer North selectivity & Double Normal \\ 
+  Winter South selectivity & Double Normal \\ 
+  Summer South selectivity & Double Normal \\ 
+  Triennial Early survey & Double Normal \\ 
+  Triennial Late survey & Double Normal \\ 
   NWFSC shelf-slope survey & Double Normal \\ 
    &  \\ 
   \underline{Fishery time blocks} &  \\ 
-  Fishery selectivity & 1918-1999, 2000-2016 \\ 
-  Fishery retention & 1918-1991, 1992-2001, 2002-2007, 2008, 2009-2010, 2011-2016 \\ 
+  Fishery selectivity & 1876-1972,1973-1982, 1983-1992, 1993-2002, 2003-2010, 2011-2018 \\ 
+  Winter retention & 1876-2002, 2003-2009, 2010, 2011-2018 \\ 
+  Summer retention & 1876-2002, 2003-2008, 2009-2010, 2011-2018 \\ 
    \hline
 \end{tabular}
 }
@@ -1982,12 +2019,13 @@ Starting year & 1918 \\
   \hline
 Fleet & Lengths & Ages \\ 
   \hline
-Fishery & 0.096 & 0.217 \\ 
-  At-sea hake & 0.104 & 0.032 \\ 
-  Pacific ocean perch survey  & 1.000 & 1 \\ 
-  AFSC slope survey & 0.077 & - \\ 
-  NWFSC slope survey & 0.565 & 0.304 \\ 
-  NWFSC shelf-slope survey & 0.031 & 0.363 \\ 
+Winter North &  &  \\ 
+  Summer North &  &  \\ 
+  Winter South &  &  \\ 
+  Summer South &  &  \\ 
+  Triennial Early survey &  & - \\ 
+  Triennial Late survey &  & - \\ 
+  NWFSC shelf-slope survey &  &  \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -1995,6 +2033,7 @@ Fishery & 0.096 & 0.217 \\
 \FloatBarrier 
 
 \begin{landscape}
+\begingroup\fontsize{9pt}{10pt}\selectfont
 \begin{longtable}{lrcccll}
 \caption{List of parameters used in
                                           the base model, including estimated 
@@ -2285,6 +2324,7 @@ NatM\_p\_1\_Fem\_GP\_1 & 0.145225 & 6 & (0.005, 0.5) & OK & 0.02 & Log\_Norm (-1
 \hline
 \label{tab:model_params}
 \end{longtable}
+\endgroup
 \end{landscape}
 
 \newpage
@@ -2299,9 +2339,9 @@ NatM\_p\_1\_Fem\_GP\_1 & 0.145225 & 6 & (0.005, 0.5) & OK & 0.02 & Log\_Norm (-1
   \hline
 Status & Base.Model \\ 
   \hline
-Returned to base case &  27 \\ 
-  Found local minimum &  23 \\ 
-  Found better solution &   0 \\ 
+Returned to base case &  \\ 
+  Found local minimum &  \\ 
+  Found better solution &  \\ 
   Total &  50 \\ 
    \hline
 \end{tabular}
@@ -2339,39 +2379,35 @@ Total & 1734.38 \\
                                         points and management quantities for the 
                                         base case.} 
 \label{tab:Ref_pts}
-\begin{tabular}{>{\raggedright}p{4.1in}>{\centering}p{.65in}>{\centering}p{1.4in}}
+\begin{tabular}{>{\raggedright}p{4.1in}>{\centering}p{.65in}>{\centering}p{.65in}>{\centering}p{.65in}}
   \hline
-\textbf{Quantity} & \textbf{Estimate} & \textbf{\~95\%  Confidence Interval} \\ 
+\textbf{Quantity} & \textbf{Estimate} & \textbf{$\sim$2.5\%  Confidence Interval} & \textbf{$\sim$97.5\%  Confidence Interval} \\ 
   \hline
-Unfished spawning output (mt) & 33693.4 & 27542.4 - 39844.4 \\ 
-  Unfished age 3+ biomass (mt) & 53873.7 & 45675.1 - 62072.3 \\ 
-  Unfished recruitment (R0, thousands) & 15430.6 & 10458.2 - 22767.1 \\ 
-  Spawning output(2019 mt) & 16841.1 &   13924 - 19758.2 \\ 
-  Depletion (2019) & 0.5 &   0.388 -   0.612 \\ 
-  \textbf{$\text{Reference points based on } \mathbf{SB_{40\%}}$} &  &  \\ 
-  Proxy spawning output ($B_{25\%}$) & 8423.3 &  6885.6 -  9961.1 \\ 
-  SPR resulting in $B_{25\%}$ ($SPR_{B25\%}$) & 0.274 &   0.251 -   0.297 \\ 
-  Exploitation rate resulting in $B_{25\%}$ & 0.166 &   0.147 -   0.186 \\ 
-  Yield with $SPR_{B25\%}$ at $B_{25\%}$ (mt) & 2729.5 &  2472.1 -  2986.8 \\ 
-  \textbf{\textit{Reference points based on SPR proxy for MSY}} &  &  \\ 
-  Spawning output & 9329.8 &  7316.9 - 11342.7 \\ 
-  $SPR_{proxy}$ & 0.3 &  \\ 
-  Exploitation rate corresponding to $SPR_{proxy}$ & 0.151 &   0.125 -   0.178 \\ 
-  Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt) & 2702.4 &  2414.6 -  2990.2 \\ 
-  \textbf{\textit{Reference points based on estimated MSY values}} &  &  \\ 
-  Spawning output at $MSY$ ($SB_{MSY}$) & 7323.1 &  5504.8 -  9141.4 \\ 
-  $SPR_{MSY}$ & 0.242 &    0.18 -   0.304 \\ 
-  Exploitation rate at $MSY$ & 0.187 &   0.157 -   0.216 \\ 
-  $MSY$ (mt)  & 2742.2 &  2502.5 -    2982 \\ 
+Unfished spawning output (mt) & 33693.4 & 27542.4 & 39844.4 \\ 
+  Unfished age 3+ biomass (mt) & 53873.7 & 45675.1 & 62072.3 \\ 
+  Unfished recruitment (R0, thousands) & 15430.6 & 10458.2 & 22767.1 \\ 
+  Spawning output(2019 mt) & 16841.1 & 13924 & 19758.2 \\ 
+  Depletion (2019) & 0.5 & 0.388 & 0.612 \\ 
+  \textbf{$\text{Reference points based on } \mathbf{SB_{40\%}}$} &  &  &  \\ 
+  Proxy spawning output ($B_{25\%}$) & 8423.3 & 6885.6 & 9961.1 \\ 
+  SPR resulting in $B_{25\%}$ ($SPR_{B25\%}$) & 0.274 & 0.251 & 0.297 \\ 
+  Exploitation rate resulting in $B_{25\%}$ & 0.166 & 0.147 & 0.186 \\ 
+  Yield with $SPR_{B25\%}$ at $B_{25\%}$ (mt) & 2729.5 & 2472.1 & 2986.8 \\ 
+  \textbf{\textit{Reference points based on SPR proxy for MSY}} &  &  &  \\ 
+  Spawning output & 9329.8 & 7316.9 & 11342.7 \\ 
+  $SPR_{proxy}$ &  &  &  \\ 
+  Exploitation rate corresponding to $SPR_{proxy}$ & 0.151 & 0.125 & 0.178 \\ 
+  Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt) & 2702.4 & 2414.6 & 2990.2 \\ 
+  \textbf{\textit{Reference points based on estimated MSY values}} &  &  &  \\ 
+  Spawning output at $MSY$ ($SB_{MSY}$) & 7323.1 & 5504.8 & 9141.4 \\ 
+  $SPR_{MSY}$ & 0.242 & 0.18 & 0.304 \\ 
+  Exploitation rate at $MSY$ & 0.187 & 0.157 & 0.216 \\ 
+  $MSY$ (mt)  & 2742.2 & 2502.5 & 2982 \\ 
    \hline
 \end{tabular}
 \end{table}
 
 \newpage
-
-\FloatBarrier
-
-\pagebreak
 
 \begingroup\fontsize{11pt}{11pt}\selectfont
 
@@ -2535,83 +2571,40 @@ Year & Total biomass (mt) & Spawning output (million eggs) & Summary biomass 3+ 
 
 \begin{sidewaystable}[ht]
 \centering
-\caption{Sensitivity of the base model} 
+\caption{Sensitivity of the base model.} 
 \label{tab:Sensitivity1}
 \scalebox{0.9}{
-\begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
+\begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
   \hline
-Label & Base & Harmonic weights & Steepness = 0.40 & Steepness = 0.72 & Old Maturity & Old Fecundity & 2008 Recruitment \\ 
+Label & Base & Low M & High M & Harmonic weights & Dirichlet weights & NA \\ 
   \hline
-Total Likelihood & 1639.130 & 2441.720 & 1639.950 & 1638.250 & 1639.140 & 1639.130 & 1877.740 \\ 
-  Survey Likelihood & -13.514 & -13.870 & -13.676 & -13.421 & -13.515 & -13.509 & -12.863 \\ 
-  Discard Likelihood & -34.574 & -17.102 & -34.425 & -34.744 & -34.578 & -34.578 & 56.929 \\ 
-  Length Likelihood & 143.504 & 742.387 & 143.129 & 143.932 & 143.501 & 143.516 & 191.232 \\ 
-  Age Likelihood & 1531.080 & 1711.000 & 1531.410 & 1530.680 & 1531.100 & 1531.070 & 1636.830 \\ 
-  Recruitment Likelihood & 11.618 & 18.273 & 11.623 & 11.661 & 11.620 & 11.616 & 4.595 \\ 
-  Forecast Recruitment Likelihood & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\ 
-  Parameter Priors Likelihood & 1.000 & 1.000 & 1.870 & 0.125 & 1.000 & 1.000 & 1.000 \\ 
-  Parameter Deviation Likelihood & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\ 
-  log(R0) & 9.402 & 9.270 & 9.341 & 9.450 & 9.401 & 9.403 & 9.392 \\ 
-  SB Virgin & 6889.170 & 6155.290 & 6475.990 & 7239.700 & 6758.200 & 8213.080 & 6908.240 \\ 
-  SB 2017 & 5280.380 & 3723.450 & 3585.220 & 7002.320 & 5280.670 & 6473.350 & 4074.950 \\ 
-  Depletion 2017 & 0.766 & 0.605 & 0.554 & 0.967 & 0.781 & 0.788 & 0.590 \\ 
-  Total Yield - SPR 50 & 1822.490 & 1620.140 & 1028.650 & 2560.050 & 1818.760 & 1844.750 & 1823.380 \\ 
-  Steepness & 0.500 & 0.500 & 0.400 & 0.720 & 0.500 & 0.500 & 0.500 \\ 
-  Natural Mortality - Female & 0.054 & 0.054 & 0.054 & 0.054 & 0.054 & 0.054 & 0.054 \\ 
-  Length at Amin - Female & 20.754 & 20.649 & 20.753 & 20.756 & 20.753 & 20.754 & 20.373 \\ 
-  Length at Amax - Female & 41.601 & 41.726 & 41.596 & 41.611 & 41.601 & 41.601 & 41.727 \\ 
-  Von Bert. k - Female & 0.167 & 0.169 & 0.167 & 0.167 & 0.167 & 0.167 & 0.175 \\ 
-  SD young - Female & 1.349 & 1.336 & 1.349 & 1.348 & 1.349 & 1.349 & 1.397 \\ 
-  SD old - Female & 2.560 & 2.772 & 2.562 & 2.558 & 2.561 & 2.560 & 2.516 \\ 
-  Natural Mortality - Male & 0.054 & 0.054 & 0.054 & 0.054 & 0.054 & 0.054 & 0.054 \\ 
-  Length at Amin - Male & 20.754 & 20.649 & 20.753 & 20.756 & 20.753 & 20.754 & 20.373 \\ 
-  Length at Amax - Male & 38.925 & 38.933 & 38.917 & 38.938 & 38.926 & 38.925 & 39.087 \\ 
-  Von Bert. k - Male & 0.198 & 0.201 & 0.198 & 0.197 & 0.198 & 0.198 & 0.204 \\ 
-  SD young - Male & 1.349 & 1.336 & 1.349 & 1.348 & 1.349 & 1.349 & 1.397 \\ 
-  SD old - Male & 2.280 & 2.587 & 2.281 & 2.279 & 2.280 & 2.280 & 2.203 \\ 
-   \hline
-\end{tabular}
-}
-\end{sidewaystable}
-
-\FloatBarrier 
-
-\begin{sidewaystable}[ht]
-\centering
-\caption{Sensitivity of the base model} 
-\label{tab:Sensitivity2}
-\scalebox{0.9}{
-\begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
-  \hline
-Label & Base & Include Triennial & Only Triennial & Include CPUE & Canadian Data & WA Research Lengths & OR Special Projects \\ 
-  \hline
-Total Likelihood & 1639.13 & 1665.44 & 164.52 & 1639.13 & 1732.43 & 1661.35 & 1704.70 \\ 
-  Survey Likelihood & -13.51 & -12.94 & -4.72 & -13.51 & -13.75 & -13.52 & -13.56 \\ 
-  Discard Likelihood & -34.57 & -34.44 & -41.41 & -34.57 & -34.34 & -34.53 & -33.98 \\ 
-  Length Likelihood & 143.50 & 149.40 & 103.50 & 143.50 & 183.12 & 164.57 & 171.18 \\ 
-  Age Likelihood & 1531.08 & 1550.29 & 98.85 & 1531.08 & 1583.84 & 1532.08 & 1566.68 \\ 
-  Recruitment Likelihood & 11.62 & 12.11 & 5.13 & 11.62 & 12.53 & 11.73 & 13.36 \\ 
-  Forecast Recruitment Likelihood & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
-  Parameter Priors Likelihood & 1.00 & 1.00 & 3.16 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
-  Parameter Deviation Likelihood & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
-  log(R0) & 9.40 & 9.34 & 9.18 & 9.40 & 9.40 & 9.38 & 9.33 \\ 
-  SB Virgin & 6889.17 & 6509.19 & 5494.23 & 6889.17 & 6932.47 & 6705.96 & 6447.45 \\ 
-  SB 2017 & 5280.38 & 4763.81 & 614.09 & 5280.38 & 5046.25 & 5015.16 & 4700.25 \\ 
-  Depletion 2017 & 0.77 & 0.73 & 0.11 & 0.77 & 0.73 & 0.75 & 0.73 \\ 
-  Total Yield - SPR 50 & 1822.49 & 1721.47 & 26.65 & 1822.49 & 1856.88 & 1788.49 & 1699.53 \\ 
-  Steepness & 0.50 & 0.50 & 0.33 & 0.50 & 0.50 & 0.50 & 0.50 \\ 
-  Natural Mortality - Female & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 \\ 
-  Length at Amin - Female & 20.75 & 20.76 & 20.75 & 20.75 & 20.74 & 20.74 & 20.78 \\ 
-  Length at Amax - Female & 41.60 & 41.60 & 41.60 & 41.60 & 41.66 & 41.53 & 41.64 \\ 
-  Von Bert. k - Female & 0.17 & 0.17 & 0.17 & 0.17 & 0.17 & 0.17 & 0.17 \\ 
-  SD young - Female & 1.35 & 1.35 & 1.35 & 1.35 & 1.35 & 1.35 & 1.34 \\ 
-  SD old - Female & 2.56 & 2.56 & 2.56 & 2.56 & 2.55 & 2.56 & 2.58 \\ 
-  Natural Mortality - Male & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 \\ 
-  Length at Amin - Male & 20.75 & 20.76 & 20.75 & 20.75 & 20.74 & 20.74 & 20.78 \\ 
-  Length at Amax - Male & 38.93 & 38.92 & 38.92 & 38.93 & 38.95 & 38.89 & 38.98 \\ 
-  Von Bert. k - Male & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 \\ 
-  SD young - Male & 1.35 & 1.35 & 1.35 & 1.35 & 1.35 & 1.35 & 1.34 \\ 
-  SD old - Male & 2.28 & 2.28 & 2.28 & 2.28 & 2.28 & 2.29 & 2.34 \\ 
+Total Likelihood &  &  &  &  &  &  \\ 
+  Survey Likelihood &  &  &  &  &  &  \\ 
+  Discard Likelihood &  &  &  &  &  &  \\ 
+  Length Likelihood &  &  &  &  &  &  \\ 
+  Age Likelihood &  &  &  &  &  &  \\ 
+  Recruitment Likelihood &  &  &  &  &  &  \\ 
+  Forecast Recruitment Likelihood &  &  &  &  &  &  \\ 
+  Parameter Priors Likelihood &  &  &  &  &  &  \\ 
+  Parameter Deviation Likelihood &  &  &  &  &  &  \\ 
+  log(R0) &  &  &  &  &  &  \\ 
+  SB Virgin &  &  &  &  &  &  \\ 
+  SB 2017 &  &  &  &  &  &  \\ 
+  Depletion 2017 &  &  &  &  &  &  \\ 
+  Total Yield - SPR 50 &  &  &  &  &  &  \\ 
+  Steepness &  &  &  &  &  &  \\ 
+  Natural Mortality - Female &  &  &  &  &  &  \\ 
+  Length at Amin - Female &  &  &  &  &  &  \\ 
+  Length at Amax - Female &  &  &  &  &  &  \\ 
+  Von Bert. k - Female &  &  &  &  &  &  \\ 
+  SD young - Female &  &  &  &  &  &  \\ 
+  SD old - Female &  &  &  &  &  &  \\ 
+  Natural Mortality - Male &  &  &  &  &  &  \\ 
+  Length at Amin - Male &  &  &  &  &  &  \\ 
+  Length at Amax - Male &  &  &  &  &  &  \\ 
+  Von Bert. k - Male &  &  &  &  &  &  \\ 
+  SD young - Male &  &  &  &  &  &  \\ 
+  SD old - Male &  &  &  &  &  &  \\ 
    \hline
 \end{tabular}
 }
@@ -2627,12 +2620,34 @@ Total Likelihood & 1639.13 & 1665.44 & 164.52 & 1639.13 & 1732.43 & 1661.35 & 17
   \hline
 Fleet & Lengths & Ages \\ 
   \hline
-Fishery & 0.361 & 0.77 \\ 
-  At-sea hake & 0.621 & 0.14 \\ 
-  Pacific ocean perch survey  & 1.000 & 1 \\ 
-  AFSC slope survey & 0.696 & 1 \\ 
-  NWFSC slope survey & 0.463 & - \\ 
-  NWFSC shelf-slope survey & 0.549 & 0.348 \\ 
+Winter North &  &  \\ 
+  Summer North &  &  \\ 
+  Winter South &  &  \\ 
+  Summer South &  &  \\ 
+  Triennial Early survey &  & - \\ 
+  Triennial Late survey &  & - \\ 
+  NWFSC shelf-slope survey &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier 
+
+\begin{table}[ht]
+\centering
+\caption{Data weights applied when using Dirichlet data weighting.} 
+\label{tab:dirichlet}
+\begin{tabular}{>{\raggedright}p{2in}>{\centering}p{.7in}>{\centering}p{.7in}}
+  \hline
+Fleet & Lengths & Ages \\ 
+  \hline
+Winter North &  &  \\ 
+  Summer North &  &  \\ 
+  Winter South &  &  \\ 
+  Summer South &  &  \\ 
+  Triennial Early survey &  & - \\ 
+  Triennial Late survey &  & - \\ 
+  NWFSC shelf-slope survey &  &  \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -2646,7 +2661,7 @@ Fishery & 0.361 & 0.77 \\
 \caption{Projection of potential
                                          OFL, spawning biomass, and depletion for the
                                          base case model. The removals in 2017 and 2018 
-                                         were set at the defined management specification of 281 mt for each year assuming full attainment.} 
+                                         were set at the defined management specification of XXX mt for each year assuming full attainment.} 
 \label{tab:Forecast_mod1}
 \begin{tabular}{c>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}}
   \hline
