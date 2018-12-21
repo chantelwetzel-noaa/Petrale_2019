@@ -723,16 +723,18 @@ align(mngmnt.table) = c('l',
   find.yr = rownames(mod1$recruitpars[grep('Main_RecrDev', rownames(mod1$recruitpars)), ])
   temp = substring(find.yr,14)
   recdev.lowest = temp[ind]
+  ind = sort(RecDevs.all[, "Value"], index.return = TRUE)$ix[(dim(RecDevs.all)[1]-4):dim(RecDevs.all)[1]]
+  recdev.highest = temp[ind]
   
   # Lowest SB
-  find.sb = mod$derived_quants[grep('SPB', mod$derived_quants$Label), ]
-  temp = find.sb[find.sb$Label >= paste('SPB_', Dat_start_mod1, sep='') & find.sb$Label <= paste('SPB_', Dat_end_mod1,  sep=''), ]  
+  find.sb = mod1$derived_quants[grep('SSB', mod1$derived_quants$Label), ]
+  temp = find.sb[find.sb$Label >= paste('SSB_', Dat_start_mod1, sep='') & find.sb$Label <= paste('SSB_', Dat_end_mod1,  sep=''), ]  
   ind = sort(temp$Value, index.return = TRUE)$ix[1]
   ssb.yr = substring(temp$Label, 5)
   low.ssb = ssb.yr[ind]
   
-  low.dep.value = paste0( round(100*mod$derived_quants[mod$derived_quants$Label == paste0("SPB_", low.ssb), 'Value'] / 
-                         mod$derived_quants[mod$derived_quants$Label == "SPB_Virgin", 'Value'],1), "%")
+  low.dep.value = paste0( round(100*mod1$derived_quants[mod1$derived_quants$Label == paste0("SSB_", low.ssb), 'Value'] / 
+                         mod1$derived_quants[mod1$derived_quants$Label == "SSB_Virgin", 'Value'],1), "%")
   
   Tot.catch = aggregate(ret_bio ~ Yr, FUN = sum, mod1$catch)$ret_bio
   Tot.catch.df = cbind((Dat_start_mod1-1):Dat_end_mod1, Tot.catch)

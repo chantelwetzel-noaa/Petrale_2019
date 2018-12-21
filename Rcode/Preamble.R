@@ -24,7 +24,8 @@ load("./r4ss/SS_output.RData")
 # ============================================================================= 
 
 # Species, common and scientific
-spp = 'Petrale sole' 
+spp.up = 'Petrale sole'
+spp = 'petrale sole' 
 spp.sci = 'Eopsetta jordani'
   
 # minimum vulnerable age class
