@@ -95,9 +95,15 @@ Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is 
 
 ###Sex Ratio, Maturation, and Fecundity
 
+Petrale sole maturity-at-length information is generally sparse in space and time, has not been collected in a systematic fashion across time, is of varying quality, and does not always agree between studies. It is possible that maturity may have changed over time. However, it is not possible to assess this quantitatively owing to differences in when historical samples on which maturity ogives could be based were taken, and how maturity stage (visual vs. histological) was determined. The 2005 petrale sole
+assessment used the most recent study for the West Coast of the U.S. that was based on observations collected during 2002 from Oregon and Washington [@hannah_length_2002]. 
+
 
 
 ###Length-Weight Relationship
+
+The length-weight relationship for `r spp` was estimated outside the model using all biological data available from the NWFSC shelf-slope survey data, where the female weight-at-length in grams was estimated at `r format(mod1$MGparmAdj$Wtlen_1_Fem[1], scientific = TRUE)`$L$^`r round(mod1$MGparmAdj$Wtlen_2_Fem[1],2)`^ and males at `r format(mod1$MGparmAdj$Wtlen_1_Mal[1], scientific = TRUE)`$L$^`r round(mod1$MGparmAdj$Wtlen_2_Mal[1], 2)`^ where $L$ is length in cm (Figures \ref{fig:Wt_len} and \ref{fig:Wt_len_pred}).
+
 
 ###Growth (Length-at-Age)
 
