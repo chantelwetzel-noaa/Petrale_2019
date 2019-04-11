@@ -1,5 +1,5 @@
 ---
-title: 'Status of Petrale sole (*Eopsetta jordani*) along the US west coast in 2019'
+title: 'Status of petrale sole (*Eopsetta jordani*) along the U.S. west coast in 2018'
 author: ''
 date: ''
 output:
@@ -20,7 +20,7 @@ documentclass: article
 fontsize: 12pt
 geometry: margin=1in
 csl: CJFAS.csl
-bibliography: Bib_Jan31.bib
+bibliography: Bib_Mar20.bib
 link-citations: yes
 ---
 <!-- To remove the figure and table labels comment out the \usepackage[inline]{showlabels} within the header.tex file -->

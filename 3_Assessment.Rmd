@@ -2,46 +2,82 @@
 <!-- *************************************************************************** -->
 <!-- ************************ASSESSMENT DESCRIPTION***************************** -->
 <!-- *************************************************************************** -->
-#Assessment
+#Assessment Model
+
+##History of Modeling Approaches Used for This Stock
+
+Early stock assessments only assessed `r spp` in the combined U.S.-Vancouver and Columbia INPFC areas, i.e. `r spp` in these areas were treated as a unit stock, using time series of data that began during the 1970s [@demory_progress_1984; @turnock_status_1993]. The first assessment used stock reduction analysis and the second assessment used the length-based Stock Synthesis model. The third `r spp` assessment utilized the hybrid length-and-age-based Stock Synthesis 1 model, using data from 1977-1998 [@sampson_assessment_1999]. During the 1999 stock assessment an attempt was made to include separate area assessments for the Eureka and Monterey INPFC areas but acceptable models could not be configured due to a lack of data [@sampson_assessment_1999].
+
+The 2005 `r spp` assessment was conducted as two separate stocks, the northern stock encompassing the U.S. Vancouver and Columbia INPFC areas and the southern stock including the Eureka, Monterey and Conception INPFC areas, using Stock Synthesis 2, a length-age structured model. Both the northern- and southern-area models specified the fishing year as beginning on November 1 and continuing through October 31 of the following year, with a November-February winter fishery and a March-October summer fishery. Landings prior to 1957 were assumed to have been taken during the summer season in years where monthly data were not available to split the catches seasonally. The complete catch history was reconstructed for `r spp` for the 2005 stock assessment, with the northern area model starting in 1910 and the southern area model in 1876. In 2005, the STAR panel noted that the `r spp` stock trends were similar in both northern and southern areas, in spite of the different modeling choices made for each area, and that a single coast-wide assessment should be considered. The 2009 and 2011 assessments treated `r spp` as a single coast-wide stock, with the fleets and landings structured by state (WA, OR, CA) area of catch. During the 2011 STAR panel concerns were raised regarding the difficulty of discriminating landings from Washington and Oregon waters, particularly in light of the Oregon historical landings reconstruction that includes a summary of data by port of landing but not by catch area, due to the fact that the Oregon and Washington vessels commonly fish in each other's waters and land in each other's ports. The availability of the historical comprehensive landings reconstruction for Oregon by port of landing lead the STAR panel to recommend combining the Washington and Oregon fleets within the coast-wide stock assessment using port of landing rather than catch area. Starting with the 2013 stock assessment, the coast-wide stock assessment now summarizes `r spp` landings by the port of landing and combines Washington and Oregon into a single fleet [@haltuch_status_2013]. The 2015 this 2019 update assessment assumes the same approach as the 2013 stock assessment.
 
 ##General Model Specifications and Assumptions
-Stock Synthesis version 3.30.03.XX was used to estimate the parameters in the model. R4SS, version 1.XX.X, along with R version 3.3.2 were used to investigate and plot model fits. A summary of the data sources used in the model (details discussed above) is shown in Figure \ref{fig:data_plot}.
+Stock Synthesis version 3.30.03.13 was used to estimate the parameters in the model [@methot_stock_2013]. R4SS, version 1.33.2, along with R version 3.4.3 were used to investigate and plot model fits. A summary of the data sources used in the model (details discussed above) is shown in Figure \ref{fig:data_plot}.
 
 
-###Changes Between the 2015 Update Assessment Model and Current Model
+###Changes Between the 2015 Update and Current Assessment Model
+
+As with the 2013 `r spp` stock assessment, the current model is implemented as a single-area model. The current update assessment has been upgraded to a new version of SS (3.30.13). A thorough description of the 2013 assessment model, which is used in this update assessment, is presented separately below; this section linking the two models is intended to clearly identify where substantive changes were made. These changes include:
+
+\begin{enumerate}
+
+\item Fitting using SS v.3.30.13. 
+
+\item Added commercial fishery catch data (2015-2018)
+
+\item `r nwfsc` index was calculated using VAST.
+
+\item Added composition data from the commercial fishery (length and age data 2015-2018) and `r nwfsc` (length and age data 2015-2018).
+
+\item Corrected `r nwfsc` length and age composition data expansion (2003-2018).
+
+\item Discard rate, average weight, and length composition data (2014-2017).
+
+\item Model tuning to re-weight data. 
+
+\item Length-weight relationship parameters estimated outside of the stock assessment model from the `r nwfsc` data up to 2018 and input as fixed values.
+
+\item Update the natural mortality prior for female and male fish.
+
+\end{enumerate}
 
 
 ###Summary of Fleets and Areas
-
-
-###Other Specifications
-
-###Modeling Software
-The STAT team used Stock Synthesis version 3.30.03.XX developed by Dr. Richard Methot at the NWFSC [@methot_stock_2013]. This most recent version was used because it included improvements and corrections to older versions.  
+Fishery removals were divided among 4 fleets: 1) winter North trawl, 2) summer North trawl, 3) winter South trawl, and 4) summer South trawl. Landings for the North fleet are defined as fish landed in Washington and Oregon ports. Landings for the South fleet are defined as fish landed in California ports. Other removals are very small and are included in the trawl fishery removals. The data available for each fleet are described in Figure \ref{fig:data_plot}.
 
 
 ###Priors
 
+Priors were applied only to parameters for steepness ($h$) and natural mortality ($M$). The steepness prior is based on the Myers [-@myers_maximum_1999] meta-analysis of flatfish steepness and the natural mortality prior is based on a meta-analysis completed by Hamel [-@hamel_method_2015]. The natural mortality prior was updated for this update assessment using the Hamel meta-analysis approach. Maximum age was assumed to be 32 and 29 years for females and males, respectively, the same assumption regarding maximum age as applied in the 2013 assessment. 
 
 
 ###Data Weighting
 
+Length and age-at-length compositions from the `r nwfsc` were fit along with length and marginal age compositions from the fishery and other survey fleets. Length data started with a sample size determined from the equation listed in Sections \ref{nwfsc-west-coast-groundfish-bottom-trawl-survey} (survey data) and \ref{fishery-length-and-age-data} (fishery data). It was assumed for age-at-length data that each age was a random sample within the length bin and the model started with a sample size equal to the number of fish in that length bin. 
+
+XXX - I think they may have done Harmonic Mean Weighting - check
+The update assessment model was weighted using the "Francis method", which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and the variance of the mean to determine if across years, the variability is explained by the model. If the variability around the mean does not encompass the model predictions, then that data source should be down-weighted. This method accounts for correlation in the data (i.e., the multinomial distribution) as opposed to the McAllister and Ianelli [-@mcallister_bayesian_1997] method (Harmonic Mean weighting) of looking at the difference between individual observations and predictions.  A sensitivity was performed examining the difference between the weighting approaches.  The weights applied to each length and age data set for the base model are shown in Table \ref{tab:francis}.
+
 
 ###Estimated and Fixed Parameters
 
+There were `r mod1$N_estimated_parameters` estimated parameters in the base model. These included one parameters for $R_0$, natural mortality, steepness, growth, selectivity, retention, time blocking of the fleets and the surveys, commercial CPUE catchability, recruitment deviations, and forecast recruitment deviations (Table \ref{tab:model_params}).
 
-
+Fixed parameters in the model were as follows. The standard deviation of recruitment deviates was fixed at `r print(mod1$parameters[mod1$parameters$Label == "SR_sigmaR","Value"],2)`. Maturity-at-length was fixed as described above in Section \ref{maturation-and-fecundity}. Length-weight parameters were fixed at estimates using all length-weight observations (Figure \ref{fig:Wt_len_pred}).
 
 
 ###Key Assumptions and Structural Choices
 
+All structural choices for stock assessment models are likely to be important under some circumstances. In this update assessment update these choices are generally made to be consistent with the previous assessment [@haltuch_statu_2013]. Major choices in the structuring of this stock assessment model include a coast-wide model with seasonal fleet structure for two regions, north and south, splitting the `r tri` into an early and late time period, and estimates of selectivity and retention curves for each fleet.
+
 
 ###Bridging Analysis
+
+The exploration of models began by bridging from the 2015 update assessment to Stock Synthesis version 3.30.03.13, which produced no discernible difference (Figure \ref{fig:bridge}). 
 
 
 ###Convergence
 
-
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10%. This was repeated 50 times and a better minimum was not found (Table \ref{tab:jitter}). The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian.  
 
 
 <!-- ************************************************************************* -->
@@ -49,6 +85,7 @@ The STAT team used Stock Synthesis version 3.30.03.XX developed by Dr. Richard M
 <!-- ************************************************************************* -->
 ##Base Model Results
 
+The base model parameter estimates along with approximate asymptotic standard errors are shown in Table \ref{tab:model_params} and the likelihood components are shown in Table \ref{tab:like}. Estimates of derived reference points and approximate 95% asymptotic confidence intervals are shown in Table \ref{tab:Ref_pts}. Estimates of stock size over time are shown in Table \ref{tab:Timeseries_mod1}. 
 
 ###Parameter Estimates
 
@@ -65,6 +102,7 @@ The STAT team used Stock Synthesis version 3.30.03.XX developed by Dr. Richard M
 
 ###Retrospective Analysis
 
+A five-year retrospective analysis was conducted by running the model using data only through 2014, 2015, 2016, 2017 and 2018 (Figure \ref{fig:retro}). 
 
 ###Historical Analysis
 

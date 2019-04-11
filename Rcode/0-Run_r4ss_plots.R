@@ -26,10 +26,10 @@ covar = TRUE
 
 # Give the names of the data and control files, for each model
 # Used in the SS_files_linebreaks.R
-mod1_dat = "data.ss"
+mod1_dat = "2019_petrale.dat"
 
 # Control file names 
-mod1_ctrl = "control.ss"
+mod1_ctrl = "2019_petrale.ctl"
 
 
 #=====================================================================================
@@ -52,7 +52,7 @@ for(p in requiredPackages){
 
 # Install the latest version of r4ss using devtools
 # r4ss sha # 06b8250
-# devtools::install_github("r4ss/r4ss", ref = '1.27.0', force = TRUE)
+# devtools::install_github("r4ss/r4ss")
 library(r4ss)
 
 # CHANGE values in this section ===============================================
@@ -65,7 +65,7 @@ n_models = 1
 # By default, you can only work in the directory containing the project
 # Set the directory here if you're getting errors
 if (Sys.info()["user"] == "Chantel.Wetzel") {
-  setwd('C:/Users/chantell.Wetzel/Documents/GitHub/Petrale_2019')
+  #setwd('C:/Users/chantell.Wetzel/Documents/GitHub/Petrale_2019')
   setwd('C:/Users/Chantel.Wetzel/Documents/GitHub/Petrale_2019')
 }
 
@@ -105,7 +105,10 @@ save.image('./r4ss/SS_output.RData')
 # output directories
 #out.dir.mod1 = file.path(output.dir,'plots_mod1')
 out.dir.mod1 = file.path(output.dir,model.plots)
-fleets = c("Winter (N)", "Summer (N)", "Winter (S)", "Summer (S)", "Triennial shelf survey - Early", "Triennial shelf survey - Late", "NWFSC shelf-slope survey")
+fleets = c("Winter (N)", "Summer (N)", "Winter (S)", "Summer (S)", 
+          "AFSC NWFSC West Coast Triennial Shelf Survey - Early", 
+          "AFSC NWFSC West Coast Triennial Shelf Survey - Late", 
+          "NWFSC West Coast Groundfish Bottom Trawl Survey")
 
 # Model 1
 SS_plots(mod1,
@@ -122,132 +125,86 @@ SS_plots(mod1,
          bub.scale.dat= 6,
          dir = out.dir.mod1)
 
+#=====================================================================================
+# SECTION 3: Source other dependent code
+#=====================================================================================
 
+# Source the figures that are created based on the model results
+source('./Rcode/Figures.R')
 
-# Create specialized plots
-pngfun <- function(file,w=7,h=7,pt=12){
-  file <- file.path(out.dir.mod1, file)
-  cat('writing PNG to',file,'\n')
-  png(filename=file,
-      width=w,height=h,
-      units='in',res=300,pointsize=pt)
-}
-
-# pngfun('POP_unavailable_biomass.png',h=8.5)
-# SSunavailableSpawningOutput(mod1, plot=TRUE)
-# dev.off()
-# 
-# pngfun('POP_index_data.png',h=8.5)
-# par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
-# for(a in 1:4){
-#   f = c(4,6,7,8)[a]
-#   SSplotIndices(mod1,fleets=f,subplot=1,datplot=TRUE,fleetnames=fleets)
-# }
-# mtext(side=1,line=1,outer=TRUE,'Year')
-# mtext(side=2,line=1,outer=TRUE,'Index')
-# dev.off()
-# 
-# # index fits
-# pngfun('POP_index_fits.png',h=8.5)
-# par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
-# for(a in 1:4){
-#   f = c(4,6,7,8)[a]
-#   SSplotIndices(mod1, fleets=f, subplot=2, fleetnames=fleets)
-# }
-# mtext(side=1,line=1,outer=TRUE,'Year')
-# mtext(side=2,line=1,outer=TRUE,'Index')
-# dev.off()
-# 
-# # index fits
-# pngfun('POP_index_fits_alt.png',h=5, w=6)
-# par(mfrow=c(2,3),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
-# for(a in 1:6){
-#   f = c(1, 4:8)[a]
-#   SSplotIndices(mod1, fleets=f, subplot=2, fleetnames=fleets)
-# }
-# mtext(side=1,line=1,outer=TRUE,'Year')
-# mtext(side=2,line=1,outer=TRUE,'Index')
-# dev.off()
-
-# discard fits
-# pngfun('POP_discard_fits.png')
-# par(mfcol=c(1,1),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
-# for(f in 1:1){
-#   SSplotDiscard(mod1, fleets=f,subplot=2,fleetnames=fleets, datplot = TRUE)
-# }
-# mtext(side=1,line=1,outer=TRUE,'Year')
-# mtext(side=2,line=1,outer=TRUE,'Discard fraction')
-# dev.off()
-# 
-# # discard without fits
-# pngfun('POP_discard_data.png')
-# par(mfcol=c(1,1),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
-# for(f in 1:1){
-#   SSplotDiscard(mod1, fleets=f,subplot=1,fleetnames=fleets, datplot = TRUE)
-# }
-# mtext(side=1,line=1,outer=TRUE,'Year')
-# mtext(side=2,line=1,outer=TRUE,'Discard fraction')
-# dev.off()
-# 
-# ### biology stuff
-# # see function maturity/SST_maturity_notes.R
-# pngfun('POP_weight_vs_fecundity.png',h=5,w=6.5)
-# par(mar=c(5,4,1,1))
-# plot(0, type='n', ylim=c(0,2.1),xlim=c(10,50),xaxs='r',axes=FALSE,
-#      xlab='Length (cm)',ylab="Weight or  Fecundity x Maturity")
-# abline(h=0,col='grey')
-# lines(mod1$biology$Mean_Size, mod1$biology$Wt_len_F,
-#       type='o', lwd=3, pch=16, col=1)
-# lines(mod1$biology$Mean_Size, mod1$biology$Spawn,
-#       type='o', lwd=3, pch=16, col=2, lty=2, ylim=c(0,3),xlim=c(0,50))
-# legend('topleft',lwd=3,pch=16,col=1:2,c("Weight","Fecundity x Maturity"),lty=1:2, bty = 'n')
-# axis(1)
-# axis(2)
-# box()
-# dev.off()
-
-
-# Fit bias ramp
-SS_fitbiasramp (mod1,  method="BFGS", twoplots=FALSE,
-           transform=FALSE, print=TRUE, plotdir=out.dir.mod1 ,shownew=FALSE,
-           pwidth=6.5, pheight=5.0, punits="in", ptsize=10, res=300, cex.main=1)
-
-
-# -----------------------------------------------------------------------------
 
 # Run the code to parse the plotInfoTable files
 source('./Rcode/Parse_r4ss_plotInfoTable.R')
 
-# -----------------------------------------------------------------------------
 
 # Create the SS files for the appendices
 # source('./Rcode/SS_files_linebreaks.R')
 
 #=====================================================================================
-# SECTION 3: Move CSV files from working directory to github directory
+# SECTION 4: Move Figures & CSV files from working directory to github directory
 #=====================================================================================
+folders = c(
+          "NWFSC_Combo/plots/",
+          "Triennial/early/plots/",
+          "Triennial/late/plots/",
+          "Biology/plots/",
+          "Assessment_History/plots/"
+           )
 
-# HomeDir = "C:/Assessments/Petrale_2019/WriteUp/Tables/"
-# files = dir(HomeDir)
-# for (i in 1:length(files)){
-#   file.copy(paste0(HomeDir,files[i]),
-#             paste0(getwd(), "/txt_files"), overwrite = TRUE)
-# }
-# 
-# # Copy and move files from other locations
-# file.copy("C:/Assessments/POP2017/Data/CommercialCatch/POP2017_PacFIN_catch_forExpansion.csv", 
-#           paste0(getwd(), "/txt_files"), overwrite = TRUE)
+HomeDir = "C:/Assessments/2019/petrale_2019/Data/"
 
-# Copy and move figures from assessment folder
-# figures = c(
-#             )
-# 
-# for (i in 1:length(figures)){
-#   file.copy(figures[i], paste0(getwd(), "/Figures"), overwrite = TRUE)
-# }
+for (i in 1:length(folders)){
+  files = list.files(paste0(HomeDir, folders[i]))
+  for(j in 1:length(files)){
+   file.copy(paste0(HomeDir,folders[i], files[j]),
+             paste0(getwd(), "/Figures"), overwrite = TRUE)
+  }
+}
+
+location = c("C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/QQ_Fn/",
+             "C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/",
+             "C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/",
+             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/early/QQ_Fn/",
+             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/early/", 
+             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/early/",
+             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/late/QQ_Fn/",
+             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/late/",
+             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/late/"
+            )
+
+files = c(
+          rep(c("Posterior_Predictive-Histogram-1.jpg",
+          "maps--catchrate_pearson_resid.png",
+          "maps--encounter_pearson_resid.png"), 3)
+          )
+
+files.new = c(rep("nwfsc_", 3), 
+              rep("tri_early_", 3),
+              rep("tri_late_", 3))
+
+for(j in 1:length(files)){
+  file.copy(paste0(location[j], files[j]), paste0(getwd(), "/Figures"), overwrite = TRUE)
+  file.rename(paste0(getwd(), "/Figures/",files[j]), paste0(getwd(), "/Figures/", files.new[j], files[j]))
+}
+
+# CSV files ------------------------------
+folders = c(
+  "NWFSC_Combo/forSS/nwfsc_combo_length_sample_size.csv",
+  "NWFSC_Combo/forSS/nwfsc_combo_age_sample_size.csv",
+  "Triennial/early/forSS/triennial_early_length_sample_size.csv",
+  "Triennial/late/forSS/triennial_late_length_sample_size.csv"
+)
+
+HomeDir = "C:/Assessments/2019/petrale_2019/Data/"
+
+for (i in 1:length(folders)){
+  file.copy(paste0(HomeDir,folders[i]),
+              paste0(getwd(), "/txt_files"), overwrite = TRUE)
+}
+
  
 #=====================================================================================
-# SECTION 4: Create Numbers at Age Table
+# SECTION 5: Create Numbers at Age Table
 #=====================================================================================
 base      <- readLines( paste0(getwd(),"/SS/", model.file, "/Report.sso"))
 
@@ -271,7 +228,7 @@ write.csv(natage.m, paste0(getwd(), "/txt_files/Petrale_natage_m.csv"))
 
 
 #=====================================================================================
-# SECTION 5: Functions
+# SECTION 6: Functions
 #=====================================================================================
 
 print.numeric<-function(x, digits) { formatC(x, digits = digits, format = "f") }

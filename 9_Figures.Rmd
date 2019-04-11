@@ -45,15 +45,59 @@
 
 
 <!-- ********************************************************************** 
-<!-- ****************Length and Age Composition FIGURES******************** --> 
+<!-- ****************    NWFSC Survey Index and Data   ******************** --> 
 <!-- ********************************************************************** -->
 
 
+![Map of the catch-per-unit-effort across by year for the  NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_map}](Figures/NWFSC_CPUE_Map_Year.png)
+
+\FloatBarrier
+
+![Catch-per-unit-effort (in log space) by latitude for the  NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_cpue_lat}](Figures/NWFSC_CPUE_Lat.png)
+
+\FloatBarrier
+
+![Catch-per-unit-effort (in log space) by depth for the  NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_cpue_depth}](Figures/NWFSC_CPUE_Depth.png)
+
+\FloatBarrier
+
+![Estimated index of abundance from the NWFSC West Coast Groundfish Bottom Trawl Survey data compared to the design-based index and the index from the 2015 update assessment. \label{fig:nw_index}](Figures/NWFSC_Index.png)
+
+\FloatBarrier
+
+![QQ plot for the  NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_qq}](Figures/nwfsc_Posterior_Predictive-Histogram-1.jpg)
+
+\FloatBarrier
+
+![Length frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_len_freq}](Figures/NWFSC Shelf-Slope_Length_Frequency.png)
+
+\FloatBarrier
+
+![Age frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_age_freq}](Figures/NWFSCBT_Age_Frequency.png)
+
+\FloatBarrier
+
+<!-- ********************************************************************** 
+<!-- **************** Triennial Survey Index and Data  ******************** --> 
+<!-- ********************************************************************** -->
 
 
 <!-- ****************************************************************************** --> 
 <!-- *****************Commercial Comps & Discards FIGURES************************** --> 
 <!-- ****************************************************************************** -->
+
+
+![Northern fishery, winter and summer, retained and discarded length frequency distributions for `r spp`. \label{fig:north_lengths}](r4ss/plots_mod1/comp_lendat__page1_multi-fleet_comparison.png)
+
+\FloatBarrier
+
+![Southern fishery, winter and summer, retained and discarded length frequency distributions for `r spp`. \label{fig:south_lengths}](r4ss/plots_mod1/comp_lendat__page2_multi-fleet_comparison.png)
+
+\FloatBarrier
+
+![Commercial fishery age frequency distributions for `r spp`. \label{fig:comm_ages}](r4ss/plots_mod1/comp_agedat__multi-fleet_comparison.png)
+
+\FloatBarrier
 
 
 <!-- ====================================================================== -->
@@ -65,12 +109,17 @@
 <!-- ********************************************************************** -->
 <!-- *****************Maturity and Fecundity FIGURES*********************** --> 
 <!-- ********************************************************************** -->
+![Estimated maturity-at-length for `r spp`. \label{fig:maturity}](r4ss/plots_mod1/bio6_maturity.png)
 
+<!-- ********************************************************************** -->
+<!-- *****************     Sex Ratio                *********************** --> 
+<!-- ********************************************************************** -->
+![Estimated proportion of female fish collected by the NWFSC shelf-slope survey across all years for `r spp`. \label{fig:sex_ratio}](Figures/NWFSC Shelf-Slope_length_fraction_female.png)
 
 <!-- ********************************************************************** -->
 <!-- **********************Weight-Length FIGURES*************************** --> 
 <!-- ********************************************************************** -->
-
+![Estimated weight-at-length for female and male `r spp`. \label{fig:mod_wt_length}](r4ss/plots_mod1/bio5_weightatsize.png)
 
 <!-- ********************************************************************** -->
 <!-- **********************Length-at-Age FIGURES*************************** --> 
@@ -99,6 +148,10 @@
 <!-- *********************Model Bridging Figure**************************** --> 
 <!-- ********************************************************************** -->
 
+
+![Comparison of model bridging estimates from Stock Synthesis version 3.30.13 and 3.24U for `r spp` for the 2015 assessment. \label{fig:bridge}](Figures/compare1_spawnbio.png)
+
+\FloatBarrier 
 
 
 <!-- ====================================================================== -->

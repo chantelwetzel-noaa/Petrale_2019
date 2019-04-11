@@ -207,15 +207,10 @@ print(Catch_AllYrs,
 ``` 
 
 
-<!-- ********************************************************************** --> 
-<!-- **************** History of Regulations TABLE 2 ********************** --> 
-<!-- ********************************************************************** --> 
-
-
 
 <!-- ********************************************************************** --> 
 <!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE******* -->
-<!-- *************************    TABLE 3 ********************************* -->
+<!-- *************************    TABLE 2 ********************************* -->
 
 ```{r, results='asis'}
   mngmnt = read.csv('./txt_files/ESF_Exec_mngmt_performance.csv')
@@ -255,44 +250,13 @@ print(Catch_AllYrs,
 ```
 
 <!-- ********************************************************************** -->
-<!-- ***********************Survey Strata  Table*************************** --> 
+<!-- ***************** NWFSC Survey Strata Table*************************** --> 
 <!-- ********************************************************************** -->
 
 ```{r, results = 'asis'}
 
-Strata = read.csv('./txt_files/Strata.csv')
-
-colnames(Strata) = c('',
-                     'Early Triennial',
-                     'Late Triennial',
-                     'NWFS Shelf-Slope')
-
-# Index of abundance summary, create table   
-Strata.table = xtable(Strata, 
-                           caption = c('Description of the data used to create the indices, the modeling platform used to generate the estimates, and the model configuration.'),
-                           label = 'tab:strata')
-                          
-# Add alignment  
-align(Strata.table) = c('l',
-                             '>{\\centering}p{1.10in}',
-                             '>{\\centering}p{1.10in}',
-                             '>{\\centering}p{1.10in}',
-                             '>{\\centering}p{1.10in}')  
-
-# Print commercial length sample numbers
-print(Strata.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-
-
-```
-
-
-```{r, results = 'asis'}
-
 Strata = read.csv('./txt_files/nwfsc_strata.csv')
-Strata = cbind(Strata[,1], Strata[,3:6])
+Strata = cbind(Strata$name, Strata[,4:7])
 
 Strata[,1] = c("Shallow Vancouver", "Shallow Columbia", "Shallow Eureka", "Shallow Monterey", "Shallow Conception", 
                "Mid Vancouver", "Mid Columbia", "Mid Eureka", "Mid Monterey", "Mid Conception",
@@ -304,12 +268,11 @@ colnames(Strata) = c('Strata',
                      'Latitude South',
                      'Latitude North')
 
-
-
 # Index of abundance summary, create table   
 Strata.table = xtable(Strata, 
                            caption = c('Description of the strata used to create the indices for the NWFSC Shelf-Slope survey.'),
-                           label = 'tab:strata_nwfsc')
+                           label = 'tab:strata_nwfsc',
+                           digits = c(0,0,0,0,1,1))
                           
 # Add alignment  
 align(Strata.table) = c('l',
@@ -317,8 +280,7 @@ align(Strata.table) = c('l',
                         '>{\\centering}p{0.50in}',
                         '>{\\centering}p{0.50in}',
                         '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}')#,
-                        #'>{\\centering}p{0.50in}')  
+                        '>{\\centering}p{0.50in}')  
 
 print(Strata.table, 
       include.rownames=FALSE, 
@@ -330,10 +292,78 @@ print(Strata.table,
 
 
 
+<!-- ********************************************************************** -->
+<!--  ************Fishery-independent biological sampling TABLES*********** -->
+<!-- ********************************************************************** -->
+
+
+<!-- *******************NWFSC Combo Survey********************************* -->
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/nwfsc_combo_length_sample_size.csv')
+Fish_Length = Fish_Length[,c("Year", "Tows", "All_Fish", "Sample_Size")]
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of NWFSC shelf-slope survey length samples used in the stock assessment.'),
+                           label = 'tab:NWcombo_Lengths',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
+
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/nwfsc_combo_age_sample_size.csv')
+Fish_Length = Fish_Length[,c("Year", "Tows", "All_Fish", "Sample_Size")]
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of NWFSC shelf-slope survey age samples used in the stock assessment.'),
+                           label = 'tab:NWcombo_Ages',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
+
+<!-- ********************************************************************** -->
+<!-- ***************** Tri Early Survey Strata Table  ********************* --> 
+<!-- ********************************************************************** -->
+
 ```{r, results = 'asis'}
 
 Strata = read.csv('./txt_files/tri_early_strata.csv')
-Strata = cbind(Strata[,1], Strata[,3:6])
+Strata = cbind(Strata$name, Strata[,3:6])
 
 Strata[,1] = c("Shallow Van/Col", "Shallow Eureka","Shallow Mon/Con", 
                "Deep Van/Col/Eur", "Deep Mon/Con")
@@ -347,8 +377,9 @@ colnames(Strata) = c('Strata',
 
 # Index of abundance summary, create table   
 Strata.table = xtable(Strata, 
-                           caption = c('Description of the strata used to create the indices for the Triennial Early (1980 - 1992) survey.'),
-                           label = 'tab:strata_tri_early')
+                      caption = c('Description of the strata used to create the indices for the Triennial Early (1980 - 1992) survey.'),
+                      label = 'tab:strata_tri_early',
+                      digits = c(0,0,0,0,1,1))
                           
 # Add alignment  
 align(Strata.table) = c('l',
@@ -356,8 +387,7 @@ align(Strata.table) = c('l',
                         '>{\\centering}p{0.50in}',
                         '>{\\centering}p{0.50in}',
                         '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}')#,
-                        #'>{\\centering}p{0.50in}')  
+                        '>{\\centering}p{0.50in}')  
 
 print(Strata.table, 
       include.rownames=FALSE, 
@@ -368,14 +398,17 @@ print(Strata.table,
 ```
 
 
+<!-- ********************************************************************** -->
+<!-- *****************  Tri Late Survey Strata Table  ********************* --> 
+<!-- ********************************************************************** -->
 
 ```{r, results = 'asis'}
 
 Strata = read.csv('./txt_files/tri_late_strata.csv')
-Strata = cbind(Strata[,1], Strata[,3:6])
+Strata = cbind(Strata$name, Strata[,4:7])
 
 Strata[,1] = c("Shallow Van/Col", "Shallow Eureka", "Shallow Mon/Con", 
-               "Deep Van/Col", "Deep Eureka", "Deep Mon/Con")
+               "Deep Van/Col", "Deep Eureka", "Deep Mon/Con", "Deep Con")
 
 colnames(Strata) = c('Strata',
                      'Depth Lower Bound',
@@ -387,8 +420,9 @@ colnames(Strata) = c('Strata',
 
 # Index of abundance summary, create table   
 Strata.table = xtable(Strata, 
-                           caption = c('Description of the strata used to create the indices for the Triennial Late (1995-2004) survey.'),
-                           label = 'tab:strata_tri_late')
+                      caption = c('Description of the strata used to create the indices for the Triennial Late (1995-2004) survey.'),
+                      label = 'tab:strata_tri_late',
+                      digits = c(0,0,0,0,1,1))
                           
 # Add alignment  
 align(Strata.table) = c('l',
@@ -396,8 +430,7 @@ align(Strata.table) = c('l',
                         '>{\\centering}p{0.50in}',
                         '>{\\centering}p{0.50in}',
                         '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}')#,
-                        #'>{\\centering}p{0.50in}')  
+                        '>{\\centering}p{0.50in}')  
 
 print(Strata.table, 
       include.rownames=FALSE, 
@@ -406,6 +439,42 @@ print(Strata.table,
 
 
 ```
+
+
+<!-- **********************Triennial Survey****************************** -->
+```{r, results = 'asis'}
+Fish_Length1 =  read.csv('./txt_files/triennial_early_length_sample_size.csv')
+Fish_Length2 =  read.csv('./txt_files/triennial_late_length_sample_size.csv')
+
+Fish_Length = rbind(Fish_Length1, Fish_Length2)
+Fish_Length = Fish_Length[,c("Year", "Tows", "All_Fish", "Sample_Size")]
+
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of Triennial survey length samples used in the stock assessment.'),
+                           label = 'tab:Triennial_Lengths',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+# NEED TO FIGURE OUT HOW TO APPLY LONGTABLE HERE
+
+```
+
 
 <!-- ********************************************************************** -->
 <!-- ***********************Survey Indices Table*************************** --> 
@@ -482,103 +551,6 @@ print(Index_summary.table,
 \FloatBarrier
 
 
-
-<!-- ********************************************************************** -->
-<!--  ************Fishery-independent biological sampling TABLES*********** -->
-<!-- ********************************************************************** -->
-
-
-<!-- *******************NWFSC Combo Survey********************************* -->
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/NWFSCComboLengthSampleSize.csv')
-
-colnames(Fish_Length) = c('Year',
-                          'Tows',
-                          'Fish',
-                          'Sample Size')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of NWFSC shelf-slope survey length samples used in the stock assessment. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for flatfish species was 3.09 fish per tow.'),
-                           label = 'tab:NWcombo_Lengths',
-                           digits = 0)    
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
-
-# Print commercial length sample numbers
-print(Fish_Length.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-
-```
-
-
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/NWFSCComboAgeSampleSize.csv')
-Fish_Length = Fish_Length[,-1]
-colnames(Fish_Length) = c('Year',
-                          'Tows',
-                          'Fish',
-                          'Sample Size')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of NWFSC shelf-slope survey age samples used in the stock assessment. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for flatfish species was 3.09 fish per tow.'),
-                           label = 'tab:NWcombo_Ages',
-                           digits = 0)    
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
-
-# Print commercial length sample numbers
-print(Fish_Length.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-
-```
-
-
-
-<!-- **********************Triennial Survey****************************** -->
-```{r, results = 'asis'}
-Fish_Length =  read.csv('./txt_files/TriennialLengthSampleSize.csv')
-colnames(Fish_Length) = c('Year',
-                          'Tows',
-                          'Fish',
-                          'Sample Size')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Triennial survey length samples used in the stock assessment. The sample sizes were calculated according to                              Stewart and Hamel (2014), which determined that the approximate realized sample size for flatfish species was 3.09 fish per tow.'),
-                           label = 'tab:Triennial_Lengths',
-                           digits = 0)    
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
-
-# Print commercial length sample numbers
-print(Fish_Length.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-# NEED TO FIGURE OUT HOW TO APPLY LONGTABLE HERE
-
-```
-
-
-
 <!-- ********************************************************************** --> 
 <!-- *******************Commercial Discards TABLES************************* --> 
 <!-- ********************************************************************** --> 
@@ -589,16 +561,20 @@ n = unique(mod1$discard$Fleet)[1:2]
 discard = NULL
 for (i in n){
   ind = mod1$discard$Fleet == n[i]
-  discard = rbind(discard, cbind(mod1$discard$Yr[ind], mod1$discard$Name[ind], 
+  discard = rbind(discard, cbind(mod1$discard$Yr[ind], mod1$discard$Fleet_Name[ind], 
                                  print.numeric(mod1$discard[ind,"Obs"], digits = 3), 
                                  print.numeric(mod1$discard$Std_in[ind], digits = 3)))
 } 
 
+tmp = c(rep("Pikitch", 3), rep("WGCOP", sum(discard[,2]=="WinterN")-3),
+        rep("Pikitch", 3), rep("WGCOP", sum(discard[,2]=="SummerN")-3))
 
+discard = cbind(discard, tmp)
 colnames(discard) = c('Year',
-                      'Source',
+                      'Fleet',
                       'Discard Rate',
-                      'Standard Error')
+                      'Standard Error',
+                      'Data Source')
 
 value = ifelse(mod1$discard_spec$units[1] == 2, "discard rates", "total discard")
 Discard.table = xtable(discard, 
@@ -609,7 +585,8 @@ Discard.table = xtable(discard,
 align(Discard.table) = c('l',
                          '>{\\centering}p{.75in}',
                          '>{\\centering}p{1.1in}',
-                         '>{\\centering}p{.75in}',
+                         '>{\\centering}p{1.1in}',
+                         '>{\\centering}p{1.1in}',
                          '>{\\centering}p{1.1in}')  
 
 # Print index summary table
@@ -622,20 +599,26 @@ print(Discard.table,
 
   
 ```{r, results = 'asis'}
-n = unique(mod1$discard$Fleet)
+n = unique(mod1$discard$Fleet)[3:4]
 
 discard = NULL
-for (i in 3:length(n)){
+for (i in 1:length(n)){
   ind = mod1$discard$Fleet == n[i]
-  discard = rbind(discard, cbind(mod1$discard$Yr[ind], mod1$discard$Name[ind], 
+  discard = rbind(discard, cbind(mod1$discard$Yr[ind], mod1$discard$Fleet_Name[ind], 
                                  print.numeric(mod1$discard[ind,"Obs"], digits = 3), 
                                  print.numeric(mod1$discard$Std_in[ind], digits = 3)))
 } 
 
+tmp = c(rep("WGCOP", sum(discard[,2]=="WinterS")),
+        rep("WGCOP", sum(discard[,2]=="SummerS")))
+
+discard = cbind(discard, tmp)
+
 colnames(discard) = c('Year',
-                      'Source',
+                      'Fleet',
                       'Discard Rate',
-                      'Standard Error')
+                      'Standard Error',
+                      'Data Source')
 
 value = ifelse(mod1$discard_spec$units[1] == 2, "discard rates", "total discard")
 Discard.table = xtable(discard, 
@@ -645,7 +628,8 @@ Discard.table = xtable(discard,
 align(Discard.table) = c('l',
                          '>{\\centering}p{.75in}',
                          '>{\\centering}p{1.1in}',
-                         '>{\\centering}p{.75in}',
+                         '>{\\centering}p{1.1in}',
+                         '>{\\centering}p{1.1in}',
                          '>{\\centering}p{1.1in}')  
 
 # Print index summary table
@@ -911,56 +895,88 @@ print(Fish_Length.table,
 <!-- ====================================================================== --> 
 <!-- ******************   Ageing Error Table ************************ --> 
 <!-- ====================================================================== --> 
-\begin{landscape}
+
 ```{r , results = 'asis'}
   #Age.Error = cbind(mod1$age_error_mean$type1[1:31], mod1$age_error_sd$type1[1:31], 
   #                  c(mod1$age_error_mean$type1[32:61], " "), c(mod1$age_error_sd$type1[32:61], " "))
 
   x = 1:18
   Age.Error = cbind(mod1$age_error_mean[x,1],
-                    print.numeric(mod1$age_error_mean[x,3], digits = 1), print.numeric(mod1$age_error_sd[x,3], digits = 2), 
-                    print.numeric(mod1$age_error_mean[x,4], digits = 1), print.numeric(mod1$age_error_sd[x,4], digits = 2),
-                    print.numeric(mod1$age_error_mean[x,5], digits = 1), print.numeric(mod1$age_error_sd[x,5], digits = 2),
-                    print.numeric(mod1$age_error_mean[x,6], digits = 1), print.numeric(mod1$age_error_sd[x,6], digits = 2),
-                    print.numeric(mod1$age_error_mean[x,8], digits = 1), print.numeric(mod1$age_error_sd[x,8], digits = 2),
-                    print.numeric(mod1$age_error_mean[x,9], digits = 1), print.numeric(mod1$age_error_sd[x,9], digits = 2))
+                    print.numeric(mod1$age_error_mean[x,3], digits = 2), print.numeric(mod1$age_error_sd[x,3], digits = 2), #CAP BB
+                    print.numeric(mod1$age_error_mean[x,4], digits = 2), print.numeric(mod1$age_error_sd[x,4], digits = 2), #CAP Surface
+                    print.numeric(mod1$age_error_mean[x,5], digits = 2), print.numeric(mod1$age_error_sd[x,5], digits = 2), #CAP Combo
+                    #print.numeric(mod1$age_error_mean[x,6], digits = 2), print.numeric(mod1$age_error_sd[x,6], digits = 2), #WDFW Combo
+                    #print.numeric(mod1$age_error_mean[x,7], digits = 2), print.numeric(mod1$age_error_sd[x,7], digits = 2), #WDFW Surface
+                    #print.numeric(mod1$age_error_mean[x,8], digits = 2), print.numeric(mod1$age_error_sd[x,8], digits = 2), #WDFW BB
+                    print.numeric(mod1$age_error_mean[x,9], digits = 2), print.numeric(mod1$age_error_sd[x,9], digits = 2)) #CAP, Surface Pre-1990
   
-  Age.Error = as.data.frame(Age.Error)                  
-#  colnames(Age.Error) = NULL #c("True Age", 
-#                          "Mean Age", "SD of Age", 
-#                          "Mean Age", "SD of Age", 
-#                          "Mean Age", "SD of Age", 
-#                          "Mean Age", "SD of Age", 
-#                          "Mean Age", "SD of Age", 
-#                          "Mean Age", "SD of Age")
+ Age.Error = as.data.frame(Age.Error)
+ colnames(Age.Error) = c("", "", "",  "", "",  "", "",  "", "")
   
  hlines = c(-1, 0, nrow(Age.Error))
  addtorow = list()
  addtorow$pos = list(0,0)
- addtorow$command = c(" & \\multicolumn{2}{c}{Age Error 1} &  \\multicolumn{2}{c}{Age Error 2} & \\multicolumn{2}{c}{Age Error 3} & \\multicolumn{2}{c}{Age Error 4} & \\multicolumn{2}{c}{Age Error 5} & \\multicolumn{2}{c}{Age Error 6} \\\\\n",
-                     "True Age & Mean & SD & Mean &  SD  & Mean &  SD & Mean & SD & Mean &  SD & Mean &  SD \\\\\n" )
+ addtorow$command = c(" & \\multicolumn{2}{c}{Break and Burn} &  \\multicolumn{2}{c}{Surface} & \\multicolumn{2}{c}{Combo} & \\multicolumn{2}{c}{Surface Pre-1990} \\\\\n",
+                     "True Age & Mean & SD & Mean &  SD  & Mean &  SD & Mean & SD \\\\\n" )
 
 
-  # Index of abundance summary, create table    
-  AgeError.table = xtable(Age.Error, 
-                          caption = c('Estimated ageing error vectors used in the assessment model'),
-                          label = 'tab:Age_Error')    
-# Add alignment  
-align(AgeError.table) = c('lccccccccccccc') 
+ # Index of abundance summary, create table    
+ AgeError.table = xtable(Age.Error, 
+                          caption = c('Estimated ageing error vectors applied to ages read by the Cooperative Aging Project lab used in the assessment model.'),
+                          label = 'tab:age_error1')    
+ # Add alignment  
+ align(AgeError.table) = c('lccccccccc') 
 
 # Print index summary table
 print(AgeError.table, 
       include.rownames=FALSE, 
       caption.placement='top',
-      #size="\\fontsize{11pt}{11pt}\\selectfont",
-      #sanitize.text.function = function(x){x})
-      tabular.environment = 'longtable',
-      floating = FALSE,
-      add.to.row = addtorow)
+      add.to.row = addtorow,
+      sanitize.text.function = function(x){x})
 
 ```
 
-\end{landscape}
+\FloatBarrier
+
+
+```{r , results = 'asis'}
+
+  x = 1:18
+  Age.Error = cbind(mod1$age_error_mean[x,1],
+                    #print.numeric(mod1$age_error_mean[x,3], digits = 2), print.numeric(mod1$age_error_sd[x,3], digits = 2), #CAP BB
+                    #print.numeric(mod1$age_error_mean[x,4], digits = 2), print.numeric(mod1$age_error_sd[x,4], digits = 2), #CAP Surface
+                    #print.numeric(mod1$age_error_mean[x,5], digits = 2), print.numeric(mod1$age_error_sd[x,5], digits = 2), #CAP Combo
+                    print.numeric(mod1$age_error_mean[x,6], digits = 2), print.numeric(mod1$age_error_sd[x,6], digits = 2), #WDFW Combo
+                    print.numeric(mod1$age_error_mean[x,7], digits = 2), print.numeric(mod1$age_error_sd[x,7], digits = 2), #WDFW Surface
+                    print.numeric(mod1$age_error_mean[x,8], digits = 2), print.numeric(mod1$age_error_sd[x,8], digits = 2)) #WDFW BB
+                    #print.numeric(mod1$age_error_mean[x,9], digits = 2), print.numeric(mod1$age_error_sd[x,9], digits = 2)) #CAP, Surface Pre-1990
+  
+  
+  Age.Error = as.data.frame(Age.Error) 
+  colnames(Age.Error) = c("", "", "",  "", "",  "", "")
+  
+ hlines = c(-1, 0, nrow(Age.Error))
+ addtorow = list()
+ addtorow$pos = list(0,0)
+ addtorow$command = c(" & \\multicolumn{2}{c}{Combo} &  \\multicolumn{2}{c}{Surface} & \\multicolumn{2}{c}{Break and Burn} \\\\\n",
+                     "True Age & Mean & SD & Mean &  SD  & Mean &  SD  \\\\\n" )
+
+
+  # Index of abundance summary, create table    
+  AgeError.table = xtable(Age.Error, 
+                          caption = c('Estimated ageing error vectors applied to ages read by Washington Department of Fish and Wildlife used in the assessment model.'),
+                          label = 'tab:age_error2')    
+# Add alignment  
+align(AgeError.table) = c('lccccccc') 
+
+# Print index summary table
+print(AgeError.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      add.to.row = addtorow,
+      sanitize.text.function = function(x){x})
+
+```
 
 \FloatBarrier
 

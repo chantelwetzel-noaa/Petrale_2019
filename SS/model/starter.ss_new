@@ -1,11 +1,11 @@
-#V3.30.13_beta-safe;_2018_10_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.13-safe;_2019_03_09;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
-#C 2015 Assessent of Petrale (Fish600 people)
-data.ss
-control.ss
+#C 2019 Updata Assessent of Petrale Sole - Chantel Wetzel
+2019_petrale.dat
+2019_petrale.ctl
 1 # 0=use init values in control file; 1=use ss.par
 1 # run display detail (0,1,2)
 1 # detailed output (0=minimal for data-limited, 1=high (w/ wtatage.ss_new), 2=brief) 

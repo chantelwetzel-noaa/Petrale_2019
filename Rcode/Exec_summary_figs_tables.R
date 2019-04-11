@@ -191,7 +191,7 @@ align(Exec_catch.table) = c('l', 'l',
   colnames(Spawn_Deplete) = c('Year', 
                               paste('Spawning Output (', fecund_unit, ')', sep = ''), 
                               '~ 95% Confidence Interval',
-                              'Estimated Depletion',
+                              'Estimated Relative Spawning Output',
                               '~ 95% Confidence Interval')
         
   # Assign a model number to the Spawn_deplete table, if you do cbind within this step
@@ -292,7 +292,7 @@ align(Spawn_Deplete_mod1.table) = c('l', 'l',
 
 # Model 1 table
 Recruit_mod1.table = xtable(Recruit_All, 
-                            caption = c(paste('Recent estimated trend in recruitment and estimated recruitment deviations determined from the base model. The recruitment deviations for 2016 and 2017 were fixed at zero within the model.', sep='')),
+                            caption = c(paste('Recent estimated trend in recruitment and estimated recruitment deviations determined from the base model. The recruitment deviations for 2018 and 2019 were fixed at zero within the model.', sep='')),
                             label = 'tab:Recruit_mod1',
                             digits = c(0, 0, 0, 0, 3, 2))
 
@@ -352,7 +352,7 @@ align(Recruit_mod1.table) = c('l',
   
   SPRratiotab$Year = as.factor(SPRratiotab$Year)
   
-  colnames(SPRratiotab) = c('Year', '(1-SPR)/ (1-SPR50%)', '~ 95% Confidence Interval')
+  colnames(SPRratiotab) = c('Year', '1-SPR', '~ 95% Confidence Interval')
       
   assign(paste('SPRratio_Exploit_', mod_area, sep=''), cbind(SPRratiotab, Exploittab))
 
@@ -362,7 +362,7 @@ align(Recruit_mod1.table) = c('l',
 
 # Model 1 
 SPRratio_Exploit_mod1.table = xtable(SPRratio_Exploit_mod1, 
-                              caption=c(paste('Recent trend in spawning potential ratio (1-SPR)/(1-SPR50) and summary exploitation rate for age 3+ biomass for ', spp, '.' , sep='')), 
+                              caption=c(paste('Recent trend in spawning potential ratio 1-SPR and summary exploitation rate for age 3+ biomass for ', spp, '.' , sep='')), 
                               label='tab:SPR_Exploit_mod1', digits = 3)  
       
 align(SPRratio_Exploit_mod1.table) = c('l','l',
@@ -404,8 +404,7 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
     Fstd_MSY        = mod$derived_quants[grep('Fstd_MSY', mod$derived_quants$Label), x],
     TotYield_MSY    = mod$derived_quants[grep('Dead_Catch_MSY', mod$derived_quants$Label), x] 
   )
-  
-  #Ref_pts         = Ref_pts[, 1:3]
+
   Ref_pts$Value   = as.numeric(Ref_pts$Value)
   Ref_pts$StdDev  = as.numeric(Ref_pts$StdDev)
   Ref_pts$Value1  = ifelse(Ref_pts$Value >= 1, as.character(round(Ref_pts$Value, dig1)), 
@@ -426,7 +425,6 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
   Ref_pts$upperCI1 = ifelse(Ref_pts$upperCI>=1, as.character(round(Ref_pts$upperCI,dig1)), 
                             as.character(round(Ref_pts$upperCI, dig3))) 
   
-  #Ref_pts$CI1      = paste0(print.numeric(Ref_pts$lowerCI1, digits = dig3), ' - ', print.numeric(Ref_pts$upperCI1, digits = dig3))
         
   Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
                      paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
@@ -449,10 +447,8 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
                     'Exploitation rate at $MSY$',
                     '$MSY$ (mt) ')
         
-  #Ref_pts = cbind(Quantity, Ref_pts[, c(4, 9)])
   Ref_pts = cbind(Quantity, Ref_pts$Value1, Ref_pts$lowerCI1, Ref_pts$upperCI1)
   Ref_pts[c(6, 11, 13, 16), 2:4] = ''
-  #Ref_pts[c(6, 11, 16), 2] = ''
   colnames(Ref_pts) = c('\\textbf{Quantity}', '\\textbf{Estimate}', 
                         '\\textbf{$\\sim$2.5\\%  Confidence Interval}',
                         '\\textbf{$\\sim$97.5\\%  Confidence Interval}')
@@ -578,11 +574,11 @@ align(mngmnt.table) = c('l',
                                    'Year',  
                                    'Catch',	
                                    'Spawning Output',	
-                                   'Depletion (%)', 
+                                   'Depletion', 
                                    'Spawning Output',	
-                                   'Depletion (%)',	
+                                   'Depletion',	
                                    'Spawning Output',	
-                                   'Depletion (%)')
+                                   'Depletion')
       
        decision_mod1.table = xtable(decision_mod1, 
                                     caption = c(paste('Decision table summary of 10-year 
@@ -594,7 +590,7 @@ align(mngmnt.table) = c('l',
                                              from the uncertainty around final spawning biomass.
                                              Columns range over low, mid, and high
                                              states of nature, and rows range over different 
-                                             assumptions of catch levels. The SPR50 catch stream is based on the equilibrium yield applying the SPR50 harvest rate.', sep = '')), 
+                                             assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
                                      label='tab:Decision_table_mod1', 
                                      digits = c(0,0,0,0,0,1,0,1,0,1)) 
       
@@ -608,9 +604,9 @@ align(mngmnt.table) = c('l',
         addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                                & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                                & \\multicolumn{2}{c}{} \\\\\n', 
-                               ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.04725} 
-                               & \\multicolumn{2}{c}{M = 0.054} 
-                               &  \\multicolumn{2}{c}{M = 0.0595} \\\\\n')
+                               ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State} 
+                               & \\multicolumn{2}{c}{Base} 
+                               &  \\multicolumn{2}{c}{High State} \\\\\n')
 
 
         
@@ -682,7 +678,7 @@ align(mngmnt.table) = c('l',
                        'ACL (mt)',
                        'Landings (mt)',
                        'Total Est. Catch (mt)',
-                      '(1-$SPR$)(1-$SPR_{50\\%}$)',
+                      '1-$SPR$',
                        'Exploitation rate',
                        paste('Age ',min_age,' biomass (mt)',sep=''),
                        'Spawning Output',
@@ -731,10 +727,30 @@ align(mngmnt.table) = c('l',
   temp = find.sb[find.sb$Label >= paste('SSB_', Dat_start_mod1, sep='') & find.sb$Label <= paste('SSB_', Dat_end_mod1,  sep=''), ]  
   ind = sort(temp$Value, index.return = TRUE)$ix[1]
   ssb.yr = substring(temp$Label, 5)
+  
+  # Lowest depletion year
   low.ssb = ssb.yr[ind]
   
   low.dep.value = paste0( round(100*mod1$derived_quants[mod1$derived_quants$Label == paste0("SSB_", low.ssb), 'Value'] / 
                          mod1$derived_quants[mod1$derived_quants$Label == "SSB_Virgin", 'Value'],1), "%")
+  
+  # Depletion
+  find.dep = mod1$derived_quants[grep('Bratio', mod1$derived_quants$Label), ]
+  temp = find.dep[find.dep$Label >= paste('Bratio_', Dat_start_mod1, sep='') & find.dep$Label <= paste('Bratio_', Dat_end_mod1,  sep=''), ] 
+  dep.vector = temp$Value
+  ind = which(dep.vector < 0.25)
+  first.yr.below.target = substring(temp$Label[ind[1]], 8)
+  value.below.target = temp$Value[ind[1]]
+  
+  find = max(ind) + 1
+  yr.rebuilt = substring(temp$Label[find], 8)
+  
+  ind = which(dep.vector < 0.125)
+  first.yr.below.thresh = substring(temp$Label[ind[1]], 8)
+  value.below.thresh = temp$Value[ind[1]]
+  
+  
+  ind = sort(temp$Value, index.return = TRUE)$ix[1]
   
   Tot.catch = aggregate(ret_bio ~ Yr, FUN = sum, mod1$catch)$ret_bio
   Tot.catch.df = cbind((Dat_start_mod1-1):Dat_end_mod1, Tot.catch)

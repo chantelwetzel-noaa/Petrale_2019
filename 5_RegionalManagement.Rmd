@@ -1,2 +1,4 @@
 <!-- **************************REGIONAL MANAGEMENT************************* -->
 #Regional Management Considerations
+
+Currently `r spp` are managed using a coast-wide harvest; therefore this assessment does not provide a recommended method for allocating harvests regionally. The resource is modeled as a single stock. There is currently no genetic evidence that there are distinct biological stocks of `r spp` off the U.S. coast and the limited tagging data that describes adult movement suggests that movement may be significant across depth and latitude.

@@ -4,8 +4,14 @@ There are many areas of research that could be improved to benefit the understan
 
 \begin{enumerate}
 
-\item \textbf{Natural mortality}: 
+\item In the past many assessments have derived historical catches independently. The states of California and Oregon have completed comprehensive historical catch reconstructions. At the time of this assessment, a comprehensive historical catch reconstruction is not available for Washington. Completion of a Washington catch reconstruction would provide the best possible estimated catch series that accounts for all the catch and better resolves historical catch uncertainty for flatfish as a group. 
 
+\item Due to limited data, new studies on both the maturity and fecundity relationships for `r spp` would be beneficial.
 
+\item The effect of the implementation of the IFQ (catch shares) program that began during 2011 on fleet behavior, including impacts on discards, fishery selectivity, and fishing locations would benefit from further study.
+
+\item Studies on stock structure and movement of `r spp`, particularly with regard to the winter-summer spawning migration of `r spp` and the likely trans-boundary movement of `r spp` between U.S. and Canadian waters seasonally.
+
+\item The extent of spatial variability on productivity processes such as growth, recruitment, and maturity is currently unknown and would benefit from further research.
 
 \end{enumerate}

@@ -3,9 +3,9 @@
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
-#C 2015 Assessent of Petrale (Fish600 people)
-data.ss
-control.ss
+#C 2019 Updata Assessent of Petrale Sole - Chantel Wetzel
+2019_petrale.dat
+2019_petrale.ctl
 1 # 0=use init values in control file; 1=use ss.par
 1 # run display detail (0,1,2)
 1 # detailed output (0=minimal for data-limited, 1=high (w/ wtatage.ss_new), 2=brief) 
@@ -23,7 +23,6 @@ control.ss
 -2 # max yr for sdreport outputs (-1 for endyr; -2 for endyr+Nforecastyrs
 0 # N individual STD years 
 #vector of year values 
-
 0.001 # final convergence criteria (e.g. 1.0e-04) 
 0 # retrospective year relative to end year (e.g. -4)
 3 # min age for calc of summary biomass

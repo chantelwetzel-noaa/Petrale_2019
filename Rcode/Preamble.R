@@ -27,6 +27,11 @@ load("./r4ss/SS_output.RData")
 spp.up = 'Petrale sole'
 spp = 'petrale sole' 
 spp.sci = 'Eopsetta jordani'
+
+# Define the survey names
+nwfsc = 'NWFSC West Coast Groundfish Bottom Trawl Survey'
+full.tri = 'AFSC/NWFSC West Coast Triennial Shelf Survey'
+tri = "Triennial Survey"
   
 # minimum vulnerable age class
 min_age = '3+' 
