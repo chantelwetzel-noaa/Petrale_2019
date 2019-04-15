@@ -15,22 +15,23 @@ Stock Synthesis version 3.30.03.13 was used to estimate the parameters in the mo
 
 
 ###Changes Between the 2015 Update and Current Assessment Model
-
 As with the 2013 `r spp` stock assessment, the current model is implemented as a single-area model. The current update assessment has been upgraded to a new version of SS (3.30.13). A thorough description of the 2013 assessment model, which is used in this update assessment, is presented separately below; this section linking the two models is intended to clearly identify where substantive changes were made. These changes include:
 
 \begin{enumerate}
 
-\item Fitting using SS v.3.30.13. 
+\item Fitting using SS v.3.30.13.
 
-\item Added commercial fishery catch data (2015-2018)
+\item Added commercial fishery catch data (2015-2018).
 
-\item `r nwfsc` index was calculated using VAST.
+\item Added composition data from the commercial fishery (length and age data 2015-2018) and recalculated data expansions based upon the current methods.
 
-\item Added composition data from the commercial fishery (length and age data 2015-2018) and `r nwfsc` (length and age data 2015-2018).
+\item Reprocessed all discard data sources and added discard rate, average weight, and length composition data (2014-2017).
 
-\item Corrected `r nwfsc` length and age composition data expansion (2003-2018).
+\item Added 2015-2018 `r nwfsc`  data and calculated the index of abundance VAST.
 
-\item Discard rate, average weight, and length composition data (2014-2017).
+\item Added `r nwfsc` length and age data 2015-2018.
+
+\item `r tri` early and late indices of abundance were calculated using VAST.
 
 \item Model tuning to re-weight data. 
 
@@ -40,6 +41,8 @@ As with the 2013 `r spp` stock assessment, the current model is implemented as a
 
 \end{enumerate}
 
+The general model set-up is described in Table \ref{tab:Model_setup}.
+
 
 ###Summary of Fleets and Areas
 Fishery removals were divided among 4 fleets: 1) winter North trawl, 2) summer North trawl, 3) winter South trawl, and 4) summer South trawl. Landings for the North fleet are defined as fish landed in Washington and Oregon ports. Landings for the South fleet are defined as fish landed in California ports. Other removals are very small and are included in the trawl fishery removals. The data available for each fleet are described in Figure \ref{fig:data_plot}.
@@ -47,22 +50,22 @@ Fishery removals were divided among 4 fleets: 1) winter North trawl, 2) summer N
 
 ###Priors
 
-Priors were applied only to parameters for steepness ($h$) and natural mortality ($M$). The steepness prior is based on the Myers [-@myers_maximum_1999] meta-analysis of flatfish steepness and the natural mortality prior is based on a meta-analysis completed by Hamel [-@hamel_method_2015]. The natural mortality prior was updated for this update assessment using the Hamel meta-analysis approach. Maximum age was assumed to be 32 and 29 years for females and males, respectively, the same assumption regarding maximum age as applied in the 2013 assessment. 
+Priors were applied only to parameters for steepness ($h$) and natural mortality ($M$). The steepness prior is based on the Myers [-@myers_maximum_1999] meta-analysis of flatfish steepness and the natural mortality prior is based on a meta-analysis completed by Hamel [-@hamel_method_2015]. The prior for steepness assumed a beta distribution with a mean equal to 0.80 (Figure \ref{fig:h_prior}). 
+
+The natural mortality prior was updated for this update assessment using the Hamel meta-analysis approach. Maximum age was assumed to be 32 and 29 years for females and males (Figure \ref{fig:m_prior}), respectively, the same assumption regarding maximum age as applied in the 2013 assessment. 
 
 
 ###Data Weighting
 
-Length and age-at-length compositions from the `r nwfsc` were fit along with length and marginal age compositions from the fishery and other survey fleets. Length data started with a sample size determined from the equation listed in Sections \ref{nwfsc-west-coast-groundfish-bottom-trawl-survey} (survey data) and \ref{fishery-length-and-age-data} (fishery data). It was assumed for age-at-length data that each age was a random sample within the length bin and the model started with a sample size equal to the number of fish in that length bin. 
+Length and conditional-age-at-length compositions from the `r nwfsc` were fit along with length and marginal age compositions from the fishery and the `r tri`. Length data started with a input sample size determined from the equation listed in Sections \ref{nwfsc-west-coast-groundfish-bottom-trawl-survey} (survey data) and \ref{fishery-length-and-age-data} (fishery data). It was assumed for conditional-age-at-length data that each age was a random sample within the length bin and the model started with a sample size equal to the number of fish in that length bin. 
 
-XXX - I think they may have done Harmonic Mean Weighting - check
-The update assessment model was weighted using the "Francis method", which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and the variance of the mean to determine if across years, the variability is explained by the model. If the variability around the mean does not encompass the model predictions, then that data source should be down-weighted. This method accounts for correlation in the data (i.e., the multinomial distribution) as opposed to the McAllister and Ianelli [-@mcallister_bayesian_1997] method (Harmonic Mean weighting) of looking at the difference between individual observations and predictions.  A sensitivity was performed examining the difference between the weighting approaches.  The weights applied to each length and age data set for the base model are shown in Table \ref{tab:francis}.
-
+The update assessment model was weighted using the McAllister and Ianelli [-@mcallister_bayesian_1997] method (Harmonic Mean weighting), consistent with the 2015 update assessment. The McAllister and Ianelli data weight approach looks at the difference between individual observations and predictions.  A sensitivity was performed examining the difference between alternative weighting approaches.  The weights applied to each length and age data set for the base model are shown in Table \ref{tab:harm}.
 
 ###Estimated and Fixed Parameters
 
 There were `r mod1$N_estimated_parameters` estimated parameters in the base model. These included one parameters for $R_0$, natural mortality, steepness, growth, selectivity, retention, time blocking of the fleets and the surveys, commercial CPUE catchability, recruitment deviations, and forecast recruitment deviations (Table \ref{tab:model_params}).
 
-Fixed parameters in the model were as follows. The standard deviation of recruitment deviates was fixed at `r print(mod1$parameters[mod1$parameters$Label == "SR_sigmaR","Value"],2)`. Maturity-at-length was fixed as described above in Section \ref{maturation-and-fecundity}. Length-weight parameters were fixed at estimates using all length-weight observations (Figure \ref{fig:Wt_len_pred}).
+Fixed parameters in the model were as follows. The standard deviation of recruitment deviates was fixed at `r print(mod1$parameters[mod1$parameters$Label == "SR_sigmaR","Value"],2)`. Maturity-at-length was fixed as described above in Section \ref{maturation-and-fecundity}. Length-weight parameters were fixed at estimates using all length-weight observations (Figure \ref{fig:wt_length}).
 
 
 ###Key Assumptions and Structural Choices

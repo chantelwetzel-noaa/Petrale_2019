@@ -12,8 +12,6 @@
 ### within the github directory
 # =============================================================================
 
-# start fresh here - this script is separate from the script for the assessment
-# document
 rm(list=ls(all=TRUE))
 
 model.num = ""
@@ -36,14 +34,6 @@ mod1_ctrl = "2019_petrale.ctl"
 # SECTION1: Run r4ss, parse plotInfoTable.csv file, & add linebreaks to SS files
 #=====================================================================================
 
-#stop("\n  This file should not be sourced!") # note to stop from accidental sourcing
-
-# Here we're going to make sure you have all the required packages for the template
-# Check for installtion and make sure all R libraries can be loaded
-# xtable for creating tables, ggplot2 for plotting, reshape2 for melting
-# dataframes, scales for printing percents
-# You may have to manually install knitr - reason unknown!
-
 requiredPackages = c('xtable', 'ggplot2', 'reshape2', 'scales', 'rmarkdown', 'knitr', 'devtools')
 for(p in requiredPackages){
   if(!require(p,character.only = TRUE)) install.packages(p)
@@ -51,7 +41,6 @@ for(p in requiredPackages){
 }
 
 # Install the latest version of r4ss using devtools
-# r4ss sha # 06b8250
 # devtools::install_github("r4ss/r4ss")
 library(r4ss)
 
@@ -76,16 +65,12 @@ if (Sys.info()["user"] == "Chantel.Wetzel") {
 input.dir = file.path(getwd(), 'SS')
 output.dir = file.path(getwd(), 'r4ss')
 
-# IF the r4SS subdirectories don't exist, create them
-# Once you have your own SS files and want to save these plots
-# Uncomment the /r4SS/ in the .gitignore file
-#dir.create(file.path(output.dir,'plots_mod1'), showWarnings = FALSE)
 dir.create(file.path(output.dir,model.plots), showWarnings = FALSE)
 
 
 # BEGIN r4ss===================================================================
 # REMOVE OLD r4SS OUTPUT!!!!! -------------------------------------------------
-# Run this deliberately - it deletes the r4SS output plots files
+
 do.call("file.remove", list(list.files(file.path(output.dir, model.plots), 
   full.names=TRUE))) #, pattern = "!Thumb")))
 
@@ -102,9 +87,9 @@ save.image('./r4ss/SS_output.RData')
 #=====================================================================================
 # SECTION 2: RUN r4ss plots for each model & save files
 #=====================================================================================
-# output directories
-#out.dir.mod1 = file.path(output.dir,'plots_mod1')
+
 out.dir.mod1 = file.path(output.dir,model.plots)
+
 fleets = c("Winter (N)", "Summer (N)", "Winter (S)", "Summer (S)", 
           "AFSC NWFSC West Coast Triennial Shelf Survey - Early", 
           "AFSC NWFSC West Coast Triennial Shelf Survey - Late", 
@@ -113,7 +98,7 @@ fleets = c("Winter (N)", "Summer (N)", "Winter (S)", "Summer (S)",
 # Model 1
 SS_plots(mod1,
          png = TRUE,
-         html = FALSE,
+         html = TRUE,
          datplot = TRUE,
          uncertainty = covar,
          fleetnames = fleets,
@@ -202,6 +187,8 @@ for (i in 1:length(folders)){
               paste0(getwd(), "/txt_files"), overwrite = TRUE)
 }
 
+file.copy(paste0(HomeDir, "Commercial_Comps/forSS/Fishery_Age_Samples.csv"), paste0(getwd(), "/txt_files"), overwrite = TRUE)
+file.copy(paste0(HomeDir, "Commercial_Comps/forSS/Fishery_Length_Samples.csv"), paste0(getwd(), "/txt_files"), overwrite = TRUE)
  
 #=====================================================================================
 # SECTION 5: Create Numbers at Age Table

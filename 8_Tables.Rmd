@@ -291,6 +291,81 @@ print(Strata.table,
 ```
 
 
+<!-- ********************************************************************** -->
+<!-- ***********************Survey Indices Table*************************** --> 
+<!-- ********************************************************************** --> 
+
+```{r, results = 'asis'}
+names = unique(mod1$cpue$Fleet_name)
+
+survey.list = list()
+for(i in 1:length(names)){
+  grab = mod1$cpue[mod1$cpue$Fleet_name == names[i], c("Obs", "SE") ]
+  survey.list[[i]] = grab
+  rownames(survey.list[[i]]) = mod1$cpue[mod1$cpue$Fleet_name == names[i], "Yr" ]
+  colnames(survey.list[[i]]) = c("Obs", "SE")
+}
+names(survey.list) = names
+
+Rows = unique(unlist(lapply(survey.list, rownames)))
+Rows = sort(as.numeric(Rows))
+Index_Summary = matrix("-", nrow = length(Rows), ncol = 2*length(names),
+                       dimnames=list(Rows, sapply(survey.list, colnames)))
+
+mat.names = NULL
+for(i in seq_along(survey.list)){
+  if(i==1) { ind = 1:2  }
+  if(i!=1) { ind = ind+2}
+  survey.dig = 0
+  if(i <= 2) {survey.dig = 2}
+  Index_Summary[rownames(survey.list[[i]]), ind] = cbind(print(survey.list[[i]]$Obs, digits = survey.dig), 
+                                                         print(survey.list[[i]]$SE,  digits = 2)) 
+  mat.names = c(mat.names, "Obs", "SE")
+}
+
+
+Index_Summary = cbind(rownames(Index_Summary), Index_Summary)
+
+# Index of abundance summary, create table
+hlines = c(-1, 0, nrow(Index_Summary))
+addtorow = list()
+addtorow$pos = list(0,0)
+addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Triennial Early} & \\multicolumn{2}{c}{Triennial Late} & \\multicolumn{2}{c}{NWFSC Combo} \\\\\n",
+                     "Year & Obs & SE & Obs & SE & Obs & SE & Obs & SE & Obs & SE\\\\\n")
+Index_summary.table = xtable(Index_Summary, 
+                             caption = c('Summary of the fishery-independent biomass/abundance
+                                         time-series used in the stock
+                                         assessment.  The standard error includes the input annual standard error and model estimated added variance.'),
+                             label = 'tab:Index_Summary',
+                             digits = 2)    
+# Add alignment  
+align(Index_summary.table) = c('l',
+                               '>{\\centering}p{.4in}',
+                               '>{\\centering}p{.5in}', 
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.5in}',
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.5in}', 
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.5in}',
+                               '>{\\centering}p{.3in}',
+                               '>{\\centering}p{.5in}',
+                               '>{\\centering}p{.3in}')  
+
+# Print index summary table
+print(Index_summary.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      hline.after = hlines,
+      add.to.row = addtorow,
+      include.colnames = FALSE,
+      sanitize.text.function = function(x){x})
+```
+
+
+\FloatBarrier
+
+
 
 <!-- ********************************************************************** -->
 <!--  ************Fishery-independent biological sampling TABLES*********** -->
@@ -466,6 +541,7 @@ align(Fish_Length.table) = c('l',
                              '>{\\centering}p{.75in}',
                              '>{\\centering}p{1in}')  
 
+
 # Print commercial length sample numbers
 print(Fish_Length.table, 
       include.rownames=FALSE, 
@@ -475,81 +551,7 @@ print(Fish_Length.table,
 
 ```
 
-
-<!-- ********************************************************************** -->
-<!-- ***********************Survey Indices Table*************************** --> 
-<!-- ********************************************************************** --> 
-
-```{r, results = 'asis'}
-names = unique(mod1$cpue$Fleet_name)
-
-survey.list = list()
-for(i in 1:length(names)){
-  grab = mod1$cpue[mod1$cpue$Fleet_name == names[i], c("Obs", "SE") ]
-  survey.list[[i]] = grab
-  rownames(survey.list[[i]]) = mod1$cpue[mod1$cpue$Fleet_name == names[i], "Yr" ]
-  colnames(survey.list[[i]]) = c("Obs", "SE")
-}
-names(survey.list) = names
-
-Rows = unique(unlist(lapply(survey.list, rownames)))
-Rows = sort(as.numeric(Rows))
-Index_Summary = matrix("-", nrow = length(Rows), ncol = 2*length(names),
-                       dimnames=list(Rows, sapply(survey.list, colnames)))
-
-mat.names = NULL
-for(i in seq_along(survey.list)){
-  if(i==1) { ind = 1:2  }
-  if(i!=1) { ind = ind+2}
-  survey.dig = 0
-  if(i <= 2) {survey.dig = 2}
-  Index_Summary[rownames(survey.list[[i]]), ind] = cbind(print(survey.list[[i]]$Obs, digits = survey.dig), 
-                                                         print(survey.list[[i]]$SE,  digits = 2)) 
-  mat.names = c(mat.names, "Obs", "SE")
-}
-
-
-Index_Summary = cbind(rownames(Index_Summary), Index_Summary)
-
-# Index of abundance summary, create table
-hlines = c(-1, 0, nrow(Index_Summary))
-addtorow = list()
-addtorow$pos = list(0,0)
-addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Triennial Early} & \\multicolumn{2}{c}{Triennial Late} & \\multicolumn{2}{c}{NWFSC Combo} \\\\\n",
-                     "Year & Obs & SE & Obs & SE & Obs & SE & Obs & SE & Obs & SE\\\\\n")
-Index_summary.table = xtable(Index_Summary, 
-                             caption = c('Summary of the fishery-independent biomass/abundance
-                                         time-series used in the stock
-                                         assessment.  The standard error includes the input annual standard error and model estimated added variance.'),
-                             label = 'tab:Index_Summary',
-                             digits = 2)    
-# Add alignment  
-align(Index_summary.table) = c('l',
-                               '>{\\centering}p{.4in}',
-                               '>{\\centering}p{.5in}', 
-                               '>{\\centering}p{.3in}',
-                               '>{\\centering}p{.5in}',
-                               '>{\\centering}p{.3in}',
-                               '>{\\centering}p{.5in}', 
-                               '>{\\centering}p{.3in}',
-                               '>{\\centering}p{.5in}',
-                               '>{\\centering}p{.3in}',
-                               '>{\\centering}p{.5in}',
-                               '>{\\centering}p{.3in}')  
-
-# Print index summary table
-print(Index_summary.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      hline.after = hlines,
-      add.to.row = addtorow,
-      include.colnames = FALSE,
-      sanitize.text.function = function(x){x})
-```
-
-
 \FloatBarrier
-
 
 <!-- ********************************************************************** --> 
 <!-- *******************Commercial Discards TABLES************************* --> 
@@ -643,253 +645,209 @@ print(Discard.table,
 <!--  ************Fishery dependent biological sampling TABLES************* -->
 <!-- ********************************************************************** -->
 
-<!-- ********************** Winter North Fishery ****************************** -->  
+<!-- ********************** Fishery Lengths ****************************** -->  
 ```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/FisheryLength_N.csv')
+Fish_Length = read.csv('./txt_files/Fishery_Length_Samples.csv')
+Fish_Length = Fish_Length[1:50, ]
 
 colnames(Fish_Length) = c('Year',
                           'Trips',
                           'Fish',
-                          'Sample Size')
+                          'Trips',
+                          'Fish',
+                          'Trips',
+                          'Fish',
+                          'Trips',
+                          'Fish')
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Winter North fishery length samples used in the stock assessment (continued on next page). Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
-                           label = 'tab:WN_Lengths',
+                           caption = c('Summary of fishery length samples used in the stock assessment (continued on next page).'),
+                           label = 'tab:Fishery_Lengths',
                            digits = 0)    
 
 # Add alignment  
 align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}') 
+
+hlines = c(-1, 0, nrow(Fish_Length))
+addtorow = list()
+addtorow$pos = list(0,0)
+addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Summer N.} & \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Summer S.} \\\\\n",
+                     "Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\\\\n")
 
 #Print commercial length sample numbers
 print(Fish_Length.table,
       include.rownames=FALSE,
       caption.placement='top',
+      hline.after = hlines,
+      add.to.row = addtorow,
+      include.colnames = FALSE,
       size="\\fontsize{11pt}{11pt}\\selectfont",
       sanitize.text.function = function(x){x})
 
-
 ``` 
 
-<!-- ********************** Summer North Fishery ****************************** -->  
+
 ```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/FisheryLength_N.csv')
+Fish_Length = read.csv('./txt_files/Fishery_Length_Samples.csv')
+Fish_Length = Fish_Length[51:nrow(Fish_Length), ]
 
 colnames(Fish_Length) = c('Year',
                           'Trips',
                           'Fish',
-                          'Sample Size')
+                          'Trips',
+                          'Fish',
+                          'Trips',
+                          'Fish',
+                          'Trips',
+                          'Fish')
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Summer North fishery length samples used in the stock assessment (continued on next page). Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
-                           label = 'tab:SN_Lengths',
                            digits = 0)    
 
 # Add alignment  
 align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}') 
+
+hlines = c(-1, 0, nrow(Fish_Length))
+addtorow = list()
+addtorow$pos = list(0,0)
+addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Summer N.} & \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Summer S.} \\\\\n",
+                     "Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\\\\n")
 
 #Print commercial length sample numbers
 print(Fish_Length.table,
       include.rownames=FALSE,
       caption.placement='top',
-      size="\\fontsize{11pt}{11pt}\\selectfont",
-      sanitize.text.function = function(x){x})
-
-
-``` 
-
-<!-- ********************** Winter South Fishery ****************************** -->  
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/FisheryLength_N.csv')
-
-colnames(Fish_Length) = c('Year',
-                          'Trips',
-                          'Fish',
-                          'Sample Size')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Winter South fishery length samples used in the stock assessment (continued on next page). Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
-                           label = 'tab:WS_Lengths',
-                           digits = 0)    
-
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
-
-#Print commercial length sample numbers
-print(Fish_Length.table,
-      include.rownames=FALSE,
-      caption.placement='top',
-      size="\\fontsize{11pt}{11pt}\\selectfont",
-      sanitize.text.function = function(x){x})
-
-
-``` 
-
-<!-- ********************** Summer South Fishery ****************************** -->  
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/FisheryLength_N.csv')
-
-colnames(Fish_Length) = c('Year',
-                          'Trips',
-                          'Fish',
-                          'Sample Size')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Summer South fishery length samples used in the stock assessment (continued on next page). Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
-                           label = 'tab:SS_Lengths',
-                           digits = 0)    
-
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
-
-#Print commercial length sample numbers
-print(Fish_Length.table,
-      include.rownames=FALSE,
-      caption.placement='top',
-      size="\\fontsize{11pt}{11pt}\\selectfont",
-      sanitize.text.function = function(x){x})
-
-
-``` 
-\FloatBarrier
-
-<!-- ********************** Ages: Winter North Fishery ****************************** -->  
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/FisheryAges_N.csv')
-colnames(Fish_Length) = c('Year',
-                          'Trips',
-                          'Fish',
-                          'Sample Size')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Winter North fishery age samples used in the stock assessment. Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
-                           label = 'tab:WN_Ages',
-                           digits = 0)    
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
-
-# Print commercial length sample numbers
-print(Fish_Length.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
+      hline.after = hlines,
+      add.to.row = addtorow,
+      include.colnames = FALSE,
       size="\\fontsize{11pt}{11pt}\\selectfont",
       sanitize.text.function = function(x){x})
 
 ```
 \FloatBarrier
 
-<!-- ********************** Ages: Summer North Fishery ****************************** -->  
+
+<!-- ********************** Fishery Ages ****************************** -->  
 ```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/FisheryAges_N.csv')
+Fish_Length = read.csv('./txt_files/Fishery_Age_Samples.csv')
+Fish_Length = Fish_Length[1:50, ]
+
 colnames(Fish_Length) = c('Year',
                           'Trips',
                           'Fish',
-                          'Sample Size')
+                          'Trips',
+                          'Fish',
+                          'Trips',
+                          'Fish',
+                          'Trips',
+                          'Fish')
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Summer North fishery age samples used in the stock assessment. Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
-                           label = 'tab:SN_Ages',
+                           caption = c('Summary of fishery age samples used in the stock assessment (continued on next page).'),
+                           label = 'tab:Fishery_Ages',
                            digits = 0)    
+
 # Add alignment  
 align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}') 
 
-# Print commercial length sample numbers
-print(Fish_Length.table, 
-      include.rownames=FALSE, 
+hlines = c(-1, 0, nrow(Fish_Length))
+addtorow = list()
+addtorow$pos = list(0,0)
+addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Summer N.} & \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Summer S.} \\\\\n",
+                     "Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\\\\n")
+
+#Print commercial length sample numbers
+print(Fish_Length.table,
+      include.rownames=FALSE,
       caption.placement='top',
+      hline.after = hlines,
+      add.to.row = addtorow,
+      include.colnames = FALSE,
       size="\\fontsize{11pt}{11pt}\\selectfont",
       sanitize.text.function = function(x){x})
 
-```
-\FloatBarrier
+``` 
 
-<!-- ********************** Ages: Winter South Fishery ****************************** -->  
+
 ```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/FisheryAges_N.csv')
+Fish_Length = read.csv('./txt_files/Fishery_Age_Samples.csv')
+Fish_Length = Fish_Length[51:nrow(Fish_Length), ]
+
 colnames(Fish_Length) = c('Year',
                           'Trips',
                           'Fish',
-                          'Sample Size')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Winter South fishery age samples used in the stock assessment. Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
-                           label = 'tab:WS_Ages',
-                           digits = 0)    
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
-
-# Print commercial length sample numbers
-print(Fish_Length.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      size="\\fontsize{11pt}{11pt}\\selectfont",
-      sanitize.text.function = function(x){x})
-
-```
-\FloatBarrier
-
-<!-- ********************** Ages: Summer South Fishery ****************************** -->  
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/FisheryAges_N.csv')
-colnames(Fish_Length) = c('Year',
                           'Trips',
                           'Fish',
-                          'Sample Size')
+                          'Trips',
+                          'Fish',
+                          'Trips',
+                          'Fish')
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Summer South fishery age samples used in the stock assessment. Sample sizes were calculated according to method described above in Section \\ref{fishery-length-and-age-data}.'),
-                           label = 'tab:SS_Ages',
                            digits = 0)    
+
 # Add alignment  
 align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}') 
 
-# Print commercial length sample numbers
-print(Fish_Length.table, 
-      include.rownames=FALSE, 
+hlines = c(-1, 0, nrow(Fish_Length))
+addtorow = list()
+addtorow$pos = list(0,0)
+addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Summer N.} & \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Summer S.} \\\\\n",
+                     "Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\\\\n")
+
+#Print commercial length sample numbers
+print(Fish_Length.table,
+      include.rownames=FALSE,
       caption.placement='top',
+      hline.after = hlines,
+      add.to.row = addtorow,
+      include.colnames = FALSE,
       size="\\fontsize{11pt}{11pt}\\selectfont",
       sanitize.text.function = function(x){x})
 
-```
+``` 
+
+
 \FloatBarrier
 
 <!-- ====================================================================== --> 
@@ -1006,11 +964,11 @@ print(AgeError.table,
 \FloatBarrier
 
   
-<!-- ***********Francis Weights Table******************************* --> 
+<!-- ***********Harmonic Weights Table******************************* --> 
 ```{r, results = 'asis'}
 
 # Read in/organize sensitivity file, change column names, caption
-harmonic = read.csv('./txt_files/FrancisWeights.csv')
+harmonic = read.csv('./txt_files/HarmonicWeights.csv')
 
 colnames(harmonic) = c('Fleet', 
                           'Lengths', 
@@ -1018,8 +976,8 @@ colnames(harmonic) = c('Fleet',
 
 # Create sensitivities table
 Harmonic.table = xtable(harmonic, 
-                           caption = c('Data weights applied when using Francis data weighting in the base model. The data weights were acquired after a single model weighting iteration.'),
-                           label = 'tab:francis',
+                           caption = c('Data weights applied when using harmonic data weighting.'),
+                           label = 'tab:harm',
                            digits = 3)
 
 
@@ -1445,11 +1403,11 @@ print(Sens_model1.table,
 <!-- ---------------------------------------------------------------------- -->
  \FloatBarrier 
  
-<!-- ***********Harmonic Weights Table******************************* --> 
+<!-- ***********Francis Weights Table******************************* --> 
 ```{r, results = 'asis'}
 
 # Read in/organize sensitivity file, change column names, caption
-harmonic = read.csv('./txt_files/HarmonicWeights.csv')
+harmonic = read.csv('./txt_files/FrancisWeights.csv')
 
 colnames(harmonic) = c('Fleet', 
                           'Lengths', 
@@ -1457,8 +1415,8 @@ colnames(harmonic) = c('Fleet',
 
 # Create sensitivities table
 Harmonic.table = xtable(harmonic, 
-                           caption = c('Data weights applied when using harmonic data weighting.'),
-                           label = 'tab:harm',
+                           caption = c('Data weights applied when using Francis data weighting in the base model. The data weights were acquired after a single model weighting iteration.'),
+                           label = 'tab:francis',
                            digits = 3)
 
 

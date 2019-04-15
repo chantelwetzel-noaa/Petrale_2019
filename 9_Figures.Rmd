@@ -25,14 +25,7 @@
   
 \FloatBarrier
 
-<!-- ********************************************************************** --> 
-<!-- ******************Commercial discards FIGURES************************* --> 
-<!-- *************************  FIGURE 1  ********************************* -->
-<!-- ********************************************************************** --> 
-  
-![Discard rates by fleet for `r spp`. \label{fig:Discard}](r4ss/plots_mod1/catch8 discard fraction.png)
 
-\FloatBarrier
 
 <!-- ********************************************************************** --> 
 <!-- *************************Data FIGURES********************************* --> 
@@ -69,11 +62,11 @@
 
 \FloatBarrier
 
-![Length frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_len_freq}](Figures/NWFSC Shelf-Slope_Length_Frequency.png)
+![Length frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_len_freq}](Figures/NWFSC Groundfish Bottom Trawl Survey_Length_Frequency.png)
 
 \FloatBarrier
 
-![Age frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_age_freq}](Figures/NWFSCBT_Age_Frequency.png)
+![Age frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_age_freq}](Figures/NWFSC Groundfish Bottom Trawl Survey_Age_Frequency.png)
 
 \FloatBarrier
 
@@ -81,9 +74,44 @@
 <!-- **************** Triennial Survey Index and Data  ******************** --> 
 <!-- ********************************************************************** -->
 
+![Map of the catch-per-unit-effort across by year for the Triennial Survey data. \label{fig:tri_map}](Figures/Triennial_CPUE_Map_Year.png)
+
+\FloatBarrier
+
+![Catch-per-unit-effort (in log space) by latitude for the Triennial Survey data. \label{fig:tri_cpue_lat}](Figures/Tri_CPUE_Lat.png)
+
+\FloatBarrier
+
+![Catch-per-unit-effort (in log space) by depth (m) for the Triennial Survey data. \label{fig:tri_cpue_depth}](Figures/Tri_CPUE_Depth.png)
+
+\FloatBarrier
+
+![Length (cm) by depth (m) for the Triennial Survey data. \label{fig:tri_size_depth}](Figures/Tri_Size_by_Depth.png)
+
+\FloatBarrier
+
+![Estimated index of abundance from the Triennial Survey data compared to the design-based index and the index from the 2015 update assessment. \label{fig:tri_index}](Figures/Triennial_Index_w_VAST.png)
+
+\FloatBarrier
+
+![QQ plot for the Triennial Early Survey data. \label{fig:tri_early_qq}](Figures/tri_early_Posterior_Predictive-Histogram-1.jpg)
+
+\FloatBarrier
+
+![QQ plot for the Triennial Late Survey data. \label{fig:tri_late_qq}](Figures/tri_late_Posterior_Predictive-Histogram-1.jpg)
+
+\FloatBarrier
+
+![Length frequency by sex for the Triennial Early Survey data. \label{fig:tri_early_len_freq}](Figures/Triennial Early_Length_Frequency.png)
+
+\FloatBarrier
+
+![Length frequency by sex for the Triennial Late Survey data. \label{fig:tri_late_len_freq}](Figures/Triennial Late_Length_Frequency.png)
+
+\FloatBarrier
 
 <!-- ****************************************************************************** --> 
-<!-- *****************Commercial Comps & Discards FIGURES************************** --> 
+<!-- ****************    Commercial Discards FIGURES    ************************** --> 
 <!-- ****************************************************************************** -->
 
 
@@ -99,6 +127,18 @@
 
 \FloatBarrier
 
+<!-- ****************************************************************************** --> 
+<!-- *****************Commercial CPUE FIGURES************************************** --> 
+<!-- ****************************************************************************** -->
+
+![The Northern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:north_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (N).png)
+
+\FloatBarrier
+
+
+![The Southern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:south_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (S).png)
+
+\FloatBarrier
 
 <!-- ====================================================================== -->
 <!-- *****************                             ************************ -->
@@ -111,6 +151,10 @@
 <!-- ********************************************************************** -->
 ![Estimated maturity-at-length for `r spp`. \label{fig:maturity}](r4ss/plots_mod1/bio6_maturity.png)
 
+![Fecundity-at-length assumed in the model for `r spp`. \label{fig:fecundity_model}](r4ss/plots_mod1/bio8_fecundity_wt.png)
+
+![Estimated fecundity-at-length for `r spp` based on Lefebvre et al. (in press). \label{fig:fecundity}](Figures/fecundity.png)
+
 <!-- ********************************************************************** -->
 <!-- *****************     Sex Ratio                *********************** --> 
 <!-- ********************************************************************** -->
@@ -119,11 +163,12 @@
 <!-- ********************************************************************** -->
 <!-- **********************Weight-Length FIGURES*************************** --> 
 <!-- ********************************************************************** -->
-![Estimated weight-at-length for female and male `r spp`. \label{fig:mod_wt_length}](r4ss/plots_mod1/bio5_weightatsize.png)
+![Estimated weight-at-length for female and male `r spp`. \label{fig:wt_length}](Figures/weightAtLengthPred.png)
 
 <!-- ********************************************************************** -->
 <!-- **********************Length-at-Age FIGURES*************************** --> 
 <!-- ********************************************************************** -->
+![Length-at-age across data sources for female and male `r spp`. \label{fig:length_age}](Figures/LengthAgeAll.png)
 
 
 <!-- ********************************************************************** -->
@@ -138,11 +183,15 @@
 <!-- ====================================================================== -->
 
 
+<!-- ********************************************************************** -->
+<!-- *****************Natural Mortality FIGURES     *********************** --> 
+<!-- ********************************************************************** -->
+![Prior distribution for natural mortality for female and male `r spp`. \label{fig:m_prior}](Figures/M_prior.png)
 
 <!-- ********************************************************************** -->
-<!-- **********************Catch Comparison******************************** --> 
+<!-- *****************    Steepnes      FIGURES     *********************** --> 
 <!-- ********************************************************************** -->
-
+![Prior distribution for steepness `r spp`. \label{fig:h_prior}](Figures/h_prior.png)
 
 <!-- ********************************************************************** -->
 <!-- *********************Model Bridging Figure**************************** --> 
@@ -169,13 +218,7 @@
 
 \FloatBarrier 
 
-<!-- ********************************************************************** -->
-<!-- *******************Estimated Maturity **************************** --> 
-<!-- ********************************************************************** -->
 
-![Estimated maturity-at-length for `r spp`. \label{fig:maturity}](r4ss/plots_mod1/bio6_maturity.png)
-
-\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- *******************Estimated Spawning Output**************************** --> 
@@ -195,7 +238,6 @@
 <!-- ******************** Estimated Recruitment**************************** --> 
 <!-- ********************************************************************** -->
 
-
 ![Estimated time-series of recruitment for `r spp`. \label{fig:recruits}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
   
 \FloatBarrier
@@ -204,17 +246,70 @@
   
 \FloatBarrier
 
+![Estimated recruitment deviations. \label{fig:rec_devs}](r4ss/plots_mod1/recdevs2_withbars.png)
 
+\FloatBarrier
+
+![Recruitment bias adjustment in the model. \label{fig:bias_adjust}](r4ss/plots_mod1/recruit_fit_bias_adjust.png)
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ***********************Fits to the Indices**************************** --> 
 <!-- ********************************************************************** -->
 
+![Fit to the Winter North catch-per-unit-effort time series for `r spp`. \label{fig:fit_wn_cpue](r4ss/plots_mod1/index2_cpuefit_Winter (N).png)
 
+\FloatBarrier
+
+![Catchability to the Winter North catch-per-unit-effort time series. \label{fig:q_north}](r4ss/plots_mod1/index7_timevaryingQ_Winter (N).png)
+
+\FloatBarrier
+
+![Fit to the Winter South catch-per-unit-effort time series for `r spp`. \label{fig:fit_wn_cpue](r4ss/plots_mod1/index2_cpuefit_Winter (S).png)
+
+\FloatBarrier
+
+![Catchability to the Winter South catch-per-unit-effort time series. \label{fig:q_south}](r4ss/plots_mod1/index7_timevaryingQ_Winter (S).png)
+
+\FloatBarrier
+
+![Fit to the Triennial Survey Early time series for `r spp`. \label{fig:fit_tri_early}](r4ss/plots_mod1/index2_cpuefit_AFSC NWFSC West Coast Triennial Shelf Survey - Early.png)
+
+\FloatBarrier 
+
+![Fit to the Triennial Survey Late time series for `r spp`. \label{fig:fit_tri_late}](r4ss/plots_mod1/index2_cpuefit_AFSC NWFSC West Coast Triennial Shelf Survey - Late.png)
+
+\FloatBarrier 
+
+![Fit to the `r nwfsc` time series for `r spp`. \label{fig:fit_nwfsc_survey}](r4ss/plots_mod1/index2_cpuefit_NWFSC West Coast Groundfish Bottom Trawl Survey.png)
+
+\FloatBarrier
+
+ 
 <!-- ********************************************************************** -->
 <!-- *******************Fits to the Discard Data*************************** --> 
 <!-- ********************************************************************** -->
 
+![Fit to the discard rates for the Winter North fleet for `r spp`. \label{fig:fit_wn_discard}](r4ss/plots_mod1/discard_dataWinter (N).png)
+
+\FloatBarrier
+
+![Fit to the discard rates for the Summer North fleet for `r spp`. \label{fig:fit_sn_discard}](r4ss/plots_mod1/discard_dataSummer (N).png)
+
+\FloatBarrier
+
+![Fit to the discard rates for the Winter South fleet for `r spp`. \label{fig:fit_ws_discard}](r4ss/plots_mod1/discard_dataWinter (S).png)
+
+\FloatBarrier
+
+![Fit to the discard rates for the Summer South fleet for `r spp`. \label{fig:fit_ss_discard}](r4ss/plots_mod1/discard_dataSummer (S).png)
+
+\FloatBarrier
+  
+![Discard rates by fleet for `r spp`. \label{fig:Discard}](r4ss/plots_mod1/catch8 discard fraction.png)
+
+\FloatBarrier
 
   
 <!-- ********************************************************************** -->
@@ -223,10 +318,47 @@
 
 ![Length compositions aggregated across time by fleet. Labels 'retained' and 'discard' indicate retained or discarded samples for each fleet. Panels without this designation represent the whole catch.  The Triennial shelf survey length data were not used in the final model, but the implied model fits are shown. \label{fig:length_agg}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
 
-
-<!-- *************** MEAN LENGTH FITS ********************************-->
-
 \FloatBarrier
+
+
+```{r, results='asis'}
+
+#Discard - Winter North
+cat('\n![', LenComp_mod1[9,caption_col], ' \\label{fig:discard_wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[9, path_col], ')\n', sep='')
+
+#Discard - Summer North
+cat('\n![', LenComp_mod1[20,caption_col], ' \\label{fig:discard_sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[20, path_col], ')\n', sep='')
+
+#Discard - Winter South
+cat('\n![', LenComp_mod1[30,caption_col], ' \\label{fig:discard_ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[30, path_col], ')\n', sep='')
+
+#Discard - Summer South
+cat('\n![', LenComp_mod1[41,caption_col], ' \\label{fig:discard_ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[41, path_col], ')\n', sep='')
+
+#Winter North
+cat('\n![', LenComp_mod1[5,caption_col], ' \\label{fig:wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[5, path_col], ')\n', sep='')
+
+#Summer North
+cat('\n![', LenComp_mod1[16,caption_col], ' \\label{fig:ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[16, path_col], ')\n', sep='')
+
+#Winter South
+cat('\n![', LenComp_mod1[26,caption_col], ' \\label{fig:sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[26, path_col], ')\n', sep='')
+
+#Summer South
+cat('\n![', LenComp_mod1[37,caption_col], ' \\label{fig:ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[37, path_col], ')\n', sep='')
+
+#Tri Early
+cat('\n![', LenComp_mod1[45,caption_col], ' \\label{fig:tri_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[45, path_col], ')\n', sep='')
+
+#Tri Late
+cat('\n![', LenComp_mod1[49,caption_col], ' \\label{fig:tri_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[49, path_col], ')\n', sep='')
+
+
+#NWFSC Combo
+cat('\n![', LenComp_mod1[53,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[53, path_col], ')\n', sep='')
+
+```
+
 
 <!-- ********************************************************************** -->
 <!-- **********************Age structure FIGURES*************************** --> 
@@ -235,10 +367,9 @@
 
 ![Age compositions aggregated across time by fleet. The Triennial shelf survey age data were not used in the final model, but the implied model fits are shown.  \label{fig:age_agg}](r4ss/plots_mod1/comp_agefit__aggregated_across_time.png)
 
-
-<!-- *************** MEAN AGE FITS ********************************-->
  
 \FloatBarrier
+
 
 <!-- ====================================================================== -->
 <!-- ********************Time-Series Figures******************************* -->
@@ -256,7 +387,10 @@
   
 \FloatBarrier
 
-![Estimated recruitment (red circles) and the assumed stock-recruit relationship (black line).  The green line shows the effect of the bias correction for the lognormal distribution \label{fig:stock_recruit_curve}](r4ss/plots_mod1/SR_curve2.png)
+![Estimated recruitment (red circles) and the assumed stock-recruit relationship (black line).  The green line shows the effect of the bias correction for the lognormal distribution. \label{fig:stock_recruit_curve}](r4ss/plots_mod1/SR_curve2.png)
+
+\FloatBarrier
+
   
   
 
