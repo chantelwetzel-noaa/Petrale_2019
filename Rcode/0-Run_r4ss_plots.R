@@ -91,8 +91,8 @@ save.image('./r4ss/SS_output.RData')
 out.dir.mod1 = file.path(output.dir,model.plots)
 
 fleets = c("Winter (N)", "Summer (N)", "Winter (S)", "Summer (S)", 
-          "AFSC NWFSC West Coast Triennial Shelf Survey - Early", 
-          "AFSC NWFSC West Coast Triennial Shelf Survey - Late", 
+          "AFSC/NFSC West Coast Triennial Shelf Survey - Early", 
+          "AFSC/NWFSC West Coast Triennial Shelf Survey - Late", 
           "NWFSC West Coast Groundfish Bottom Trawl Survey")
 
 # Model 1

@@ -874,7 +874,7 @@
 2015	7	4	1	2	0.253	0.087
 2016	7	4	1	2	0.284	0.113
 2017	7	4	1	2	0.376	0.204
- -9999 0 0 0 0 0 0 # terminator for mean body size data 
+-9999   0   0   0   0   0       0  # terminator for mean body size data 
 #
 # set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
 2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
