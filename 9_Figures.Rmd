@@ -32,7 +32,7 @@
 <!-- *************************  FIGURE 2  ********************************* -->
 <!-- ********************************************************************** -->
   
-![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot}](r4ss/plots_mod1/data_plot2.png)
+![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot}](r4ss/plots_mod1/data_plot.png)
 
 \FloatBarrier
 
@@ -151,25 +151,36 @@
 <!-- ********************************************************************** -->
 ![Estimated maturity-at-length for `r spp`. \label{fig:maturity}](r4ss/plots_mod1/bio6_maturity.png)
 
+\FloatBarrier
+
 ![Fecundity-at-length assumed in the model for `r spp`. \label{fig:fecundity_model}](r4ss/plots_mod1/bio8_fecundity_wt.png)
 
+\FloatBarrier
+
 ![Estimated fecundity-at-length for `r spp` based on Lefebvre et al. (in press). \label{fig:fecundity}](Figures/fecundity.png)
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- *****************     Sex Ratio                *********************** --> 
 <!-- ********************************************************************** -->
 ![Estimated proportion of female fish collected by the NWFSC shelf-slope survey across all years for `r spp`. \label{fig:sex_ratio}](Figures/NWFSC Shelf-Slope_length_fraction_female.png)
 
+\FloatBarrier
+
 <!-- ********************************************************************** -->
 <!-- **********************Weight-Length FIGURES*************************** --> 
 <!-- ********************************************************************** -->
 ![Estimated weight-at-length for female and male `r spp`. \label{fig:wt_length}](Figures/weightAtLengthPred.png)
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- **********************Length-at-Age FIGURES*************************** --> 
 <!-- ********************************************************************** -->
 ![Length-at-age across data sources for female and male `r spp`. \label{fig:length_age}](Figures/LengthAgeAll.png)
 
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ****************Aging Precision and Bias FIGURES********************** --> 
@@ -188,10 +199,14 @@
 <!-- ********************************************************************** -->
 ![Prior distribution for natural mortality for female and male `r spp`. \label{fig:m_prior}](Figures/M_prior.png)
 
+\FloatBarrier
+
 <!-- ********************************************************************** -->
 <!-- *****************    Steepnes      FIGURES     *********************** --> 
 <!-- ********************************************************************** -->
 ![Prior distribution for steepness `r spp`. \label{fig:h_prior}](Figures/h_prior.png)
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- *********************Model Bridging Figure**************************** --> 
@@ -218,14 +233,11 @@
 
 \FloatBarrier 
 
-
-
 <!-- ********************************************************************** -->
 <!-- *******************Estimated Spawning Output**************************** --> 
 <!-- ********************************************************************** -->
 
 ![Estimated spawning output-at-length for female `r spp`. \label{fig:spawnoutlen}](r4ss/plots_mod1/bio10_spawningoutput_len.png)
-
 
 \FloatBarrier 
 
@@ -233,6 +245,17 @@
 <!-- *******************Selectivity & Retention**************************** --> 
 <!-- ********************************************************************** -->
 
+![Estimated selectivity for each commerical fleet over the assessment period for female and male `r spp`. \label{fig:fish_selex}](Figures/Petrale_fishery_selectivity.png)
+
+\FloatBarrier
+
+![Estimated retention for each commerical fleet over the assessment period for `r spp`. Retention was not estimated to be sex-specific. \label{fig:fish_reten}](Figures/Petrale_retention.png)
+
+\FloatBarrier
+
+![Estimated selectivity for each survey over the assessment period for female and male `r spp`. \label{fig:survey_selex}](Figures/Petrale_survey_selectivity.png)
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ******************** Estimated Recruitment**************************** --> 
@@ -367,8 +390,33 @@ cat('\n![', LenComp_mod1[53,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}
 
 ![Age compositions aggregated across time by fleet. The Triennial shelf survey age data were not used in the final model, but the implied model fits are shown.  \label{fig:age_agg}](r4ss/plots_mod1/comp_agefit__aggregated_across_time.png)
 
- 
 \FloatBarrier
+
+
+```{r, results='asis'}
+
+
+#Winter North
+cat('\n![', AgeComp_mod1[6,caption_col], ' \\label{fig:wn_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[6, path_col], ')\n', sep='')
+
+#Summer North
+cat('\n![', AgeComp_mod1[14,caption_col], ' \\label{fig:sn_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[14, path_col], ')\n', sep='')
+
+#Winter South
+cat('\n![', AgeComp_mod1[20,caption_col], ' \\label{fig:ws_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[20, path_col], ')\n', sep='')
+
+#Summer South
+cat('\n![', AgeComp_mod1[26,caption_col], ' \\label{fig:ss_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[26, path_col], ')\n', sep='')
+
+plot.vec = c(1:2, 4:7)
+for(a in 1:length(plot.vec)){
+#NWFSC Combo - Andre plots
+cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_andre_',a,'}](r4ss/plots_mod1/', AALComp_mod1[plot.vec[a], path_col], ')\n', sep='')
+}
+
+
+```
+
 
 
 <!-- ====================================================================== -->
@@ -433,7 +481,7 @@ cat('\n![', LenComp_mod1[53,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}
   
 <!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
 
-![Estimated spawning potential ratio (1-SPR)/(1-SPR30%) for the base-case model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR30% harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR}](r4ss/plots_mod1/SPR3_ratiointerval.png)
+![Estimated relative spawning potential ratio 1-SPR for the base model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR30% harvest rate. The last year in the time-series is `r Dat_end_mod1`. \label{fig:SPR_all_fig}](r4ss/plots_mod1/SPR2_minusSPRseries.png)
   
   
 \FloatBarrier
