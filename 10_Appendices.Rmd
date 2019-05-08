@@ -22,7 +22,7 @@ output:
 
 ```{r, results='asis'}
 
-plot.vec = c(1:4, 8, 12:15, 20, 23:25, 29, 33:36, 40, 44, 48, 52)
+plot.vec = c(1:4, 8, 12:15, 19, 23:25, 29, 33:36, 40, 44, 48, 52)
 
 for (a in 1:length(plot.vec)){
 
@@ -62,7 +62,7 @@ for (a in 1:length(plot.vec)){
 The listed files are also available as auxiliary files to accompany the assessment document:
 
 \begin{enumerate}
-  \item Numbers at age for female and male `r spp` (Petrale_natagef.csv and Petrale_natagem.csv)
+  \item Numbers at age for female and male `r spp` (Petrale natagef.csv and Petrale natagem.csv)
   \item The `r spp` Stock Synthesis 3.30.13 model files
   
   \begin{enumerate}

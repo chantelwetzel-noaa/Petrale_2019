@@ -153,7 +153,7 @@ align(Exec_catch.table) = c('l', 'l',
   SpawningBtab = subset(SpawningByrs, select = c('YEAR', 'Value', 'CI'))
       
   # Assign column names
-  colnames(SpawningBtab) = c('Year', paste('Spawning Output (', fecund_unit,')', 
+  colnames(SpawningBtab) = c('Year', paste('Spawning Biomass (', fecund_unit,')', 
                                            sep=''), '~ 95% confidence interval')
   
   
@@ -189,9 +189,9 @@ align(Exec_catch.table) = c('l', 'l',
   Spawn_Deplete = cbind(SpawningBtab, Depletiontab)
  
   colnames(Spawn_Deplete) = c('Year', 
-                              paste('Spawning Output (', fecund_unit, ')', sep = ''), 
+                              paste('Spawning Biomass (', fecund_unit, ')', sep = ''), 
                               '~ 95% Confidence Interval',
-                              'Estimated Relative Spawning Output',
+                              'Estimated Relative Spawning Biomass',
                               '~ 95% Confidence Interval')
         
   # Assign a model number to the Spawn_deplete table, if you do cbind within this step
@@ -218,7 +218,7 @@ align(Exec_catch.table) = c('l', 'l',
 # Create Spawning/Depletion tables for the correct number of models
 # Model 1 table ---------------------------------------------------------------
 Spawn_Deplete_mod1.table = xtable(SpawnDepletemod1, 
-                           caption = paste0('Recent trend in estimated spawning output (', fecund_unit, ') and estimated relative spawning output (depletion).'), 
+                           caption = paste0('Recent trend in estimated spawning biomass (', fecund_unit, ') and estimated relative spawning biomass (depletion).'), 
                            label='tab:SpawningDeplete_mod1',  
                            digits = c(0, 0, 0, 0, 3, 2)) 
 
@@ -426,23 +426,23 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
                             as.character(round(Ref_pts$upperCI, dig3))) 
   
         
-  Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
+  Quantity = c(paste('Unfished spawning biomass (', fecund_unit, ')', sep = ''),
                      paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
                     'Unfished recruitment (R0, thousands)',
-                     paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
-                     paste('Relative spawning output (depletion) (', LastYR,')',sep=''),
+                     paste('Spawning biomass', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
+                     paste('Relative spawning biomass (depletion) (', LastYR,')',sep=''),
                     '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{25\\%}}$}',
-                    'Proxy spawning output ($B_{25\\%}$)',
+                    'Proxy spawning biomass ($B_{25\\%}$)',
                     'SPR resulting in $B_{25\\%}$ ($SPR_{B25\\%}$)',
                     'Exploitation rate resulting in $B_{25\\%}$',
                     'Yield with $SPR_{B25\\%}$ at $B_{25\\%}$ (mt)',
                     '\\textbf{\\textit{Reference points based on SPR proxy for MSY}}',
-                    'Spawning output',
+                    'Spawning biomass',
                     '$SPR_{30\\%}$',
                     'Exploitation rate corresponding to $SPR_{30\\%}$',
                     'Yield with $SPR_{30\\%}$ at $SB_{SPR}$ (mt)',
                     '\\textbf{\\textit{Reference points based on estimated MSY values}}',
-                    'Spawning output at $MSY$ ($SB_{MSY}$)',
+                    'Spawning biomass at $MSY$ ($SB_{MSY}$)',
                     '$SPR_{MSY}$',
                     'Exploitation rate at $MSY$',
                     '$MSY$ (mt) ')
@@ -545,10 +545,10 @@ align(mngmnt.table) = c('l',
       Bratio.fore = print(Bratio.fore, digits = 3)
       
       Fore_Table = cbind(OFL, Spawn.fore, Bratio.fore)
-      colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Output (',fecund_unit,')'), "Relative Depletion") 
+      colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Depletion") 
 
       # Create the table
-      OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning output and relative depletion based on ABC removals.  The 2019 and 2020 
+      OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative depletion based on ABC removals.  The 2019 and 2020 
                                                removals are set at the harvest limits currently set by management of XXX mt per year.'),
                   label = 'tab:OFL_projection',
                   digits = 0)
@@ -573,11 +573,11 @@ align(mngmnt.table) = c('l',
        colnames(decision_mod1) = c('', 
                                    'Year',  
                                    'Catch',	
-                                   'Spawning Output',	
+                                   'Spawning Biomass',	
                                    'Depletion', 
-                                   'Spawning Output',	
+                                   'Spawning Biomass',	
                                    'Depletion',	
-                                   'Spawning Output',	
+                                   'Spawning Biomass',	
                                    'Depletion')
       
        decision_mod1.table = xtable(decision_mod1, 
@@ -681,7 +681,7 @@ align(mngmnt.table) = c('l',
                       '1-$SPR$',
                        'Exploitation rate',
                        paste('Age ',min_age,' biomass (mt)',sep=''),
-                       'Spawning Output',
+                       'Spawning Biomass',
                        '~95\\% CI',
                        'Relative Depletion',
                        '~95\\% CI',

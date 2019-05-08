@@ -70,7 +70,7 @@ Fixed parameters in the model were as follows. The standard deviation of recruit
 
 ###Key Assumptions and Structural Choices
 
-All structural choices for stock assessment models are likely to be important under some circumstances. In this update assessment update these choices are generally made to be consistent with the previous assessment [@haltuch_statu_2013]. Major choices in the structuring of this stock assessment model include a coast-wide model with seasonal fleet structure for two regions, north and south, splitting the `r tri` into an early and late time period, and estimates of selectivity and retention curves for each fleet.
+All structural choices for stock assessment models are likely to be important under some circumstances. In this update assessment update these choices are generally made to be consistent with the previous assessment [@haltuch_status_2013]. Major choices in the structuring of this stock assessment model include a coast-wide model with seasonal fleet structure for two regions, north and south, splitting the `r tri` into an early and late time period, and estimates of selectivity and retention curves for each fleet.
 
 
 ###Bridging Analysis
@@ -91,26 +91,80 @@ Proper convergence was determined by starting the minimization process from disp
 The base model parameter estimates along with approximate asymptotic standard errors are shown in Table \ref{tab:model_params} and the likelihood components are shown in Table \ref{tab:like}. Estimates of derived reference points and approximate 95% asymptotic confidence intervals are shown in Table \ref{tab:Ref_pts}. Estimates of stock size over time are shown in Table \ref{tab:Timeseries_mod1}. 
 
 ###Parameter Estimates
+Natural mortality be sex was estimated directly within the model.  Natural mortality was estimated to be `r round(mod1$parameters[mod1$parameters$Label == "NatM_p_1_Fem_GP_1", 3],3)` for female fish and `r round(mod1$parameters[mod1$parameters$Label == "NatM_p_1_Mal_GP_1", 3],3)` for male fish. In comparison the estimates from the 2015 assesment were 0.145 and 0.154 for female and male fish, respectively.  
+
+Steepness was also estimated within the model, consistent with the approach applied in the 2013 full and 2015 update assessment. The estimate of steepness from the Beverton-Holt stock recruitment curve was estimated at `r print(mod1$parameters[mod1$parameters$Label == "SR_BH_steep","Value"],2)`. The previous update assessment estimated a steepness of 0.89.  
+
+The estimates of maximum length and the von Bertanlaffy growth coefficient, $k$, were less than the external estimates for males and female but were well within the 95% confidence interval given the estimated uncertainty (Table \ref{tab:model_params}). The estimated $k$ for female fish was consistent with the value estimated in the 2015 update assessment (`r round(mod1$parameters[mod1$parameters$Label == "VonBert_K_Fem_GP_1", 3],3)` versus 0.134), but the estimated $k$ for male fish was higher than the value estimated in 2015 (`r round(mod1$parameters[mod1$parameters$Label == "VonBert_K_Mal_GP_1", 3],3)` versus 0.203).  The majority of growth for female and male `r spp` growth occurs at younger ages, reaching near maximum length by age 10-15, depending upon sex, with female `r spp` reaching  larger maximum lengths (Figure \ref{fig:sizeatage}). The spawning output estimated was equal to the spawning weight of female fish (Figure \ref{fig:spawnoutlen}).
+
+Selectivity curves were estimated for the fishery and survey fleets.  The estimated selectivities for the fishery fleets are shown in Figure \ref{fig:fish_selex}.  All fishery selectivities were estimated to be asymptotic, reaching maximum selectivity for fish between 35 and 40 cm.  Shifts in selectivities for were estimated for each fleet fishery were estimated based on time blocks assumed in the 2013 assessment (Figure \ref{fig:fish_selex}).  The estimated retention curves for each fleet based on the historical time blocks and discarded length composition data are shown in Figure \ref{fig:fish_reten}.  Sex specific survey selectivities were assumed to be asymptotic and are shown in Figure \ref{fig:survey_selex}.
+
+The catchability for each of the winter CPUE time series were estimated as power functions. The Winter North base catchability value was estimated at `r round(exp(mod1$parameters[mod1$parameters$Label == "LnQ_base_WinterN(1)", 3]), 3)` with the exponent parameter at `r round(mod1$parameters[mod1$parameters$Label == "Q_power_WinterN(1)", 3], 3)`.  The Winter South base catchability value was estimated at `r round(exp(mod1$parameters[mod1$parameters$Label == "LnQ_base_WinterS(3)", 3]), 3)` with the exponent parameter at `r round(mod1$parameters[mod1$parameters$Label == "Q_power_WinterS(3)", 3], 3)`. 
+
+Additional survey variability, process error added directly to each year's input variability, for the `r tri`, both early and late, was estimated within the model.  The model estimated a added variance of `r round(mod1$parameters[mod1$parameters$Label == "Q_extraSD_TriEarly(5)", 3], 3)` for the early time period of  and `r round(mod1$parameters[mod1$parameters$Label == "Q_extraSD_TriLate(6)", 3], 3)` for the late period. 
+
+The time-series of estimated recruitments shows a relationship with the decline in spawning output, punctuated by larger recruitments (Figures \ref{fig:recruits} and \ref{fig:recdevs}) in recent years (2006, 2007, and 2008). There is little information regarding recruitment prior to 1960 and the uncertainty in those estimates is expressed in the model. The five largest estimated recruitment estimated with the model (in ascending order) occurred in `r recdev.highest[1]`, `r recdev.highest[2]`, `r recdev.highest[3]`, `r recdev.highest[4]`, and  `r recdev.highest[5]`. The four lowest recruitments estimated within the model (in ascending order) occurred in `r recdev.lowest[1]`, `r recdev.lowest[2]`, `r recdev.lowest[3]`, and `r recdev.lowest[4]`.
 
 
 ###Fits to the Data
+There are numerous types of data for which the fits are discussed: fishery CPUE, survey abundance indices, discard data (rates, mean body weights, and length compositions), length-composition data for the fisheries and surveys, marginal age compositions for the fisheries, and conditional age-at-length observations for the `r nwfsc`.
 
+The fit to the CPUE for the winter fisheries is show in Figures \ref{fig:fit_wn_cpue}, \ref{fig:q_north}, \ref{fig:fit_ws_cpue}, and \ref{fig:q_south}. The model fits both of the CPUE time-series relatively well. The fits to the survey indices are shown in Figures \ref{fig:fit_tri_early}, \ref{fig:fit_tri_late}, and \ref{fig:fit_nwfsc_survey}.  In order to fit the early and the late periods of the `r tri` extra standard error was required. The trend in the early time-series of the `r tri` was generally not consistent with other data within the model. The final year, 2004, in the late period of the `r tri` was under fit by the model. The `r spp` survey index from the `r nwfsc` was generally fit well. However, the most recent year, 2018 data point was over fit by the model.   
+
+The observed WCGOP discard rates (Figures \ref{fig:fit_wn_discard} - \ref{fig:fit_ss_discard}) were fit by each fishery using time blocks. The time blocks on the discard data was based on those define in the 2013 assessment [@haltuch_california_2013] with the final block starting in 2011 being extended through the final model year. The discarding rates over time by each fleet are shown in Figure \ref{fig:Discard}. Fits to the discard rates for the northern fleets from the Pikitch data in 1985-1987 were either under (Figure \ref{fig:fit_wn_discard}) or over fit (Figure \ref{fig:fit_sn_discard}) which is consistent to the estimates from the 2015 update assessment.  Fits to the WCGOP observed mean body weights are shown in Figures \ref{fig:nw_bodywt_fit} - \ref{fig:ss_bodywt_fit}. The fits to the discard mean body weights to the summer fleets were generally better than the data from the winter fisheries which had more variable observations and lower number of observations (hence larger annual uncertainties). 
+
+Fits to the length data are shown based on the proportions of lengths observed by year and the Pearson residuals-at-length for all fleets. Detailed fits to the length data by year and fleet are provided in Appendix A, section \ref{appendix-a.-detailed-fit-to-length-composition-data}.  Aggregate fits by fleet are shown in Figure \ref{fig:length_agg}.  There are a few things that stand out when examining the aggregated length composition data. First, the sexed discard lengths from the Pikitch study appear to be poorly fit by the model but this is related to small sample sizes.  However, the unsexed discard lengths from the WCGOP data for each fleet were fit well by the model. 
+
+Discard lengths from WCGOP were fit well by the model and show no obvious pattern in the residuals (Figures \ref{fig:discard_wn_len_pearson} - \ref{fig:discard_ss_len_pearson}).  The residuals to the fishery lengths clearly showed the growth differential between males and females where the majority of positive residuals at larger sizes were from female fish (Figures \ref{fig:wn_len_pearson} - \ref{fig:ss_len_pearson}). Notably, the Summer North fishery has a large positive residual pattern for male fish between 1966-1980. A similar pattern in the Pearson residuals was observed in the 2013 full and the 2015 update assessment [@haltuch_status_2013; @stawitz_stock_2015]. The residuals for each of the surveys are shown in Figures \ref{fig:tri_early_len_pearson}, \ref{fig:tri_late_len_pearson}, and  \ref{fig:nwfsc_combo_len_pearson}. The Pearson residuals from the `r nwfsc` shows indications of the 2008 cohort moving through the population. Length data were weighted according to the McAllister Ianelli Harmonic mean weights. The relationship between the observed (input) sample size to the effective sample sizes after weighting are shown in Figures \ref{fig:harm_mean_wn} - \ref{fig:harm_mean_nwfsc}.
+
+Age data were fitted to as marginal age compositions for the fishery fleets.The `r nwfsc` ages were treated as conditional age-at-length data to facilitate the estimation of growth within the model.  The aggregated fits to the marginal age data are shown in Figure \ref{fig:age_agg}.  The aggregated age data were general fit well for the fishery fleets, however, the peaks of each of the age data were often under fit by the model which was also observed in the 2013 assessment [@haltuch_status_2013].  Detailed fits to the age data by year and fleet are provided in Appendix B, section \ref{appendix-b.-detailed-fit-to-age-composition-data}. The Pearson residuals for the fishery fleets are shown in Figures \ref{fig:wn_age_pearson} - \ref{fig_ss_age_pearson}.  
+
+The observed and expected conditional age-at-length fits for `r nwfsc` are shown in Figures \ref{fig:nwfsc_combo_andre_1} - \ref{fig:nwfsc_combo_andre_5}. The fits generally match the observations. The Pearson residuals are shown in Figure \ref{fig:nwfsc_combo_pearson_1} and \ref{fig:nwfsc_combo_pearson_2}.  
+
+The age data were also weighted according to the McAllister Ianelli Harmonic mean weights. The relationship betwen the observed (input) sample size to the effective sample sizes after weighting are shown in Figures \ref{fig:harm_mean_wn_age} - \ref{fig:harm_mean_wn_age}.
 
 ###Population Trajectory
+The predicted spawning biomass is given in Table \ref{tab:Timeseries_mod1} and plotted in Figure \ref{fig:ssb}. The predicted spawning biomass time series shows a strong decline from the late-1930s through the mid-1960s, followed by a small recovery through the mid-1970s, and another decline to its lowest point during the early 1990s.  This general pattern of stock decline is coincident with increasing catches and the movement of the fishery from the south to the north, and from summer fishing in shallow waters to winter fishing on spawning aggregations in deeper waters. From the mid-1990s through 2005 the stock increased slightly, then declined through 2010 (Figure \ref{fig:ssb}). The stock has increased strongly since 2010 in response to reduced catches and in response to above average recruitment in 2006, 2007, and 2008. The estimated total biomass follows the same genera trend as observed in the spawning biomass (Figure \ref{fig:total_bio}). The `r LastYR` estimated spawning biomass relative to unfished equilibrium spawning biomass is above the target of 25% of unfished spawning biomass at `r Depl_mod1` (Figure \ref{fig:depl}). Approximate confidence intervals based on the asymptotic variance estimates show that the uncertainty in the estimated spawning biomass is generaly low. The standard deviation of the log of the spawning output in `r LastYR` is `r round(mod1$Pstar_sigma,2)`.
 
+Recruitment deviations were estimated for the entire time-series that was modeled (Figure \ref{fig:recruits} and discussed in Section \ref{parameter-estimates}) and provide a realistic portrayal of uncertainty. The time series of estimated recruitments shows a relationship with the decline in spawning output, punctuated by larger recruitments in 2006, 2007, and 2008. The five largest estimated recruitment estimated with the model (in ascending order) occurred in `r recdev.highest[1]`, `r recdev.highest[2]`, `r recdev.highest[3]`, `r recdev.highest[4]`, and  `r recdev.highest[5]`. The four lowest recruitments estimated within the model (in ascending order) occurred in `r recdev.lowest[1]`, `r recdev.lowest[2]`, `r recdev.lowest[3]`, and `r recdev.lowest[4]`. The stock-recruit curve resulting from a value of estimated steepness, `r print(mod1$parameters[mod1$parameters$Label == "SR_BH_steep","Value"],2)`, is shown in Figure \ref{fig:stock_recruit_curve} with estimated recruitments also shown. 
 
-###Uncertainty and Sensitivity Analyses
+###Sensitivity Analyses
+A number of sensitivity analyses were conducted.  Each of the sensitivities conducted was a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
 
+\begin{enumerate}
 
+  \item Fix natural mortality value for female fish at a lower value of ??.
+  
+  \item Fix natural mortality value for female fish at a higher value of ??.
+  
+  \item Use the natural mortality prior for female and male fish used in the 2015 update assessment, natural mortality estimated.
+  
+  \item Use the coastwide fecundity relationship for `r spp` estimated by Lefebvre et al. (in press).
+  
+  \item Estimate the sex ratio between female and male fish within the model.
+  
+  \item Data weight according to the Francis method using the weighting values shown in Table \ref{tab:francis}. 
+  
+  \item Data weight according to the Dirichlet method where the estimated parameters are shown in Table \ref{tab:dirichlet}.
+  
+\end{enumerate}
+
+Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sens_table}.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens_ssb} and \ref{fig:sens_depl}
 
 ###Retrospective Analysis
-
-A five-year retrospective analysis was conducted by running the model using data only through 2014, 2015, 2016, 2017 and 2018 (Figure \ref{fig:retro}). 
+A five-year retrospective analysis was conducted by running the model using data only through 2014, 2015, 2016, 2017 and 2018 (Figures \ref{fig:retro_ssb}, \ref{fig:retro_depl}, and \ref{fig:retro_recdev}). he initial scale of the spawning biomass trended upward relative to the base model. Overall, no alarming patterns were present in the retrospective analysis.  
 
 ###Historical Analysis
+The estimated summary biomass from previous assessments since 2005 are shown in Figure \ref{fig:historical_analysis}.  The current assessment estimated a slight increase in initial spawning biomass compared to previous assessments.  
 
 
 ###Likelihood Profiles
+Likelihood profiles were conducted for $R_0$, steepness, and female natural mortality values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
 
+For steepness, the negative log-likelihood supported values between 0.70 - 0.95 (Figure \ref{fig:piner_h}).  Likelihood components by data source show that the  age data support a higher steepness value.  The surveys generally provide very little information concerning steepness.  The relative spawning biomass for `r spp` diverges most during the middel of the time series based on the assumed values of steepness with the final status generally being above the management target biomass (Figure \ref{fig:h_trajectory}).
+
+The negative log-likelihood was minimized at a female natural mortality value of ??, but the 95% confidence interval extends over values ranging from ?? - ??.  Male natural mortality was estimated in the likelihood profile.  The age and length data likelihood contribution was minimized at natural morality values ranging from ??-?? (Figure \ref{fig:piner_m}).  The relative spawning biomass for `r spp` widely varied across alternative values of natural mortality (Figure \ref{fig:m_trajectory}).
+
+In regards to values of $R_0$, the negative log-likelihood was minimized at approximately log($R_0$) of `r round(log(mod1$derived_quants[mod1$derived_quants$Label == "Recr_Virgin",2]),2)`  (Figure \ref{fig:piner_R0}).  
 
 ###Reference Points

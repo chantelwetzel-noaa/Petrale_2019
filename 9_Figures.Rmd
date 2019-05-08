@@ -114,6 +114,22 @@
 <!-- ****************    Commercial Discards FIGURES    ************************** --> 
 <!-- ****************************************************************************** -->
 
+![Northern winter fishery mean body weights of discarded fish for `r spp`. \label{fig:nw_bodywt}](r4ss/plots_mod1/bodywt_data_fltWinter (N).png)
+
+\FloatBarrier
+
+![Northern summer fishery mean body weights of discarded fish for `r spp`. \label{fig:ns_bodywt}](r4ss/plots_mod1/bodywt_data_fltSummer (N).png)
+
+\FloatBarrier
+
+![Southern winter fishery mean body weights of discarded fish for `r spp`. \label{fig:sw_bodywt}](r4ss/plots_mod1/bodywt_data_fltWinter (S).png)
+
+\FloatBarrier
+
+![Southern summer fishery mean body weights of discarded fish for `r spp`. \label{fig:ss_bodywt}](r4ss/plots_mod1/bodywt_data_fltSummer (S).png)
+
+\FloatBarrier
+
 
 ![Northern fishery, winter and summer, retained and discarded length frequency distributions for `r spp`. \label{fig:north_lengths}](r4ss/plots_mod1/comp_lendat__page1_multi-fleet_comparison.png)
 
@@ -281,7 +297,7 @@
 <!-- ***********************Fits to the Indices**************************** --> 
 <!-- ********************************************************************** -->
 
-![Fit to the Winter North catch-per-unit-effort time series for `r spp`. \label{fig:fit_wn_cpue](r4ss/plots_mod1/index2_cpuefit_Winter (N).png)
+![Fit to the Winter North catch-per-unit-effort time series for `r spp`. \label{fig:fit_wn_cpue}](r4ss/plots_mod1/index2_cpuefit_Winter (N).png)
 
 \FloatBarrier
 
@@ -289,7 +305,7 @@
 
 \FloatBarrier
 
-![Fit to the Winter South catch-per-unit-effort time series for `r spp`. \label{fig:fit_wn_cpue](r4ss/plots_mod1/index2_cpuefit_Winter (S).png)
+![Fit to the Winter South catch-per-unit-effort time series for `r spp`. \label{fig:fit_ws_cpue}](r4ss/plots_mod1/index2_cpuefit_Winter (S).png)
 
 \FloatBarrier
 
@@ -297,11 +313,11 @@
 
 \FloatBarrier
 
-![Fit to the Triennial Survey Early time series for `r spp`. \label{fig:fit_tri_early}](r4ss/plots_mod1/index2_cpuefit_AFSC NWFSC West Coast Triennial Shelf Survey - Early.png)
+![Fit to the Triennial Survey Early time series for `r spp`. \label{fig:fit_tri_early}](r4ss/plots_mod1/index2_cpuefit_Triennial - Early.png)
 
 \FloatBarrier 
 
-![Fit to the Triennial Survey Late time series for `r spp`. \label{fig:fit_tri_late}](r4ss/plots_mod1/index2_cpuefit_AFSC NWFSC West Coast Triennial Shelf Survey - Late.png)
+![Fit to the Triennial Survey Late time series for `r spp`. \label{fig:fit_tri_late}](r4ss/plots_mod1/index2_cpuefit_Triennial - Late.png)
 
 \FloatBarrier 
 
@@ -314,23 +330,43 @@
 <!-- *******************Fits to the Discard Data*************************** --> 
 <!-- ********************************************************************** -->
 
-![Fit to the discard rates for the Winter North fleet for `r spp`. \label{fig:fit_wn_discard}](r4ss/plots_mod1/discard_dataWinter (N).png)
+![Fit to the discard rates for the Winter North fleet for `r spp`. \label{fig:fit_wn_discard}](r4ss/plots_mod1/discard_fitWinter (N).png)
 
 \FloatBarrier
 
-![Fit to the discard rates for the Summer North fleet for `r spp`. \label{fig:fit_sn_discard}](r4ss/plots_mod1/discard_dataSummer (N).png)
+![Fit to the discard rates for the Summer North fleet for `r spp`. \label{fig:fit_sn_discard}](r4ss/plots_mod1/discard_fitSummer (N).png)
 
 \FloatBarrier
 
-![Fit to the discard rates for the Winter South fleet for `r spp`. \label{fig:fit_ws_discard}](r4ss/plots_mod1/discard_dataWinter (S).png)
+![Fit to the discard rates for the Winter South fleet for `r spp`. \label{fig:fit_ws_discard}](r4ss/plots_mod1/discard_fitWinter (S).png)
 
 \FloatBarrier
 
-![Fit to the discard rates for the Summer South fleet for `r spp`. \label{fig:fit_ss_discard}](r4ss/plots_mod1/discard_dataSummer (S).png)
+![Fit to the discard rates for the Summer South fleet for `r spp`. \label{fig:fit_ss_discard}](r4ss/plots_mod1/discard_fitSummer (S).png)
 
 \FloatBarrier
   
 ![Discard rates by fleet for `r spp`. \label{fig:Discard}](r4ss/plots_mod1/catch8 discard fraction.png)
+
+\FloatBarrier
+
+<!-- ********************************************************************** -->
+<!-- *******************Fits to the Discard MnWt*************************** --> 
+<!-- ********************************************************************** -->
+
+![Fit to the Northern winter fishery mean body weights of discarded fish for `r spp`. \label{fig:nw_bodywt_fit}](r4ss/plots_mod1/bodywt_fit_fltWinter (N).png)
+
+\FloatBarrier
+
+![Fit to the Northern summer fishery mean body weights of discarded fish for `r spp`. \label{fig:ns_bodywt_fit}](r4ss/plots_mod1/bodywt_fit_fltSummer (N).png)
+
+\FloatBarrier
+
+![Fit to the Southern winter fishery mean body weights of discarded fish for `r spp`. \label{fig:sw_bodywt_fit}](r4ss/plots_mod1/bodywt_fit_fltWinter (S).png)
+
+\FloatBarrier
+
+![Fit to the Southern summer fishery mean body weights of discarded fish for `r spp`. \label{fig:ss_bodywt_fit}](r4ss/plots_mod1/bodywt_fit_fltSummer (S).png)
 
 \FloatBarrier
 
@@ -339,7 +375,7 @@
 <!-- ****************Length Composition Fits and EffN********************** --> 
 <!-- ********************************************************************** -->
 
-![Length compositions aggregated across time by fleet. Labels 'retained' and 'discard' indicate retained or discarded samples for each fleet. Panels without this designation represent the whole catch.  The Triennial shelf survey length data were not used in the final model, but the implied model fits are shown. \label{fig:length_agg}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
+![Length compositions aggregated across time by fleet. Labels 'retained' and 'discard' indicate retained or discarded samples for each fleet. Panels without this designation represent the whole catch. \label{fig:length_agg}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
 
 \FloatBarrier
 
@@ -362,20 +398,19 @@ cat('\n![', LenComp_mod1[41,caption_col], ' \\label{fig:discard_ss_len_pearson}]
 cat('\n![', LenComp_mod1[5,caption_col], ' \\label{fig:wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[5, path_col], ')\n', sep='')
 
 #Summer North
-cat('\n![', LenComp_mod1[16,caption_col], ' \\label{fig:ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[16, path_col], ')\n', sep='')
+cat('\n![', LenComp_mod1[16,caption_col], ' \\label{fig:sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[16, path_col], ')\n', sep='')
 
 #Winter South
-cat('\n![', LenComp_mod1[26,caption_col], ' \\label{fig:sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[26, path_col], ')\n', sep='')
+cat('\n![', LenComp_mod1[26,caption_col], ' \\label{fig:ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[26, path_col], ')\n', sep='')
 
 #Summer South
 cat('\n![', LenComp_mod1[37,caption_col], ' \\label{fig:ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[37, path_col], ')\n', sep='')
 
 #Tri Early
-cat('\n![', LenComp_mod1[45,caption_col], ' \\label{fig:tri_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[45, path_col], ')\n', sep='')
+cat('\n![', LenComp_mod1[45,caption_col], ' \\label{fig:tri_early_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[45, path_col], ')\n', sep='')
 
 #Tri Late
-cat('\n![', LenComp_mod1[49,caption_col], ' \\label{fig:tri_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[49, path_col], ')\n', sep='')
-
+cat('\n![', LenComp_mod1[49,caption_col], ' \\label{fig:tri_late_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[49, path_col], ')\n', sep='')
 
 #NWFSC Combo
 cat('\n![', LenComp_mod1[53,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[53, path_col], ')\n', sep='')
@@ -384,11 +419,43 @@ cat('\n![', LenComp_mod1[53,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}
 
 
 <!-- ********************************************************************** -->
+<!-- **********************Harmonic Weighting FIGURES*************************** --> 
+<!-- ********************************************************************** -->
+![McAllister and Ianelli (harmonic mean) weighting for the Winter North fishery length data. \label{fig:harm_mean_wn}](r4ss/plots_mod1/comp_lenfit_sampsize_flt1mkt2.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the Summer North fishery length data. \label{fig:harm_mean_sn}](r4ss/plots_mod1/comp_lenfit_sampsize_flt2mkt2.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the Winter South fishery length data. \label{fig:harm_mean_ws}](r4ss/plots_mod1/comp_lenfit_sampsize_flt3mkt2.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the Summer South fishery length data. \label{fig:harm_mean_wn}](r4ss/plots_mod1/comp_lenfit_sampsize_flt4mkt2.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the Triennial Survey - early length data. \label{fig:harm_mean_tri_early}](r4ss/plots_mod1/comp_lenfit_sampsize_flt5mkt0.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the Triennial Survey - late length data. \label{fig:harm_mean_tri_late}](r4ss/plots_mod1/comp_lenfit_sampsize_flt6mkt0.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the NWFSC West Coast Groundfish Bottom Trawl Survey length data. \label{fig:harm_mean_nwfsc}](r4ss/plots_mod1/comp_lenfit_sampsize_flt7mkt0.png)
+
+\FloatBarrier
+
+
+<!-- ********************************************************************** -->
 <!-- **********************Age structure FIGURES*************************** --> 
 <!-- ********************************************************************** -->
 
 
-![Age compositions aggregated across time by fleet. The Triennial shelf survey age data were not used in the final model, but the implied model fits are shown.  \label{fig:age_agg}](r4ss/plots_mod1/comp_agefit__aggregated_across_time.png)
+![Age compositions aggregated across time for each fishery fleet. \label{fig:age_agg}](r4ss/plots_mod1/comp_agefit__aggregated_across_time.png)
 
 \FloatBarrier
 
@@ -408,22 +475,49 @@ cat('\n![', AgeComp_mod1[20,caption_col], ' \\label{fig:ws_age_pearson}](r4ss/pl
 #Summer South
 cat('\n![', AgeComp_mod1[26,caption_col], ' \\label{fig:ss_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[26, path_col], ')\n', sep='')
 
-plot.vec = c(1:2, 4:7)
+```
+
+
+```{r, results='asis'}
+plot.vec = c(4:7)
 for(a in 1:length(plot.vec)){
 #NWFSC Combo - Andre plots
 cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_andre_',a,'}](r4ss/plots_mod1/', AALComp_mod1[plot.vec[a], path_col], ')\n', sep='')
 }
 
+plot.vec = c(1:2)
+for(a in 1:length(plot.vec)){
+#NWFSC Combo - Andre plots
+cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pearson_',a,'}](r4ss/plots_mod1/', AALComp_mod1[plot.vec[a], path_col], ')\n', sep='')
+}
 
 ```
 
+<!-- ********************************************************************** -->
+<!-- **********************Harmonic Weighting FIGURES*************************** --> 
+<!-- ********************************************************************** -->
+![McAllister and Ianelli (harmonic mean) weighting for the Winter North fishery age data. \label{fig:harm_mean_wn_age}](r4ss/plots_mod1/comp_agefit_sampsize_flt1mkt2.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the Summer North fishery age data. \label{fig:harm_mean_sn_age}](r4ss/plots_mod1/comp_agefit_sampsize_flt2mkt2.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the Winter South fishery age data. \label{fig:harm_mean_ws_age}](r4ss/plots_mod1/comp_agefit_sampsize_flt3mkt2.png)
+
+\FloatBarrier
+
+![McAllister and Ianelli (harmonic mean) weighting for the Summer South fishery age data. \label{fig:harm_mean_wn_age}](r4ss/plots_mod1/comp_agefit_sampsize_flt4mkt2.png)
+
+\FloatBarrier
 
 
 <!-- ====================================================================== -->
 <!-- ********************Time-Series Figures******************************* -->
 <!-- ====================================================================== -->
 
-![Estimated time-series of spawning output trajectory (circles and line: median; light broken lines: 95% credibility intervals) for `r spp`. \label{fig:ssb}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals)
+![Estimated time-series of spawning biomass trajectory (circles and line: median; light broken lines: 95% credibility intervals) for `r spp`. \label{fig:ssb}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals)
   
 \FloatBarrier
 
@@ -431,11 +525,11 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_and
 
 \FloatBarrier
 
-![Estimated time-series of relative spawning output (depletion) (circles and line: median; light broken lines: 95% credibility intervals) for `r spp`. \label{fig:depl}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
+![Estimated time-series of relative spawning biomass (depletion) (circles and line: median; light broken lines: 95% credibility intervals) for `r spp`. \label{fig:depl}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
   
 \FloatBarrier
 
-![Estimated recruitment (red circles) and the assumed stock-recruit relationship (black line).  The green line shows the effect of the bias correction for the lognormal distribution. \label{fig:stock_recruit_curve}](r4ss/plots_mod1/SR_curve2.png)
+![Estimated recruitment (colored circles) and the assumed stock-recruit relationship (solid black line).  The dashed line shows the effect of the bias correction for the lognormal distribution. \label{fig:stock_recruit_curve}](r4ss/plots_mod1/SR_curve2.png)
 
 \FloatBarrier
 
@@ -448,32 +542,78 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_and
   
 <!-- ***********MODEL 1 Uncertainty and Sensitivity FIGURES**************** --> 
 
-  
+![Estimate spawning biomass for the base model and each sensitivity. \label{fig:sens_ssb}](Figures/ssb_sens.png)
+
+\FloatBarrier
+
+![Estimate relative spawning biomass for the base model and each sensitivity. \label{fig:sens_depl}](Figures/depl_sens.png)
+
+\FloatBarrier
   
   
 <!-- ********************************************************************** -->
 <!-- *****************Retrospective analysis FIGURES*********************** -->
 <!-- ********************************************************************** -->
 
-<!-- ***********MODEL 1 Retrospective analysis FIGURE********************** --> 
+![Retrospective pattern for spawning biomass. \label{fig:retro_ssb}](Figures/retro_ssb.png)
+  
+\FloatBarrier
+
+![Retrospective pattern for relative spawning biomass. \label{fig:retro_depl}](Figures/retro_depl.png)
+  
+\FloatBarrier
+
+
+![Retrospective pattern for estimated recruitment deviations. \label{fig:retro_recdev}](Figures/retro_recdevs.png)
+  
+\FloatBarrier
 
 
 <!-- ********************************************************************** -->
 <!-- *****************Historical analysis FIGURES*********************** -->
 <!-- ********************************************************************** -->
 
+![Pattern for estimated spawning biomass from each assessment since 2005. \label{fig:historical_analysis}](Figures/Assessment_History.png)
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ******************Likelihood profile FIGURES************************** --> 
 <!-- ********************************************************************** -->
 
+<!-- ***********h Likelihood profile FIGURES******************************* -->
+
+  
+![Likelihood profile across steepness values. \label{fig:piner_h}](Figures/piner_panel_h.png)
+  
+\FloatBarrier
+
+![Trajectories of relative spawning biomass across values of steepness. \label{fig:h_trajectory}](Figures/h_trajectories.png)
+  
+\FloatBarrier
+
   
 <!-- ***********M Likelihood profile FIGURES******************************* -->
 
+![Likelihood profile across female natural mortality values. Male natural mortality was estimated.  \label{fig:m_like}](Figures/piner_panel_m.png)
+  
+\FloatBarrier
+
+
+
+![Trajectories of relative spawning biomass across values of natural mortality. \label{fig:m_trajectory}](Figures/m_trajectories.png)
+  
+\FloatBarrier
+  
   
 <!-- ***********R0 Likelihood profile FIGURES******************************* -->
 
+
+![Likelihood profile across R\textsubscript{0} values. \label{fig:piner_R0}](Figures/piner_panel_R0.png)
   
+\FloatBarrier  
+
+
   
 <!-- ********************************************************************** -->
 <!-- *********************REFERENCE POINTS FIGURES************************* --> 

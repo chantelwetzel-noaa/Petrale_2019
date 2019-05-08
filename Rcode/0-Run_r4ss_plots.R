@@ -41,8 +41,8 @@ for(p in requiredPackages){
 }
 
 # Install the latest version of r4ss using devtools
-# devtools::install_github("r4ss/r4ss")
-library(r4ss)
+ devtools::install_github("r4ss/r4ss", ref = "development")
+#library(r4ss)
 
 # CHANGE values in this section ===============================================
 
@@ -90,9 +90,11 @@ save.image('./r4ss/SS_output.RData')
 
 out.dir.mod1 = file.path(output.dir,model.plots)
 
-fleets = c("Winter (N)", "Summer (N)", "Winter (S)", "Summer (S)", 
-          "AFSC/NFSC West Coast Triennial Shelf Survey - Early", 
-          "AFSC/NWFSC West Coast Triennial Shelf Survey - Late", 
+fleets.in = c("Winter (N)", "Summer (N)", "Winter (S)", "Summer (S)", 
+           "Triennial - Early", 
+           "Triennial - Late", 
+          #"AFSC/NFSC West Coast Triennial Shelf Survey - Early", 
+          #"AFSC/NWFSC West Coast Triennial Shelf Survey - Late", 
           "NWFSC West Coast Groundfish Bottom Trawl Survey")
 
 # Model 1
@@ -101,7 +103,7 @@ SS_plots(mod1,
          html = TRUE,
          datplot = TRUE,
          uncertainty = covar,
-         fleetnames = fleets,
+         fleetnames = fleets.in,
          maxrows = 4, 
          maxcols = 4, 
          maxrows2 = 4, 
@@ -146,6 +148,16 @@ for (i in 1:length(folders)){
   }
 }
 
+folders = c("_profiles/plots/", "_retro/plots/", "_sensitivities/plots/")
+HomeDir = "C:/Assessments/2019/petrale_2019/Models/"
+for (i in 1:length(folders)){
+  files = list.files(paste0(HomeDir, folders[i]))
+  for(j in 1:length(files)){
+    file.copy(paste0(HomeDir,folders[i], files[j]),
+              paste0(getwd(), "/Figures"), overwrite = TRUE)
+  }
+}
+
 location = c("C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/QQ_Fn/",
              "C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/",
              "C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/",
@@ -187,6 +199,7 @@ for (i in 1:length(folders)){
               paste0(getwd(), "/txt_files"), overwrite = TRUE)
 }
 
+file.copy("C:/Assessments/2019/petrale_2019/Models/_sensitivities/tables/Sensitivities.csv", paste0(getwd(), "/txt_files"), overwrite = TRUE)
 file.copy(paste0(HomeDir, "Commercial_Comps/forSS/Fishery_Age_Samples.csv"), paste0(getwd(), "/txt_files"), overwrite = TRUE)
 file.copy(paste0(HomeDir, "Commercial_Comps/forSS/Fishery_Length_Samples.csv"), paste0(getwd(), "/txt_files"), overwrite = TRUE)
  

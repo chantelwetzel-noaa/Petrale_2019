@@ -1230,23 +1230,23 @@ print(Like.table,
   
   #Ref_pts$CI1      = paste0(print.numeric(Ref_pts$lowerCI1, digits = 3), ' - ', print.numeric(Ref_pts$upperCI1, digits = 3))
         
-  Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
+  Quantity = c(paste('Unfished spawning biomass (', fecund_unit, ')', sep = ''),
                      paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
                     'Unfished recruitment (R0, thousands)',
-                     paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
+                     paste('Spawning biomass', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
                      paste('Depletion (', LastYR,')',sep=''),
                     '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
-                    'Proxy spawning output ($B_{25\\%}$)',
+                    'Proxy spawning biomass ($B_{25\\%}$)',
                     'SPR resulting in $B_{25\\%}$ ($SPR_{B25\\%}$)',
                     'Exploitation rate resulting in $B_{25\\%}$',
                     'Yield with $SPR_{B25\\%}$ at $B_{25\\%}$ (mt)',
                     '\\textbf{\\textit{Reference points based on SPR proxy for MSY}}',
-                    'Spawning output',
+                    'Spawning biomass',
                     '$SPR_{proxy}$',
                     'Exploitation rate corresponding to $SPR_{proxy}$',
                     'Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt)',
                     '\\textbf{\\textit{Reference points based on estimated MSY values}}',
-                    'Spawning output at $MSY$ ($SB_{MSY}$)',
+                    'Spawning bioamss at $MSY$ ($SB_{MSY}$)',
                     '$SPR_{MSY}$',
                     'Exploitation rate at $MSY$',
                     '$MSY$ (mt) ')
@@ -1318,7 +1318,7 @@ Timeseries = data.frame(Year,
 # Add colulmn names    
 colnames(Timeseries)=c('Year', 
                        'Total biomass (mt)', 
-                       'Spawning output (million eggs)',
+                       'Spawning biomass (million eggs)',
                        paste('Summary biomass', min_age),
                        'Relative biomass', 
                        'Age-0 recruits', 
@@ -1370,19 +1370,22 @@ print(Timeseries.table,
 ```{r, results = 'asis'}
 
 # Read in/organize sensitivity file, change column names, caption
-Sens_model1 = read.csv('./txt_files/Sensitivity1.csv')
+Sens_model1 = read.csv('./txt_files/Sensitivities.csv')
 
 colnames(Sens_model1) = c('Label', 
                           'Base', 
                           'Low M',
                           'High M',
-                          'Harmonic weights',
-                          'Dirichlet weights')
+                          'Old M Prior',
+                          'Fecundity',
+                          'Sex Ratio',
+                          'Francis',
+                          'Dirichlet')
 
 # Create sensitivities table
 Sens_model1.table = xtable(Sens_model1, 
                            caption = c('Sensitivity of the base model.'),
-                           label = 'tab:Sensitivity1',
+                           label = 'tab:sens_table',
                            digits = 3)
 
 
@@ -1483,7 +1486,7 @@ colnames(Forecast_mod1)=c('Year',
                           'OFL (mt)',
                           'ACL (mt)',
                           #'Age 3+ biomass (mt)',
-                          'Spawning Output',
+                          'Spawning Biomass',
                           'Depletion (%)')
 
 # Make sure year is a factor, so you don't get decimals
@@ -1525,11 +1528,11 @@ print(Forecast_mod1.table,
        colnames(decision_mod1) = c('', 
                                    'Year',  
                                    'Catch',	
-                                   'Spawning Output',	
+                                   'Spawning Biomass',	
                                    'Depletion (%)', 
-                                   'Spawning Output',	
+                                   'Spawning Biomass',	
                                    'Depletion (%)',	
-                                   'Spawning Output',	
+                                   'Spawning Biomass',	
                                    'Depletion (%)')
       
        decision_mod1.table = xtable(decision_mod1, 
