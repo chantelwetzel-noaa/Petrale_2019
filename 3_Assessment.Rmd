@@ -157,7 +157,6 @@ A five-year retrospective analysis was conducted by running the model using data
 ###Historical Analysis
 The estimated summary biomass from previous assessments since 2005 are shown in Figure \ref{fig:historical_analysis}.  The current assessment estimated a slight increase in initial spawning biomass compared to previous assessments.  
 
-
 ###Likelihood Profiles
 Likelihood profiles were conducted for $R_0$, steepness, and female natural mortality values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
 
@@ -168,3 +167,8 @@ The negative log-likelihood was minimized at a female natural mortality value of
 In regards to values of $R_0$, the negative log-likelihood was minimized at approximately log($R_0$) of `r round(log(mod1$derived_quants[mod1$derived_quants$Label == "Recr_Virgin",2]),2)`  (Figure \ref{fig:piner_R0}).  
 
 ###Reference Points
+Reference points were calculated using the estimated selectivities and catch distributions among fleets in the most recent year of the model (`r LastYR - 1`). Sustainable total yields (landings plus discards) were `r prettyNum(Ref_pts_mod1[15,2],big.mark = ",")` mt when using an $SPR_{30\%}$ reference harvest rate and with a 95% confidence interval of `r prettyNum(Ref_pts_mod1[15,3],big.mark = ",")` mt based on estimates of uncertainty. The spawning biomass equivalent to 25% of the unfished spawning output ($SB_{25\%}$) was `r prettyNum(Ref_pts_mod1[7,2],big.mark = ",")`. 
+
+The predicted spawning biomass from the base model generally showed a decline beginning during the 1950s and reaching a low in spawning biomass in `r low.ssb` with the stock declining to `r low.dep.value` relative stock size (Figures \ref{fig:ssb} and \ref{fig:depl}). Since 20010, the spawning biomass has been increasing due to small catches and above average recruitment. The `r LastYR` spawning biomass relative to unfished equilibrium spawning biomass is above the target of 25% of unfished (Figure \ref{fig:depl}). The fishing intensity, 1-SPR, exceeded the current  harvest rate limit ($SPR_{30\%}$) throughout the late 1970s until approximately 2010 as seen in Figure \ref{fig:SPR_all_fig}. Recent exploitation rates on `r spp` were estimated to be less than target levels. 
+
+Table \ref{tab:Ref_pts} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value estimated at `r print(mod1$parameters[mod1$parameters$Label == "SR_BH_steep","Value"],2)`.
