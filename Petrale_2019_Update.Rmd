@@ -83,6 +83,9 @@ link-citations: yes
 ```{r child = "7_Acknowledgments.Rmd"}
 ```
 
+#References{}
+
+<div id = "refs"></div>
 
 ```{r child = "8_Tables.Rmd"}
 ```
@@ -104,10 +107,10 @@ link-citations: yes
 
 <!-- ====================================================================== -->
 <!-- **********REFERENCES - WILL APPEAR AFTER APPENDICES******************* -->
-<!-- ====================================================================== -->
+<!-- ====================================================================== 
 \color{black}
 
 #References
 \renewcommand{\thepage}{}
-
+-->
 <!-- ********************END OF THE DOCUMENT******************************* -->
