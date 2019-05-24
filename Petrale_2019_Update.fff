@@ -1,0 +1,1358 @@
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/catch2 landings stacked.png}
+\caption{'Landings of by the Northern and Southern winter and summer
+fleets of the US west coast. \label{fig:Exec_catch1}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of spawning biomass trajectory (circles
+and line: median; light broken lines: 95\% credibility intervals) for
+the base assessment model. \label{fig:Spawnbio_all}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of relative spawning biomass (depletion)
+(circles and line: median; light broken lines: 95\% credibility
+intervals) for the base assessment model. \label{fig:RelDeplete_all}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
+\caption{Time-series of estimated petrale sole recruitments for the base
+model with 95\% confidence or credibility intervals.
+\label{fig:Recruits_all}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SPR2_minusSPRseries.png}
+\caption{Estimated relative spawning potential ratio 1-SPR for the base
+model. One minus SPR is plotted so that higher exploitation rates occur
+on the upper portion of the y-axis. The management target is plotted as
+a red horizontal line and values above this reflect harvests in excess
+of the overfishing proxy based on the SPR30\% harvest rate. The last
+year in the time-series is 2018. \label{fig:SPR_all}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SPR4_phase.png}
+\caption{Phase plot of estimated 1-SPR(\%) vs.~relative spawning biomass
+(B/Btarget) for the base case model. The red circle indicates 2018
+estimated status and exploitation for petrale sole.
+\label{fig:Phase_all}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
+\caption{Equilibrium yield curve for the base case model. Values are
+based on the 2018 fishery selectivity and with steepness fixed at 0.84.
+\label{fig:Yield_all}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/catch2 landings stacked.png}
+\caption{Total catches petrale sole. \label{fig:Catch}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/data_plot.png}
+\caption{Summary of data sources used in the base model.
+\label{fig:data_plot}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/NWFSC_CPUE_Map_Year.png}
+\caption{Map of the catch-per-unit-effort across by year for the NWFSC
+West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_map}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/NWFSC_CPUE_Lat.png}
+\caption{Catch-per-unit-effort (in log space) by latitude for the NWFSC
+West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_cpue_lat}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/NWFSC_CPUE_Depth.png}
+\caption{Catch-per-unit-effort (in log space) by depth for the NWFSC
+West Coast Groundfish Bottom Trawl Survey data.
+\label{fig:nw_cpue_depth}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/NWFSC_Index.png}
+\caption{Estimated index of abundance from the NWFSC West Coast
+Groundfish Bottom Trawl Survey data compared to the design-based index
+and the index from the 2015 update assessment. \label{fig:nw_index}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/nwfsc_Posterior_Predictive-Histogram-1.jpg}
+\caption{QQ plot for the NWFSC West Coast Groundfish Bottom Trawl Survey
+data. \label{fig:nw_qq}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/NWFSC Groundfish Bottom Trawl Survey_Length_Frequency.png}
+\caption{Length frequency by sex for the NWFSC West Coast Groundfish
+Bottom Trawl Survey data. \label{fig:nw_len_freq}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/NWFSC Groundfish Bottom Trawl Survey_Age_Frequency.png}
+\caption{Age frequency by sex for the NWFSC West Coast Groundfish Bottom
+Trawl Survey data. \label{fig:nw_age_freq}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Triennial_CPUE_Map_Year.png}
+\caption{Map of the catch-per-unit-effort across by year for the
+Triennial Survey data. \label{fig:tri_map}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Tri_CPUE_Lat.png}
+\caption{Catch-per-unit-effort (in log space) by latitude for the
+Triennial Survey data. \label{fig:tri_cpue_lat}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Tri_CPUE_Depth.png}
+\caption{Catch-per-unit-effort (in log space) by depth (m) for the
+Triennial Survey data. \label{fig:tri_cpue_depth}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Tri_Size_by_Depth.png}
+\caption{Length (cm) by depth (m) for the Triennial Survey data.
+\label{fig:tri_size_depth}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Triennial_Index_w_VAST.png}
+\caption{Estimated index of abundance from the Triennial Survey data
+compared to the design-based index and the index from the 2015 update
+assessment. \label{fig:tri_index}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/tri_early_Posterior_Predictive-Histogram-1.jpg}
+\caption{QQ plot for the Triennial Early Survey data.
+\label{fig:tri_early_qq}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/tri_late_Posterior_Predictive-Histogram-1.jpg}
+\caption{QQ plot for the Triennial Late Survey data.
+\label{fig:tri_late_qq}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Triennial Early_Length_Frequency.png}
+\caption{Length frequency by sex for the Triennial Early Survey data.
+\label{fig:tri_early_len_freq}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Triennial Late_Length_Frequency.png}
+\caption{Length frequency by sex for the Triennial Late Survey data.
+\label{fig:tri_late_len_freq}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_data_fltWinter (N).png}
+\caption{Northern winter fishery mean body weights of discarded fish for
+petrale sole. \label{fig:nw_bodywt}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_data_fltSummer (N).png}
+\caption{Northern summer fishery mean body weights of discarded fish for
+petrale sole. \label{fig:ns_bodywt}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_data_fltWinter (S).png}
+\caption{Southern winter fishery mean body weights of discarded fish for
+petrale sole. \label{fig:sw_bodywt}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_data_fltSummer (S).png}
+\caption{Southern summer fishery mean body weights of discarded fish for
+petrale sole. \label{fig:ss_bodywt}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lendat__page1_multi-fleet_comparison.png}
+\caption{Northern fishery, winter and summer, retained and discarded
+length frequency distributions for petrale sole.
+\label{fig:north_lengths}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lendat__page2_multi-fleet_comparison.png}
+\caption{Southern fishery, winter and summer, retained and discarded
+length frequency distributions for petrale sole.
+\label{fig:south_lengths}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agedat__multi-fleet_comparison.png}
+\caption{Commercial fishery age frequency distributions for petrale
+sole. \label{fig:comm_ages}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index1_cpuedata_Winter (N).png}
+\caption{The Northern Winter fishery catch-per-unit-effort based on
+logbook data for petrale sole. \label{fig:north_cpue}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index1_cpuedata_Winter (S).png}
+\caption{The Southern Winter fishery catch-per-unit-effort based on
+logbook data for petrale sole. \label{fig:south_cpue}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bio6_maturity.png}
+\caption{Estimated maturity-at-length for petrale sole.
+\label{fig:maturity}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bio8_fecundity_wt.png}
+\caption{Fecundity-at-length assumed in the model for petrale sole.
+\label{fig:fecundity_model}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/fecundity.png}
+\caption{Estimated fecundity-at-length for petrale sole based on
+Lefebvre et al. (in press). \label{fig:fecundity}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/NWFSC Shelf-Slope_length_fraction_female.png}
+\caption{Estimated proportion of female fish collected by the NWFSC
+shelf-slope survey across all years for petrale sole.
+\label{fig:sex_ratio}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/weightAtLengthPred.png}
+\caption{Estimated weight-at-length for female and male petrale sole.
+\label{fig:wt_length}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/LengthAgeAll.png}
+\caption{Length-at-age across data sources for female and male petrale
+sole. \label{fig:length_age}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/M_prior.png}
+\caption{Prior distribution for natural mortality for female and male
+petrale sole. \label{fig:m_prior}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/h_prior.png}
+\caption{Prior distribution for steepness petrale sole.
+\label{fig:h_prior}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/compare1_spawnbio.png}
+\caption{Comparison of model bridging estimates from Stock Synthesis
+version 3.30.13 and 3.24U for petrale sole for the 2015 assessment.
+\label{fig:bridge}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bio1_sizeatage.png}
+\caption{Estimated length-at-age for male and female for petrale sole
+with estimated CV. \label{fig:sizeatage}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bio10_spawningoutput_len.png}
+\caption{Estimated spawning output-at-length for female petrale sole.
+\label{fig:spawnoutlen}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Petrale_fishery_selectivity.png}
+\caption{Estimated selectivity for each commerical fleet over the
+assessment period for female and male petrale sole.
+\label{fig:fish_selex}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Petrale_retention.png}
+\caption{Estimated retention for each commerical fleet over the
+assessment period for petrale sole. Retention was not estimated to be
+sex-specific. \label{fig:fish_reten}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Petrale_survey_selectivity.png}
+\caption{Estimated selectivity for each survey over the assessment
+period for female and male petrale sole. \label{fig:survey_selex}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
+\caption{Estimated time-series of recruitment for petrale sole.
+\label{fig:recruits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/recdevs2_withbars.png}
+\caption{Estimated time-series of recruitment deviations for petrale
+sole. \label{fig:recdevs}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/recdevs2_withbars.png}
+\caption{Estimated recruitment deviations. \label{fig:rec_devs}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/recruit_fit_bias_adjust.png}
+\caption{Recruitment bias adjustment in the model.
+\label{fig:bias_adjust}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_Winter (N).png}
+\caption{Fit to the Winter North catch-per-unit-effort time series for
+petrale sole. \label{fig:fit_wn_cpue}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index7_timevaryingQ_Winter (N).png}
+\caption{Catchability to the Winter North catch-per-unit-effort time
+series. \label{fig:q_north}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_Winter (S).png}
+\caption{Fit to the Winter South catch-per-unit-effort time series for
+petrale sole. \label{fig:fit_ws_cpue}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index7_timevaryingQ_Winter (S).png}
+\caption{Catchability to the Winter South catch-per-unit-effort time
+series. \label{fig:q_south}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_Triennial - Early.png}
+\caption{Fit to the Triennial Survey Early time series for petrale sole.
+\label{fig:fit_tri_early}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_Triennial - Late.png}
+\caption{Fit to the Triennial Survey Late time series for petrale sole.
+\label{fig:fit_tri_late}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_NWFSC West Coast Groundfish Bottom Trawl Survey.png}
+\caption{Fit to the NWFSC West Coast Groundfish Bottom Trawl Survey time
+series for petrale sole. \label{fig:fit_nwfsc_survey}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/discard_fitWinter (N).png}
+\caption{Fit to the discard rates for the Winter North fleet for petrale
+sole. \label{fig:fit_wn_discard}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/discard_fitSummer (N).png}
+\caption{Fit to the discard rates for the Summer North fleet for petrale
+sole. \label{fig:fit_sn_discard}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/discard_fitWinter (S).png}
+\caption{Fit to the discard rates for the Winter South fleet for petrale
+sole. \label{fig:fit_ws_discard}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/discard_fitSummer (S).png}
+\caption{Fit to the discard rates for the Summer South fleet for petrale
+sole. \label{fig:fit_ss_discard}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/catch8 discard fraction.png}
+\caption{Discard rates by fleet for petrale sole. \label{fig:Discard}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_fit_fltWinter (N).png}
+\caption{Fit to the Northern winter fishery mean body weights of
+discarded fish for petrale sole. \label{fig:nw_bodywt_fit}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_fit_fltSummer (N).png}
+\caption{Fit to the Northern summer fishery mean body weights of
+discarded fish for petrale sole. \label{fig:ns_bodywt_fit}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_fit_fltWinter (S).png}
+\caption{Fit to the Southern winter fishery mean body weights of
+discarded fish for petrale sole. \label{fig:sw_bodywt_fit}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_fit_fltSummer (S).png}
+\caption{Fit to the Southern summer fishery mean body weights of
+discarded fish for petrale sole. \label{fig:ss_bodywt_fit}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png}
+\caption{Length compositions aggregated across time by fleet. Labels
+`retained' and `discard' indicate retained or discarded samples for each
+fleet. Panels without this designation represent the whole catch.
+\label{fig:length_agg}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt1mkt1.png}
+\caption{Pearson residuals, discard, Winter (N) (max=7.19)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:discard_wn_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt2mkt1.png}
+\caption{Pearson residuals, discard, Summer (N) (max=6.6)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:discard_sn_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt3mkt1.png}
+\caption{Pearson residuals, discard, Winter (S) (max=3.81)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:discard_ws_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt4mkt1.png}
+\caption{Pearson residuals, discard, Summer (S) (max=5.02)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:discard_ss_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt1mkt2_page4.png}
+\caption{Pearson residuals, retained, Winter (N) (max=3.93) (plot 4 of
+4)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:wn_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt2mkt2_page4.png}
+\caption{Pearson residuals, retained, Summer (N) (max=5.15) (plot 4 of
+4)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:sn_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt3mkt2_page3.png}
+\caption{Pearson residuals, retained, Winter (S) (max=5.1) (plot 3 of
+3)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:ws_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt4mkt2_page4.png}
+\caption{Pearson residuals, retained, Summer (S) (max=5.63) (plot 4 of
+4)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:ss_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt5mkt0.png}
+\caption{Pearson residuals, whole catch, Triennial \_ Early (max=3.16)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:tri_early_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt6mkt0.png}
+\caption{Pearson residuals, whole catch, Triennial \_ Late (max=3.54)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:tri_late_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt7mkt0.png}
+\caption{Pearson residuals, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (max=5.11)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:nwfsc_combo_len_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt1mkt2.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the Winter
+North fishery length data. \label{fig:harm_mean_wn}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt2mkt2.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the Summer
+North fishery length data. \label{fig:harm_mean_sn}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt3mkt2.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the Winter
+South fishery length data. \label{fig:harm_mean_ws}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt4mkt2.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the Summer
+South fishery length data. \label{fig:harm_mean_wn}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt5mkt0.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the
+Triennial Survey - early length data. \label{fig:harm_mean_tri_early}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt6mkt0.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the
+Triennial Survey - late length data. \label{fig:harm_mean_tri_late}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt7mkt0.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the NWFSC
+West Coast Groundfish Bottom Trawl Survey length data.
+\label{fig:harm_mean_nwfsc}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit__aggregated_across_time.png}
+\caption{Age compositions aggregated across time for each fishery fleet.
+\label{fig:age_agg}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_residsflt1mkt2_page5.png}
+\caption{Pearson residuals, retained, Winter (N) (max=4.57) (plot 5 of
+5)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:wn_age_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_residsflt2mkt2_page5.png}
+\caption{Pearson residuals, retained, Summer (N) (max=5.9) (plot 5 of
+5)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:sn_age_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_residsflt3mkt2_page3.png}
+\caption{Pearson residuals, retained, Winter (S) (max=7.4) (plot 3 of
+3)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:ws_age_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_residsflt4mkt2_page3.png}
+\caption{Pearson residuals, retained, Summer (S) (max=4.31) (plot 3 of
+3)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:ss_age_pearson}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt7mkt0_page1.png}
+\caption{Conditional AAL plot, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (plot 1 of 4) These plots show mean age and std.
+dev. in conditional AAL. Left plots are mean AAL by size\_class (obs.
+and pred.) with 90\% CIs based on adding 1.64 SE of mean to the data.
+Right plots in each pair are SE of mean AAL (obs. and pred.) with 90\%
+CIs based on the chi\_square distribution.
+\label{fig:nwfsc_combo_andre_1}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt7mkt0_page2.png}
+\caption{Conditional AAL plot, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (plot 2 of 4) \label{fig:nwfsc_combo_andre_2}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt7mkt0_page3.png}
+\caption{Conditional AAL plot, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (plot 3 of 4) \label{fig:nwfsc_combo_andre_3}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt7mkt0_page4.png}
+\caption{Conditional AAL plot, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (plot 4 of 4) \label{fig:nwfsc_combo_andre_4}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_residsflt7mkt0_page1.png}
+\caption{Pearson residuals, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (max=7.72) (plot 1 of 2)
+\label{fig:nwfsc_combo_pearson_1}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_residsflt7mkt0_page2.png}
+\caption{Pearson residuals, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (max=7.72) (plot 1 of 2) (plot 2 of 2)
+\label{fig:nwfsc_combo_pearson_2}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_sampsize_flt1mkt2.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the Winter
+North fishery age data. \label{fig:harm_mean_wn_age}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_sampsize_flt2mkt2.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the Summer
+North fishery age data. \label{fig:harm_mean_sn_age}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_sampsize_flt3mkt2.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the Winter
+South fishery age data. \label{fig:harm_mean_ws_age}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_sampsize_flt4mkt2.png}
+\caption{McAllister and Ianelli (harmonic mean) weighting for the Summer
+South fishery age data. \label{fig:harm_mean_wn_age}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
+\caption{Estimated time-series of spawning biomass trajectory (circles
+and line: median; light broken lines: 95\% credibility intervals) for
+petrale sole. \label{fig:ssb}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts1_Total_biomass_(mt).png}
+\caption{Estimated time-series of total biomass for petrale sole.
+\label{fig:total_bio}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of relative spawning biomass (depletion)
+(circles and line: median; light broken lines: 95\% credibility
+intervals) for petrale sole. \label{fig:depl}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SR_curve2.png}
+\caption{Estimated recruitment (colored circles) and the assumed
+stock-recruit relationship (solid black line). The dashed line shows the
+effect of the bias correction for the lognormal distribution.
+\label{fig:stock_recruit_curve}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/ssb_sens.png}
+\caption{Estimate spawning biomass for the base model and each
+sensitivity. \label{fig:sens_ssb}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/depl_sens.png}
+\caption{Estimate relative spawning biomass for the base model and each
+sensitivity. \label{fig:sens_depl}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/retro_ssb.png}
+\caption{Retrospective pattern for spawning biomass.
+\label{fig:retro_ssb}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/retro_depl.png}
+\caption{Retrospective pattern for relative spawning biomass.
+\label{fig:retro_depl}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/retro_recdevs.png}
+\caption{Retrospective pattern for estimated recruitment deviations.
+\label{fig:retro_recdev}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/Assessment_History.png}
+\caption{Pattern for estimated spawning biomass from each assessment
+since 2005. \label{fig:historical_analysis}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/piner_panel_h.png}
+\caption{Likelihood profile across steepness values.
+\label{fig:piner_h}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/h_trajectories.png}
+\caption{Trajectories of relative spawning biomass across values of
+steepness. \label{fig:h_trajectory}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/piner_panel_m.png}
+\caption{Likelihood profile across female natural mortality values. Male
+natural mortality was estimated. \label{fig:m_like}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/m_trajectories.png}
+\caption{Trajectories of relative spawning biomass across values of
+natural mortality. \label{fig:m_trajectory}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{Figures/piner_panel_R0.png}
+\caption{Likelihood profile across R\textsubscript{0} values.
+\label{fig:piner_R0}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SPR2_minusSPRseries.png}
+\caption{Estimated relative spawning potential ratio 1-SPR for the base
+model. One minus SPR is plotted so that higher exploitation rates occur
+on the upper portion of the y-axis. The management target is plotted as
+a red horizontal line and values above this reflect harvests in excess
+of the overfishing proxy based on the SPR30\% harvest rate. The last
+year in the time-series is 2018. \label{fig:SPR_all_fig}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
+\caption{Equilibrium yield curve for the base case model. Values are
+based on the 2018 fishery selectivity and with steepness fixed at 0.84.
+\label{fig:yield}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt1mkt2_page1.png}
+\caption{Length comps, retained, Winter (N) (plot 1 of 4). `N adj.' is
+the input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt1mkt2_page2.png}
+\caption{Length comps, retained, Winter (N) (plot 2 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt1mkt2_page3.png}
+\caption{Length comps, retained, Winter (N) (plot 3 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt1mkt2_page4.png}
+\caption{Length comps, retained, Winter (N) (plot 4 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt1mkt1.png}
+\caption{Length comps, discard, Winter (N). `N adj.' is the input sample
+size after data\_weighting adjustment. N eff. is the calculated
+effective sample size used in the McAllister\_Iannelli tuning method.
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt2mkt2_page1.png}
+\caption{Length comps, retained, Summer (N) (plot 1 of 4). `N adj.' is
+the input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt2mkt2_page2.png}
+\caption{Length comps, retained, Summer (N) (plot 2 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt2mkt2_page3.png}
+\caption{Length comps, retained, Summer (N) (plot 3 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt2mkt2_page4.png}
+\caption{Length comps, retained, Summer (N) (plot 4 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt2mkt1.png}
+\caption{Length comps, discard, Summer (N). `N adj.' is the input sample
+size after data\_weighting adjustment. N eff. is the calculated
+effective sample size used in the McAllister\_Iannelli tuning method.
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt3mkt2_page1.png}
+\caption{Length comps, retained, Winter (S) (plot 1 of 3). `N adj.' is
+the input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt3mkt2_page2.png}
+\caption{Length comps, retained, Winter (S) (plot 2 of 3)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt3mkt2_page3.png}
+\caption{Length comps, retained, Winter (S) (plot 3 of 3)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt3mkt1.png}
+\caption{Length comps, discard, Winter (S). `N adj.' is the input sample
+size after data\_weighting adjustment. N eff. is the calculated
+effective sample size used in the McAllister\_Iannelli tuning method.
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt4mkt2_page1.png}
+\caption{Length comps, retained, Summer (S) (plot 1 of 4). `N adj.' is
+the input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt4mkt2_page2.png}
+\caption{Length comps, retained, Summer (S) (plot 2 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt4mkt2_page3.png}
+\caption{Length comps, retained, Summer (S) (plot 3 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt4mkt2_page4.png}
+\caption{Length comps, retained, Summer (S) (plot 4 of 4)
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt4mkt1.png}
+\caption{Length comps, discard, Summer (S). `N adj.' is the input sample
+size after data\_weighting adjustment. N eff. is the calculated
+effective sample size used in the McAllister\_Iannelli tuning method.
+\label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt5mkt0.png}
+\caption{Length comps, whole catch, Triennial \_ Early. `N adj.' is the
+input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt6mkt0.png}
+\caption{Length comps, whole catch, Triennial \_ Late. `N adj.' is the
+input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt7mkt0.png}
+\caption{Length comps, whole catch, NWFSC West Coast Groundfish Bottom
+Trawl Survey. `N adj.' is the input sample size after data\_weighting
+adjustment. N eff. is the calculated effective sample size used in the
+McAllister\_Iannelli tuning method. \label{fig:length_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt1mkt2_page1.png}
+\caption{Age comps, retained, Winter (N) (plot 1 of 5). `N adj.' is the
+input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt1mkt2_page2.png}
+\caption{Age comps, retained, Winter (N) (plot 2 of 5)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt1mkt2_page3.png}
+\caption{Age comps, retained, Winter (N) (plot 3 of 5)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt1mkt2_page4.png}
+\caption{Age comps, retained, Winter (N) (plot 4 of 5)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt1mkt2_page5.png}
+\caption{Age comps, retained, Winter (N) (plot 5 of 5)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt2mkt2_page1.png}
+\caption{Age comps, retained, Summer (N) (plot 1 of 5). `N adj.' is the
+input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt2mkt2_page2.png}
+\caption{Age comps, retained, Summer (N) (plot 2 of 5)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt2mkt2_page3.png}
+\caption{Age comps, retained, Summer (N) (plot 3 of 5)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt2mkt2_page4.png}
+\caption{Age comps, retained, Summer (N) (plot 4 of 5)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt2mkt2_page5.png}
+\caption{Age comps, retained, Summer (N) (plot 5 of 5)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt3mkt2_page1.png}
+\caption{Age comps, retained, Winter (S) (plot 1 of 3). `N adj.' is the
+input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt3mkt2_page2.png}
+\caption{Age comps, retained, Winter (S) (plot 2 of 3)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt3mkt2_page3.png}
+\caption{Age comps, retained, Winter (S) (plot 3 of 3)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt4mkt2_page1.png}
+\caption{Age comps, retained, Summer (S) (plot 1 of 3). `N adj.' is the
+input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt4mkt2_page2.png}
+\caption{Age comps, retained, Summer (S) (plot 2 of 3)
+\label{fig:age_fits}}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_agefit_flt4mkt2_page3.png}
+\caption{Age comps, retained, Summer (S) (plot 3 of 3)
+\label{fig:age_fits}}
+\end{figure}

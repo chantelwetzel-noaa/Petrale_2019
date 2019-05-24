@@ -29,7 +29,7 @@
 \usepackage{hyperref}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
-            pdftitle={Status of petrale sole (Eopsetta jordani) along the U.S. west coast in 2018},
+            pdftitle={Status of petrale sole (Eopsetta jordani) along the U.S. west coast in 2019},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -65,7 +65,7 @@
 
 \setlength{\droptitle}{-2em}
   \title{Status of petrale sole (\emph{Eopsetta jordani}) along the U.S. west
-coast in 2018}
+coast in 2019}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
   \author{}
@@ -101,14 +101,15 @@ coast in 2018}
 \usepackage{fancyvrb}                                             % verbatim in a box
 %\usepackage{draftwatermark}                                      % places Draft watermark in background; comment out for final
 \usepackage{textcomp}                                             % fixes error with packages interfering
-\usepackage{lscape}                                               % rotate pages - to allow for landscape longtables
+%\usepackage{lscape}                                               % rotate pages - to allow for landscape longtables
+\usepackage{pdflscape}                                             % rotate pages - to allow for landscape longtables
+\usepackage{geometry}                                             % For landscape display
 %\pdfinterwordspaceon                                             % fix loss of inter word spacing
 \usepackage{cmap}                                                 % fix mapping characters to unicode
 \RequirePackage[linewidth = 1]{pdfcomment}                        % pdf comments
 \RequirePackage[l2tabu, orthodox]{nag}                            % checks packages related to the accessibility?
 \usepackage[inline]{showlabels}                                   % show table and figure labels; comment out for final
 %\RequirePackage[tagged]{accessibilityMeta}
-
 
 %\linenumbers                                                      % specify use of line numbers
 
@@ -163,6 +164,14 @@ Chantel R. Wetzel\textsuperscript{1}\\
 \vfill
 June 2019
 
+\vspace{1cm}
+
+DRAFT SAFE\\
+Disclaimer: This information is distributed solely for the purpose of pre-dissemination
+peer review under applicable information quality guidelines. It has not been formally
+disseminated by NOAA Fisheries. It does not represent and should not be construed to
+represent any agency determination or policy. 
+
 
 \vspace{.3cm}
 %Bottom of the page
@@ -172,22 +181,20 @@ June 2019
 
 \vspace{3cm}
 
-Please cite as:\\
+This report may be cited as:\\
 
-Wetzel, C.R. 2019. Status of petrale sole (\textit{Eopsetta jordani}) along the U.S. west coast in 2018. Pacific Fishery Management Council, 7700 Ambassador Place NE, Suite 200, Portland, OR 97220. 
+Wetzel, C.R. 2019. Status of petrale sole (\textit{Eopsetta jordani}) along the U.S. west coast in 2019. Pacific Fishery Management Council, 7700 Ambassador Place NE, Suite 200, Portland, OR 97220. 
+\end{center}
 
 \vspace{3cm}
+
+
 
 \maketitle
 
 
-
-
-
-
 \pagenumbering{roman}
 \setcounter{page}{1}
-\end{center}
 
 {
 \setcounter{tocdepth}{4}
@@ -3748,7 +3755,7 @@ Unfished spawning biomass (mt) & 30554.7 & 24634.6 & 36474.8 \\
 \end{tabular}
 \end{table}
 
-\newpage
+\clearpage
 
 \begingroup\fontsize{11pt}{11pt}\selectfont
 
@@ -5104,8 +5111,8 @@ year in the time-series is 2018. \label{fig:SPR_all_fig}}
 \centering
 \includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
 \caption{Equilibrium yield curve for the base case model. Values are
-based on the 2018 fishery selectivity and with steepness fixed at 0.84.
-\label{fig:yield}}
+based on the 2018 fishery selectivity and with steepness estimated at
+0.84. \label{fig:yield}}
 \end{figure}
 
 \FloatBarrier
