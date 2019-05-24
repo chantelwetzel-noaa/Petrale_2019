@@ -1278,13 +1278,10 @@ print(Like.table,
 
 ```
 
-
-
-\newpage
+\clearpage
 
 <!-- *********************TIME SERIES TABLE************************* --> 
 ```{r, results='asis'}
-
 ind = mod1$timeseries$Yr >= Dat_start_mod1 & mod1$timeseries$Yr <= LastYR
 Year = mod1$timeseries$Yr[ind]
 Bio_all = mod1$timeseries$Bio_all[ind]
