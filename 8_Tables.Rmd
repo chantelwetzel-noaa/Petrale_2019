@@ -206,7 +206,7 @@ print(Catch_AllYrs,
       sanitize.text.function = function(x){x})
 ``` 
 
-
+\clearpage
 
 <!-- ********************************************************************** --> 
 <!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE******* -->
@@ -430,6 +430,7 @@ print(Fish_Length.table,
 
 ```
 
+\clearpage
 
 <!-- ********************************************************************** -->
 <!-- ***************** Tri Early Survey Strata Table  ********************* --> 
