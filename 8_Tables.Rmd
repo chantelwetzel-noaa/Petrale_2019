@@ -649,7 +649,7 @@ print(Discard.table,
 <!-- ********************** Fishery Lengths ****************************** -->  
 ```{r, results = 'asis'}
 Fish_Length = read.csv('./txt_files/Fishery_Length_Samples.csv')
-Fish_Length = Fish_Length[1:50, ]
+Fish_Length = Fish_Length[1:45, ]
 
 colnames(Fish_Length) = c('Year',
                           'Trips',
@@ -692,7 +692,7 @@ print(Fish_Length.table,
       hline.after = hlines,
       add.to.row = addtorow,
       include.colnames = FALSE,
-      size="\\fontsize{11pt}{11pt}\\selectfont",
+      size="\\fontsize{12pt}{12pt}\\selectfont",
       sanitize.text.function = function(x){x})
 
 ``` 
@@ -700,7 +700,7 @@ print(Fish_Length.table,
 
 ```{r, results = 'asis'}
 Fish_Length = read.csv('./txt_files/Fishery_Length_Samples.csv')
-Fish_Length = Fish_Length[51:nrow(Fish_Length), ]
+Fish_Length = Fish_Length[46:nrow(Fish_Length), ]
 
 colnames(Fish_Length) = c('Year',
                           'Trips',
@@ -741,7 +741,7 @@ print(Fish_Length.table,
       hline.after = hlines,
       add.to.row = addtorow,
       include.colnames = FALSE,
-      size="\\fontsize{11pt}{11pt}\\selectfont",
+      size="\\fontsize{12pt}{12pt}\\selectfont",
       sanitize.text.function = function(x){x})
 
 ```
