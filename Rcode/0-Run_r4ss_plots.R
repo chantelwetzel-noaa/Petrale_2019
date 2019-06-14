@@ -41,8 +41,8 @@ for(p in requiredPackages){
 }
 
 # Install the latest version of r4ss using devtools
- devtools::install_github("r4ss/r4ss", ref = "development")
-#library(r4ss)
+# devtools::install_github("r4ss/r4ss", ref = "development")
+library(r4ss)
 
 # CHANGE values in this section ===============================================
 
@@ -158,26 +158,24 @@ for (i in 1:length(folders)){
   }
 }
 
-location = c("C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/QQ_Fn/",
-             "C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/",
-             "C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/lognormal/",
-             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/early/QQ_Fn/",
-             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/early/", 
-             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/early/",
-             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/late/QQ_Fn/",
-             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/late/",
-             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/lognormal/late/"
+location = c("C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/gamma/QQ_Fn/",
+             rep("C:/Assessments/2019/petrale_2019/Data/NWFSC_Combo/VAST/gamma/",3),
+             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/gamma/early/QQ_Fn/",
+             rep("C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/gamma/early/",3), 
+             "C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/gamma/late/QQ_Fn/",
+             rep("C:/Assessments/2019/petrale_2019/Data/Triennial/VAST/gamma/late/",3)
             )
 
 files = c(
           rep(c("Posterior_Predictive-Histogram-1.jpg",
           "maps--catchrate_pearson_resid.png",
-          "maps--encounter_pearson_resid.png"), 3)
+          "maps--encounter_pearson_resid.png",
+          "Dens.png"), 3)
           )
 
-files.new = c(rep("nwfsc_", 3), 
-              rep("tri_early_", 3),
-              rep("tri_late_", 3))
+files.new = c(rep("nwfsc_", 4), 
+              rep("tri_early_", 4),
+              rep("tri_late_", 4))
 
 for(j in 1:length(files)){
   file.copy(paste0(location[j], files[j]), paste0(getwd(), "/Figures"), overwrite = TRUE)

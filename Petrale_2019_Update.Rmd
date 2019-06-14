@@ -20,7 +20,7 @@ documentclass: article
 fontsize: 12pt
 geometry: margin=1in
 csl: CJFAS.csl
-bibliography: Bib_Mar20.bib
+bibliography: Bib_June11.bib
 link-citations: yes
 ---
 <!-- To remove the figure and table labels comment out the \usepackage[inline]{showlabels} within the header.tex file -->
