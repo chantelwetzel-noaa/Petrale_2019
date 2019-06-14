@@ -54,11 +54,24 @@
 
 \FloatBarrier
 
-![Estimated index of abundance from the NWFSC West Coast Groundfish Bottom Trawl Survey data compared to the design-based index and the index from the 2015 update assessment. \label{fig:nw_index}](Figures/NWFSC_Index.png)
+
+![QQ plot for the  NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_qq}](Figures/nwfsc_Posterior_Predictive-Histogram-1.jpg)
 
 \FloatBarrier
 
-![QQ plot for the  NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_qq}](Figures/nwfsc_Posterior_Predictive-Histogram-1.jpg)
+![Pearson residuals for the encounter rate for the NWFSC West Coast Groundfish Bottom Trawl Survey by VAST. \label{fig:nw_enc_rate}](Figures/nwfsc_maps--encounter_pearson_resid.png)
+
+\FloatBarrier
+
+![Pearson residuals for the estimated catch rate for the NWFSC West Coast Groundfish Bottom Trawl Survey by VAST. \label{fig:nw_catch_rate}](Figures/nwfsc_maps--catchrate_pearson_resid.png)
+
+\FloatBarrier
+
+![Estimated index of abundance from the NWFSC West Coast Groundfish Bottom Trawl Survey data compared to the design-based index and the index from the 2015 update assessment. \label{fig:nw_index}](Figures/NWFSC_Index_gamma.png)
+
+\FloatBarrier
+
+![Estimated density of abundance from the NWFSC West Coast Groundfish Bottom Trawl Survey data by VAST. \label{fig:nw_density}](Figures/nwfsc_dens.png)
 
 \FloatBarrier
 
@@ -90,15 +103,39 @@
 
 \FloatBarrier
 
-![Estimated index of abundance from the Triennial Survey data compared to the design-based index and the index from the 2015 update assessment. \label{fig:tri_index}](Figures/Triennial_Index_w_VAST.png)
-
-\FloatBarrier
-
 ![QQ plot for the Triennial Early Survey data. \label{fig:tri_early_qq}](Figures/tri_early_Posterior_Predictive-Histogram-1.jpg)
 
 \FloatBarrier
 
+![Pearson residuals for the encounter rate for the Triennial Early Survey by VAST. \label{fig:tri_early_enc_rate}](Figures/tri_early_maps--encounter_pearson_resid.png)
+
+\FloatBarrier
+
+![Pearson residuals for the estimated catch rate for the Triennial Early Survey by VAST. \label{fig:tri_early_catch_rate}](Figures/tri_early_maps--catchrate_pearson_resid.png)
+
+\FloatBarrier
+
 ![QQ plot for the Triennial Late Survey data. \label{fig:tri_late_qq}](Figures/tri_late_Posterior_Predictive-Histogram-1.jpg)
+
+\FloatBarrier
+
+![Pearson residuals for the encounter rate for the Triennial Late Survey by VAST. \label{fig:tri_late_enc_rate}](Figures/tri_late_maps--encounter_pearson_resid.png)
+
+\FloatBarrier
+
+![Pearson residuals for the estimated catch rate for the Triennial Late Survey by VAST. \label{fig:tri_late_catch_rate}](Figures/tri_late_maps--catchrate_pearson_resid.png)
+
+\FloatBarrier
+
+![Estimated index of abundance from the Triennial Survey data compared to the design-based index and the index from the 2015 update assessment. \label{fig:tri_index}](Figures/Triennial_Index_w_VAST_gamma.png)
+
+\FloatBarrier
+
+![Estimated density of abundance from the Triennial Early Survey data by VAST. \label{fig:tri_early_density}](Figures/tri_early_dens.png)
+
+\FloatBarrier
+
+![Estimated density of abundance from the Triennial Late Survey data by VAST. \label{fig:tri_late_density}](Figures/tri_late_dens.png)
 
 \FloatBarrier
 
@@ -285,9 +322,6 @@
   
 \FloatBarrier
 
-![Estimated recruitment deviations. \label{fig:rec_devs}](r4ss/plots_mod1/recdevs2_withbars.png)
-
-\FloatBarrier
 
 ![Recruitment bias adjustment in the model. \label{fig:bias_adjust}](r4ss/plots_mod1/recruit_fit_bias_adjust.png)
 
