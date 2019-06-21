@@ -1186,8 +1186,8 @@ print(Like.table,
   # Rbind all of the data for the big summary reference table  
   x = 1:3
   Ref_pts = rbind (
-    SSB_Unfished    = mod$derived_quants[grep('SSB_un',                   mod$derived_quants$Label)[1], x],
-    TotBio_Unfished = mod$derived_quants[grep('Totbio_un',                  mod$derived_quants$Label), x],
+    SSB_Unfished    = mod$derived_quants[grep('SSB_un',                  mod$derived_quants$Label)[1], x],
+    SmryBio_Unfished = mod$derived_quants[grep('SmryBio_un',             mod$derived_quants$Label), x],
     Recr_Unfished   = mod$derived_quants[grep('Recr_un',                 mod$derived_quants$Label), x],
     SPB_lastyr      = mod$derived_quants[grep(paste0('SSB_', LastYR),    mod$derived_quants$Label), x],
     Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), x],
