@@ -78,7 +78,7 @@ The base stock assessment model structure is consistent with the 2013 assessment
     spawn.file  = ifelse(fecund=='numbers',
                            'r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png',
                            'r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png')
-    Bratio.file = 'r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png' 
+    Bratio.file = 'r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png' 
 
 ```
 
@@ -208,11 +208,10 @@ Model uncertainty has been described by the estimated uncertainty within the bas
 
 \FloatBarrier
 
-```{r, results='asis'}   
-   # Edit text file(s): ./txt_files/DecisionTable_mod1 ,  
+```{r, results='asis'} 
     print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
           caption.placement = 'top', 
-          hline.after = c(-1, 0, 10, nrow(decision_mod1.table)), 
+          hline.after = c(-1, 0, 10, 20,nrow(decision_mod1.table)), 
           scalebox = .85)
 ```
 

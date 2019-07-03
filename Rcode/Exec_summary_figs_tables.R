@@ -233,9 +233,6 @@ align(Spawn_Deplete_mod1.table) = c('l', 'l',
 #=============================================================================
 # Executive Table C: Recruitment 
 #=============================================================================
-
-# Extract recruitment values
-
   mod=mod1
   mod_area='mod1'
   
@@ -360,7 +357,6 @@ align(Recruit_mod1.table) = c('l',
 # =============================================================================
 # Create the three tables for SPR Ratio and Exploitation
 
-# Model 1 
 SPRratio_Exploit_mod1.table = xtable(SPRratio_Exploit_mod1, 
                               caption=c(paste('Recent trend in spawning potential ratio 1-SPR and summary exploitation rate for age 3+ biomass for ', spp, '.' , sep='')), 
                               label='tab:SPR_Exploit_mod1', digits = 3)  
@@ -377,12 +373,12 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
 #=============================================================================
 
 # Extract reference points table data
-  mod = mod1
-  mod_area = 'mod1'
+mod = mod1
+mod_area = 'mod1'
   
-  # Rbind all of the data for the big summary reference table  
-  x = 1:3
-  Ref_pts = rbind (
+# Rbind all of the data for the big summary reference table  
+x = 1:3
+Ref_pts = rbind (
     SSB_Unfished    = mod$derived_quants[grep('SSB_un',                  mod$derived_quants$Label)[1], x],
     SmryBio_Unfished = mod$derived_quants[grep('SmryBio_un',               mod$derived_quants$Label), x],
     Recr_Unfished   = mod$derived_quants[grep('Recr_un',                 mod$derived_quants$Label), x],
@@ -402,31 +398,29 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
     SSB_MSY         = mod$derived_quants[grep('SSB_MSY', mod$derived_quants$Label), x],
     SPR_MSY         = mod$derived_quants[grep('SPR_MSY', mod$derived_quants$Label), x],
     Fstd_MSY        = mod$derived_quants[grep('Fstd_MSY', mod$derived_quants$Label), x],
-    TotYield_MSY    = mod$derived_quants[grep('Dead_Catch_MSY', mod$derived_quants$Label), x] 
-  )
+    TotYield_MSY    = mod$derived_quants[grep('Dead_Catch_MSY', mod$derived_quants$Label), x] )
 
-  Ref_pts$Value   = as.numeric(Ref_pts$Value)
-  Ref_pts$StdDev  = as.numeric(Ref_pts$StdDev)
-  Ref_pts$Value1  = ifelse(Ref_pts$Value >= 1, as.character(round(Ref_pts$Value, dig1)), 
+Ref_pts$Value   = as.numeric(Ref_pts$Value)
+Ref_pts$StdDev  = as.numeric(Ref_pts$StdDev)
+Ref_pts$Value1  = ifelse(Ref_pts$Value >= 1, as.character(round(Ref_pts$Value, dig1)), 
                            as.character(round(Ref_pts$Value, dig3)))   
         
-  Ref_pts$lowerCI  = Ref_pts$Value + qnorm(0.025) * Ref_pts$StdDev
-  
-  Ref_pts$upperCI  = Ref_pts$Value - qnorm(0.025) * Ref_pts$StdDev
+Ref_pts$lowerCI  = Ref_pts$Value + qnorm(0.025) * Ref_pts$StdDev
+Ref_pts$upperCI  = Ref_pts$Value - qnorm(0.025) * Ref_pts$StdDev
 
-  Which = which(Ref_pts$Label=="Recr_Unfished")
-  logint  <- sqrt(log(1+(Ref_pts[Which,"StdDev"]/Ref_pts[Which, "Value"])^2))
-  Ref_pts[Which, "lowerCI"] <- exp(log(Ref_pts[Which, "Value"]) + qnorm(0.025)*logint)
-  Ref_pts[Which, "upperCI"] <- exp(log(Ref_pts[Which, "Value"]) + qnorm(0.975)*logint)
-  
-  Ref_pts$lowerCI1 = ifelse(Ref_pts$lowerCI >= 1, as.character(round(Ref_pts$lowerCI, dig1)), 
-                            as.character(round(Ref_pts$lowerCI, dig3))) 
-  
-  Ref_pts$upperCI1 = ifelse(Ref_pts$upperCI>=1, as.character(round(Ref_pts$upperCI,dig1)), 
-                            as.character(round(Ref_pts$upperCI, dig3))) 
-  
-        
-  Quantity = c(paste('Unfished spawning biomass (', fecund_unit, ')', sep = ''),
+Which = which(Ref_pts$Label=="Recr_Unfished")
+logint  <- sqrt(log(1+(Ref_pts[Which,"StdDev"]/Ref_pts[Which, "Value"])^2))
+Ref_pts[Which, "lowerCI"] <- exp(log(Ref_pts[Which, "Value"]) + qnorm(0.025)*logint)
+Ref_pts[Which, "upperCI"] <- exp(log(Ref_pts[Which, "Value"]) + qnorm(0.975)*logint)
+
+Ref_pts$lowerCI1 = ifelse(Ref_pts$lowerCI >= 1, as.character(round(Ref_pts$lowerCI, dig1)), 
+                          as.character(round(Ref_pts$lowerCI, dig3))) 
+
+Ref_pts$upperCI1 = ifelse(Ref_pts$upperCI>=1, as.character(round(Ref_pts$upperCI,dig1)), 
+                          as.character(round(Ref_pts$upperCI, dig3))) 
+
+      
+Quantity = c(paste('Unfished spawning biomass (', fecund_unit, ')', sep = ''),
                      paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
                     'Unfished recruitment (R0, thousands)',
                      paste('Spawning biomass', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
@@ -447,12 +441,12 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
                     'Exploitation rate at $MSY$',
                     '$MSY$ (mt) ')
         
-  Ref_pts = cbind(Quantity, Ref_pts$Value1, Ref_pts$lowerCI1, Ref_pts$upperCI1)
-  Ref_pts[c(6, 11, 13, 16), 2:4] = ''
-  colnames(Ref_pts) = c('\\textbf{Quantity}', '\\textbf{Estimate}', 
-                        '\\textbf{$\\sim$2.5\\%  Confidence Interval}',
-                        '\\textbf{$\\sim$97.5\\%  Confidence Interval}')
-  assign(paste('Ref_pts_', mod_area, sep = ''), Ref_pts)
+Ref_pts = cbind(Quantity, Ref_pts$Value1, Ref_pts$lowerCI1, Ref_pts$upperCI1)
+Ref_pts[c(6, 11, 13, 16), 2:4] = ''
+colnames(Ref_pts) = c('\\textbf{Quantity}', '\\textbf{Estimate}', 
+                      '\\textbf{$\\sim$2.5\\%  Confidence Interval}',
+                      '\\textbf{$\\sim$97.5\\%  Confidence Interval}')
+assign(paste('Ref_pts_', mod_area, sep = ''), Ref_pts)
 
 
 # =============================================================================
@@ -516,51 +510,50 @@ align(mngmnt.table) = c('l',
 #==============================================================================
 
 # Extract OFLs for next 10 years for each model
-  #Fore_Table = read.csv('./txt_files/OFL_forecast.csv')
-      OFL_mod1 = mod1$derived_quants[grep('OFL',mod1$derived_quants$Label),]
-      OFL_mod1 = OFL_mod1[, 2]    
-      
-      ACL_mod1 = mod1$derived_quants[grep('ForeCatch_',mod1$derived_quants$Label),]
-      ACL_mod1 = ACL_mod1[,2]
-      
-      OFL = as.data.frame(cbind(OFL_mod1, ACL_mod1))
-      OFL$Year=seq(Project_firstyr,Project_lastyr, 1)
-      OFL$Year = as.factor(OFL$Year)
+#Fore_Table = read.csv('./txt_files/OFL_forecast.csv')
+OFL_mod1 = mod1$derived_quants[grep('OFL',mod1$derived_quants$Label),]
+OFL_mod1 = OFL_mod1[, 2]    
 
-      OFL = OFL[,c(3, 1, 2)]
-      OFL[,2] =  print.numeric(OFL$OFL_mod1, digits = 0)
-      OFL[,3] =  print.numeric(OFL$ACL_mod1, digits = 0)
-      
-      # Extract biomass/output  
-      SpawningB = mod$derived_quants[grep('SSB', mod$derived_quants$Label), ]
-      SpawningB = SpawningB[c(-1, -2), ]
-      Spawn.fore = SpawningB[SpawningB$Label >= paste('SSB_', Project_firstyr, sep='') 
-                               & SpawningB$Label <= paste('SSB_', Project_lastyr,  sep=''), "Value"]  
-      Spawn.fore = print(Spawn.fore, digits = 0)
-      
-      Bratio = mod$derived_quants[grep('Bratio', mod$derived_quants$Label), ]
-      Bratio = Bratio[c(-1, -2), ]
-      Bratio.fore = Bratio[Bratio$Label >= paste('Bratio_', Project_firstyr, sep='') 
-                             & Bratio$Label <= paste('Bratio_', Project_lastyr,  sep=''), "Value"]
-      Bratio.fore = print(Bratio.fore, digits = 3)
-      
-      Fore_Table = cbind(OFL, Spawn.fore, Bratio.fore)
-      colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Depletion") 
+ACL_mod1 = mod1$derived_quants[grep('ForeCatch_',mod1$derived_quants$Label),]
+ACL_mod1 = ACL_mod1[,2]
 
-      # Create the table
-      OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative depletion based on ABC removals.  The 2019 and 2020 
-                                               removals are set at the harvest limits currently set by management of XXX mt per year.'),
+OFL = as.data.frame(cbind(OFL_mod1, ACL_mod1))
+OFL$Year=seq(Project_firstyr,Project_lastyr, 1)
+OFL$Year = as.factor(OFL$Year)
+
+OFL = OFL[,c(3, 1, 2)]
+OFL[,2] =  print.numeric(OFL$OFL_mod1, digits = 0)
+OFL[,3] =  print.numeric(OFL$ACL_mod1, digits = 0)
+
+# Extract biomass/output  
+SpawningB = mod$derived_quants[grep('SSB', mod$derived_quants$Label), ]
+SpawningB = SpawningB[c(-1, -2), ]
+Spawn.fore = SpawningB[SpawningB$Label >= paste('SSB_', Project_firstyr, sep='') 
+                         & SpawningB$Label <= paste('SSB_', Project_lastyr,  sep=''), "Value"]  
+Spawn.fore = print(Spawn.fore, digits = 0)
+
+Bratio = mod$derived_quants[grep('Bratio', mod$derived_quants$Label), ]
+Bratio = Bratio[c(-1, -2), ]
+Bratio.fore = Bratio[Bratio$Label >= paste('Bratio_', Project_firstyr, sep='') 
+                       & Bratio$Label <= paste('Bratio_', Project_lastyr,  sep=''), "Value"]
+Bratio.fore = print(Bratio.fore, digits = 3)
+
+Fore_Table = cbind(OFL, Spawn.fore, Bratio.fore)
+colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Depletion") 
+
+# Create the table
+OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative depletion based on ABC removals.  The 2019 and 2020 
+                                          removals are set at the harvest limits currently set by management of XXX mt per year.'),
                   label = 'tab:OFL_projection',
                   digits = 0)
       
-      # Add alignment
-      align(OFL.table) = c('l',
-                              '>{\\raggedleft}p{0.5in}',
-                              '>{\\centering}p{1.1in}',
-                              '>{\\centering}p{1.1in}', 
-                              '>{\\centering}p{1.6in}',
-                              '>{\\centering}p{1.1in}')  
-     
+# Add alignment
+align(OFL.table) = c('l',
+                        '>{\\raggedleft}p{0.5in}',
+                        '>{\\centering}p{1.1in}',
+                        '>{\\centering}p{1.1in}', 
+                        '>{\\centering}p{1.6in}',
+                        '>{\\centering}p{1.1in}')    
 
 #=============================================================================
 # Executive Table h: Decision Table
@@ -569,46 +562,38 @@ align(mngmnt.table) = c('l',
 
 # Model 1
 # Read in decision table file
-  decision_mod1 = read.csv('./txt_files/DecisionTable_mod1.csv')
-       colnames(decision_mod1) = c('', 
-                                   'Year',  
-                                   'Catch',	
-                                   'Spawning Biomass',	
-                                   'Depletion', 
-                                   'Spawning Biomass',	
-                                   'Depletion',	
-                                   'Spawning Biomass',	
-                                   'Depletion')
+decision_mod1 = read.csv('./txt_files/DecisionTable_mod1.csv')
+colnames(decision_mod1) = c('', 
+                            'Year',  
+                            'Catch',	
+                            'Spawning Biomass',	
+                            'Depletion', 
+                            'Spawning Biomass',	
+                            'Depletion',	
+                            'Spawning Biomass',	
+                            'Depletion')
       
-       decision_mod1.table = xtable(decision_mod1, 
-                                    caption = c(paste('Decision table summary of 10-year 
-                                             projections beginning in ', LastYR+2,' 
-                                             for alternate states of nature based on 
-                                             an axis of uncertainty for the base model. The removals in 2019 and 2020 were set at the defined management 
-                                             specification of XXX mt for each year assuming full attainment.
-                                             The range of natural mortality values corresponded to the 12.5 and 87.5th quantile
-                                             from the uncertainty around final spawning biomass.
-                                             Columns range over low, mid, and high
-                                             states of nature, and rows range over different 
+decision_mod1.table = xtable( decision_mod1, 
+                              caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on 
+                                             an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification 
+                                             of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different 
                                              assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
-                                     label='tab:Decision_table_mod1', 
-                                     digits = c(0,0,0,0,0,1,0,1,0,1)) 
+                              label='tab:Decision_table_mod1', 
+                              digits = c(0,0,0,0,0,1,0,1,0,1)) 
       
-    # Assign alignment and add the header columns
-        align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
+# Assign alignment and add the header columns
+align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
     
-        addtorow <- list()
-        addtorow$pos <- list()
-        addtorow$pos[[1]] <- -1
-        addtorow$pos[[2]] <- -1
-        addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
-                               & \\multicolumn{2}{c}{\\textbf{States of nature}} 
-                               & \\multicolumn{2}{c}{} \\\\\n', 
-                               ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State} 
-                               & \\multicolumn{2}{c}{Base} 
-                               &  \\multicolumn{2}{c}{High State} \\\\\n')
-
-
+addtorow <- list()
+addtorow$pos <- list()
+addtorow$pos[[1]] <- -1
+addtorow$pos[[2]] <- -1
+addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
+                       & \\multicolumn{2}{c}{\\textbf{States of nature}} 
+                       & \\multicolumn{2}{c}{} \\\\\n', 
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.12} 
+                       & \\multicolumn{2}{c}{M = 0.151} 
+                       &  \\multicolumn{2}{c}{M = 0.18} \\\\\n')
         
 #=============================================================================
 # Executive Summary Table I: Summary of Results

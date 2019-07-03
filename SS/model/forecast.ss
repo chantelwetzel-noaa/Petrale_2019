@@ -8,7 +8,7 @@
 0.3 # SPR target (e.g. 0.40)
 0.25 # Biomass target (e.g. 0.40)
 #_Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, or values of 0 or -integer to be rel. endyr)
- 2014 2014 2014 2014 2014 2014 1876 2014 1876 2014
+ -1 -1 -1 -1 -1 -1 1876 2018 1876 2018
 2 #Bmark_relF_Basis: 1 = use year range; 2 = set relF same as forecast below
 #
 1 # Forecast: 0=none; 1=F(SPR); 2=F(MSY) 3=F(Btgt) or F0.1; 4=Ave F (uses first-last relF yrs); 5=input annual F scalar
@@ -17,10 +17,23 @@
 #_Fcast_years:  beg_selex, end_selex, beg_relF, end_relF, beg_mean recruits, end_recruits  (enter actual year, or values of 0 or -integer to be rel. endyr)
  0 0 -10 0 -999 0
 0 # Forecast selectivity (0=fcast selex is mean from year range; 1=fcast selectivity from annual time-vary parms)
-1 # Control rule method (1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
+3 # Control rule method (1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
 0.25 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.40); (Must be > the no F level below) 
 0.05 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
-0.956 # Control rule target as fraction of Flimit (e.g. 0.75) 
+-1 # Control rule target as fraction of Flimit (e.g. 0.75) 
+2019 1
+2020 1
+2021 0.935 
+2022 0.930 
+2023 0.926 
+2024 0.922 
+2025 0.917 
+2026 0.913 
+2027 0.909 
+2028 0.904 
+2029 0.900 
+2030 0.896 
+-9999 0
 3 #_N forecast loops (1=OFL only; 2=ABC; 3=get F from forecast ABC catch with allocations applied)
 3 #_First forecast loop with stochastic recruitment
 0 #_Forecast recruitment:  0= spawn_recr; 1=value*spawn_recr_fxn; 2=value*VirginRecr; 3=recent mean from yr range above 
@@ -49,14 +62,16 @@
 2 # basis for input Fcast catch: -1=read basis with each obs; 2=dead catch; 3=retained catch; 99=input Hrate(F)
 #enter list of Fcast catches; terminate with line having year=-9999
 #_Yr Seas Fleet Catch(or_F)
- 2015 1 1 899.12
- 2015 1 2 1232.92
- 2015 1 3 266.38
- 2015 1 4 417.58
- 2016 1 1 929.13
- 2016 1 2 1274.07
- 2016 1 3 275.27
- 2016 1 4 431.52
+# Forecast catch splits provided by the GMT
+2019	1	1	1034.782543
+2019	1	2	1316.687988
+2019	1	3	140.8114601
+2019	1	4	415.7180085
+2020	1	1	1024.917712
+2020	1	2	1198.736198
+2020	1	3	242.8690096
+2020	1	4	378.47708
+
 -9999 1 1 0 
 #
 999 # verify end of input 
