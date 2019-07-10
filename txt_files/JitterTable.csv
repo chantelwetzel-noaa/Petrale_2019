@@ -1,5 +1,5 @@
-Status,Base Model (jitter 0.05)
-Returned to base case,8
-Found local minimum,42
-Found better solution,0
-Total,50
+Status,Jitter = 0.05,Jitter = 0.10
+Returned to base case,8,4
+Found local minimum,42,46
+Found better solution,0,0
+Total,50,50

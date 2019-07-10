@@ -33,7 +33,7 @@ ssb = dat$X2005 ; ind = !is.na(ssb)
 lines(dat$Year[ind], ssb[ind], lty = 2, col = colors[6], lwd =2)
 
 legend("topright", bty = 'n', legend = c(2019, 2015, 2013, 2011, 2009, 2005), col = colors, 
-       lty = c(1,2,3,2,2,2,2,2), lwd = 2)
+       lty = c(1,2,2,2,2,2,2,2), lwd = 2)
 
 dev.off()
 

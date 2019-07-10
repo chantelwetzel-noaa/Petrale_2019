@@ -75,11 +75,11 @@
 
 \FloatBarrier
 
-![Length frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_len_freq}](Figures/NWFSC Groundfish Bottom Trawl Survey_Length_Frequency.png)
+![Length frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_len_freq}](r4ss/plots_mod1/comp_lendat_bubflt7mkt0.png)
 
 \FloatBarrier
 
-![Age frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_age_freq}](Figures/NWFSC Groundfish Bottom Trawl Survey_Age_Frequency.png)
+![Age frequency by sex for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_age_freq}](r4ss/plots_mod1/comp_gstagedat_bubflt7mkt0.png)
 
 \FloatBarrier
 
@@ -139,11 +139,11 @@
 
 \FloatBarrier
 
-![Length frequency by sex for the Triennial Early Survey data. \label{fig:tri_early_len_freq}](Figures/Triennial Early_Length_Frequency.png)
+![Length frequency by sex for the Triennial Early Survey data. \label{fig:tri_early_len_freq}](r4ss/plots_mod1/comp_lendat_bubflt5mkt0.png)
 
 \FloatBarrier
 
-![Length frequency by sex for the Triennial Late Survey data. \label{fig:tri_late_len_freq}](Figures/Triennial Late_Length_Frequency.png)
+![Length frequency by sex for the Triennial Late Survey data. \label{fig:tri_late_len_freq}](r4ss/plots_mod1/comp_lendat_bubflt6mkt0.png)
 
 \FloatBarrier
 
@@ -207,7 +207,7 @@
 \FloatBarrier
 
 ![Fecundity-at-length assumed in the model for `r spp`. \label{fig:fecundity_model}](r4ss/plots_mod1/bio8_fecundity_wt.png)
-
+-slop
 \FloatBarrier
 
 ![Estimated fecundity-at-length for `r spp` based on Lefebvre et al. (in press). \label{fig:fecundity}](Figures/fecundity.png)
@@ -217,7 +217,7 @@
 <!-- ********************************************************************** -->
 <!-- *****************     Sex Ratio                *********************** --> 
 <!-- ********************************************************************** -->
-![Estimated proportion of female fish collected by the NWFSC shelf-slope survey across all years for `r spp`. \label{fig:sex_ratio}](Figures/NWFSC Shelf-Slope_length_fraction_female.png)
+![Estimated proportion of female fish collected by the NWFSC shelf-slope survey across all years for `r spp`. \label{fig:sex_ratio}](Figures/NWFSC Groundfish Bottom Trawl Survey_length_fraction_female.png)
 
 \FloatBarrier
 
@@ -417,37 +417,48 @@
 ```{r, results='asis'}
 
 #Discard - Winter North
-cat('\n![', LenComp_mod1[9,caption_col], ' \\label{fig:discard_wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[9, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt1mkt1.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:discard_wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Summer North
-cat('\n![', LenComp_mod1[20,caption_col], ' \\label{fig:discard_sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[20, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt2mkt1.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:discard_sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Winter South
-cat('\n![', LenComp_mod1[30,caption_col], ' \\label{fig:discard_ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[30, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt1.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:discard_ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Summer South
-cat('\n![', LenComp_mod1[41,caption_col], ' \\label{fig:discard_ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[41, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt1.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:discard_ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Winter North
-cat('\n![', LenComp_mod1[5,caption_col], ' \\label{fig:wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[5, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt1mkt2_page3.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Summer North
-cat('\n![', LenComp_mod1[16,caption_col], ' \\label{fig:sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[16, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt2mkt2_page3.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Winter South
-cat('\n![', LenComp_mod1[26,caption_col], ' \\label{fig:ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[26, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt2_page4.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Summer South
-cat('\n![', LenComp_mod1[37,caption_col], ' \\label{fig:ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[37, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt4mkt2_page4.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Tri Early
-cat('\n![', LenComp_mod1[45,caption_col], ' \\label{fig:tri_early_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[45, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt5mkt0.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:tri_early_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Tri Late
-cat('\n![', LenComp_mod1[49,caption_col], ' \\label{fig:tri_late_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[49, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt6mkt0.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:tri_late_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #NWFSC Combo
-cat('\n![', LenComp_mod1[53,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[53, path_col], ')\n', sep='')
+find = which(LenComp_mod1$basename == "comp_lenfit_residsflt7mkt0.png")
+cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 ```
 
@@ -498,22 +509,26 @@ cat('\n![', LenComp_mod1[53,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}
 
 
 #Winter North
-cat('\n![', AgeComp_mod1[6,caption_col], ' \\label{fig:wn_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[6, path_col], ')\n', sep='')
+find = which(AgeComp_mod1$basename == "comp_agefit_residsflt1mkt2_page4.png")
+cat('\n![', AgeComp_mod1[find,caption_col], ' \\label{fig:wn_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[find, path_col], ')\n', sep='')
 
 #Summer North
-cat('\n![', AgeComp_mod1[14,caption_col], ' \\label{fig:sn_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[14, path_col], ')\n', sep='')
+find = which(AgeComp_mod1$basename == "comp_agefit_residsflt2mkt2_page5.png")
+cat('\n![', AgeComp_mod1[find,caption_col], ' \\label{fig:sn_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[find, path_col], ')\n', sep='')
 
 #Winter South
-cat('\n![', AgeComp_mod1[20,caption_col], ' \\label{fig:ws_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[20, path_col], ')\n', sep='')
+find = which(AgeComp_mod1$basename == "comp_agefit_residsflt3mkt2_page3.png")
+cat('\n![', AgeComp_mod1[find,caption_col], ' \\label{fig:ws_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[find, path_col], ')\n', sep='')
 
 #Summer South
-cat('\n![', AgeComp_mod1[26,caption_col], ' \\label{fig:ss_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[26, path_col], ')\n', sep='')
+find = which(AgeComp_mod1$basename == "comp_agefit_residsflt4mkt2_page3.png")
+cat('\n![', AgeComp_mod1[find,caption_col], ' \\label{fig:ss_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[find, path_col], ')\n', sep='')
 
 ```
 
 
 ```{r, results='asis'}
-plot.vec = c(4:7)
+plot.vec = c(4:9)
 for(a in 1:length(plot.vec)){
 #NWFSC Combo - Andre plots
 cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_andre_',a,'}](r4ss/plots_mod1/', AALComp_mod1[plot.vec[a], path_col], ')\n', sep='')
@@ -589,25 +604,41 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
 <!-- *****************Retrospective analysis FIGURES*********************** -->
 <!-- ********************************************************************** -->
 
-![Retrospective pattern for spawning biomass. \label{fig:retro_ssb}](Figures/retro_ssb.png)
+![Retrospective pattern for spawning biomass. \label{fig:retro_ssb}](Figures/retro_ssb_5.png)
   
 \FloatBarrier
 
-![Retrospective pattern for relative spawning biomass. \label{fig:retro_depl}](Figures/retro_depl.png)
+![Retrospective pattern for relative spawning biomass. \label{fig:retro_depl}](Figures/retro_depl_5.png)
   
 \FloatBarrier
 
 
-![Retrospective pattern for estimated recruitment deviations. \label{fig:retro_recdev}](Figures/retro_recdevs.png)
+![Retrospective pattern for estimated recruitment deviations. \label{fig:retro_recdev}](Figures/retro_recdevs_5.png)
   
+\FloatBarrier
+
+<!-- ********************************************************************** -->
+<!-- *****************   Data analysis FIGURES   ************************** -->
+<!-- ********************************************************************** -->
+
+![The estimated spawning output trajectory as each data source was updated relative to the 2015 update assessment. \label{fig:ssb_data}](Figures/data_ssb.png)
+
+\FloatBarrier
+
+![The estimated relative spawning output trajectory as each data source was updated relative to the 2015 update assessment. \label{fig:depl_data}](Figures/data_depl.png)
+
+\FloatBarrier
+
+![The estimated annual recruitment deviations as each data source was updated relative to the 2015 update assessment. \label{fig:recdev_data}](Figures/data_recdevs.png)
+
 \FloatBarrier
 
 
 <!-- ********************************************************************** -->
-<!-- *****************Historical analysis FIGURES*********************** -->
+<!-- *****************Historical analysis FIGURES************************** -->
 <!-- ********************************************************************** -->
 
-![Pattern for estimated spawning biomass from each assessment since 2005. \label{fig:historical_analysis}](Figures/Assessment_History.png)
+![The estimated spawning output from each assessment since 2005. \label{fig:historical_analysis}](Figures/Assessment_History.png)
 
 \FloatBarrier
 
@@ -622,7 +653,12 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
   
 \FloatBarrier
 
-![Trajectories of relative spawning biomass across values of steepness. \label{fig:h_trajectory}](Figures/h_trajectories.png)
+
+![Trajectories of spawning output across values of steepness. \label{fig:h_ssb_trajectory}](Figures/h_trajectories_ssb.png)
+  
+\FloatBarrier
+
+![Trajectories of relative spawning output across values of steepness. \label{fig:h_depl_trajectory}](Figures/h_trajectories_depl.png)
   
 \FloatBarrier
 
@@ -633,9 +669,11 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
   
 \FloatBarrier
 
+![Trajectories of spawning output across values of natural mortality. \label{fig:m_ssb_trajectory}](Figures/m_trajectories_ssb.png)
+  
+\FloatBarrier
 
-
-![Trajectories of relative spawning biomass across values of natural mortality. \label{fig:m_trajectory}](Figures/m_trajectories.png)
+![Trajectories of relative spawning output across values of natural mortality. \label{fig:m_depl_trajectory}](Figures/m_trajectories_depl.png)
   
 \FloatBarrier
   

@@ -195,9 +195,11 @@ There are a number of major uncertainties regarding model parameters that have b
 Additionally, to date a reconstructed historical Washington catch history has not been included in the `r spp` stock assessment.  Washington state is currently undergoing efforts to determine historical catches.  
 
 ##Decision Table{-}    
+The forecast of stock abundance and yield was developed using the base model. The total catches in 2019 and 2020 are set to the PFMC adopted ACLs of 2908 and 2845, respectively. The exploitation rate for 2021 and beyond is based upon an SPR of 30% and the 25:5 harveest control rule. The average exploitation rates, across recent years, by fleet as provided by the Groundfish Management Team were used to distribute catches among the fisheries during the forecast period. 
 
-Model uncertainty has been described by the estimated uncertainty within the base model and by the sensitivities to different model structure. 
+Uncertainty in the forecasts is based upon the three states of nature based on the likelihood profile of female M, chosen using a change of 1.2 NLL units (75% interval) from the minimum value to correspond to the midpoints of the lower 25% probability and upper 25% probability regions from the base model and are low (0.125, rounded to the third decimal place) and high (0.180, rounded to the third decimal place) values for female natural mortality. 
 
+Catches during the projection period under the current harvest control rule are projected to start around 3800 mt and decline over the projection period to 3000 -3050 mt as the stock declines towards that target spawning biomass (Table \ref{tab:OFL_projection}).  Acorss the low and high states of nature the under the current harvest control rule range between 0.25 - 0.38 fraction of spawning biomass by the end of the projection period (Table \ref{tab:Decision_table_mod1_es}).
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
 

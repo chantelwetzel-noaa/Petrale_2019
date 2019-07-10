@@ -148,7 +148,7 @@ for (i in 1:length(folders)){
   }
 }
 
-folders = c("_profiles/plots/", "_retro/plots/", "_sensitivities/plots/")
+folders = c("_profiles/plots/", "_retro/plots/", "_sensitivities/plots/", "3.0_base/data_plots/")
 HomeDir = "C:/Assessments/2019/petrale_2019/Models/"
 for (i in 1:length(folders)){
   files = list.files(paste0(HomeDir, folders[i]))

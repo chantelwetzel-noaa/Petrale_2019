@@ -539,11 +539,12 @@ Bratio.fore = Bratio[Bratio$Label >= paste('Bratio_', Project_firstyr, sep='')
 Bratio.fore = print(Bratio.fore, digits = 3)
 
 Fore_Table = cbind(OFL, Spawn.fore, Bratio.fore)
-colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Depletion") 
+colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Biomass") 
+write.csv(Fore_Table, file = './txt_files/OFL_forecast.csv', row.names = FALSE)
 
 # Create the table
-OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative depletion based on ABC removals.  The 2019 and 2020 
-                                          removals are set at the harvest limits currently set by management of XXX mt per year.'),
+OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
+                                          removals are set at the harvest limits currently set by management of 2908 and 2845 mt per year, respectively.'),
                   label = 'tab:OFL_projection',
                   digits = 0)
       
@@ -567,19 +568,19 @@ colnames(decision_mod1) = c('',
                             'Year',  
                             'Catch',	
                             'Spawning Biomass',	
-                            'Depletion', 
+                            'Relative Biomass', 
                             'Spawning Biomass',	
-                            'Depletion',	
+                            'Relative Biomass',	
                             'Spawning Biomass',	
-                            'Depletion')
+                            'Relative Biomass')
       
 decision_mod1.table = xtable( decision_mod1, 
                               caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on 
                                              an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification 
                                              of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different 
                                              assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
-                              label='tab:Decision_table_mod1', 
-                              digits = c(0,0,0,0,0,1,0,1,0,1)) 
+                              label='tab:Decision_table_mod1_es', 
+                              digits = c(0,0,0,0,0,3,0,3,0,3)) 
       
 # Assign alignment and add the header columns
 align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
@@ -591,9 +592,9 @@ addtorow$pos[[2]] <- -1
 addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                        & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                        & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.12} 
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.125} 
                        & \\multicolumn{2}{c}{M = 0.151} 
-                       &  \\multicolumn{2}{c}{M = 0.18} \\\\\n')
+                       &  \\multicolumn{2}{c}{M = 0.180} \\\\\n')
         
 #=============================================================================
 # Executive Summary Table I: Summary of Results

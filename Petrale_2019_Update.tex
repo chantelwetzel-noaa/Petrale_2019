@@ -545,10 +545,10 @@ corresponding to an spawning biomass of 13,114 mt (\(\sim\) 95\%
 asymptotic interval: 10,722-15,506 mt). Unfished age 3+ biomass was
 estimated to be 55,563.4 mt in the base model. The target spawning
 biomass based on the biomass target (\(SB_{25\%}\)) is 8,687.4 mt, with
-an equilibrium catch of 3,169.4 mt. Equilibrium yield at the proxy
-\(F_{MSY}\) harvest rate corresponding to \(SPR_{30\%}\) is 3,145.7 mt.
-Estimated MSY catch is at a 3,184.6 spawning biomass of 7,564.2 mt
-(21.8\% relative spawning biomass).
+an equilibrium catch of 3,143.3 mt. Equilibrium yield at the proxy
+\(F_{MSY}\) harvest rate corresponding to \(SPR_{30\%}\) is 3,120.3 mt.
+Estimated MSY catch is at a 3,157.3 spawning biomass of 7,603.3 mt
+(21.9\% relative spawning biomass).
 
 \begin{table}[ht]
 \centering
@@ -568,18 +568,18 @@ Unfished spawning biomass (mt) & 34749.5 & 28140.3 & 41358.7 \\
   \textbf{$\text{Reference points based on } \mathbf{SB_{25\%}}$} &  &  &  \\ 
   Proxy spawning biomass ($B_{25\%}$) & 8687.4 & 7035.1 & 10339.7 \\ 
   SPR resulting in $B_{25\%}$ ($SPR_{B25\%}$) & 0.28 & 0.257 & 0.303 \\ 
-  Exploitation rate resulting in $B_{25\%}$ & 0.179 & 0.16 & 0.199 \\ 
-  Yield with $SPR_{B25\%}$ at $B_{25\%}$ (mt) & 3169.4 & 2902.2 & 3436.7 \\ 
+  Exploitation rate resulting in $B_{25\%}$ & 0.178 & 0.159 & 0.197 \\ 
+  Yield with $SPR_{B25\%}$ at $B_{25\%}$ (mt) & 3143.3 & 2877.7 & 3408.8 \\ 
   \textbf{\textit{Reference points based on SPR proxy for MSY}} &  &  &  \\ 
   Spawning biomass & 9412.8 & 7349.3 & 11476.3 \\ 
   $SPR_{30\%}$ &  &  &  \\ 
-  Exploitation rate corresponding to $SPR_{30\%}$ & 0.167 & 0.141 & 0.193 \\ 
-  Yield with $SPR_{30\%}$ at $SB_{SPR}$ (mt) & 3145.7 & 2847.5 & 3443.8 \\ 
+  Exploitation rate corresponding to $SPR_{30\%}$ & 0.166 & 0.14 & 0.192 \\ 
+  Yield with $SPR_{30\%}$ at $SB_{SPR}$ (mt) & 3120.3 & 2824.7 & 3415.9 \\ 
   \textbf{\textit{Reference points based on estimated MSY values}} &  &  &  \\ 
-  Spawning biomass at $MSY$ ($SB_{MSY}$) & 7564.2 & 5628.4 & 9500.1 \\ 
-  $SPR_{MSY}$ & 0.249 & 0.188 & 0.31 \\ 
-  Exploitation rate at $MSY$ & 0.201 & 0.168 & 0.233 \\ 
-  $MSY$ (mt)  & 3184.6 & 2935.8 & 3433.4 \\ 
+  Spawning biomass at $MSY$ ($SB_{MSY}$) & 7603.3 & 5669.5 & 9537.2 \\ 
+  $SPR_{MSY}$ & 0.25 & 0.189 & 0.311 \\ 
+  Exploitation rate at $MSY$ & 0.198 & 0.167 & 0.229 \\ 
+  $MSY$ (mt)  & 3157.3 & 2909.2 & 3405.4 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -670,30 +670,51 @@ catches.
 \subsection*{Decision Table}\label{decision-table}
 \addcontentsline{toc}{subsection}{Decision Table}
 
-Model uncertainty has been described by the estimated uncertainty within
-the base model and by the sensitivities to different model structure.
+The forecast of stock abundance and yield was developed using the base
+model. The total catches in 2019 and 2020 are set to the PFMC adopted
+ACLs of 2908 and 2845, respectively. The exploitation rate for 2021 and
+beyond is based upon an SPR of 30\% and the 25:5 harveest control rule.
+The average exploitation rates, across recent years, by fleet as
+provided by the Groundfish Management Team were used to distribute
+catches among the fisheries during the forecast period.
+
+Uncertainty in the forecasts is based upon the three states of nature
+based on the likelihood profile of female M, chosen using a change of
+1.2 NLL units (75\% interval) from the minimum value to correspond to
+the midpoints of the lower 25\% probability and upper 25\% probability
+regions from the base model and are low (0.125, rounded to the third
+decimal place) and high (0.180, rounded to the third decimal place)
+values for female natural mortality.
+
+Catches during the projection period under the current harvest control
+rule are projected to start around 3800 mt and decline over the
+projection period to 3000 -3050 mt as the stock declines towards that
+target spawning biomass (Table \ref{tab:OFL_projection}). Acorss the low
+and high states of nature the under the current harvest control rule
+range between 0.25 - 0.38 fraction of spawning biomass by the end of the
+projection period (Table \ref{tab:Decision_table_mod1_es}).
 
 \begin{table}[ht]
 \centering
-\caption{Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative depletion based on ABC removals.  The 2019 and 2020 
-                                          removals are set at the harvest limits currently set by management of XXX mt per year.} 
+\caption{Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
+                                          removals are set at the harvest limits currently set by management of 2908 and 2845 mt per year, respectively.} 
 \label{tab:OFL_projection}
 \begin{tabular}{>{\raggedleft}p{0.5in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.6in}>{\centering}p{1.1in}}
   \hline
-Year & OFL & ABC & Spawning Biomass (mt) & Relative Depletion \\ 
+Year & OFL & ABC & Spawning Biomass (mt) & Relative Biomass \\ 
   \hline
-2019 & 4494 & 2908 & 13114 & 0.377 \\ 
-  2020 & 4327 & 2845 & 12630 & 0.363 \\ 
-  2021 & 4154 & 3884 & 12115 & 0.349 \\ 
-  2022 & 3770 & 3506 & 11040 & 0.318 \\ 
-  2023 & 3523 & 3262 & 10367 & 0.298 \\ 
-  2024 & 3391 & 3126 & 10032 & 0.289 \\ 
-  2025 & 3341 & 3064 & 9925 & 0.286 \\ 
-  2026 & 3341 & 3050 & 9945 & 0.286 \\ 
-  2027 & 3361 & 3055 & 10011 & 0.288 \\ 
-  2028 & 3385 & 3060 & 10082 & 0.290 \\ 
-  2029 & 3407 & 3066 & 10142 & 0.292 \\ 
-  2030 & 3423 & 3067 & 10185 & 0.293 \\ 
+2019 & 4421 & 2908 & 13114 & 0.377 \\ 
+  2020 & 4257 & 2845 & 12630 & 0.363 \\ 
+  2021 & 4088 & 3822 & 12115 & 0.349 \\ 
+  2022 & 3730 & 3469 & 11078 & 0.319 \\ 
+  2023 & 3497 & 3239 & 10421 & 0.300 \\ 
+  2024 & 3373 & 3110 & 10087 & 0.290 \\ 
+  2025 & 3325 & 3049 & 9974 & 0.287 \\ 
+  2026 & 3323 & 3034 & 9984 & 0.287 \\ 
+  2027 & 3340 & 3036 & 10041 & 0.289 \\ 
+  2028 & 3362 & 3039 & 10105 & 0.291 \\ 
+  2029 & 3382 & 3043 & 10160 & 0.292 \\ 
+  2030 & 3397 & 3044 & 10201 & 0.294 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -706,50 +727,50 @@ Year & OFL & ABC & Spawning Biomass (mt) & Relative Depletion \\
                                              an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification 
                                              of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different 
                                              assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.} 
-\label{tab:Decision_table_mod1}
+\label{tab:Decision_table_mod1_es}
 \scalebox{0.85}{
 \begin{tabular}{l|cc|>{\centering}p{.7in}c|>{\centering}p{.7in}c|>{\centering}p{.7in}c}
    \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{} 
                        & \multicolumn{2}{c}{\textbf{States of nature}} 
                        & \multicolumn{2}{c}{} \\
-  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.12} 
+  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.125} 
                        & \multicolumn{2}{c}{M = 0.151} 
-                       &  \multicolumn{2}{c}{M = 0.18} \\
+                       &  \multicolumn{2}{c}{M = 0.180} \\
  \hline
- & Year & Catch & Spawning Biomass & Depletion & Spawning Biomass & Depletion & Spawning Biomass & Depletion \\ 
+ & Year & Catch & Spawning Biomass & Relative Biomass & Spawning Biomass & Relative Biomass & Spawning Biomass & Relative Biomass \\ 
   \hline
- & 2021 & 3884 & 11559 & 0.3 & 12115 & 0.3 & 14446 & 0.5 \\ 
-   & 2022 & 3506 & 10560 & 0.3 & 11040 & 0.3 & 13168 & 0.4 \\ 
-   & 2023 & 3262 & 9895 & 0.2 & 10367 & 0.3 & 12401 & 0.4 \\ 
-  ABC & 2024 & 3126 & 9517 & 0.2 & 10032 & 0.3 & 12021 & 0.4 \\ 
-   & 2025 & 3064 & 9341 & 0.2 & 9925 & 0.3 & 11877 & 0.4 \\ 
-   & 2026 & 3050 & 9284 & 0.2 & 9945 & 0.3 & 11850 & 0.4 \\ 
-   & 2027 & 3055 & 9279 & 0.2 & 10011 & 0.3 & 11863 & 0.4 \\ 
-   & 2028 & 3060 & 9291 & 0.2 & 10082 & 0.3 & 11874 & 0.4 \\ 
-   & 2029 & 3066 & 9303 & 0.2 & 10142 & 0.3 & 11872 & 0.4 \\ 
-   & 2030 & 3067 & 9309 & 0.2 & 10185 & 0.3 & 11856 & 0.4 \\ 
+ & 2021 & 3822 & 11638 & 0.299 & 12115 & 0.349 & 14446 & 0.467 \\ 
+   & 2022 & 3469 & 10666 & 0.274 & 11078 & 0.319 & 13204 & 0.427 \\ 
+   & 2023 & 3239 & 10023 & 0.257 & 10421 & 0.300 & 12457 & 0.403 \\ 
+  ABC & 2024 & 3110 & 9665 & 0.248 & 10087 & 0.290 & 12086 & 0.391 \\ 
+   & 2025 & 3049 & 9510 & 0.244 & 9974 & 0.287 & 11947 & 0.386 \\ 
+   & 2026 & 3034 & 9472 & 0.243 & 9984 & 0.287 & 11923 & 0.385 \\ 
+   & 2027 & 3036 & 9488 & 0.244 & 10041 & 0.289 & 11939 & 0.386 \\ 
+   & 2028 & 3039 & 9519 & 0.244 & 10105 & 0.291 & 11955 & 0.386 \\ 
+   & 2029 & 3043 & 9552 & 0.245 & 10160 & 0.292 & 11960 & 0.387 \\ 
+   & 2030 & 3044 & 9577 & 0.246 & 10201 & 0.294 & 11952 & 0.386 \\ 
    \hline
- & 2021 & 3262 & 11559 & 0.3 & 12115 & 0.3 & 14446 & 0.5 \\ 
-   & 2022 & 3050 & 10944 & 0.3 & 11416 & 0.3 & 13534 & 0.4 \\ 
-   & 2023 & 2916 & 10558 & 0.3 & 11003 & 0.3 & 13010 & 0.4 \\ 
-  SPR  & 2024 & 2850 & 10381 & 0.3 & 10845 & 0.3 & 12785 & 0.4 \\ 
-  target =  & 2025 & 2830 & 10352 & 0.3 & 10860 & 0.3 & 12742 & 0.4 \\ 
-  0.34 & 2026 & 2841 & 10409 & 0.3 & 10967 & 0.3 & 12783 & 0.4 \\ 
-   & 2027 & 2863 & 10498 & 0.3 & 11101 & 0.3 & 12843 & 0.4 \\ 
-   & 2028 & 2882 & 10592 & 0.3 & 11230 & 0.3 & 12892 & 0.4 \\ 
-   & 2029 & 2901 & 10679 & 0.3 & 11342 & 0.3 & 12922 & 0.4 \\ 
-   & 2030 & 2913 & 10753 & 0.3 & 11434 & 0.3 & 12933 & 0.4 \\ 
+ & 2021 & 3218 & 11638 & 0.299 & 12115 & 0.349 & 14446 & 0.467 \\ 
+   & 2022 & 3020 & 11038 & 0.283 & 11443 & 0.329 & 13560 & 0.438 \\ 
+   & 2023 & 2895 & 10666 & 0.274 & 11043 & 0.318 & 13052 & 0.422 \\ 
+  SPR  & 2024 & 2834 & 10504 & 0.270 & 10888 & 0.313 & 12836 & 0.415 \\ 
+  target =  & 2025 & 2815 & 10492 & 0.269 & 10899 & 0.314 & 12798 & 0.414 \\ 
+  0.34 & 2026 & 2825 & 10564 & 0.271 & 10998 & 0.316 & 12843 & 0.415 \\ 
+   & 2027 & 2846 & 10670 & 0.274 & 11125 & 0.320 & 12907 & 0.417 \\ 
+   & 2028 & 2863 & 10779 & 0.277 & 11249 & 0.324 & 12961 & 0.419 \\ 
+   & 2029 & 2880 & 10881 & 0.279 & 11357 & 0.327 & 12998 & 0.420 \\ 
+   & 2030 & 2891 & 10970 & 0.282 & 11446 & 0.329 & 13016 & 0.421 \\ 
    \hline
- & 2021 & 2549 & 11559 & 0.3 & 12115 & 0.3 & 14446 & 0.5 \\ 
-   & 2022 & 2478 & 11385 & 0.3 & 11847 & 0.3 & 13954 & 0.5 \\ 
-   & 2023 & 2445 & 11349 & 0.3 & 11764 & 0.3 & 13737 & 0.4 \\ 
-  SPR  & 2024 & 2447 & 11449 & 0.3 & 11854 & 0.3 & 13733 & 0.4 \\ 
-  target =  & 2025 & 2471 & 11643 & 0.3 & 12058 & 0.3 & 13851 & 0.4 \\ 
-  0.4 & 2026 & 2511 & 11882 & 0.3 & 12312 & 0.4 & 14011 & 0.5 \\ 
-   & 2027 & 2554 & 12128 & 0.3 & 12567 & 0.4 & 14165 & 0.5 \\ 
-   & 2028 & 2590 & 12360 & 0.3 & 12800 & 0.4 & 14290 & 0.5 \\ 
-   & 2029 & 2623 & 12571 & 0.3 & 13004 & 0.4 & 14385 & 0.5 \\ 
-   & 2030 & 2649 & 12758 & 0.3 & 13178 & 0.4 & 14452 & 0.5 \\ 
+ & 2021 & 2522 & 11638 & 0.299 & 12115 & 0.349 & 14446 & 0.467 \\ 
+   & 2022 & 2458 & 11466 & 0.294 & 11864 & 0.341 & 13970 & 0.452 \\ 
+   & 2023 & 2430 & 11436 & 0.294 & 11790 & 0.339 & 13764 & 0.445 \\ 
+  SPR  & 2024 & 2434 & 11544 & 0.296 & 11882 & 0.342 & 13767 & 0.445 \\ 
+  target =  & 2025 & 2458 & 11747 & 0.302 & 12083 & 0.348 & 13890 & 0.449 \\ 
+  0.4 & 2026 & 2497 & 11996 & 0.308 & 12332 & 0.355 & 14054 & 0.454 \\ 
+   & 2027 & 2539 & 12251 & 0.315 & 12582 & 0.362 & 14212 & 0.459 \\ 
+   & 2028 & 2574 & 12492 & 0.321 & 12811 & 0.369 & 14343 & 0.464 \\ 
+   & 2029 & 2605 & 12711 & 0.326 & 13012 & 0.374 & 14444 & 0.467 \\ 
+   & 2030 & 2630 & 12906 & 0.331 & 13185 & 0.379 & 14517 & 0.469 \\ 
    \hline
 \end{tabular}
 }
@@ -1373,14 +1394,14 @@ fleet due to the fact that vessels commonly fish and land in each
 other's waters and ports.
 
 The PacFIN database (1981-2018 for California and Washington; 1987-2018
-for Oregon) extracted XXX ADD DATE XXX. Historical catches were not
-updated from the previous assessment in 2013. The 2013 assessment
-historical Washington catches were obtained from WDFW landings
-reconstruction for 1935, 1939 and 1949- 1969 (pers. comm. T. Tsou and G.
-Lippert) and the Pacific Marine Fisheries Commission (PMFC) Data Series
-for 1956-1980 (PFMC \protect\hyperlink{ref-pfmc_data_1979}{1979}). The
-2013 assessment historical Oregon landings were obtained from
-reconstruction for 1932 to 1986 (Karnowski et al.
+for Oregon) extracted June 26, 2019. Historical catches were not updated
+from the previous assessment in 2013. The 2013 assessment historical
+Washington catches were obtained from WDFW landings reconstruction for
+1935, 1939 and 1949- 1969 (pers. comm. T. Tsou and G. Lippert) and the
+Pacific Marine Fisheries Commission (PMFC) Data Series for 1956-1980
+(PFMC \protect\hyperlink{ref-pfmc_data_1979}{1979}). The 2013 assessment
+historical Oregon landings were obtained from reconstruction for 1932 to
+1986 (Karnowski et al.
 \protect\hyperlink{ref-karnowski_historical_2014}{2014}). The 2013
 assessment historical California landings used catch reconstruction data
 extending from 1931-1980 (Ralston et al.
@@ -1506,17 +1527,18 @@ years 1948-1992 was extracted and provided from CALCOM by Brenda Erwin
 (CDFG) in 2011.
 
 The historical Oregon data for petrale sole has change substantially
-since 2015. The state has identified samples across years that were not
-collected according to the state's standardized sampling protocal that
-were included in PacFIN due to error. These samples likely represent
-samples that were collected for special projects. Oregon has removed
-some of these samples for petrale sole from PacFIN, but not all as of
-2019. To remove the remaining non-standard samples, Oregon PacFIN data
-was filtered according to the ``Sample Quality'' based on directions
-from Ali Whitman at ODFW where samples with a sample quality code of 63
-represent non-standardized samples. Filtering out these records removed
-all Oregon samples from 1966-1970 and 1972-1975 and a portion of samples
-from 1971.
+since 2015. The state has identified that all samples collected prior to
+1987 were not collected according to the state's standardized sampling
+protocal that were included in PacFIN as random samples in error (pers.
+comm. Ali Whitman). These samples likely represent samples that were
+collected for special projects. Oregon has removed some of these samples
+for petrale sole from PacFIN, but not all as of 2019. To remove the
+remaining non-standard samples, Oregon PacFIN data were filtered to
+remove all samples prior to 1987. Although these samples were removed
+from the length and age composition data for this update assessment,
+future assessments should evaluate these data to determine if they can
+be included within the assessment through alternative means (e.g.,
+external estimates of length-at-age).
 
 Commercial length-frequency distributions based on the fishing year were
 developed for each state for which observations were available. For each
@@ -1685,8 +1707,6 @@ The length-at-age was estimated for male and female petrale sole. Figure
 Bertalanffy fits to the data from the fishery and the NWFSC West Coast
 Groundfish Bottom Trawl Survey data. Females grow larger than males and
 sex-specific growth parameters were estimated at the following values:
-
-XXX DOUBLE CHECK THESE VALUES WHEN AGES ARRIVE XXX
 
 \begin{centering}
 
@@ -2146,19 +2166,21 @@ assumptions and/or data, and were not performed in a cumulative fashion.
 
 \begin{enumerate}
 
-  \item Fix natural mortality value for female fish at a lower value of ??.
+  \item Fix natural mortality value for female fish at a lower value of 0.125.
   
-  \item Fix natural mortality value for female fish at a higher value of ??.
+  \item Fix natural mortality value for female fish at a higher value of 0.180.
   
   \item Use the natural mortality prior for female and male fish used in the 2015 update assessment, natural mortality estimated.
   
-  \item Use the coastwide fecundity relationship for petrale sole estimated by Lefebvre et al. (in press).
+  \item Use the coastwide fecundity relationship for petrale sole estimated by Lefebvre et al. in press.
   
   \item Estimate the sex ratio between female and male fish within the model.
   
-  \item Data weight according to the Francis method using the weighting values shown in Table \ref{tab:francis}. 
+  \item Estimate the sex ratio between female and male fish within the model and assume the coastwide fecundity relationship for petrale sole Lefebvre et al. in press.
   
-  \item Data weight according to the Dirichlet method where the estimated parameters are shown in Table \ref{tab:dirichlet}.
+  \item Data weighting according to the Francis method using the weighting values shown in Table \ref{tab:francis}. 
+  
+  \item Data weighting according to the Dirichlet method where the estimated parameters are shown in Table \ref{tab:dirichlet}.
   
 \end{enumerate}
 
@@ -2170,11 +2192,23 @@ in Figures \ref{fig:sens_ssb} and \ref{fig:sens_depl}
 \subsubsection{Retrospective Analysis}\label{retrospective-analysis}
 
 A five-year retrospective analysis was conducted by running the model
-using data only through 2014, 2015, 2016, 2017 and 2018 (Figures
+using data only through 2013, 2014, 2015, 2016, 2017 and 2018 (Figures
 \ref{fig:retro_ssb}, \ref{fig:retro_depl}, and \ref{fig:retro_recdev}).
-he initial scale of the spawning biomass trended upward relative to the
+The initial scale of the spawning biomass trended upward relative to the
 base model. Overall, no alarming patterns were present in the
 retrospective analysis.
+
+\subsubsection{Data Analysis}\label{data-analysis}
+
+The changes from the 2015 update assessment based on the addition and
+reprocessing of data was explored. Each data source was added starting
+with catches and ending with ages for all fleets within the model where
+each model run contains the ealier updated data (e.g., + Lengths has
+data through 2019 for the catches, indices, discard rates and weights,
+and lengths for all fleets with only the age data through 2014). The
+estimates of the spawning biomass, relative spawning biomass, and the
+annual recruitment deviations from each model are shown in Figures
+\ref{fig:ssb_data}, \ref{fig:depl_data}, and \ref{fig:recdevs_data}.
 
 \subsubsection{Historical Analysis}\label{historical-analysis}
 
@@ -2197,16 +2231,16 @@ generally provide very little information concerning steepness. The
 relative spawning biomass for petrale sole diverges most during the
 middel of the time series based on the assumed values of steepness with
 the final status generally being above the management target biomass
-(Figure \ref{fig:h_trajectory}).
+(Figures \ref{fig:h_ssb_trajectory} and \ref{fig:h_depl_trajectory}).
 
 The negative log-likelihood was minimized at a female natural mortality
-value of ??, but the 95\% confidence interval extends over values
-ranging from ?? - ??. Male natural mortality was estimated in the
+value of 0.151, but the 95\% confidence interval extends over values
+ranging from 0.12 - 0.18. Male natural mortality was estimated in the
 likelihood profile. The age and length data likelihood contribution was
 minimized at natural morality values ranging from ??-?? (Figure
 \ref{fig:piner_m}). The relative spawning biomass for petrale sole
-widely varied across alternative values of natural mortality (Figure
-\ref{fig:m_trajectory}).
+widely varied across alternative values of natural mortality (Figures
+\ref{fig:m_ssb_trajectory} and \ref{fig:m_depl_trajectory}).
 
 In regards to values of \(R_0\), the negative log-likelihood was
 minimized at approximately log(\(R_0\)) of 9.85 (Figure
@@ -2216,9 +2250,9 @@ minimized at approximately log(\(R_0\)) of 9.85 (Figure
 
 Reference points were calculated using the estimated selectivities and
 catch distributions among fleets in the most recent year of the model
-(2018). Sustainable total yields (landings plus discards) were 3,145.7
+(2018). Sustainable total yields (landings plus discards) were 3,120.3
 mt when using an \(SPR_{30\%}\) reference harvest rate and with a 95\%
-confidence interval of 2,847.5 mt based on estimates of uncertainty. The
+confidence interval of 2,824.7 mt based on estimates of uncertainty. The
 spawning biomass equivalent to 25\% of the unfished spawning output
 (\(SB_{25\%}\)) was 8,687.4.
 
@@ -2583,16 +2617,21 @@ Pacific West Coast bottom trawl survey of groundifsh resources:
 Estimates of distribution, abundance and length and age composition.
 NOAA Technical Memorandum, U.S. Department of Commerce.
 
+\newpage
+
 \section{Tables}\label{tables}
 
-\begin{table}[ht]
-\centering
-\caption{Landings for each fleet for the modeled years.} 
-\label{tab:Comm_Catch}
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}}
+\begin{longtable}{ccccc}
+\caption{Landings for each fleet for the modeled years.} \\ 
   \hline
 Year & Winter North & Summer North & Winter South & Summer South \\ 
-  \hline
+  \hline 
+\endhead 
+\hline 
+\multicolumn{3}{l}{\footnotesize Continued on next page} 
+\endfoot 
+\endlastfoot 
+ \hline
 1875 & 0 & 0 & 0 & 0 \\ 
   1876 & 0 & 0 & 0 & 1 \\ 
   1877 & 0 & 0 & 0 & 1 \\ 
@@ -2633,17 +2672,7 @@ Year & Winter North & Summer North & Winter South & Summer South \\
   1912 & 0 & 0 & 0 & 349 \\ 
   1913 & 0 & 0 & 0 & 360 \\ 
   1914 & 0 & 0 & 0 & 370 \\ 
-   \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}}
-  \hline
-Year & Winter North & Summer North & Winter South & Summer South \\ 
-  \hline
-1915 & 0 & 0 & 0 & 381 \\ 
+  1915 & 0 & 0 & 0 & 381 \\ 
   1916 & 0 & 0 & 0 & 386 \\ 
   1917 & 0 & 0 & 0 & 526 \\ 
   1918 & 0 & 0 & 0 & 424 \\ 
@@ -2683,17 +2712,7 @@ Year & Winter North & Summer North & Winter South & Summer South \\
   1952 & 131 & 1390 & 326 & 882 \\ 
   1953 & 46 & 737 & 533 & 981 \\ 
   1954 & 27 & 903 & 801 & 1073 \\ 
-   \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}}
-  \hline
-Year & Winter North & Summer North & Winter South & Summer South \\ 
-  \hline
-1955 & 57 & 863 & 526 & 1052 \\ 
+  1955 & 57 & 863 & 526 & 1052 \\ 
   1956 & 137 & 759 & 508 & 801 \\ 
   1957 & 171 & 1103 & 527 & 1027 \\ 
   1958 & 99 & 1152 & 568 & 957 \\ 
@@ -2733,67 +2752,7 @@ Year & Winter North & Summer North & Winter South & Summer South \\
   1992 & 640 & 366 & 272 & 307 \\ 
   1993 & 685 & 392 & 237 & 234 \\ 
   1994 & 518 & 355 & 246 & 299 \\ 
-   \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}}
-  \hline
-Year & Winter North & Summer North & Winter South & Summer South \\ 
-  \hline
-1915 & 0 & 0 & 0 & 381 \\ 
-  1916 & 0 & 0 & 0 & 386 \\ 
-  1917 & 0 & 0 & 0 & 526 \\ 
-  1918 & 0 & 0 & 0 & 424 \\ 
-  1919 & 0 & 0 & 0 & 333 \\ 
-  1920 & 0 & 0 & 0 & 230 \\ 
-  1921 & 0 & 0 & 0 & 294 \\ 
-  1922 & 0 & 0 & 0 & 425 \\ 
-  1923 & 0 & 0 & 0 & 427 \\ 
-  1924 & 0 & 0 & 0 & 533 \\ 
-  1925 & 0 & 0 & 0 & 528 \\ 
-  1926 & 0 & 0 & 0 & 522 \\ 
-  1927 & 0 & 0 & 0 & 632 \\ 
-  1928 & 0 & 0 & 0 & 620 \\ 
-  1929 & 0 & 2 & 0 & 706 \\ 
-  1930 & 0 & 1 & 0 & 659 \\ 
-  1931 & 0 & 81 & 63 & 531 \\ 
-  1932 & 2 & 251 & 36 & 520 \\ 
-  1933 & 6 & 408 & 39 & 392 \\ 
-  1934 & 10 & 568 & 139 & 896 \\ 
-  1935 & 14 & 650 & 155 & 777 \\ 
-  1936 & 16 & 770 & 95 & 432 \\ 
-  1937 & 20 & 1051 & 75 & 741 \\ 
-  1938 & 27 & 1187 & 48 & 890 \\ 
-  1939 & 35 & 1545 & 31 & 1029 \\ 
-  1940 & 39 & 1737 & 162 & 597 \\ 
-  1941 & 41 & 1803 & 111 & 331 \\ 
-  1942 & 46 & 2919 & 24 & 216 \\ 
-  1943 & 51 & 2867 & 72 & 345 \\ 
-  1944 & 55 & 2047 & 86 & 447 \\ 
-  1945 & 60 & 1866 & 102 & 439 \\ 
-  1946 & 64 & 2492 & 72 & 1116 \\ 
-  1947 & 69 & 1778 & 154 & 1093 \\ 
-  1948 & 74 & 2315 & 273 & 1778 \\ 
-  1949 & 76 & 1809 & 617 & 1812 \\ 
-  1950 & 156 & 2322 & 424 & 1638 \\ 
-  1951 & 118 & 1666 & 208 & 993 \\ 
-  1952 & 131 & 1390 & 326 & 882 \\ 
-  1953 & 46 & 737 & 533 & 981 \\ 
-  1954 & 27 & 903 & 801 & 1073 \\ 
-   \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}>{\centering}p{.75in}}
-  \hline
-Year & Winter North & Summer North & Winter South & Summer South \\ 
-  \hline
-1995 & 591 & 454 & 236 & 287 \\ 
+  1995 & 591 & 454 & 236 & 287 \\ 
   1996 & 591 & 440 & 406 & 394 \\ 
   1997 & 621 & 430 & 448 & 442 \\ 
   1998 & 522 & 577 & 221 & 300 \\ 
@@ -2818,8 +2777,9 @@ Year & Winter North & Summer North & Winter South & Summer South \\
   2017 & 1142 & 1271 & 201 & 393 \\ 
   2018 & 957 & 1262 & 218 & 402 \\ 
    \hline
-\end{tabular}
-\end{table}
+\hline
+\label{tab:Comm_Catch}
+\end{longtable}
 
 \clearpage
 
@@ -2827,7 +2787,7 @@ Year & Winter North & Summer North & Winter South & Summer South \\
 \centering
 \caption{Recent trend in estimated total catch relative to management guidelines. The estimated total catch includes the total landings plus the model estimated discard mortality based upon discard rate data.} 
 \label{tab:mnmgt_perform_tables}
-\begin{tabular}{>{\raggedleft}p{0.5in}>{\centering}p{1.0in}>{\centering}p{1.0in}>{\centering}p{1.1in}>{\centering}p{1.1in}}
+\begin{tabular}{>{\raggedleft}p{0.5in}>{\centering}p{1.25in}>{\centering}p{1.25in}>{\centering}p{1.25in}>{\centering}p{1.25in}}
   \hline
 Year & OFL (mt; ABC prior to 2011) & ACL (mt; OY prior to 2011) & Total landings (mt) & Estimated total catch (mt) \\ 
   \hline
@@ -3039,14 +2999,19 @@ Year & Tows & Fish & Sample Size \\
 
 \FloatBarrier
 
-\begin{table}[ht]
-\centering
-\caption{Summary of discard rates used in the model by each data source (continued on next page).} 
-\label{tab:Discard}
-\begin{tabular}{>{\centering}p{.75in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}}
+\clearpage   \newpage
+
+\begin{longtable}{ccccc}
+\caption{Summary of discard rates used in the model by each data source (continued on next page).} \\ 
   \hline
 Year & Fleet & Discard Rate & Standard Error & Data Source \\ 
-  \hline
+  \hline 
+\endhead 
+\hline 
+\multicolumn{3}{l}{\footnotesize Continued on next page} 
+\endfoot 
+\endlastfoot 
+ \hline
 1985 & WinterN & 0.022 & 0.110 & Pikitch \\ 
   1986 & WinterN & 0.021 & 0.116 & Pikitch \\ 
   1987 & WinterN & 0.027 & 0.119 & Pikitch \\ 
@@ -3086,19 +3051,9 @@ Year & Fleet & Discard Rate & Standard Error & Data Source \\
   2015 & SummerN & 0.006 & 0.015 & WGCOP \\ 
   2016 & SummerN & 0.017 & 0.015 & WGCOP \\ 
   2017 & SummerN & 0.007 & 0.015 & WGCOP \\ 
-   \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{>{\centering}p{.75in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}}
-  \hline
-Year & Fleet & Discard Rate & Standard Error & Data Source \\ 
-  \hline
-2002 & WinterS & 0.035 & 0.016 & WGCOP \\ 
-  2003 & WinterS & 0.012 & 0.001 & WGCOP \\ 
-  2004 & WinterS & 0.013 & 0.033 & WGCOP \\ 
+  2002 & WinterS & 0.035 & 0.016 & Pikitch \\ 
+  2003 & WinterS & 0.012 & 0.001 & Pikitch \\ 
+  2004 & WinterS & 0.013 & 0.033 & Pikitch \\ 
   2005 & WinterS & 0.033 & 0.004 & WGCOP \\ 
   2006 & WinterS & 0.071 & 0.035 & WGCOP \\ 
   2007 & WinterS & 0.012 & 0.003 & WGCOP \\ 
@@ -3116,9 +3071,9 @@ Year & Fleet & Discard Rate & Standard Error & Data Source \\
   2002 & SummerS & 0.058 & 0.016 & WGCOP \\ 
   2003 & SummerS & 0.033 & 0.011 & WGCOP \\ 
   2004 & SummerS & 0.033 & 0.014 & WGCOP \\ 
-  2005 & SummerS & 0.012 & 0.003 & WGCOP \\ 
-  2006 & SummerS & 0.038 & 0.014 & WGCOP \\ 
-  2007 & SummerS & 0.065 & 0.023 & WGCOP \\ 
+  2005 & SummerS & 0.012 & 0.003 & Pikitch \\ 
+  2006 & SummerS & 0.038 & 0.014 & Pikitch \\ 
+  2007 & SummerS & 0.065 & 0.023 & Pikitch \\ 
   2008 & SummerS & 0.026 & 0.014 & WGCOP \\ 
   2009 & SummerS & 0.023 & 0.006 & WGCOP \\ 
   2010 & SummerS & 0.056 & 0.007 & WGCOP \\ 
@@ -3130,15 +3085,16 @@ Year & Fleet & Discard Rate & Standard Error & Data Source \\
   2016 & SummerS & 0.004 & 0.015 & WGCOP \\ 
   2017 & SummerS & 0.008 & 0.015 & WGCOP \\ 
    \hline
-\end{tabular}
-\end{table}
+\hline
+\label{tab:Discard}
+\end{longtable}
 
-\begin{table}[ht]
-\centering
-\caption{Summary of fishery length samples used in the stock assessment (continued on next page).} 
-\label{tab:Fishery_Lengths}
-\begingroup\fontsize{12pt}{12pt}\selectfont
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}}
+\FloatBarrier
+
+\newpage
+
+\begin{longtable}{ccccccccc}
+\caption{Summary of fishery length samples used in the stock assessment (continued on next page).} \\ 
   \hline
    & \multicolumn{2}{c}{Winter N.} &  \multicolumn{2}{c}{Summer N.} & \multicolumn{2}{c}{Winter S.} & \multicolumn{2}{c}{Summer S.} \\
  Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\
@@ -3188,20 +3144,7 @@ Year & Fleet & Discard Rate & Standard Error & Data Source \\
   2000 & 17 & 638 & 24 & 1012 & 0 & 0 & 0 & 0 \\ 
   2001 & 12 & 468 & 18 & 786 & 10 & 305 & 9 & 289 \\ 
   2002 & 13 & 551 & 31 & 1259 & 7 & 209 & 10 & 252 \\ 
-   \hline
-\end{tabular}
-\endgroup
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begingroup\fontsize{12pt}{12pt}\selectfont
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}}
-  \hline
-   & \multicolumn{2}{c}{Winter N.} &  \multicolumn{2}{c}{Summer N.} & \multicolumn{2}{c}{Winter S.} & \multicolumn{2}{c}{Summer S.} \\
- Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\
- \hline
-2003 & 28 & 872 & 35 & 1370 & 10 & 254 & 30 & 475 \\ 
+  2003 & 28 & 872 & 35 & 1370 & 10 & 254 & 30 & 475 \\ 
   2004 & 22 & 720 & 30 & 1328 & 10 & 228 & 15 & 431 \\ 
   2005 & 18 & 628 & 35 & 1493 & 9 & 169 & 36 & 966 \\ 
   2006 & 26 & 1106 & 51 & 2639 & 37 & 1040 & 47 & 1059 \\ 
@@ -3218,18 +3161,16 @@ Year & Fleet & Discard Rate & Standard Error & Data Source \\
   2017 & 57 & 1816 & 74 & 2790 & 33 & 1289 & 85 & 2489 \\ 
   2018 & 50 & 1386 & 93 & 2654 & 19 & 823 & 77 & 2663 \\ 
    \hline
-\end{tabular}
-\endgroup
-\end{table}
+\hline
+\label{tab:Fishery_Lengths}
+\end{longtable}
 
 \FloatBarrier
 
-\begin{table}[ht]
-\centering
-\caption{Summary of fishery age samples used in the stock assessment (continued on next page).} 
-\label{tab:Fishery_Ages}
-\begingroup\fontsize{11pt}{11pt}\selectfont
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}}
+\newpage
+
+\begin{longtable}{ccccccccc}
+\caption{Summary of fishery age samples used in the stock assessment (continued on next page).} \\ 
   \hline
    & \multicolumn{2}{c}{Winter N.} &  \multicolumn{2}{c}{Summer N.} & \multicolumn{2}{c}{Winter S.} & \multicolumn{2}{c}{Summer S.} \\
  Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\
@@ -3284,27 +3225,16 @@ Year & Fleet & Discard Rate & Standard Error & Data Source \\
   2012 & 31 & 385 & 40 & 835 & 4 & 118 & 1 & 34 \\ 
   2013 & 48 & 723 & 46 & 831 & 1 & 39 & 3 & 100 \\ 
   2014 & 29 & 678 & 24 & 616 & 0 & 0 & 0 & 0 \\ 
-   \hline
-\end{tabular}
-\endgroup
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begingroup\fontsize{11pt}{11pt}\selectfont
-\begin{tabular}{>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}>{\centering}p{.5in}}
-  \hline
-   & \multicolumn{2}{c}{Winter N.} &  \multicolumn{2}{c}{Summer N.} & \multicolumn{2}{c}{Winter S.} & \multicolumn{2}{c}{Summer S.} \\
- Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\
- \hline
-2015 & 56 & 584 & 48 & 811 & 0 & 0 & 0 & 0 \\ 
+  2015 & 56 & 584 & 48 & 811 & 0 & 0 & 0 & 0 \\ 
   2016 & 28 & 318 & 36 & 302 & 0 & 0 & 0 & 0 \\ 
   2017 & 49 & 567 & 61 & 779 & 0 & 0 & 0 & 0 \\ 
   2018 & 38 & 534 & 78 & 961 & 0 & 0 & 0 & 0 \\ 
    \hline
-\end{tabular}
-\endgroup
-\end{table}
+\hline
+\label{tab:Fishery_Ages}
+\end{longtable}
+
+\newpage
 
 \FloatBarrier
 
@@ -3471,7 +3401,7 @@ NatM\_p\_1\_Fem\_GP\_1 & 0.151334 & 6 & (0.005, 0.5) & OK & 0.02 & Log\_Norm (-1
   VonBert\_K\_Fem\_GP\_1 & 0.142492 & 2 & (0.04, 0.5) & OK & 0.01 & None \\ 
   SD\_young\_Fem\_GP\_1 & 0.188679 & 3 & (0.01, 1) & OK & 0.01 & None \\ 
   SD\_old\_Fem\_GP\_1 & 0.0344042 & 4 & (0.01, 1) & OK & 0.01 & None \\ 
-  Wtlen\_1\_Fem\_GP\_1 & 0.000001986 & -3 & (-3, 3) &  &  & Normal (0.000001986, 0.8) \\ 
+  Wtlen\_1\_Fem\_GP\_1 & 0.000001986 & -3 & (-3, 3) &  &  & Normal (0.00000199, 0.8) \\ 
   Wtlen\_2\_Fem\_GP\_1 & 3.484 & -3 & (1, 5) &  &  & Normal (3.478, 0.8) \\ 
   Mat50\%\_Fem\_GP\_1 & 33.1 & -3 & (10, 50) &  &  & Normal (33.1, 0.8) \\ 
   Mat\_slope\_Fem\_GP\_1 & -0.743 & -3 & (-3, 3) &  &  & Normal (-0.743, 0.8) \\ 
@@ -3483,7 +3413,7 @@ NatM\_p\_1\_Fem\_GP\_1 & 0.151334 & 6 & (0.005, 0.5) & OK & 0.02 & Log\_Norm (-1
   VonBert\_K\_Mal\_GP\_1 & 0.234 & 2 & (0.04, 0.5) & OK & 0.01 & None \\ 
   SD\_young\_Mal\_GP\_1 & 0.135122 & 3 & (0.01, 1) & OK & 0.01 & None \\ 
   SD\_old\_Mal\_GP\_1 & 0.059 & 4 & (0.01, 1) & OK & 0.00 & None \\ 
-  Wtlen\_1\_Mal\_GP\_1 & 0.000002983 & -3 & (-3, 3) &  &  & Normal (0.000002983, 0.8) \\ 
+  Wtlen\_1\_Mal\_GP\_1 & 0.000002983 & -3 & (-3, 3) &  &  & Normal (0.00000298, 0.8) \\ 
   Wtlen\_2\_Mal\_GP\_1 & 3.363 & -3 & (-3, 5) &  &  & Normal (3.363, 0.8) \\ 
   CohortGrowDev & 1 & -4 & (0, 1) &  &  & None \\ 
   FracFemale\_GP\_1 & 0.5 & -99 & (0.01, 0.99) &  &  & None \\ 
@@ -3698,14 +3628,14 @@ NatM\_p\_1\_Fem\_GP\_1 & 0.151334 & 6 & (0.005, 0.5) & OK & 0.02 & Log\_Norm (-1
 \centering
 \caption{Results from 50 jitters from the base model.} 
 \label{tab:jitter}
-\begin{tabular}{>{\raggedright}p{2in}>{\centering}p{1in}}
+\begin{tabular}{>{\raggedright}p{2in}>{\centering}p{1in}>{\centering}p{1in}}
   \hline
-Status & Base.Model..jitter.0.05. \\ 
+Status & Jitter = 0.05 & Jitter = 0.10 \\ 
   \hline
-Returned to base case &   8 \\ 
-  Found local minimum &  42 \\ 
-  Found better solution &   0 \\ 
-  Total &  50 \\ 
+Returned to base case &   8 &   4 \\ 
+  Found local minimum &  42 &  46 \\ 
+  Found better solution &   0 &   0 \\ 
+  Total &  50 &  50 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -3754,18 +3684,18 @@ Unfished spawning biomass (mt) & 34749.5 & 28140.3 & 41358.7 \\
   \textbf{$\text{Reference points based on } \mathbf{SB_{40\%}}$} &  &  &  \\ 
   Proxy spawning biomass ($B_{25\%}$) & 8687.4 & 7035.1 & 10339.7 \\ 
   SPR resulting in $B_{25\%}$ ($SPR_{B25\%}$) & 0.28 & 0.257 & 0.303 \\ 
-  Exploitation rate resulting in $B_{25\%}$ & 0.179 & 0.16 & 0.199 \\ 
-  Yield with $SPR_{B25\%}$ at $B_{25\%}$ (mt) & 3169.4 & 2902.2 & 3436.7 \\ 
+  Exploitation rate resulting in $B_{25\%}$ & 0.178 & 0.159 & 0.197 \\ 
+  Yield with $SPR_{B25\%}$ at $B_{25\%}$ (mt) & 3143.3 & 2877.7 & 3408.8 \\ 
   \textbf{\textit{Reference points based on SPR proxy for MSY}} &  &  &  \\ 
   Spawning biomass & 9412.8 & 7349.3 & 11476.3 \\ 
   $SPR_{proxy}$ &  &  &  \\ 
-  Exploitation rate corresponding to $SPR_{proxy}$ & 0.167 & 0.141 & 0.193 \\ 
-  Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt) & 3145.7 & 2847.5 & 3443.8 \\ 
+  Exploitation rate corresponding to $SPR_{proxy}$ & 0.166 & 0.14 & 0.192 \\ 
+  Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt) & 3120.3 & 2824.7 & 3415.9 \\ 
   \textbf{\textit{Reference points based on estimated MSY values}} &  &  &  \\ 
-  Spawning bioamss at $MSY$ ($SB_{MSY}$) & 7564.2 & 5628.4 & 9500.1 \\ 
-  $SPR_{MSY}$ & 0.249 & 0.188 & 0.31 \\ 
-  Exploitation rate at $MSY$ & 0.201 & 0.168 & 0.233 \\ 
-  $MSY$ (mt)  & 3184.6 & 2935.8 & 3433.4 \\ 
+  Spawning bioamss at $MSY$ ($SB_{MSY}$) & 7603.3 & 5669.5 & 9537.2 \\ 
+  $SPR_{MSY}$ & 0.25 & 0.189 & 0.311 \\ 
+  Exploitation rate at $MSY$ & 0.198 & 0.167 & 0.229 \\ 
+  $MSY$ (mt)  & 3157.3 & 2909.2 & 3405.4 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -3778,7 +3708,13 @@ Unfished spawning biomass (mt) & 34749.5 & 28140.3 & 41358.7 \\
 \caption{Time-series of population estimates from the base model.} \\ 
   \hline
 Year & Total biomass (mt) & Spawning biomass (million eggs) & Summary biomass 3+ & Relative biomass & Age-0 recruits & Estimated total catch (mt) & 1-SPR & Exploit. rate \\ 
-  \hline \endhead  \hline
+  \hline 
+\endhead 
+\hline 
+\multicolumn{3}{l}{\footnotesize Continued on next page} 
+\endfoot 
+\endlastfoot 
+ \hline
 1876 & 56,178 & 34,750 & 55,564 & 1.00 & 18,944 & 1 & 0 & 0 \\ 
   1877 & 56,177 & 34,749 & 55,563 & 1.00 & 18,944 & 1 & 0 & 0 \\ 
   1878 & 56,176 & 34,748 & 55,562 & 1.00 & 18,944 & 1 & 0 & 0 \\ 
@@ -3932,47 +3868,49 @@ Year & Total biomass (mt) & Spawning biomass (million eggs) & Summary biomass 3+
 
 \FloatBarrier
 
-\begin{sidewaystable}[ht]
-\centering
-\caption{Sensitivity of the base model.} 
-\label{tab:sens_table}
-\scalebox{0.9}{
-\begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
+\begin{landscape}
+\begingroup\fontsize{9pt}{10pt}\selectfont
+\begin{longtable}{lrrrrrrrrr}
+\caption{Sensitivity runs relative to the base model.} \\ 
   \hline
-Label & Base & Low M & High M & Old M Prior & Fecundity & Sex Ratio & Francis & Dirichlet & NA \\ 
+Label & Base & Low M & High M & Old M Prior & Fecundity & Sex Ratio & Sex Ratio \& Fecund. & Francis & Dirichlet \\ 
   \hline
-Total Likelihood & 1397.460 & 1399.700 & 1641.010 & 1397.720 & 1408.490 & 1396.340 & 1407.380 & 1397.460 & 3067.230 \\ 
-  Survey Likelihood & -75.071 & -74.367 & -69.484 & -75.030 & -75.085 & -75.101 & -75.112 & -75.069 & -75.049 \\ 
-  Discard Likelihood & -228.290 & -228.458 & -189.705 & -228.323 & -228.291 & -227.963 & -227.962 & -228.288 & -228.711 \\ 
-  Discard Mean Body Wt. & -160.927 & -161.049 & -160.482 & -160.933 & -160.926 & -160.858 & -160.858 & -160.936 & -161.187 \\ 
-  Length Likelihood & 785.852 & 787.493 & 929.400 & 786.289 & 785.863 & 785.938 & 785.957 & 785.843 & 881.219 \\ 
-  Age Likelihood & 1096.580 & 1095.280 & 1148.630 & 1096.290 & 1096.600 & 1094.780 & 1094.780 & 1096.580 & 2669.450 \\ 
-  Recruitment Likelihood & -27.797 & -27.500 & -26.131 & -27.577 & -27.834 & -27.819 & -27.879 & -27.795 & -24.307 \\ 
-  Forecast Recruitment Likelihood & 0.043 & 0.041 & 0.021 & 0.044 & 0.043 & 0.044 & 0.043 & 0.043 & 0.000 \\ 
-  Parameter Priors Likelihood & 7.038 & 8.217 & 8.717 & 6.926 & 18.081 & 7.285 & 18.364 & 7.042 & 5.780 \\ 
-  Convergence Gradient & 0.000 & 0.280 & 0.651 & 0.633 & 0.008 & 0.059 & 0.280 & 1.263 & 1408.380 \\ 
-  log(R0) & 9.849 & 9.478 & 10.168 & 9.862 & 9.856 & 9.890 & 9.894 & 9.848 & 9.781 \\ 
-  SB Virgin & 34749.500 & 39864.800 & 30936.200 & 34717.000 & 35578.900 & 36771.800 & 37802.600 & 34781.300 & 36377.800 \\ 
-  SB 2019 & 13114.100 & 12261.200 & 16234.700 & 13107.400 & 12141.300 & 13340.300 & 12371.100 & 13128.700 & 13735.500 \\ 
-  Depletion 2019 & 0.377 & 0.308 & 0.525 & 0.378 & 0.341 & 0.363 & 0.327 & 0.377 & 0.378 \\ 
-  Total Yield - SPR 30 & 3145.650 & 2981.340 & 3248.460 & 3130.850 & 3077.190 & 3156.070 & 3075.860 & 3145.640 & 3056.970 \\ 
-  Steepness & 0.862 & 0.928 & 0.811 & 0.853 & 0.885 & 0.873 & 0.895 & 0.862 & 0.847 \\ 
-  Natural Mortality - Female & 0.151 & 0.120 & 0.180 & 0.152 & 0.152 & 0.143 & 0.144 & 0.151 & 0.142 \\ 
-  Length at Amin - Female & 15.499 & 15.625 & 14.948 & 15.524 & 15.495 & 15.506 & 15.501 & 15.498 & 15.459 \\ 
-  Length at Amax - Female & 53.129 & 52.971 & 52.535 & 53.142 & 53.127 & 52.963 & 52.961 & 53.129 & 52.447 \\ 
-  Von Bert. k - Female & 0.142 & 0.144 & 0.155 & 0.142 & 0.143 & 0.145 & 0.145 & 0.142 & 0.149 \\ 
-  SD young - Female & 0.189 & 0.187 & 0.188 & 0.188 & 0.189 & 0.187 & 0.187 & 0.189 & 0.194 \\ 
-  SD old - Female & 0.034 & 0.035 & 0.039 & 0.034 & 0.034 & 0.036 & 0.036 & 0.034 & 0.036 \\ 
-  Natural Mortality - Male & 0.151 & 0.120 & 0.180 & 0.152 & 0.152 & 0.143 & 0.144 & 0.151 & 0.142 \\ 
-  Length at Amin - Male & 15.499 & 15.625 & 14.948 & 15.524 & 15.495 & 15.506 & 15.501 & 15.498 & 15.459 \\ 
-  Length at Amax - Male & 53.129 & 52.971 & 52.535 & 53.142 & 53.127 & 52.963 & 52.961 & 53.129 & 52.447 \\ 
-  Von Bert. k - Male & 0.142 & 0.144 & 0.155 & 0.142 & 0.143 & 0.145 & 0.145 & 0.142 & 0.149 \\ 
-  SD young - Male & 0.189 & 0.187 & 0.188 & 0.188 & 0.189 & 0.187 & 0.187 & 0.189 & 0.194 \\ 
-  SD old - Male & 0.034 & 0.035 & 0.039 & 0.034 & 0.034 & 0.036 & 0.036 & 0.034 & 0.036 \\ 
+Total Likelihood & 1397.46 & 1399.00 & 1398.97 & 1397.72 & 1408.49 & 1396.34 & 1407.38 & 1397.46 & 3066.90 \\ 
+  Survey Likelihood & -75.07 & -74.53 & -74.95 & -75.03 & -75.08 & -75.10 & -75.11 & -75.07 & -75.08 \\ 
+  Discard Likelihood & -228.29 & -228.44 & -228.06 & -228.32 & -228.29 & -227.96 & -227.96 & -228.29 & -228.76 \\ 
+  Discard Mean Body Wt. & -160.93 & -161.03 & -160.82 & -160.93 & -160.93 & -160.86 & -160.86 & -160.94 & -161.09 \\ 
+  Length Likelihood & 785.85 & 787.22 & 785.39 & 786.29 & 785.86 & 785.94 & 785.96 & 785.84 & 880.63 \\ 
+  Age Likelihood & 1096.58 & 1095.44 & 1097.60 & 1096.29 & 1096.60 & 1094.78 & 1094.78 & 1096.58 & 2669.77 \\ 
+  Recruitment Likelihood & -27.80 & -27.62 & -27.28 & -27.58 & -27.83 & -27.82 & -27.88 & -27.80 & -24.39 \\ 
+  Forecast Recruitment Likelihood & 0.04 & 0.04 & 0.04 & 0.04 & 0.04 & 0.04 & 0.04 & 0.04 & 0.00 \\ 
+  Parameter Priors Likelihood & 7.04 & 7.88 & 7.02 & 6.93 & 18.08 & 7.29 & 18.36 & 7.04 & 5.78 \\ 
+  Convergence Gradient & 0.01 & 0.81 & 0.06 & 0.63 & 0.01 & 0.06 & 0.28 & 1.26 & 7688.56 \\ 
+  log(R0) & 9.85 & 9.54 & 10.17 & 9.86 & 9.86 & 9.89 & 9.89 & 9.85 & 9.78 \\ 
+  SB Virgin & 34749.50 & 38940.30 & 31565.70 & 34717.00 & 35578.90 & 36771.80 & 37802.60 & 34781.30 & 36356.50 \\ 
+  SB 2019 & 13114.10 & 12386.10 & 13979.30 & 13107.40 & 12141.30 & 13340.30 & 12371.10 & 13128.70 & 13752.70 \\ 
+  Depletion 2019 & 0.38 & 0.32 & 0.44 & 0.38 & 0.34 & 0.36 & 0.33 & 0.38 & 0.38 \\ 
+  Total Yield - SPR 30 & 3120.31 & 3010.28 & 3257.73 & 3130.85 & 3077.19 & 3156.07 & 3075.86 & 3145.64 & 3058.55 \\ 
+  Steepness & 0.86 & 0.92 & 0.80 & 0.85 & 0.88 & 0.87 & 0.89 & 0.86 & 0.85 \\ 
+  Natural Mortality - Female & 0.15 & 0.12 & 0.18 & 0.15 & 0.15 & 0.14 & 0.14 & 0.15 & 0.14 \\ 
+  Length at Amin - Female & 15.50 & 15.61 & 15.37 & 15.52 & 15.49 & 15.51 & 15.50 & 15.50 & 15.48 \\ 
+  Length at Amax - Female & 53.13 & 53.00 & 53.26 & 53.14 & 53.13 & 52.96 & 52.96 & 53.13 & 52.43 \\ 
+  Von Bert. k - Female & 0.14 & 0.14 & 0.14 & 0.14 & 0.14 & 0.15 & 0.15 & 0.14 & 0.15 \\ 
+  SD young - Female & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 \\ 
+  SD old - Female & 0.03 & 0.04 & 0.03 & 0.03 & 0.03 & 0.04 & 0.04 & 0.03 & 0.04 \\ 
+  Natural Mortality - Male & 0.16 & 0.13 & 0.19 & 0.16 & 0.16 & 0.17 & 0.17 & 0.16 & 0.15 \\ 
+  Length at Amin - Male & 16.22 & 16.25 & 16.19 & 16.22 & 16.22 & 16.21 & 16.21 & 16.22 & 15.89 \\ 
+  Length at Amax - Male & 40.87 & 40.80 & 40.95 & 40.88 & 40.88 & 41.03 & 41.03 & 40.87 & 40.79 \\ 
+  Von Bert. k - Male & 0.23 & 0.24 & 0.23 & 0.23 & 0.23 & 0.23 & 0.23 & 0.23 & 0.24 \\ 
+  SD young - Male & 0.14 & 0.13 & 0.14 & 0.14 & 0.14 & 0.14 & 0.14 & 0.14 & 0.16 \\ 
+  SD old - Male & 0.06 & 0.06 & 0.06 & 0.06 & 0.06 & 0.06 & 0.06 & 0.06 & 0.05 \\ 
    \hline
-\end{tabular}
-}
-\end{sidewaystable}
+\hline
+\label{tab:sens_table}
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\newpage
 
 \FloatBarrier 
 
@@ -4022,25 +3960,24 @@ Winter North & 16.725 & 14.373 \\
 
 \begin{table}[ht]
 \centering
-\caption{Projection of potential
-                                         OFL, spawning biomass, and depletion for the
-                                         base case model. The removals in 2017 and 2018 
-                                         were set at the defined management specification of XXX mt for each year assuming full attainment.} 
+\caption{Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 removals are set at the harvest limits currently set by management of 2908 and 2845 mt per year, respectively.} 
 \label{tab:Forecast_mod1}
 \begin{tabular}{c>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}}
   \hline
-Year & OFL (mt) & ACL (mt) & Spawning Biomass & Depletion (\%) \\ 
+Year & OFL (mt) & ACL (mt) & Spawning Biomass & Relative Biomass \\ 
   \hline
-2019 & 4753 & 4340 & 5741 & 83.3 \\ 
-  2020 & 4632 & 4229 & 5745 & 83.4 \\ 
-  2021 & 4499 & 4108 & 5723 & 83.1 \\ 
-  2022 & 4364 & 3984 & 5666 & 82.2 \\ 
-  2023 & 4230 & 3862 & 5586 & 81.1 \\ 
-  2024 & 4105 & 3748 & 5494 & 79.8 \\ 
-  2025 & 3991 & 3644 & 5395 & 78.3 \\ 
-  2026 & 3889 & 3551 & 5292 & 76.8 \\ 
-  2027 & 3797 & 3467 & 5188 & 75.3 \\ 
-  2028 & 3712 & 3389 & 5084 & 73.8 \\ 
+2019 & 4421 & 2908 & 13114 & 0.377 \\ 
+  2020 & 4257 & 2845 & 12630 & 0.363 \\ 
+  2021 & 4088 & 3822 & 12115 & 0.349 \\ 
+  2022 & 3730 & 3469 & 11078 & 0.319 \\ 
+  2023 & 3497 & 3239 & 10421 & 0.300 \\ 
+  2024 & 3373 & 3110 & 10087 & 0.290 \\ 
+  2025 & 3325 & 3049 & 9974 & 0.287 \\ 
+  2026 & 3323 & 3034 & 9984 & 0.287 \\ 
+  2027 & 3340 & 3036 & 10041 & 0.289 \\ 
+  2028 & 3362 & 3039 & 10105 & 0.291 \\ 
+  2029 & 3382 & 3043 & 10160 & 0.292 \\ 
+  2030 & 3397 & 3044 & 10201 & 0.294 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -4049,53 +3986,50 @@ Year & OFL (mt) & ACL (mt) & Spawning Biomass & Depletion (\%) \\
 
 \begin{table}[ht]
 \centering
-\caption{Decision table summary of 10-year projections beginning in 2021 for alternate states of nature based on 
-                                             an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification 
-                                             of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different 
-                                             assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.} 
+\caption{Decision table summary of 10-year projections beginning in 2021 for alternate states of nature based on an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.} 
 \label{tab:Decision_table_mod1}
 \scalebox{0.85}{
 \begin{tabular}{l|cc|>{\centering}p{.7in}c|>{\centering}p{.7in}c|>{\centering}p{.7in}c}
    \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{} 
                        & \multicolumn{2}{c}{\textbf{States of nature}} 
                        & \multicolumn{2}{c}{} \\
-  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.12} 
+  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.125} 
                        & \multicolumn{2}{c}{M = 0.151} 
-                       &  \multicolumn{2}{c}{M = 0.18} \\
+                       &  \multicolumn{2}{c}{M = 0.180} \\
  \hline
  & Year & Catch & Spawning Biomass & Depletion & Spawning Biomass & Depletion & Spawning Biomass & Depletion \\ 
   \hline
- & 2021 & 3884 & 11559 & 0.3 & 12115 & 0.3 & 14446 & 0.5 \\ 
-   & 2022 & 3506 & 10560 & 0.3 & 11040 & 0.3 & 13168 & 0.4 \\ 
-   & 2023 & 3262 & 9895 & 0.2 & 10367 & 0.3 & 12401 & 0.4 \\ 
-  ABC & 2024 & 3126 & 9517 & 0.2 & 10032 & 0.3 & 12021 & 0.4 \\ 
-   & 2025 & 3064 & 9341 & 0.2 & 9925 & 0.3 & 11877 & 0.4 \\ 
-   & 2026 & 3050 & 9284 & 0.2 & 9945 & 0.3 & 11850 & 0.4 \\ 
-   & 2027 & 3055 & 9279 & 0.2 & 10011 & 0.3 & 11863 & 0.4 \\ 
-   & 2028 & 3060 & 9291 & 0.2 & 10082 & 0.3 & 11874 & 0.4 \\ 
-   & 2029 & 3066 & 9303 & 0.2 & 10142 & 0.3 & 11872 & 0.4 \\ 
-   & 2030 & 3067 & 9309 & 0.2 & 10185 & 0.3 & 11856 & 0.4 \\ 
+ & 2021 & 3822 & 11638 & 0.299 & 12115 & 0.349 & 14446 & 0.467 \\ 
+   & 2022 & 3469 & 10666 & 0.274 & 11078 & 0.319 & 13204 & 0.427 \\ 
+   & 2023 & 3239 & 10023 & 0.257 & 10421 & 0.300 & 12457 & 0.403 \\ 
+  ABC & 2024 & 3110 & 9665 & 0.248 & 10087 & 0.290 & 12086 & 0.391 \\ 
+   & 2025 & 3049 & 9510 & 0.244 & 9974 & 0.287 & 11947 & 0.386 \\ 
+   & 2026 & 3034 & 9472 & 0.243 & 9984 & 0.287 & 11923 & 0.385 \\ 
+   & 2027 & 3036 & 9488 & 0.244 & 10041 & 0.289 & 11939 & 0.386 \\ 
+   & 2028 & 3039 & 9519 & 0.244 & 10105 & 0.291 & 11955 & 0.386 \\ 
+   & 2029 & 3043 & 9552 & 0.245 & 10160 & 0.292 & 11960 & 0.387 \\ 
+   & 2030 & 3044 & 9577 & 0.246 & 10201 & 0.294 & 11952 & 0.386 \\ 
    \hline
- & 2021 & 3262 & 11559 & 0.3 & 12115 & 0.3 & 14446 & 0.5 \\ 
-   & 2022 & 3050 & 10944 & 0.3 & 11416 & 0.3 & 13534 & 0.4 \\ 
-   & 2023 & 2916 & 10558 & 0.3 & 11003 & 0.3 & 13010 & 0.4 \\ 
-  SPR  & 2024 & 2850 & 10381 & 0.3 & 10845 & 0.3 & 12785 & 0.4 \\ 
-  target =  & 2025 & 2830 & 10352 & 0.3 & 10860 & 0.3 & 12742 & 0.4 \\ 
-  0.34 & 2026 & 2841 & 10409 & 0.3 & 10967 & 0.3 & 12783 & 0.4 \\ 
-   & 2027 & 2863 & 10498 & 0.3 & 11101 & 0.3 & 12843 & 0.4 \\ 
-   & 2028 & 2882 & 10592 & 0.3 & 11230 & 0.3 & 12892 & 0.4 \\ 
-   & 2029 & 2901 & 10679 & 0.3 & 11342 & 0.3 & 12922 & 0.4 \\ 
-   & 2030 & 2913 & 10753 & 0.3 & 11434 & 0.3 & 12933 & 0.4 \\ 
-   & 2021 & 2549 & 11559 & 0.3 & 12115 & 0.3 & 14446 & 0.5 \\ 
-   & 2022 & 2478 & 11385 & 0.3 & 11847 & 0.3 & 13954 & 0.5 \\ 
-   & 2023 & 2445 & 11349 & 0.3 & 11764 & 0.3 & 13737 & 0.4 \\ 
-  SPR  & 2024 & 2447 & 11449 & 0.3 & 11854 & 0.3 & 13733 & 0.4 \\ 
-  target =  & 2025 & 2471 & 11643 & 0.3 & 12058 & 0.3 & 13851 & 0.4 \\ 
-  0.4 & 2026 & 2511 & 11882 & 0.3 & 12312 & 0.4 & 14011 & 0.5 \\ 
-   & 2027 & 2554 & 12128 & 0.3 & 12567 & 0.4 & 14165 & 0.5 \\ 
-   & 2028 & 2590 & 12360 & 0.3 & 12800 & 0.4 & 14290 & 0.5 \\ 
-   & 2029 & 2623 & 12571 & 0.3 & 13004 & 0.4 & 14385 & 0.5 \\ 
-   & 2030 & 2649 & 12758 & 0.3 & 13178 & 0.4 & 14452 & 0.5 \\ 
+ & 2021 & 3218 & 11638 & 0.299 & 12115 & 0.349 & 14446 & 0.467 \\ 
+   & 2022 & 3020 & 11038 & 0.283 & 11443 & 0.329 & 13560 & 0.438 \\ 
+   & 2023 & 2895 & 10666 & 0.274 & 11043 & 0.318 & 13052 & 0.422 \\ 
+  SPR  & 2024 & 2834 & 10504 & 0.270 & 10888 & 0.313 & 12836 & 0.415 \\ 
+  target =  & 2025 & 2815 & 10492 & 0.269 & 10899 & 0.314 & 12798 & 0.414 \\ 
+  0.34 & 2026 & 2825 & 10564 & 0.271 & 10998 & 0.316 & 12843 & 0.415 \\ 
+   & 2027 & 2846 & 10670 & 0.274 & 11125 & 0.320 & 12907 & 0.417 \\ 
+   & 2028 & 2863 & 10779 & 0.277 & 11249 & 0.324 & 12961 & 0.419 \\ 
+   & 2029 & 2880 & 10881 & 0.279 & 11357 & 0.327 & 12998 & 0.420 \\ 
+   & 2030 & 2891 & 10970 & 0.282 & 11446 & 0.329 & 13016 & 0.421 \\ 
+   & 2021 & 2522 & 11638 & 0.299 & 12115 & 0.349 & 14446 & 0.467 \\ 
+   & 2022 & 2458 & 11466 & 0.294 & 11864 & 0.341 & 13970 & 0.452 \\ 
+   & 2023 & 2430 & 11436 & 0.294 & 11790 & 0.339 & 13764 & 0.445 \\ 
+  SPR  & 2024 & 2434 & 11544 & 0.296 & 11882 & 0.342 & 13767 & 0.445 \\ 
+  target =  & 2025 & 2458 & 11747 & 0.302 & 12083 & 0.348 & 13890 & 0.449 \\ 
+  0.4 & 2026 & 2497 & 11996 & 0.308 & 12332 & 0.355 & 14054 & 0.454 \\ 
+   & 2027 & 2539 & 12251 & 0.315 & 12582 & 0.362 & 14212 & 0.459 \\ 
+   & 2028 & 2574 & 12492 & 0.321 & 12811 & 0.369 & 14343 & 0.464 \\ 
+   & 2029 & 2605 & 12711 & 0.326 & 13012 & 0.374 & 14444 & 0.467 \\ 
+   & 2030 & 2630 & 12906 & 0.331 & 13185 & 0.379 & 14517 & 0.469 \\ 
    \hline
 \end{tabular}
 }
@@ -4445,13 +4379,7 @@ logbook data for petrale sole. \label{fig:south_cpue}}
 
 \FloatBarrier
 
-\begin{figure}
-\centering
-\includegraphics{r4ss/plots_mod1/bio8_fecundity_wt.png}
-\caption{Fecundity-at-length assumed in the model for petrale sole.
-\label{fig:fecundity_model}}
-\end{figure}
-
+\includegraphics{r4ss/plots_mod1/bio8_fecundity_wt.png} -slop
 \FloatBarrier
 
 \begin{figure}
@@ -4465,7 +4393,7 @@ Lefebvre et al. (in press). \label{fig:fecundity}}
 
 \begin{figure}
 \centering
-\includegraphics{Figures/NWFSC Shelf-Slope_length_fraction_female.png}
+\includegraphics{Figures/NWFSC Groundfish Bottom Trawl Survey_length_fraction_female.png}
 \caption{Estimated proportion of female fish collected by the NWFSC
 shelf-slope survey across all years for petrale sole.
 \label{fig:sex_ratio}}
@@ -4749,91 +4677,106 @@ fleet. Panels without this designation represent the whole catch.
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt1mkt1.png}
-\caption{N\_EffN comparison, Length comps, discard, Winter (N)
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt1mkt1.png}
+\caption{Pearson residuals, discard, Winter (N) (max=6.3)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:discard_wn_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_Summer (N).png}
-\caption{Mean length for Summer (N) with 95\% confidence intervals based
-on current samples sizes. Francis data weighting method TA1.8: thinner
-intervals (with capped ends) show result of further adjusting sample
-sizes based on suggested multiplier (with 95\% interval) for len data
-from Summer (N): 0.7932 (0.5984\_1.1773) For more info, see Francis,
-R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-https://doi.org/10.1139/f2011\_025 \label{fig:discard_sn_len_pearson}}
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt2mkt1.png}
+\caption{Pearson residuals, discard, Summer (N) (max=5.64)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:discard_sn_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt3mkt1.png}
-\caption{N\_EffN comparison, Length comps, discard, Winter (S)
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt3mkt1.png}
+\caption{Pearson residuals, discard, Winter (S) (max=3.19)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:discard_ws_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt4mkt1.png}
-\caption{N\_EffN comparison, Length comps, discard, Summer (S)
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt3mkt1.png}
+\caption{Pearson residuals, discard, Winter (S) (max=3.19)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:discard_ss_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt1mkt2.png}
-\caption{N\_EffN comparison, Length comps, retained, Winter (N)
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt1mkt2_page3.png}
+\caption{Pearson residuals, retained, Winter (N) (max=3.47) (plot 3 of
+3)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:wn_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_Summer (N).png}
-\caption{Mean length for Summer (N) with 95\% confidence intervals based
-on current samples sizes. Francis data weighting method TA1.8: thinner
-intervals (with capped ends) show result of further adjusting sample
-sizes based on suggested multiplier (with 95\% interval) for len data
-from Summer (N): 0.7932 (0.5979\_1.1834) For more info, see Francis,
-R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-https://doi.org/10.1139/f2011\_025 \label{fig:sn_len_pearson}}
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt2mkt2_page3.png}
+\caption{Pearson residuals, retained, Summer (N) (max=6.45) (plot 3 of
+3)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:sn_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt3mkt2.png}
-\caption{N\_EffN comparison, Length comps, retained, Winter (S)
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt3mkt2_page4.png}
+\caption{Pearson residuals, retained, Winter (S) (max=3.92) (plot 4 of
+4)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:ws_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt4mkt2.png}
-\caption{N\_EffN comparison, Length comps, retained, Summer (S)
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt4mkt2_page4.png}
+\caption{Pearson residuals, retained, Summer (S) (max=6.51) (plot 4 of
+4)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:ss_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt5mkt0.png}
-\caption{N\_EffN comparison, Length comps, whole catch, Triennial \_
-Early \label{fig:tri_early_len_pearson}}
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt5mkt0.png}
+\caption{Pearson residuals, whole catch, Triennial \_ Early (max=3.23)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:tri_early_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt6mkt0.png}
-\caption{N\_EffN comparison, Length comps, whole catch, Triennial \_
-Late \label{fig:tri_late_len_pearson}}
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt6mkt0.png}
+\caption{Pearson residuals, whole catch, Triennial \_ Late (max=3.91)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:tri_late_len_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_lenfit_sampsize_flt7mkt0.png}
-\caption{N\_EffN comparison, Length comps, whole catch, NWFSC West Coast
-Groundfish Bottom Trawl Survey \label{fig:nwfsc_combo_len_pearson}}
+\includegraphics{r4ss/plots_mod1/comp_lenfit_residsflt7mkt0.png}
+\caption{Pearson residuals, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (max=5.12)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
+\label{fig:nwfsc_combo_len_pearson}}
 \end{figure}
 
 \begin{figure}
@@ -4911,29 +4854,41 @@ West Coast Groundfish Bottom Trawl Survey length data.
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_agefit_sampsize_flt1mkt2.png}
-\caption{N\_EffN comparison, Age comps, retained, Winter (N)
+\includegraphics{r4ss/plots_mod1/comp_agefit_residsflt1mkt2_page4.png}
+\caption{Pearson residuals, retained, Winter (N) (max=4.05) (plot 4 of
+4)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:wn_age_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_agefit_sampsize_flt2mkt2.png}
-\caption{N\_EffN comparison, Age comps, retained, Summer (N)
+\includegraphics{r4ss/plots_mod1/comp_agefit_residsflt2mkt2_page5.png}
+\caption{Pearson residuals, retained, Summer (N) (max=4.53) (plot 5 of
+5)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:sn_age_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_agefit_sampsize_flt3mkt2.png}
-\caption{N\_EffN comparison, Age comps, retained, Winter (S)
+\includegraphics{r4ss/plots_mod1/comp_agefit_residsflt3mkt2_page3.png}
+\caption{Pearson residuals, retained, Winter (S) (max=6.55) (plot 3 of
+3)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:ws_age_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/comp_agefit_sampsize_flt4mkt2.png}
-\caption{N\_EffN comparison, Age comps, retained, Summer (S)
+\includegraphics{r4ss/plots_mod1/comp_agefit_residsflt4mkt2_page3.png}
+\caption{Pearson residuals, retained, Summer (S) (max=4.06) (plot 3 of
+3)\\
+Closed bubbles are positive residuals (observed \textgreater{} expected)
+and open bubbles are negative residuals (observed \textless{} expected).
 \label{fig:ss_age_pearson}}
 \end{figure}
 
@@ -4968,6 +4923,20 @@ Bottom Trawl Survey (plot 3 of 6) \label{fig:nwfsc_combo_andre_3}}
 \includegraphics{r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt7mkt0_page4.png}
 \caption{Conditional AAL plot, whole catch, NWFSC West Coast Groundfish
 Bottom Trawl Survey (plot 4 of 6) \label{fig:nwfsc_combo_andre_4}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt7mkt0_page5.png}
+\caption{Conditional AAL plot, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (plot 5 of 6) \label{fig:nwfsc_combo_andre_5}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt7mkt0_page6.png}
+\caption{Conditional AAL plot, whole catch, NWFSC West Coast Groundfish
+Bottom Trawl Survey (plot 6 of 6) \label{fig:nwfsc_combo_andre_6}}
 \end{figure}
 
 \begin{figure}
@@ -5082,7 +5051,7 @@ sensitivity. \label{fig:sens_depl}}
 
 \begin{figure}
 \centering
-\includegraphics{Figures/retro_ssb.png}
+\includegraphics{Figures/retro_ssb_5.png}
 \caption{Retrospective pattern for spawning biomass.
 \label{fig:retro_ssb}}
 \end{figure}
@@ -5091,7 +5060,7 @@ sensitivity. \label{fig:sens_depl}}
 
 \begin{figure}
 \centering
-\includegraphics{Figures/retro_depl.png}
+\includegraphics{Figures/retro_depl_5.png}
 \caption{Retrospective pattern for relative spawning biomass.
 \label{fig:retro_depl}}
 \end{figure}
@@ -5100,7 +5069,7 @@ sensitivity. \label{fig:sens_depl}}
 
 \begin{figure}
 \centering
-\includegraphics{Figures/retro_recdevs.png}
+\includegraphics{Figures/retro_recdevs_5.png}
 \caption{Retrospective pattern for estimated recruitment deviations.
 \label{fig:retro_recdev}}
 \end{figure}
@@ -5109,9 +5078,39 @@ sensitivity. \label{fig:sens_depl}}
 
 \begin{figure}
 \centering
+\includegraphics{Figures/data_ssb.png}
+\caption{The estimated spawning output trajectory as each data source
+was updated relative to the 2015 update assessment.
+\label{fig:ssb_data}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{Figures/data_depl.png}
+\caption{The estimated relative spawning output trajectory as each data
+source was updated relative to the 2015 update assessment.
+\label{fig:depl_data}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{Figures/data_recdevs.png}
+\caption{The estimated annual recruitment deviations as each data source
+was updated relative to the 2015 update assessment.
+\label{fig:recdev_data}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
 \includegraphics{Figures/Assessment_History.png}
-\caption{Pattern for estimated spawning biomass from each assessment
-since 2005. \label{fig:historical_analysis}}
+\caption{The estimated spawning output from each assessment since 2005.
+\label{fig:historical_analysis}}
 \end{figure}
 
 \FloatBarrier
@@ -5127,9 +5126,18 @@ since 2005. \label{fig:historical_analysis}}
 
 \begin{figure}
 \centering
-\includegraphics{Figures/h_trajectories.png}
-\caption{Trajectories of relative spawning biomass across values of
-steepness. \label{fig:h_trajectory}}
+\includegraphics{Figures/h_trajectories_ssb.png}
+\caption{Trajectories of spawning output across values of steepness.
+\label{fig:h_ssb_trajectory}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{Figures/h_trajectories_depl.png}
+\caption{Trajectories of relative spawning output across values of
+steepness. \label{fig:h_depl_trajectory}}
 \end{figure}
 
 \FloatBarrier
@@ -5145,9 +5153,18 @@ natural mortality was estimated. \label{fig:m_like}}
 
 \begin{figure}
 \centering
-\includegraphics{Figures/m_trajectories.png}
-\caption{Trajectories of relative spawning biomass across values of
-natural mortality. \label{fig:m_trajectory}}
+\includegraphics{Figures/m_trajectories_ssb.png}
+\caption{Trajectories of spawning output across values of natural
+mortality. \label{fig:m_ssb_trajectory}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{Figures/m_trajectories_depl.png}
+\caption{Trajectories of relative spawning output across values of
+natural mortality. \label{fig:m_depl_trajectory}}
 \end{figure}
 
 \FloatBarrier

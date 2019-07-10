@@ -133,26 +133,31 @@ A number of sensitivity analyses were conducted.  Each of the sensitivities cond
 
 \begin{enumerate}
 
-  \item Fix natural mortality value for female fish at a lower value of ??.
+  \item Fix natural mortality value for female fish at a lower value of 0.125.
   
-  \item Fix natural mortality value for female fish at a higher value of ??.
+  \item Fix natural mortality value for female fish at a higher value of 0.180.
   
   \item Use the natural mortality prior for female and male fish used in the 2015 update assessment, natural mortality estimated.
   
-  \item Use the coastwide fecundity relationship for `r spp` estimated by Lefebvre et al. (in press).
+  \item Use the coastwide fecundity relationship for `r spp` estimated by Lefebvre et al. in press.
   
   \item Estimate the sex ratio between female and male fish within the model.
   
-  \item Data weight according to the Francis method using the weighting values shown in Table \ref{tab:francis}. 
+  \item Estimate the sex ratio between female and male fish within the model and assume the coastwide fecundity relationship for `r spp` Lefebvre et al. in press.
   
-  \item Data weight according to the Dirichlet method where the estimated parameters are shown in Table \ref{tab:dirichlet}.
+  \item Data weighting according to the Francis method using the weighting values shown in Table \ref{tab:francis}. 
+  
+  \item Data weighting according to the Dirichlet method where the estimated parameters are shown in Table \ref{tab:dirichlet}.
   
 \end{enumerate}
 
 Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sens_table}.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens_ssb} and \ref{fig:sens_depl}
 
 ###Retrospective Analysis
-A five-year retrospective analysis was conducted by running the model using data only through 2014, 2015, 2016, 2017 and 2018 (Figures \ref{fig:retro_ssb}, \ref{fig:retro_depl}, and \ref{fig:retro_recdev}). he initial scale of the spawning biomass trended upward relative to the base model. Overall, no alarming patterns were present in the retrospective analysis.  
+A five-year retrospective analysis was conducted by running the model using data only through 2013, 2014, 2015, 2016, 2017 and 2018 (Figures \ref{fig:retro_ssb}, \ref{fig:retro_depl}, and \ref{fig:retro_recdev}). The initial scale of the spawning biomass trended upward relative to the base model. Overall, no alarming patterns were present in the retrospective analysis.  
+
+###Data Analysis
+The changes from the 2015 update assessment based on the addition and reprocessing of data was explored.  Each data source was added starting with catches and ending with ages for all fleets within the model where each model run contains the ealier updated data (e.g., + Lengths has data through 2019 for the catches, indices, discard rates and weights, and lengths for all fleets with only the age data through 2014).  The estimates of the spawning biomass, relative spawning biomass, and the annual recruitment deviations from each model are shown in Figures \ref{fig:ssb_data}, \ref{fig:depl_data}, and \ref{fig:recdevs_data}.
 
 ###Historical Analysis
 The estimated summary biomass from previous assessments since 2005 are shown in Figure \ref{fig:historical_analysis}.  The current assessment estimated a slight increase in initial spawning biomass compared to previous assessments.  
@@ -160,9 +165,9 @@ The estimated summary biomass from previous assessments since 2005 are shown in 
 ###Likelihood Profiles
 Likelihood profiles were conducted for $R_0$, steepness, and female natural mortality values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
 
-For steepness, the negative log-likelihood supported values between 0.70 - 0.95 (Figure \ref{fig:piner_h}).  Likelihood components by data source show that the  age data support a higher steepness value.  The surveys generally provide very little information concerning steepness.  The relative spawning biomass for `r spp` diverges most during the middel of the time series based on the assumed values of steepness with the final status generally being above the management target biomass (Figure \ref{fig:h_trajectory}).
+For steepness, the negative log-likelihood supported values between 0.70 - 0.95 (Figure \ref{fig:piner_h}).  Likelihood components by data source show that the  age data support a higher steepness value.  The surveys generally provide very little information concerning steepness.  The relative spawning biomass for `r spp` diverges most during the middel of the time series based on the assumed values of steepness with the final status generally being above the management target biomass (Figures \ref{fig:h_ssb_trajectory} and \ref{fig:h_depl_trajectory}).
 
-The negative log-likelihood was minimized at a female natural mortality value of ??, but the 95% confidence interval extends over values ranging from ?? - ??.  Male natural mortality was estimated in the likelihood profile.  The age and length data likelihood contribution was minimized at natural morality values ranging from ??-?? (Figure \ref{fig:piner_m}).  The relative spawning biomass for `r spp` widely varied across alternative values of natural mortality (Figure \ref{fig:m_trajectory}).
+The negative log-likelihood was minimized at a female natural mortality value of `r round(mod1$parameters[mod1$parameters$Label == "NatM_p_1_Fem_GP_1", 3],3)`, but the 95% confidence interval extends over values ranging from 0.12 - 0.18.  Male natural mortality was estimated in the likelihood profile.  The age and length data likelihood contribution was minimized at natural morality values ranging from ??-?? (Figure \ref{fig:piner_m}).  The relative spawning biomass for `r spp` widely varied across alternative values of natural mortality (Figures \ref{fig:m_ssb_trajectory} and \ref{fig:m_depl_trajectory}).
 
 In regards to values of $R_0$, the negative log-likelihood was minimized at approximately log($R_0$) of `r round(log(mod1$derived_quants[mod1$derived_quants$Label == "Recr_Virgin",2]),2)`  (Figure \ref{fig:piner_R0}).  
 

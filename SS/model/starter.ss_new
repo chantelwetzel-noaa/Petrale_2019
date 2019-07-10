@@ -3,7 +3,7 @@
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
-#C 2019 Updata Assessent of Petrale Sole - Chantel Wetzel
+#C 2019 Update Assessent of Petrale Sole - Chantel Wetzel
 2019_petrale.dat
 2019_petrale.ctl
 1 # 0=use init values in control file; 1=use ss.par

@@ -44,11 +44,16 @@
 1 # Do West Coast gfish rebuilder output (0/1) 
 2013 # Rebuilder:  first year catch could have been set to zero (Ydecl)(-1 to set to 1999)
 2015 # Rebuilder:  year for current age structure (Yinit) (-1 to set to endyear+1)
-1 # fleet relative F:  1=use first-last alloc year; 2=read seas, fleet, alloc list below
+2 # fleet relative F:  1=use first-last alloc year; 2=read seas, fleet, alloc list below
 # Note that fleet allocation is used directly as average F if Do_Forecast=4 
 2 # basis for fcast catch tuning and for fcast catch caps and allocation  (2=deadbio; 3=retainbio; 5=deadnum; 6=retainnum)
 # Conditional input if relative F choice = 2
 # enter list of:  season,  fleet, relF; if used, terminate with season=-9999
+1 1 0.360252
+1 2 0.421348
+1 3 0.085367
+1 4 0.133032
+-9999 0 0 
 # enter list of: fleet number, max annual catch for fleets with a max; terminate with fleet=-9999
 -9999 -1
 # enter list of area ID and max annual catch; terminate with area=-9999
@@ -71,7 +76,6 @@
 2020	1	2	1198.736198
 2020	1	3	242.8690096
 2020	1	4	378.47708
-
 -9999 1 1 0 
 #
 999 # verify end of input 

@@ -1,4 +1,5 @@
 
+\newpage
 <!-- ====================================================================== -->
 <!-- ****************************            ****************************** --> 
 <!-- ****************************BEGIN TABLES****************************** --> 
@@ -9,6 +10,7 @@
 <!-- ********************************************************************** --> 
 <!-- *********************Commercial landings TABLE 1********************** --> 
 <!-- ********************************************************************** --> 
+
 ```{r, results = 'asis'}
 n = unique(mod1$catch$Fleet)
 catch = NULL
@@ -18,9 +20,6 @@ for (i in n){
 } 
 
 catch = cbind(unique(mod1$catch$Yr), catch)
-
-# only use catches from 1918 forward
-catch = catch[1:40, ]
 
 colnames(catch) = c('Year',
                            'Winter North',
@@ -35,176 +34,38 @@ Catch_AllYrs = xtable(catch,
                       digits = 0)    
 
 # Add alignment  
-align(Catch_AllYrs) = c('l',
-                        '>{\\centering}p{.5in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}')  
+align(Catch_AllYrs) = c('lccccc')
 
-print(Catch_AllYrs,
-      include.rownames=FALSE,
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
+# Add "continued on next page"" footnote   
+addtorow          <- list()
+addtorow$pos      <- list()
+addtorow$pos[[1]] <- c(0)
+addtorow$command  <- c(paste("\\hline \n",
+                             "\\endhead \n",
+                             "\\hline \n",
+                             "\\multicolumn{3}{l}",
+                             "{\\footnotesize Continued on next page} \n",
+                             "\\endfoot \n",
+                             "\\endlastfoot \n",sep=""))
 
-``` 
+#add.to.row <- list(pos = list(0), command = NULL)
+#command <- paste0("\\hline\n\\endhead\n",
+#"\\hline\n",
+#"\\multicolumn{3}{l}",
+#"{\\footnotesize Continued on next page}\n",
+#"\\endfoot\n",
+#"\\endlastfoot\n")
+#add.to.row$command <- command
 
-
-```{r, results = 'asis'}
-n = unique(mod1$catch$Fleet)
-catch = NULL
-for (i in n){
-  ind = mod1$catch$Fleet == n[i]
-  catch = cbind(catch, mod1$catch[ind,"Obs"])
-} 
-
-catch = cbind(unique(mod1$catch$Yr), catch)
-
-# only use catches from 1918 forward
-catch = catch[41:80, ]
-
-colnames(catch) = c('Year',
-                           'Winter North',
-                           'Summer North',
-                           'Winter South', 
-                           'Summer South')
-
-
-# Index of abundance summary, create table   
-Catch_AllYrs = xtable(catch, 
-                      digits = 0)    
-
-# Add alignment  
-align(Catch_AllYrs) = c('l',
-                        '>{\\centering}p{.5in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}')  
-
-
-print(Catch_AllYrs,
-      include.rownames=FALSE,
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
+print(Catch_AllYrs, 
+      include.rownames = FALSE,
+      caption.placement = 'top',
+      tabular.environment = 'longtable',
+      floating = TRUE,
+      add.to.row = addtorow)
 
 ``` 
 
-
-```{r, results = 'asis'}
-n = unique(mod1$catch$Fleet)
-catch = NULL
-for (i in n){
-  ind = mod1$catch$Fleet == n[i]
-  catch = cbind(catch, mod1$catch[ind,"Obs"])
-} 
-
-catch = cbind(unique(mod1$catch$Yr), catch)
-
-# only use catches from 1918 forward
-catch = catch[81:120, ]
-
-colnames(catch) = c('Year',
-                           'Winter North',
-                           'Summer North',
-                           'Winter South', 
-                           'Summer South')
-
-Catch_AllYrs = xtable(catch, 
-                      digits = 0)    
-
-# Add alignment  
-align(Catch_AllYrs) = c('l',
-                        '>{\\centering}p{.5in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}')  
-
-
-print(Catch_AllYrs,
-      include.rownames=FALSE,
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-``` 
-
-```{r, results = 'asis'}
-n = unique(mod1$catch$Fleet)
-catch = NULL
-for (i in n){
-  ind = mod1$catch$Fleet == n[i]
-  catch = cbind(catch, mod1$catch[ind,"Obs"])
-} 
-
-catch = cbind(unique(mod1$catch$Yr), catch)
-
-# only use catches from 1918 forward
-catch = catch[41:80, ]
-
-colnames(catch) = c('Year',
-                           'Winter North',
-                           'Summer North',
-                           'Winter South', 
-                           'Summer South')
-
-
-# Index of abundance summary, create table   
-Catch_AllYrs = xtable(catch, 
-                      digits = 0)    
-
-# Add alignment  
-align(Catch_AllYrs) = c('l',
-                        '>{\\centering}p{.5in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}')  
-
-
-print(Catch_AllYrs,
-      include.rownames=FALSE,
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-
-``` 
-
-
-```{r, results = 'asis'}
-n = unique(mod1$catch$Fleet)
-catch = NULL
-for (i in n){
-  ind = mod1$catch$Fleet == n[i]
-  catch = cbind(catch, mod1$catch[ind,"Obs"])
-} 
-
-catch = cbind(unique(mod1$catch$Yr), catch)
-
-# only use catches from 1918 forward
-catch = catch[121:144, ]
-
-colnames(catch) = c('Year',
-                           'Winter North',
-                           'Summer North',
-                           'Winter South', 
-                           'Summer South')
-
-Catch_AllYrs = xtable(catch, 
-                      digits = 0)    
-
-# Add alignment  
-align(Catch_AllYrs) = c('l',
-                        '>{\\centering}p{.5in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}',
-                        '>{\\centering}p{.75in}')  
-
-
-print(Catch_AllYrs,
-      include.rownames=FALSE,
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-``` 
 
 \clearpage
 
@@ -237,10 +98,10 @@ print(Catch_AllYrs,
   # Add alignment
   align(mngmnt.table2) = c('l',
                         '>{\\raggedleft}p{0.5in}',
-                        '>{\\centering}p{1.0in}',
-                        '>{\\centering}p{1.0in}', 
-                        '>{\\centering}p{1.1in}',
-                        '>{\\centering}p{1.1in}') 
+                        '>{\\centering}p{1.25in}',
+                        '>{\\centering}p{1.25in}', 
+                        '>{\\centering}p{1.25in}',
+                        '>{\\centering}p{1.25in}') 
   
 
   print(mngmnt.table2, 
@@ -557,9 +418,11 @@ print(Fish_Length.table,
 <!-- ********************************************************************** --> 
 <!-- *******************Commercial Discards TABLES************************* --> 
 <!-- ********************************************************************** --> 
-  
+\clearpage  
+\newpage
+
 ```{r, results = 'asis'}
-n = unique(mod1$discard$Fleet)[1:2]
+n = unique(mod1$discard$Fleet)[1:4]
 
 discard = NULL
 for (i in n){
@@ -585,71 +448,38 @@ Discard.table = xtable(discard,
                        label = 'tab:Discard',
                        digits = 3)    
 # Add alignment  
-align(Discard.table) = c('l',
-                         '>{\\centering}p{.75in}',
-                         '>{\\centering}p{1.1in}',
-                         '>{\\centering}p{1.1in}',
-                         '>{\\centering}p{1.1in}',
-                         '>{\\centering}p{1.1in}')  
+align(Discard.table) = c('lccccc')
+
+addtorow          <- list()
+addtorow$pos      <- list()
+addtorow$pos[[1]] <- c(0)
+addtorow$command  <- c(paste("\\hline \n",
+                             "\\endhead \n",
+                             "\\hline \n",
+                             "\\multicolumn{3}{l}",
+                             "{\\footnotesize Continued on next page} \n",
+                             "\\endfoot \n",
+                             "\\endlastfoot \n",sep=""))
 
 # Print index summary table
 print(Discard.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
+      include.rownames = FALSE,
+      caption.placement = 'top',
+      tabular.environment = 'longtable',
+      floating = FALSE,
+      add.to.row = addtorow)
 ```
 
-
-  
-```{r, results = 'asis'}
-n = unique(mod1$discard$Fleet)[3:4]
-
-discard = NULL
-for (i in 1:length(n)){
-  ind = mod1$discard$Fleet == n[i]
-  discard = rbind(discard, cbind(mod1$discard$Yr[ind], mod1$discard$Fleet_Name[ind], 
-                                 print.numeric(mod1$discard[ind,"Obs"], digits = 3), 
-                                 print.numeric(mod1$discard$Std_in[ind], digits = 3)))
-} 
-
-tmp = c(rep("WGCOP", sum(discard[,2]=="WinterS")),
-        rep("WGCOP", sum(discard[,2]=="SummerS")))
-
-discard = cbind(discard, tmp)
-
-colnames(discard) = c('Year',
-                      'Fleet',
-                      'Discard Rate',
-                      'Standard Error',
-                      'Data Source')
-
-value = ifelse(mod1$discard_spec$units[1] == 2, "discard rates", "total discard")
-Discard.table = xtable(discard, 
-                       digits = 3)    
-
-# Add alignment  
-align(Discard.table) = c('l',
-                         '>{\\centering}p{.75in}',
-                         '>{\\centering}p{1.1in}',
-                         '>{\\centering}p{1.1in}',
-                         '>{\\centering}p{1.1in}',
-                         '>{\\centering}p{1.1in}')  
-
-# Print index summary table
-print(Discard.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-```
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!--  ************Fishery dependent biological sampling TABLES************* -->
 <!-- ********************************************************************** -->
-
+\newpage
 <!-- ********************** Fishery Lengths ****************************** -->  
 ```{r, results = 'asis'}
 Fish_Length = read.csv('./txt_files/Fishery_Length_Samples.csv')
-Fish_Length = Fish_Length[1:45, ]
+#Fish_Length = Fish_Length[1:45, ]
 
 colnames(Fish_Length) = c('Year',
                           'Trips',
@@ -667,17 +497,8 @@ Fish_Length.table = xtable(Fish_Length,
                            label = 'tab:Fishery_Lengths',
                            digits = 0)    
 
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}') 
+# Add alignment 
+align(Fish_Length.table) = c('lccccccccc')
 
 hlines = c(-1, 0, nrow(Fish_Length))
 addtorow = list()
@@ -690,68 +511,22 @@ print(Fish_Length.table,
       include.rownames=FALSE,
       caption.placement='top',
       hline.after = hlines,
+      tabular.environment = 'longtable',
+      floating = FALSE,
       add.to.row = addtorow,
-      include.colnames = FALSE,
-      size="\\fontsize{12pt}{12pt}\\selectfont",
-      sanitize.text.function = function(x){x})
+      include.colnames = FALSE)#,
+      #size="\\fontsize{12pt}{12pt}\\selectfont",
+      #sanitize.text.function = function(x){x})
 
 ``` 
 
-
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/Fishery_Length_Samples.csv')
-Fish_Length = Fish_Length[46:nrow(Fish_Length), ]
-
-colnames(Fish_Length) = c('Year',
-                          'Trips',
-                          'Fish',
-                          'Trips',
-                          'Fish',
-                          'Trips',
-                          'Fish',
-                          'Trips',
-                          'Fish')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           digits = 0)    
-
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}') 
-
-hlines = c(-1, 0, nrow(Fish_Length))
-addtorow = list()
-addtorow$pos = list(0,0)
-addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Summer N.} & \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Summer S.} \\\\\n",
-                     "Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\\\\n")
-
-#Print commercial length sample numbers
-print(Fish_Length.table,
-      include.rownames=FALSE,
-      caption.placement='top',
-      hline.after = hlines,
-      add.to.row = addtorow,
-      include.colnames = FALSE,
-      size="\\fontsize{12pt}{12pt}\\selectfont",
-      sanitize.text.function = function(x){x})
-
-```
 \FloatBarrier
 
-
+\newpage
 <!-- ********************** Fishery Ages ****************************** -->  
 ```{r, results = 'asis'}
 Fish_Length = read.csv('./txt_files/Fishery_Age_Samples.csv')
-Fish_Length = Fish_Length[1:50, ]
+#Fish_Length = Fish_Length[1:50, ]
 
 colnames(Fish_Length) = c('Year',
                           'Trips',
@@ -770,16 +545,7 @@ Fish_Length.table = xtable(Fish_Length,
                            digits = 0)    
 
 # Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}') 
+align(Fish_Length.table) = c('lccccccccc')
 
 hlines = c(-1, 0, nrow(Fish_Length))
 addtorow = list()
@@ -792,62 +558,16 @@ print(Fish_Length.table,
       include.rownames=FALSE,
       caption.placement='top',
       hline.after = hlines,
+      tabular.environment = 'longtable',
+      floating = FALSE,
       add.to.row = addtorow,
-      include.colnames = FALSE,
-      size="\\fontsize{11pt}{11pt}\\selectfont",
-      sanitize.text.function = function(x){x})
+      include.colnames = FALSE)#,
+      #size="\\fontsize{11pt}{11pt}\\selectfont",
+      #sanitize.text.function = function(x){x})
 
 ``` 
 
-
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/Fishery_Age_Samples.csv')
-Fish_Length = Fish_Length[51:nrow(Fish_Length), ]
-
-colnames(Fish_Length) = c('Year',
-                          'Trips',
-                          'Fish',
-                          'Trips',
-                          'Fish',
-                          'Trips',
-                          'Fish',
-                          'Trips',
-                          'Fish')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           digits = 0)    
-
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}',
-                             '>{\\centering}p{.5in}') 
-
-hlines = c(-1, 0, nrow(Fish_Length))
-addtorow = list()
-addtorow$pos = list(0,0)
-addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Summer N.} & \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Summer S.} \\\\\n",
-                     "Year & Trips & Fish & Trips & Fish & Trips & Fish & Trips & Fish \\\\\n")
-
-#Print commercial length sample numbers
-print(Fish_Length.table,
-      include.rownames=FALSE,
-      caption.placement='top',
-      hline.after = hlines,
-      add.to.row = addtorow,
-      include.colnames = FALSE,
-      size="\\fontsize{11pt}{11pt}\\selectfont",
-      sanitize.text.function = function(x){x})
-
-``` 
-
+\newpage
 
 \FloatBarrier
 
@@ -1126,6 +846,7 @@ print(mod_params.table,
 ```{r, results = 'asis'}
 # Replace values in file and read in - values for all models in 1 table  
 jitter = read.csv('./txt_files/JitterTable.csv')  
+colnames(jitter) = c("Status", "Jitter = 0.05", "Jitter = 0.10")
 
 # Create model 1 jitter table
 jitter.table = xtable(jitter, 
@@ -1134,6 +855,7 @@ jitter.table = xtable(jitter,
 
 align(jitter.table) = c('l',
                         '>{\\raggedright}p{2in}', 
+                        '>{\\centering}p{1in}',
                         '>{\\centering}p{1in}')
 
 
@@ -1335,6 +1057,7 @@ Timeseries.table = xtable(Timeseries,
                           digits = c(0,0,0,0,0,0,0,0,2,3))   
 
 # Add alignment
+#align(Timeseries.table) = c('lccccccccc')
 align(Timeseries.table) = c('l',
                             'c',
                             '>{\\centering}p{.5in}',
@@ -1346,6 +1069,18 @@ align(Timeseries.table) = c('l',
                             '>{\\centering}p{.45in}',
                             'c')
 
+# Add "continued on next page"" footnote   
+addtorow          <- list()
+addtorow$pos      <- list()
+addtorow$pos[[1]] <- c(0)
+addtorow$command  <- c(paste("\\hline \n",
+                             "\\endhead \n",
+                             "\\hline \n",
+                             "\\multicolumn{3}{l}",
+                             "{\\footnotesize Continued on next page} \n",
+                             "\\endfoot \n",
+                             "\\endlastfoot \n",sep=""))
+
 
 # Print timeseries of population estimates table
 print(Timeseries.table, 
@@ -1355,8 +1090,8 @@ print(Timeseries.table,
       align=TRUE, 
       floating = FALSE, 
       size="\\fontsize{11pt}{11pt}\\selectfont",
-      add.to.row = list(pos = list(0), 
-                        command = '\\hline \\endhead '))
+      add.to.row = addtorow) #list(pos = list(0), 
+                        #command = '\\hline \\endhead '))
 ```
 
 <!-- ---------------------------------------------------------------------- -->
@@ -1365,6 +1100,7 @@ print(Timeseries.table,
 
 
 <!-- ***********MODEL 1 SENSITIVITY TABLE(S)******************************* --> 
+\begin{landscape}
 ```{r, results = 'asis'}
 
 # Read in/organize sensitivity file, change column names, caption
@@ -1377,30 +1113,39 @@ colnames(Sens_model1) = c('Label',
                           'Old M Prior',
                           'Fecundity',
                           'Sex Ratio',
+                          'Sex Ratio & Fecund.',
                           'Francis',
                           'Dirichlet')
 
 # Create sensitivities table
 Sens_model1.table = xtable(Sens_model1, 
-                           caption = c('Sensitivity of the base model.'),
+                           caption = c('Sensitivity runs relative to the base model.'),
                            label = 'tab:sens_table',
-                           digits = 3)
+                           digits = 2)
 
 
 # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
 # You can change this easily to have variable columns width after you know how many
 # colunns your final table has
-align(Sens_model1.table) = c('l', 'l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+# align(Sens_model1.table) = c('l', 'l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+align(Sens_model1.table) = c('llrrrrrrrrr')
 
 
 # Print model 1 sensitivity table
 print(Sens_model1.table, 
       include.rownames = FALSE,             
       caption.placement = 'top',
-      floating.environment = 'sidewaystable',
-      scalebox = .9)
+      tabular.environment = 'longtable',
+      floating = FALSE,
+      size="\\fontsize{9pt}{10pt}\\selectfont")
+      #floating.environment = 'sidewaystable',
+      #scalebox = .9)
 
 ```
+\end{landscape}
+
+\newpage
+
 <!-- ---------------------------------------------------------------------- -->
  \FloatBarrier 
  
@@ -1485,19 +1230,16 @@ colnames(Forecast_mod1)=c('Year',
                           'ACL (mt)',
                           #'Age 3+ biomass (mt)',
                           'Spawning Biomass',
-                          'Depletion (%)')
+                          'Relative Biomass')
 
 # Make sure year is a factor, so you don't get decimals
 Forecast_mod1$Year = as.factor(Forecast_mod1$Year)
 
 # Create the forecast table
 Forecast_mod1.table = xtable(Forecast_mod1,
-                             caption = c('Projection of potential
-                                         OFL, spawning biomass, and depletion for the
-                                         base case model. The removals in 2017 and 2018 
-                                         were set at the defined management specification of XXX mt for each year assuming full attainment.'),
+                             caption = c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 removals are set at the harvest limits currently set by management of 2908 and 2845 mt per year, respectively.'),
                              label = 'tab:Forecast_mod1',
-                             digits = c(0,0,0,0,0,1))
+                             digits = c(0,0,0,0,0,3))
 # Add alignment
 align(Forecast_mod1.table) = c('l',
                                'c',
@@ -1522,46 +1264,6 @@ print(Forecast_mod1.table,
 
 ```{r, results = 'asis'}
 
-# Read in decision table file
-#  decision_mod1 = read.csv('./txt_files/DecisionTable_mod1.csv')
-#       colnames(decision_mod1) = c('', 
-#                                   'Year',  
-#                                   'Catch',	
-#                                   'Spawning Biomass',	
-#                                   'Depletion (%)', 
-#                                   'Spawning Biomass',	
-#                                   'Depletion (%)',	
-#                                   'Spawning Biomass',	
-#                                   'Depletion (%)')
-#      
-#       decision_mod1.table = xtable(decision_mod1, 
-#                                    caption = c(paste('Decision table summary of 10-year 
-#                                             projections beginning in ', LastYR+2,' 
-#                                             for alternate states of nature based on 
-#                                             an axis of uncertainty for the base model. The removals in 2017 and 2018 
-#                                             were set at the defined management specification of 281 mt for each year assuming full attainment.
-#                                             Columns range over low, mid, and high
-#                                             states of nature over natural mortality, and rows range over different 
-#                                             assumptions of catch levels. An entry of "--" 
-#                                             indicates that the stock is driven to very low 
-#                                             abundance under the particular scenario.', sep = '')), 
-#                                     label='tab:Decision_table_mod1_back',
-#                                     digits = c(0,0,0,0,0,1,0,1,0,1))
-#      
-#    # Assign alignment and add the header columns
-#        align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
-#    
-#        addtorow <- list()
-#        addtorow$pos <- list()
-#        addtorow$pos[[1]] <- -1
-#        addtorow$pos[[2]] <- -1
-#        addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
-#                               & \\multicolumn{2}{c}{\\textbf{States of nature}} 
-#                               & \\multicolumn{2}{c}{} \\\\\n', 
-#                               ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.04725} 
-#                               & \\multicolumn{2}{c}{M = 0.054} 
-#                               &  \\multicolumn{2}{c}{M = 0.0595} \\\\\n')
-
 decision_mod1 = read.csv('./txt_files/DecisionTable_mod1.csv')
 colnames(decision_mod1) = c('', 
                             'Year',  
@@ -1574,12 +1276,9 @@ colnames(decision_mod1) = c('',
                             'Depletion')
       
 decision_mod1.table = xtable( decision_mod1, 
-                              caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on 
-                                             an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification 
-                                             of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different 
-                                             assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
+                              caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
                               label='tab:Decision_table_mod1', 
-                              digits = c(0,0,0,0,0,1,0,1,0,1)) 
+                              digits = c(0,0,0,0,0,3,0,3,0,3)) 
       
 # Assign alignment and add the header columns
 align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
@@ -1591,15 +1290,20 @@ addtorow$pos[[2]] <- -1
 addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                        & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                        & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.12} 
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.125} 
                        & \\multicolumn{2}{c}{M = 0.151} 
-                       &  \\multicolumn{2}{c}{M = 0.18} \\\\\n')
+                       &  \\multicolumn{2}{c}{M = 0.180} \\\\\n')
         
  print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
        caption.placement = 'top', 
        hline.after = c(-1, 0, 10, nrow(decision_mod1.table)), 
        scalebox = .85)
 
+#    label='tab:Decision_table_mod1' 
+#    print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
+#          caption.placement = 'top', 
+#          hline.after = c(-1, 0, 10, 20,nrow(decision_mod1.table)), 
+#          scalebox = .85)
 
 ```
 <!-- ********************************************************************** -->
