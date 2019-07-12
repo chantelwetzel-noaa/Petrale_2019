@@ -52,19 +52,19 @@ The base stock assessment model structure is consistent with the 2013 assessment
 
 \item Updated historical composition data from the commercial fishery (length and age data) and new data (2015 - 2018) expanded to trip and catch based on current best practices.
 
-\item Updated discard rate, average weight, and discard length composition data (2014-2017).
+\item Updated discard rates, average weights, and discard length composition data (2014-2017).
 
-\item `r nwfsc` index of abundance was calculated using VAST.
+\item `r nwfsc` index of abundance calculated using VAST.
 
 \item Updated `r nwfsc` length and age data (2015-2018) with all years data expanded to the tow and strata.
 
-\item `r full.tri` early and late index of abundance were calculated using VAST.
+\item `r full.tri` early and late index of abundance calculated using VAST.
 
-\item Model tuning to re-weight data. 
+\item Model tuning to re-weight data using the McAllister and Iannelli approach. 
 
 \item Length-weight relationship parameters estimated outside of the stock assessment model from the `r nwfsc` data up to 2018 and input as fixed values.
 
-\item Update the natural mortality prior for female and male fish.
+\item Updated the natural mortality prior for female and male fish.
 
 \end{enumerate}
 
@@ -213,7 +213,7 @@ Catches during the projection period under the current harvest control rule are 
 ```{r, results='asis'} 
     print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
           caption.placement = 'top', 
-          hline.after = c(-1, 0, 10, 20,nrow(decision_mod1.table)), 
+          hline.after = c(-1, 0, 10, 20, nrow(decision_mod1.table)), 
           scalebox = .85)
 ```
 

@@ -54,6 +54,10 @@
 
 \FloatBarrier
 
+![Length (cm) by depth (m) for the NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nwfsc_size_depth}](Figures/NWFSC_Size_by_Depth.png)
+
+\FloatBarrier
+
 
 ![QQ plot for the  NWFSC West Coast Groundfish Bottom Trawl Survey data. \label{fig:nw_qq}](Figures/nwfsc_Posterior_Predictive-Histogram-1.jpg)
 
@@ -465,7 +469,7 @@ cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:nwfsc_combo_len_pearso
 
 <!-- ********************************************************************** -->
 <!-- **********************Harmonic Weighting FIGURES*************************** --> 
-<!-- ********************************************************************** -->
+<!-- ************************************************
 ![McAllister and Ianelli (harmonic mean) weighting for the Winter North fishery length data. \label{fig:harm_mean_wn}](r4ss/plots_mod1/comp_lenfit_sampsize_flt1mkt2.png)
 
 \FloatBarrier
@@ -493,7 +497,7 @@ cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:nwfsc_combo_len_pearso
 ![McAllister and Ianelli (harmonic mean) weighting for the NWFSC West Coast Groundfish Bottom Trawl Survey length data. \label{fig:harm_mean_nwfsc}](r4ss/plots_mod1/comp_lenfit_sampsize_flt7mkt0.png)
 
 \FloatBarrier
-
+********************** -->
 
 <!-- ********************************************************************** -->
 <!-- **********************Age structure FIGURES*************************** --> 
@@ -544,7 +548,7 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
 
 <!-- ********************************************************************** -->
 <!-- **********************Harmonic Weighting FIGURES*************************** --> 
-<!-- ********************************************************************** -->
+<!-- **************************************
 ![McAllister and Ianelli (harmonic mean) weighting for the Winter North fishery age data. \label{fig:harm_mean_wn_age}](r4ss/plots_mod1/comp_agefit_sampsize_flt1mkt2.png)
 
 \FloatBarrier
@@ -560,7 +564,7 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
 ![McAllister and Ianelli (harmonic mean) weighting for the Summer South fishery age data. \label{fig:harm_mean_wn_age}](r4ss/plots_mod1/comp_agefit_sampsize_flt4mkt2.png)
 
 \FloatBarrier
-
+******************************** -->
 
 <!-- ====================================================================== -->
 <!-- ********************Time-Series Figures******************************* -->

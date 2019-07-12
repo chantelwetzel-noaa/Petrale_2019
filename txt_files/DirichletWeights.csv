@@ -1,8 +1,8 @@
-Fleet,Lengths,Ages
-Winter North,16.725,14.373
-Summer North,18.8122,14.373
-Winter South,19.3238,13.6679
-Summer South,14.2023,14.0375
-Triennial Early survey,13.9469,-
-Triennial Late survey,15.7983,-
-NWFSC shelf-slope survey,19.4979,16.3388
+Fleet,log(Lengths Parm),log(Ages Parm)
+Winter North,,
+Summer North,,
+Winter South,,
+Summer South,,
+Triennial Early Survey,,
+Triennial Late Survey,,
+NWFSC WCGBT Survey,,

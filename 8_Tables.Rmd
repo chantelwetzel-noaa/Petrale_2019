@@ -10,7 +10,7 @@
 <!-- ********************************************************************** --> 
 <!-- *********************Commercial landings TABLE 1********************** --> 
 <!-- ********************************************************************** --> 
-
+\begin{center}
 ```{r, results = 'asis'}
 n = unique(mod1$catch$Fleet)
 catch = NULL
@@ -65,7 +65,7 @@ print(Catch_AllYrs,
       add.to.row = addtorow)
 
 ``` 
-
+\end{center}
 
 \clearpage
 
@@ -151,6 +151,7 @@ print(Strata.table,
 
 ```
 
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ***********************Survey Indices Table*************************** --> 
@@ -334,6 +335,7 @@ print(Strata.table,
 
 ```
 
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- *****************  Tri Late Survey Strata Table  ********************* --> 
@@ -377,6 +379,7 @@ print(Strata.table,
 
 ```
 
+\FloatBarrier
 
 <!-- **********************Triennial Survey****************************** -->
 ```{r, results = 'asis'}
@@ -444,7 +447,7 @@ colnames(discard) = c('Year',
 
 value = ifelse(mod1$discard_spec$units[1] == 2, "discard rates", "total discard")
 Discard.table = xtable(discard, 
-                       caption = paste('Summary of', value,'used in the model by each data source (continued on next page).'),
+                       caption = paste('Summary of', value,'used in the model by each data source.'),
                        label = 'tab:Discard',
                        digits = 3)    
 # Add alignment  
@@ -493,7 +496,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of fishery length samples used in the stock assessment (continued on next page).'),
+                           caption = c('Summary of fishery length samples used in the stock assessment.'),
                            label = 'tab:Fishery_Lengths',
                            digits = 0)    
 
@@ -540,7 +543,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of fishery age samples used in the stock assessment (continued on next page).'),
+                           caption = c('Summary of fishery age samples used in the stock assessment.'),
                            label = 'tab:Fishery_Ages',
                            digits = 0)    
 
@@ -1159,6 +1162,7 @@ colnames(harmonic) = c('Fleet',
                           'Lengths', 
                           'Ages')
 
+
 # Create sensitivities table
 Harmonic.table = xtable(harmonic, 
                            caption = c('Data weights applied when using Francis data weighting in the base model. The data weights were acquired after a single model weighting iteration.'),
@@ -1186,24 +1190,37 @@ print(Harmonic.table,
 
 # Read in/organize sensitivity file, change column names, caption
 harmonic = read.csv('./txt_files/DirichletWeights.csv')
+len.parm = round(exp(harmonic[,2]),0)
+age.parm = round(exp(harmonic[,3]),0)
+len.theta = round(len.parm / (1 + len.parm), 2)
+age.theta = round(age.parm / (1+ age.parm),  2)
 
-colnames(harmonic) = c('Fleet', 
-                          'Lengths', 
-                          'Ages')
+
+harm.new = cbind(harmonic, len.parm, age.parm, len.theta, age.theta)
+harm.new[5:6, c(3,5,7)] = '-'
+colnames(harm.new) = c('Fleet', 
+                          'log(Lengths Parm)', 
+                          'log(Ages Parm)',
+                          'Lengths',
+                          'Ages',
+                          'Lengths Theta',
+                          'Ages Theta')
 
 # Create sensitivities table
-Harmonic.table = xtable(harmonic, 
-                           caption = c('Data weights applied when using Dirichlet data weighting.'),
+Harmonic.table = xtable(harm.new, 
+                           caption = c('Data weights applied when using Dirichlet data weighting. SS estimates these parameters in log-space. The estimated parameter values in log-space, converted to real-space, and the resulting theta values, the adjustment factor to the input sample sizes, are provided'),
                            label = 'tab:dirichlet',
-                           digits = 3)
+                           digits = c(0, 0, 3, 3, 0, 0, 0, 0))
 
 
 align(Harmonic.table) = c('l', 
-                             '>{\\raggedright}p{2in}',
-                             '>{\\centering}p{.7in}',
-                             '>{\\centering}p{.7in}')
-
-
+                             '>{\\raggedright}p{1.85in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}', 
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}',
+                             '>{\\centering}p{.5in}', 
+                             '>{\\centering}p{.5in}')
 
 print(Harmonic.table, 
       include.rownames=FALSE, 
@@ -1296,7 +1313,7 @@ addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{}
         
  print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
        caption.placement = 'top', 
-       hline.after = c(-1, 0, 10, nrow(decision_mod1.table)), 
+       hline.after = c(-1, 0, 10, 20, nrow(decision_mod1.table)), 
        scalebox = .85)
 
 #    label='tab:Decision_table_mod1' 

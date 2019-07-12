@@ -21,8 +21,8 @@ output:
 
 
 ```{r, results='asis'}
-
-plot.vec = c(1:4, 8, 12:15, 19, 23:25, 29, 33:36, 40, 44, 48, 52)
+plot.vec = grep("comp_lenfit_flt", LenComp_mod1$basename)
+#plot.vec = c(1:4, 8, 12:15, 19, 23:25, 29, 33:36, 40, 44, 48, 52)
 
 for (a in 1:length(plot.vec)){
 
@@ -37,9 +37,9 @@ for (a in 1:length(plot.vec)){
 #Appendix B. Detailed Fit to Age Composition Data 
 
 ```{r, results='asis'}
+plot.vec = grep("comp_agefit_flt", AgeComp_mod1$basename)
+#plot.vec = c(1:5, 9:13, 17:19, 23:25)
 
-plot.vec = c(1:5, 9:13, 17:19, 23:25)
-name.vec = c("")
 
 for (a in 1:length(plot.vec)){
 

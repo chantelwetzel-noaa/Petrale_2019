@@ -1,6 +1,4 @@
-"Year","Tows","All_Fish","Sexed_Fish","Unsexed_Fish","Sample_Size"
-1980,1,16,16,0,3
-1983,2,30,30,0,6
+Year,Tows,All_Fish,Sexed_Fish,Unsexed_Fish,Sample_Size
 1986,36,540,540,0,111
 1989,141,1419,1415,4,337
 1992,116,1015,1015,0,256
