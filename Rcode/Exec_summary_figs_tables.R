@@ -568,11 +568,11 @@ colnames(decision_mod1) = c('',
                             'Year',  
                             'Catch',	
                             'Spawning Biomass',	
-                            'Relative Biomass', 
+                            'Depletion', 
                             'Spawning Biomass',	
-                            'Relative Biomass',	
+                            'Depletion',	
                             'Spawning Biomass',	
-                            'Relative Biomass')
+                            'Depletion')
       
 decision_mod1.table = xtable( decision_mod1, 
                               caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on 
@@ -583,8 +583,9 @@ decision_mod1.table = xtable( decision_mod1,
                               digits = c(0,0,0,0,0,3,0,3,0,3)) 
       
 # Assign alignment and add the header columns
-align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
-    
+align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.6in}','c|','>{\\centering}p{.6in}','c|','>{\\centering}p{.6in}','c') 
+
+
 addtorow <- list()
 addtorow$pos <- list()
 addtorow$pos[[1]] <- -1
@@ -592,9 +593,9 @@ addtorow$pos[[2]] <- -1
 addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                        & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                        & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.125} 
-                       & \\multicolumn{2}{c}{M = 0.151} 
-                       &  \\multicolumn{2}{c}{M = 0.180} \\\\\n')
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.13} 
+                       & \\multicolumn{2}{c}{M = 0.156} 
+                       &  \\multicolumn{2}{c}{M = 0.185} \\\\\n')
         
 #=============================================================================
 # Executive Summary Table I: Summary of Results
@@ -684,16 +685,16 @@ addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{}
   # Add alignment   
   align(base_summary.table) = c('l',
                                 'r', 
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}')    
+                                'r', #>{\\centering}p{1.1in}',
+                                'r', #'>{\\centering}p{1.1in}',
+                                'r', #'>{\\centering}p{1.1in}', 
+                                'r', #'>{\\centering}p{1.1in}', 
+                                'r', #'>{\\centering}p{1.1in}', 
+                                'r', #'>{\\centering}p{1.1in}', 
+                                'r', #'>{\\centering}p{1.1in}', 
+                                'r', #'>{\\centering}p{1.1in}', 
+                                'r', #'>{\\centering}p{1.1in}', 
+                                'r') #'>{\\centering}p{1.1in}')    
   
   ################################################################################################################################################################
   # Executive summary values

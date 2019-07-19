@@ -1,5 +1,7 @@
 Status,Jitter = 0.05,Jitter = 0.10
-Returned to base case,8,4
-Found local minimum,42,46
+Returned to base case,2,2
+Found local minimum,48,48
+Likelihood Diff. < 0.5,9,5
 Found better solution,0,0
+Gradient > 1,42,45
 Total,50,50

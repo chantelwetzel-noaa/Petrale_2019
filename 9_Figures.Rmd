@@ -111,15 +111,15 @@
 
 \FloatBarrier
 
+![QQ plot for the Triennial Late Survey data. \label{fig:tri_late_qq}](Figures/tri_late_Posterior_Predictive-Histogram-1.jpg)
+
+\FloatBarrier
+
 ![Pearson residuals for the encounter rate for the Triennial Early Survey by VAST. \label{fig:tri_early_enc_rate}](Figures/tri_early_maps--encounter_pearson_resid.png)
 
 \FloatBarrier
 
 ![Pearson residuals for the estimated catch rate for the Triennial Early Survey by VAST. \label{fig:tri_early_catch_rate}](Figures/tri_early_maps--catchrate_pearson_resid.png)
-
-\FloatBarrier
-
-![QQ plot for the Triennial Late Survey data. \label{fig:tri_late_qq}](Figures/tri_late_Posterior_Predictive-Histogram-1.jpg)
 
 \FloatBarrier
 
@@ -152,7 +152,20 @@
 \FloatBarrier
 
 <!-- ****************************************************************************** --> 
-<!-- ****************    Commercial Discards FIGURES    ************************** --> 
+<!-- *****************Commercial CPUE FIGURES************************************** --> 
+<!-- ****************************************************************************** -->
+
+![The Northern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:north_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (N).png)
+
+\FloatBarrier
+
+
+![The Southern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:south_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (S).png)
+
+\FloatBarrier
+
+<!-- ****************************************************************************** --> 
+<!-- ****************    Commercial Bio Samples FIGURES  ************************** --> 
 <!-- ****************************************************************************** -->
 
 ![Northern winter fishery mean body weights of discarded fish for `r spp`. \label{fig:nw_bodywt}](r4ss/plots_mod1/bodywt_data_fltWinter (N).png)
@@ -171,12 +184,32 @@
 
 \FloatBarrier
 
+```{r, results='asis'}
 
-![Northern fishery, winter and summer, retained and discarded length frequency distributions for `r spp`. \label{fig:north_lengths}](r4ss/plots_mod1/comp_lendat__page1_multi-fleet_comparison.png)
+#Discard - Winter North
+find = grep("comp_lendat_bubflt1mkt1", CompDat_mod1$basename)
+cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_wn_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
+
+#Discard - Summer North
+find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
+cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_sn_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
+
+#Discard - Winter South
+find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
+cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_ws_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
+
+#Discard - Summer North
+find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
+cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_ss_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
+```
 
 \FloatBarrier
 
-![Southern fishery, winter and summer, retained and discarded length frequency distributions for `r spp`. \label{fig:south_lengths}](r4ss/plots_mod1/comp_lendat__page2_multi-fleet_comparison.png)
+![Northern, winter and summer fleets, retained and discarded length frequency distributions for `r spp`. \label{fig:north_lengths}](r4ss/plots_mod1/comp_lendat__page1_multi-fleet_comparison.png)
+
+\FloatBarrier
+
+![Northern, winter and summer fleets, retained and discarded length frequency distributions for `r spp`. \label{fig:south_lengths}](r4ss/plots_mod1/comp_lendat__page2_multi-fleet_comparison.png)
 
 \FloatBarrier
 
@@ -184,24 +217,19 @@
 
 \FloatBarrier
 
-<!-- ****************************************************************************** --> 
-<!-- *****************Commercial CPUE FIGURES************************************** --> 
-<!-- ****************************************************************************** -->
-
-![The Northern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:north_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (N).png)
-
-\FloatBarrier
-
-
-![The Southern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:south_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (S).png)
-
-\FloatBarrier
 
 <!-- ====================================================================== -->
 <!-- *****************                             ************************ -->
 <!-- *****************START BIOLOGICAL DATA FIGURES************************ --> 
 <!-- *****************                            ************************ -->
 <!-- ====================================================================== -->
+
+<!-- ********************************************************************** -->
+<!-- *****************Natural Mortality FIGURES     *********************** --> 
+<!-- ********************************************************************** -->
+![Prior distribution for natural mortality for female and male `r spp`. \label{fig:m_prior}](Figures/M_prior.png)
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- *****************Maturity and Fecundity FIGURES*********************** --> 
@@ -211,7 +239,7 @@
 \FloatBarrier
 
 ![Fecundity-at-length assumed in the model for `r spp`. \label{fig:fecundity_model}](r4ss/plots_mod1/bio8_fecundity_wt.png)
--slop
+
 \FloatBarrier
 
 ![Estimated fecundity-at-length for `r spp` based on Lefebvre et al. (in press). \label{fig:fecundity}](Figures/fecundity.png)
@@ -251,12 +279,6 @@
 <!-- ====================================================================== -->
 
 
-<!-- ********************************************************************** -->
-<!-- *****************Natural Mortality FIGURES     *********************** --> 
-<!-- ********************************************************************** -->
-![Prior distribution for natural mortality for female and male `r spp`. \label{fig:m_prior}](Figures/M_prior.png)
-
-\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- *****************    Steepnes      FIGURES     *********************** --> 
@@ -421,47 +443,58 @@
 ```{r, results='asis'}
 
 #Discard - Winter North
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt1mkt1.png")
+find = grep("comp_lenfit_residsflt1mkt1", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt1mkt1.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:discard_wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Summer North
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt2mkt1.png")
+find = grep("comp_lenfit_residsflt2mkt1", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt2mkt1.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:discard_sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Winter South
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt1.png")
+find = grep("comp_lenfit_residsflt3mkt1", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt1.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:discard_ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Summer South
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt1.png")
+find = grep("comp_lenfit_residsflt3mkt1", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt1.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:discard_ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Winter North
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt1mkt2_page3.png")
+find = grep("comp_lenfit_residsflt1mkt2", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt1mkt2_page3.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:wn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Summer North
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt2mkt2_page3.png")
+find = grep("comp_lenfit_residsflt2mkt2", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt2mkt2_page3.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:sn_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Winter South
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt2_page4.png")
+find = grep("comp_lenfit_residsflt3mkt2", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt3mkt2_page4.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:ws_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Summer South
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt4mkt2_page4.png")
+find = grep("comp_lenfit_residsflt4mkt2", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt4mkt2_page4.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:ss_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Tri Early
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt5mkt0.png")
+find = grep("comp_lenfit_residsflt5mkt0", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt5mkt0.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:tri_early_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #Tri Late
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt6mkt0.png")
+find = grep("comp_lenfit_residsflt6mkt0", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt6mkt0.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:tri_late_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 #NWFSC Combo
-find = which(LenComp_mod1$basename == "comp_lenfit_residsflt7mkt0.png")
+find = grep("comp_lenfit_residsflt7mkt0", LenComp_mod1$basename)
+#find = which(LenComp_mod1$basename == "comp_lenfit_residsflt7mkt0.png")
 cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:nwfsc_combo_len_pearson}](r4ss/plots_mod1/', LenComp_mod1[find, path_col], ')\n', sep='')
 
 ```
@@ -513,25 +546,31 @@ cat('\n![', LenComp_mod1[find,caption_col], ' \\label{fig:nwfsc_combo_len_pearso
 
 
 #Winter North
-find = which(AgeComp_mod1$basename == "comp_agefit_residsflt1mkt2_page4.png")
+find = grep("comp_agefit_residsflt1mkt2", AgeComp_mod1$basename)
+#find = which(AgeComp_mod1$basename == "comp_agefit_residsflt1mkt2_page4.png")
 cat('\n![', AgeComp_mod1[find,caption_col], ' \\label{fig:wn_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[find, path_col], ')\n', sep='')
 
 #Summer North
-find = which(AgeComp_mod1$basename == "comp_agefit_residsflt2mkt2_page5.png")
+find = grep("comp_agefit_residsflt2mkt2", AgeComp_mod1$basename)
+#find = which(AgeComp_mod1$basename == "comp_agefit_residsflt2mkt2_page5.png")
 cat('\n![', AgeComp_mod1[find,caption_col], ' \\label{fig:sn_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[find, path_col], ')\n', sep='')
 
 #Winter South
-find = which(AgeComp_mod1$basename == "comp_agefit_residsflt3mkt2_page3.png")
+find = grep("comp_agefit_residsflt3mkt2", AgeComp_mod1$basename)
+#find = which(AgeComp_mod1$basename == "comp_agefit_residsflt3mkt2_page3.png")
 cat('\n![', AgeComp_mod1[find,caption_col], ' \\label{fig:ws_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[find, path_col], ')\n', sep='')
 
 #Summer South
-find = which(AgeComp_mod1$basename == "comp_agefit_residsflt4mkt2_page3.png")
+find = grep("comp_agefit_residsflt4mkt2", AgeComp_mod1$basename)
+#find = which(AgeComp_mod1$basename == "comp_agefit_residsflt4mkt2_page3.png")
 cat('\n![', AgeComp_mod1[find,caption_col], ' \\label{fig:ss_age_pearson}](r4ss/plots_mod1/', AgeComp_mod1[find, path_col], ')\n', sep='')
 
 ```
 
 
 ```{r, results='asis'}
+
+#find = grep("comp_agefit_residsflt1mkt2", AALComp_mod1$basename)
 plot.vec = c(4:9)
 for(a in 1:length(plot.vec)){
 #NWFSC Combo - Andre plots
