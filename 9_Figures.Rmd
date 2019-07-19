@@ -187,20 +187,20 @@
 ```{r, results='asis'}
 
 #Discard - Winter North
-find = grep("comp_lendat_bubflt1mkt1", CompDat_mod1$basename)
-cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_wn_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
+#find = grep("comp_lendat_bubflt1mkt1", CompDat_mod1$basename)
+#cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_wn_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Summer North
-find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
-cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_sn_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
+#find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
+#cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_sn_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Winter South
-find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
-cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_ws_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
+#find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
+#cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_ws_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
 
 #Discard - Summer North
-find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
-cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_ss_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
+#find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
+#cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_ss_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
 ```
 
 \FloatBarrier

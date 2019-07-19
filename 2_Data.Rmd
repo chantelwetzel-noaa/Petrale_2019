@@ -91,7 +91,7 @@ Starting in 2015, a small number of vessels switched to electronic monitoring di
 
 Discard mean body weight data were obtained from the WCGOP data and used in this update assessment for each of the four fishing fleets.  The mean body weight of discarded fish from each fleet are shown in Figures \ref{fig:nw_bodywt} - \ref{fig:ss_bodywt}.  The summer fisheries, both north and south, had relatively large sample numbers which is reflected in a lower coefficient of variation by year relative to the winter fisheries. 
 
-Discard length composition data available from the Pikitch study and  WCGOP data were used in this update assessment to estimate retention curves for each of the four fishing fleets.  The discard length data from each fleet are shown in Figures \ref{fig:discard_wn_len}, \ref{fig:discard_sn_len}, \ref{fig:discard_ws_len}, and \ref{fig:discard_ss_len}.
+Discard length composition data available from the Pikitch study and  WCGOP data were used in this update assessment to estimate retention curves for each of the four fishing fleets.  The discard length data from each fleet are shown in Figures \ref{fig:north_lengths} and \ref{fig:south_lengths}.
 
 The data, historical and current, provided by the WCGOP are updated annually based on the most recent standards of QA/QC methods. Hence, these data can have minor changes over time.  To ensure the data from the years since the last update assessment (2014-2018) were consistent with the earlier data, data from all years were replaced based to reflect the current standings of the WCGOP data.  
 
@@ -159,17 +159,7 @@ The length-weight relationship for `r spp` was estimated outside the model using
 
 ###Growth (Length-at-Age)
 
-The length-at-age was estimated for male and female `r spp`. Figure \ref{fig:length_age} shows the lengths and ages as well as predicted von Bertalanffy fits to the data from the fishery and the `r nwfsc` data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
-
-\begin{centering}
-
-Females $L_{\infty}$ = 54; $k$ = 0.16
-
-Males $L_{\infty}$ = 41; $k$ = 0.25
-
-\end{centering}
-
-These values were used as starting parameter values within the base model prior to estimating each parameter for male and female `r spp`.
+The length-at-age was estimated for male and female `r spp`. Figure \ref{fig:length_age} shows the lengths and ages as well as predicted von Bertalanffy fits to the data from the fishery and the `r nwfsc` data. Females grow larger than males and sex-specific growth parameters were estimated at the following values for females $L_{\infty}$ = 54 cm; $k$ = 0.16 $\text{yr}^{-1}$, and males $L_{\infty}$ = 41 cm; $k$ = 0.25 $\text{yr}^{-1}$. These values were used as starting parameter values within the base model prior to estimating each parameter for male and female `r spp`.
 
 
 ###Ageing Precision and Bias

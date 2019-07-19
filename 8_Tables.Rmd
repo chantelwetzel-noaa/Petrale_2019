@@ -428,7 +428,10 @@ print(Strata.table,
 \clearpage  
 \newpage
 
-```{r, results = 'asis'}
+
+
+```{r, results = 'asis', fig.align="center"}
+  
 n = unique(mod1$discard$Fleet)[1:4]
 
 discard = NULL
@@ -476,6 +479,7 @@ print(Discard.table,
       floating = FALSE,
       add.to.row = addtorow)
 ```
+
 
 \FloatBarrier
 
@@ -723,6 +727,32 @@ print(Harmonic.table,
 ```
 <!-- ---------------------------------------------------------------------- -->
  \FloatBarrier 
+ 
+ <!-- ***********JITTER TABLE*********************************************** --> 
+```{r, results = 'asis'}
+# Replace values in file and read in - values for all models in 1 table  
+jitter = read.csv('./txt_files/JitterTable.csv')  
+colnames(jitter) = c("Status", "Jitter = 0.05", "Jitter = 0.10")
+
+# Create model 1 jitter table
+jitter.table = xtable(jitter, 
+                      caption = c('Results from 50 jitters from the base model.'),
+                      label = 'tab:jitter')
+
+align(jitter.table) = c('l',
+                        '>{\\raggedright}p{2in}', 
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}')
+
+
+# Print jitter table (all models)    
+print(jitter.table, 
+      include.rownames = FALSE, 
+      caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\FloatBarrier  
 
   
   
@@ -849,32 +879,6 @@ print(mod_params.table,
 
 \FloatBarrier
 
-<!-- ***********JITTER TABLE*********************************************** --> 
-```{r, results = 'asis'}
-# Replace values in file and read in - values for all models in 1 table  
-jitter = read.csv('./txt_files/JitterTable.csv')  
-colnames(jitter) = c("Status", "Jitter = 0.05", "Jitter = 0.10")
-
-# Create model 1 jitter table
-jitter.table = xtable(jitter, 
-                      caption = c('Results from 50 jitters from the base model.'),
-                      label = 'tab:jitter')
-
-align(jitter.table) = c('l',
-                        '>{\\raggedright}p{2in}', 
-                        '>{\\centering}p{1in}',
-                        '>{\\centering}p{1in}')
-
-
-# Print jitter table (all models)    
-print(jitter.table, 
-      include.rownames = FALSE, 
-      caption.placement = 'top')
-```
-<!-- ---------------------------------------------------------------------- -->
-
-\FloatBarrier  
-  
 
 
 <!-- ***********Likelihood TABLE*********************************************** -->
