@@ -6,11 +6,11 @@ This assessment reports the status of the `r spp` (\emph{`r spp.sci`})  off  U.S
 
 
 ##Landings{-}
-While records do not exist, the earliest catches of `r spp` are reported in `r Dat_start_mod1` in California and 1884 in Oregon. In this assessment, fishery removals have been divided among 4 fleets: 1) Winter North trawl, 2) Summer North trawl, 3) Winter South trawl, and 4) Summer South trawl. Landings for the North fleet are defined as fish landed in Washington and Oregon ports. Landings for the South fleet are defined as fish landed in California ports. Recent annual catches between 1981-2018 range between `r min(round(Tot.catch.df[Tot.catch.df[,1] >= 1981 & Tot.catch.df[,1] <= 2018,2],0))` and `r max(round(Tot.catch.df[Tot.catch.df[,1] >= 1981 & Tot.catch.df[,1] <= 2018,2],0))` mt per year and the most recent year landing are shown in Table \ref{tab:Exec_catch}. `r spp.up` are caught nearly exclusively by trawl fleets; non-trawl gears contribute less than 3% of the catches. 
+While records do not exist, the earliest catches of `r spp` are reported in `r Dat_start_mod1` in California and 1884 in Oregon. In this assessment, fishery removals have been divided among 4 fleets: 1) Winter North trawl, 2) Summer North trawl, 3) Winter South trawl, and 4) Summer South trawl. Landings for the North fleet are defined as fish landed in Washington and Oregon ports. Landings for the South fleet are defined as fish landed in California ports. Recent annual catches between 1981-2018 range between `r min(round(Tot.catch.df[Tot.catch.df[,1] >= 1981 & Tot.catch.df[,1] <= 2018,2],0))` and `r max(round(Tot.catch.df[Tot.catch.df[,1] >= 1981 & Tot.catch.df[,1] <= 2018,2],0))` mt per year and the most recent year landings are shown in Table \ref{tab:Exec_catch}. The landings are summarized into winter and summer fleets where winter is defined as November to February and summer running from March to October. `r spp.up` are caught nearly exclusively by trawl fleets; non-trawl gears contribute only a small fraction of the catches across all years. 
 
-From the inception of the fishery through the war years, the vast majority of catches occurred between March and October (the summer fishery), when the stock is dispersed over the continental shelf. The post-World War II period witnessed a steady decline in the amount and proportion of annual catches occurring during the summer months (March-October). Conversely, `r spp` catch during the winter season (November-February), when the fishery targets spawning aggregations, has exhibited a steadily increasing trend since the 1940s. From the mid-1980s through the early 2000s, catches during the winter months were roughly equivalent to or exceeded catches throughout the remainder of the year, whereas during the past 10 years, the relative catches during the winter and summer have been more variable across years (\ref{tab:Exec_catch}). `r spp` are a desirable market species and discarding has historically been low.
+From the inception of the fishery through the war years, the vast majority of catches occurred between March and October (the summer fishery), when the stock is dispersed over the continental shelf. The post-World War II period witnessed a steady decline in the amount and proportion of annual catches occurring during the summer months (March-October). Conversely, `r spp` catch during the winter season (November-February), when the fishery targets spawning aggregations, has exhibited a steadily increasing trend since the 1940s. From the mid-1980s through the early 2000s, catches during the winter months were roughly equivalent to or exceeded catches throughout the remainder of the year, whereas during the past 10 years, the relative catches during the winter and summer have been more variable across years (Table \ref{tab:Exec_catch}). `r spp.up` are a desirable market species and discarding has historically been low.
 
-Based on the 2005 assessment, annual catch limits (ACLs) were reduced to 2499 mt for 2007-2008. Following the 2009 assessment when the stock was declared overfished, the ACLs were further reduced to 976 mt for 2011.  Since then, the ACLs and  landings have subsequently increased to a high value of 3,136 for 2017.
+Based on the 2005 assessment, annual catch limits (ACLs) were reduced to 2499 mt for 2007-2008. Following the 2009 assessment when the stock was declared overfished, the ACLs were further reduced to 976 mt for 2011.  Since then, the ACLs and  landings have subsequently increased to a high value of 3,136 mt for 2017.
 
 
 <!-- ***********CATCH TABLE************************************************ -->
@@ -31,38 +31,38 @@ Based on the 2005 assessment, annual catch limits (ACLs) were reduced to 2499 mt
 
 ```
 
-!['Landings of by the Northern and Southern winter and summer fleets of the US west coast.  \label{fig:Exec_catch1}](`r Catch.file`)
+!['Landings of by the Northern and Southern winter and summer fleets off the U.S. west coast.  \label{fig:Exec_catch1}](`r Catch.file`)
 
 \FloatBarrier
 
 
 ##Data and Assessment{-}
-This an update assessment for `r spp`, which was last assessed in 2013 and updated in 2015.  The update assessment was conducted using the length- and age-structured modeling software Stock Synthesis (version 3.30.13).  The coastwide population was modeled allowing separate growth and mortality parameters for each sex (a two-sex model)  with the fishing year beginning on November 1 and ending on October 31.  The  fisheries are structured seasonally based on winter (November to February) and summer (March to October) fishing seasons due to the development and growth of the wintertime fishery, which began in the 1950s. In recent decades, wintertime catches have often exceed summertime catches. The fisheries modeled as the North Winter and North Summer fleets, where the North includes both Washington and Oregon, and South Winter and South Summer encompasses California fisheries. 
+This an update assessment for `r spp`, which was last assessed in 2013 and updated in 2015.  This update assessment was conducted using the length- and age-structured modeling software Stock Synthesis (version 3.30.13).  The coastwide population was modeled allowing separate growth and mortality parameters for each sex (a two-sex model)  with the fishing year beginning on November 1 and ending on October 31.  The  fisheries are structured seasonally based on winter (November to February) and summer (March to October) fishing seasons due to the development and growth of the wintertime fishery, which began in the 1950s. In recent decades, wintertime catches have often exceed summertime catches. The fisheries modeled as the Winter North and Summer North fleets, where the North includes both Washington and Oregon, and Southern Winter and Southern Summer encompasses California fisheries. 
 
-The model includes fishery data in the form of catches, discard rates and average weigths, length- and age-frequency data, as well as standardized winter fishery catch-per-unit-effort (CPUE). Biological data are derived from both port and on-board observer sampling programs. The National Marine Fisheries Service (NMFS) `r full.tri ` early (1980, 1983, 1986, 1989, 1992) and late period (1995, 1998, 2001, and 2004) and the `r nwfsc` (2003-2018) relative biomass indices and biological sampling provide fishery independent information on relative trend and demographics of the `r spp` stock.
+The model includes fishery data in the form of catches, discard rates and average weights, length- and age-frequency data, as well as standardized winter fishery catch-per-unit-effort (CPUE). Biological data are derived from both port and on-board observer sampling programs. The National Marine Fisheries Service (NMFS) `r full.tri ` early (1980, 1983, 1986, 1989, 1992) and late period (1995, 1998, 2001, and 2004) and the `r nwfsc` (2003-2018) relative biomass indices and biological sampling provide fishery independent information on relative trend and demographics of the `r spp` stock.
 
 <!--Map of assessment region: (Figure \ref{fig:assess_region_map}).  
  
 ![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map}](Figures/assess_region_map.png)  \FloatBarrier  -->
 
 ##Updated Data{-}
-The base stock assessment model structure is consistent with the 2013 assessment and the 2015 update, except as noted here. Modifications from the previous assessment model include:
+The base assessment model structure is consistent with the 2013 assessment and the 2015 update, except as noted here. Modifications from the previous assessment model include:
 
 \begin{enumerate}
   \item Commercial catches (2015-2018 added);
   \item Commercial length and age data (all years reprocessed, 2015-2018 added);
   \item Observed discard rates, average weights, and lengths (2002-2017 reprocessed, 2014-2017 added); 
-  \item `r full.tri` early and late indices of abundance and length composition data (1980-2004 reprocessed); and
-  \item `r nwfsc` index of abundance, length and age composition data (2003-2018 reprocessed, 2015-2018 added).
-  \item Model tuning to re-weight data using the McAllister and Iannelli approach (same approach applied in the 2013 assessment). 
-  \item Length-weight relationship parameters estimated outside of the stock assessment model from the `r nwfsc` data up to 2018 and input as fixed values.
-  \item Updated the natural mortality prior for female and male fish.
+  \item `r full.tri` early and late indices of abundance and length composition data (1980-2004 reprocessed); 
+  \item `r nwfsc` index of abundance, length and age composition data (2003-2018 reprocessed, 2015-2018 added);
+  \item Model tuning to re-weight data using the McAllister and Iannelli approach (same approach applied in the 2013 assessment);
+  \item Length-weight relationship parameters estimated outside of the stock assessment model from the `r nwfsc` data up to 2018 and input as fixed values;
+  \item Updated the natural mortality prior for female and male fish; and,
   \item Model fitting using latest version of Stock Synthesis (SS v.3.30.13). 
 \end{enumerate}
 
 
 ##Stock Biomass{-}
-`r spp.up` were lightly exploited during the early 1900s, but by the 1950s, the fishery was well developed with the stock showing declines in biomass and catches (Figures \ref{fig:Exec_catch1} and \ref{fig:Spawnbio_all}). The rate of decline in spawning biomass accelerated through the 1970s reaching minimums generally around or below 10% of the unexploited levels during the 1980s through the early 2000s (Figure \ref{fig:RelDeplete_all}). The `r spp` spawning stock biomass is estimated to have increased in recent yeard due to reduced catches during rebuilding and in response to above average recruitment in 2006, 2007, and 2008. The `r LastYR` estimated spawning biomass relative to unfished equilibrium spawning biomass is above the target of 25% of unfished spawning biomass at `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`).
+`r spp.up` were lightly exploited during the early 1900s, but by the 1950s, the fishery was well developed with the stock showing declines in biomass and catches (Figures \ref{fig:Exec_catch1} and \ref{fig:Spawnbio_all}). The rate of decline in spawning biomass accelerated through the 1970s reaching minimums generally around or below 10% of the unexploited levels during the 1980s through the early 2000s (Figure \ref{fig:RelDeplete_all}). The `r spp` spawning stock biomass is estimated to have increased in recent years due to reduced catches during rebuilding and in response to above average recruitment in 2006, 2007, and 2008. The `r LastYR` estimated spawning biomass relative to unfished equilibrium spawning biomass is above the target of 25% of unfished spawning biomass at `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Table \ref{tab:SpawningDeplete_mod1}).
 
 <!--BEGIN  EXECUTIVE SUMMARY SPAWNING BIOMASS AND DEPLETE TABLES AND FIGURES-->
 ```{r, results='asis'}
@@ -91,7 +91,9 @@ The base stock assessment model structure is consistent with the 2013 assessment
 
 ##Recruitment{-}
 
-Annual recruitment was treated as stochastic, and estimated as annual deviations from log-mean recruitment where mean recruitment is the fitted Beverton-Holt stock recruitment curve. The time-series of estimated recruitments shows a relationship with the decline in spawning biomass, punctuated by larger recruitments in 2006, 2007, and 2008 (Figure \ref{fig:Recruits_all}). The five largest estimated recruitments estimated within the model (in ascending order) occurred in `r recdev.highest[1]`, `r recdev.highest[2]`, `r recdev.highest[3]`, `r recdev.highest[4]`, and  `r recdev.highest[5]`. The four lowest recruitments estimated within the model (in ascending order) occurred in `r recdev.lowest[1]`, `r recdev.lowest[2]`, `r recdev.lowest[3]`, and `r recdev.lowest[4]`.  
+Annual recruitment was treated as stochastic, and estimated as annual deviations from log-mean recruitment where mean recruitment is the fitted Beverton-Holt stock recruitment curve. The time-series of estimated recruitments shows a relationship with the decline in spawning biomass, punctuated by larger recruitments in 2006, 2007, and 2008 (Figure \ref{fig:Recruits_all}). However, recruitment in recent years (2013 - 2017) is estimated to be less than the expected mean recruitment indicating an absence of strong incoming recruitment (Table \ref{tab:Recruit_mod1}). 
+
+The five largest estimated recruitments estimated within the model (in ascending order) occurred in `r recdev.highest[1]`, `r recdev.highest[2]`, `r recdev.highest[3]`, `r recdev.highest[4]`, and  `r recdev.highest[5]`. The four lowest recruitments estimated within the model (in ascending order) occurred in `r recdev.lowest[1]`, `r recdev.lowest[2]`, `r recdev.lowest[3]`, and `r recdev.lowest[4]`.  
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY RECRUITMENT TABLES AND FIGURES***** -->
 ```{r, results='asis'}
@@ -110,7 +112,7 @@ Annual recruitment was treated as stochastic, and estimated as annual deviations
 
 
 ##Exploitation Status{-}
-The relative spawning biomass of of `r spp` was estimated to have dropped below the management target (25%) for the first time in `r first.yr.below.target`. The stock continued to decline and first fell below the minimum stock size threshold level of 12.5% in `r first.yr.below.thresh` (although, at the time the mangement target and thresholds were not set at the current values of 25% and 12.5%).  The relative spawning biomass remained around the threshold stock size until approximately 2010, with the stock reaching its lowest relative spawning biomass level in `r low.ssb` at `r low.dep.value`. In 2009 `r spp` was formally declared overfished. Fishing mortality rates sharply declined during the rebuilding period relative to previous year rates which exceeded the target (Figure \ref{fig:SPR_all}). After reduced harvests, the 2015 update stock assessment estimated the stock to have rebuilt to the management target (25%) in 2014.  This update estimates that the relative spawning biomass exceeded 25% in `r yr.rebuilt` with harvest rates in the most recent years remaining just under of the target rate (Figure \ref{fig:SPR_all}).    
+The relative spawning biomass of `r spp` was estimated to have dropped below the management target (25%) for the first time in `r first.yr.below.target`. The stock continued to decline and first fell below the minimum stock size threshold level of 12.5% in `r first.yr.below.thresh` (although, at the time the management target and thresholds were not set at the current values of 25% and 12.5%).  The relative spawning biomass remained around the threshold stock size until approximately 2010, with the stock reaching its lowest relative spawning biomass level in `r low.ssb` at `r low.dep.value`. In 2009 `r spp` was formally declared overfished. Fishing mortality rates sharply declined during the rebuilding period, relative to previous year rates, which exceeded the target (Figure \ref{fig:SPR_all}). After reduced harvests, the 2015 update stock assessment estimated the stock to have rebuilt to the management target (25%) in 2014.  This update estimates that the relative spawning biomass exceeded 25% in `r yr.rebuilt` with harvest rates in the most recent years remaining under of the target rate (Table \ref{tab:SPR_Exploit_mod1} and Figures \ref{fig:SPR_all} and \ref{fig:Phase_all}).    
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY EXPLOITATION AND******************* -->
@@ -140,9 +142,9 @@ Ecosystem factors have not been explicitly modeled in this assessment, but there
 
 ##Reference Points{-}
 
-This update stock assessment estimates that the spawning biomass of `r spp` is `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the management target. Due to reduced landings and the large 2008 year-class, an increasing trend in spawning biomass was estimated in the base model. The estimated relative spawning biomass in `r LastYR` is `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`), corresponding to an spawning biomass of `r paste(prettyNum(Spawn_mod1,big.mark=","), fecund_unit,sep=' ')` ($\sim$ 95% asymptotic interval: `r paste(prettyNum(Spawn_mod1_CI,big.mark=","), fecund_unit, sep=' ')`).  Unfished age `r min_age` biomass was estimated to be `r prettyNum(format(Ref_pts_mod1[2,2],0),big.mark=",")` mt in the base model. 
+This update stock assessment estimates that the spawning biomass of `r spp` is `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the management target. Due to reduced landings and a series of above average recruitments (2006, 2007, and 2008), an increasing trend in spawning biomass was estimated in the base model with a decline in the start of the year spawning biomass estimate in 2019. The estimated relative spawning biomass in `r LastYR` is `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`), corresponding to an spawning biomass of `r paste(prettyNum(Spawn_mod1,big.mark=",", digits = 0), fecund_unit,sep=' ')` ($\sim$ 95% asymptotic interval: `r paste(prettyNum(Spawn_mod1_CI,big.mark=","), fecund_unit, sep=' ')`) (Table \ref{tab:Ref_pts_mod1}).  Unfished age `r min_age` biomass was estimated to be `r prettyNum(formatC(Ref_pts_mod1[2,2],0),big.mark=",", drop0trailing = TRUE)` mt in the base model. 
 
-The target spawning biomass based on the biomass target ($SB_{25\%}$) is `r paste(prettyNum(format(Ref_pts_mod1[7,2],0),big.mark=","), fecund_unit,sep=' ')`, with an equilibrium catch of `r prettyNum(format(Ref_pts_mod1[10,2],0),big.mark=",")` mt. Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to $SPR_{30\%}$ is `r prettyNum(format(Ref_pts_mod1[15,2],0),big.mark=",")` mt. Estimated MSY catch is at a `r prettyNum(format(Ref_pts_mod1[20,2],0),big.mark=",")` spawning biomass of `r paste(prettyNum(format(Ref_pts_mod1[17,2],0),big.mark=","), fecund_unit,sep=' ')` (`r paste0(round(100 * as.numeric(Ref_pts_mod1[17,2])/as.numeric(Ref_pts_mod1[1,2]),1), "%")` relative spawning biomass).
+The target spawning biomass based on the biomass target ($SB_{25\%}$) is `r paste(prettyNum(format(Ref_pts_mod1[7,2],0),big.mark=",", digits = 0), fecund_unit,sep=' ')`, with an equilibrium catch of `r prettyNum(format(Ref_pts_mod1[10,2],0),big.mark=",", digits = 0)` mt (Table \ref{tab:Ref_pts_mod1}). Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to $SPR_{30\%}$ is `r prettyNum(format(Ref_pts_mod1[15,2],0),big.mark=",")` mt. Estimated MSY catch is at a `r prettyNum(format(Ref_pts_mod1[20,2],0),big.mark=",", digits = 0)` spawning biomass of `r paste(prettyNum(format(Ref_pts_mod1[17,2],0),big.mark=",", digits = 0), fecund_unit,sep=' ')` (`r paste0(round(100 * as.numeric(Ref_pts_mod1[17,2])/as.numeric(Ref_pts_mod1[1,2]),1), "%")` relative spawning biomass).
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY REFERENCE POINT TABLES************* -->
@@ -178,24 +180,24 @@ There are a number of major uncertainties regarding model parameters that have b
 
 \begin{enumerate}
 
-\item Value of natural mortality by sex.
+\item The value of natural mortality by sex.
 
-\item Sex ratio between female and male in the population of `r spp`.
+\item The current sex ratio between female and males in the population of `r spp`.
 
-\item Alternative fecundity estimates based upon new research for `r spp`.
+\item Fecundity estimates based upon new research for `r spp` and measured differences in fecundity between northern and southern fish.
 
-\item Changes in estimated based on alternative data weighting approaches.
+\item Changes in the model estimates based on alternative data weighting approaches.
 
 \end{enumerate}
 
-Additionally, to date a reconstructed historical Washington catch history has not been included in the `r spp` stock assessment.  Washington state is currently undergoing efforts to determine historical catches for `r spp`.  
+Additionally, to date a reconstructed historical Washington catch history has not been included in the `r spp` stock assessment.  Washington state is currently undergoing efforts to determine historical catches for `r spp` and next assessment is likely to incorporate these new historical catch estimates.  
 
 ##Decision Table{-}    
-The forecast of stock abundance and yield was developed using the base model. The total catches in 2019 and 2020 are set at values provided by the Groundfish Managment Team (GMT) of the PFMC at 2908 and 2845 mt, respectively. The management adopted ACL values for these years are 2921 and 2857 mt. The exploitation rate for 2021 and beyond is based upon an SPR of 30% and the 25:5 harveest control rule. The average exploitation rates, across recent years, by fleet as provided by the GMT were used to distribute catches during the forecast period. 
+The forecast of stock abundance and yield was developed using the base model. The total catches in 2019 and 2020 are set at values provided by the Groundfish Management Team (GMT) of the PFMC at 2908 and 2845 mt, respectively. The management adopted ACL values for these years are 2921 and 2857 mt. The exploitation rate for 2021 and beyond is based upon an SPR of 30% and the 25:5 harvest control rule. The average exploitation rates, across recent years, by fleet as provided by the GMT were used to distribute catches during the forecast period. 
 
-Uncertainty in the forecasts is based upon the three states of nature based on the likelihood profile of female natural mortality ($M$), chosen using a change of 1.2 NLL units (75% interval) from the minimum value to correspond to the midpoints of the lower 25% probability and upper 25% probability regions from the base model and are low (0.130 $yr^-1$) and high (0.185 $yr^-1$) values for female natural mortality. 
+Uncertainty in the forecasts is based upon the three states of nature based on the likelihood profile of female natural mortality ($M$), chosen using a change of 1.2 NLL units (75% interval) from the minimum value to correspond to the midpoints of the lower 25% probability and upper 25% probability regions from the base model and are low (0.130 yr^-1^) and high (0.185 yr^-1^) values for female natural mortality. 
 
-Catches during the projection period under the current harvest control rule are projected to start at 4115 mt and decline over the projection period to 3093 mt, in the base model, as the stock declines towards that target spawning biomass (Table \ref{tab:OFL_projection}).  Acorss the low and high states of nature the under the current harvest control rule range between XXX - XXX fraction of spawning biomass by the end of the projection period (Table \ref{tab:Decision_table_mod1_es}).
+Catches during the projection period under the current harvest control rule are projected to start at 4115 mt and decline over the projection period to 3093 mt, in the base model, as the stock declines towards that target spawning biomass (Table \ref{tab:OFL_projection}).  Across the low and high states of nature the under the current harvest control rule, the relative biomass (depletion) range between 0.24 - 0.34 by the end of the 12-year projection period (Table \ref{tab:Decision_table_mod1_es}).
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
 
@@ -224,7 +226,7 @@ Progress on a number of research topics and data issues would substantially impr
 
 \item In the past many assessments have derived historical catches independently. The states of California and Oregon have completed comprehensive historical catch reconstructions. At the time of this assessment, a comprehensive historical catch reconstruction is not available for Washington. Completion of a Washington catch reconstruction would provide the best possible estimated catch series that accounts for all the catch and better resolves historical catch uncertainty for flatfish as a group.
 
-\item Due to limited data, new studies on the maturity relationships for `r spp` would be beneficial.
+\item Due to limited data, new studies on the maturity at length or age for `r spp` would be beneficial.
 
 \item Where possible, historical otolith samples aged using a combination of surface and break-and-burn methods should be re-aged using the break-and-burn method. Early surface read otoliths should also be re-aged using the break-and-burn method. Historical otoliths aged with a standard method will allow the further evaluation of the potential impacts of consistent under ageing using surface methods, changes in selectivity during early periods of time without any composition information, and potential changes in growth.
 

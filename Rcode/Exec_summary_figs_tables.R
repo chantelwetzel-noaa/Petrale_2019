@@ -53,7 +53,7 @@ rich.colors.short <- function(n,alpha=1){
 
 Final_Catch_AllYrs = read.csv('./txt_files/Petrale_2019_PacFIN_catch_forExpansion.csv')
 Exec_catch_sep = Final_Catch_AllYrs
-#Exec_catch_sep = Exec_catch_sep [,2:ncol(Exec_catch_sep)]
+              
 Exec_catch_sep = Exec_catch_sep[Exec_catch_sep$Year != LastYR, ]
 
 colnames(Exec_catch_sep) = c('Year',  'Winter (N)', 'Summer (N)', 'Winter (S)', 'Summer (S)')
@@ -89,6 +89,11 @@ Plot_catch = function(Catch_df) {
 
 # Read in executive summary catches table
 Exec_catch_summary_sep = Final_Catch_AllYrs[, 1:ncol(Final_Catch_AllYrs)]
+Exec_catch_summary_sep = data.frame(Year = Exec_catch_summary_sep$Years, 
+                            Winter_N = Exec_catch_summary_sep$WA.TRAWL.1+Exec_catch_summary_sep$OR.TRAWL.1,
+                            Summer_N = Exec_catch_summary_sep$WA.TRAWL.2+Exec_catch_summary_sep$OR.TRAWL.2,
+                            Winter_S = Exec_catch_summary_sep$CA.TRAWL.1,
+                            Summer_S = Exec_catch_summary_sep$CA.TRAWL.2)
 
 # Bind the data frames together
 Exec_catch_summary = cbind(Exec_catch_summary_sep[,1:5], 
@@ -106,7 +111,8 @@ Exec_catch_summary = subset(Exec_catch_summary, Year >= FirstYR-1 & Year <= Last
 # Make executive summary catch xtable
 Exec_catch.table = xtable(Exec_catch_summary, 
                           caption = c(paste0('Landings (mt) for the past 10 years for ',spp,' by source.')), 
-                          label='tab:Exec_catch')
+                          label='tab:Exec_catch',
+                          digits = 0)
     
 # Add alignment - you will have to adjust based on the number of columns you have
 # and the desired width, remember to add one leading ghost column for row.names
@@ -218,7 +224,7 @@ align(Exec_catch.table) = c('l', 'l',
 # Create Spawning/Depletion tables for the correct number of models
 # Model 1 table ---------------------------------------------------------------
 Spawn_Deplete_mod1.table = xtable(SpawnDepletemod1, 
-                           caption = paste0('Recent trend in estimated spawning biomass (', fecund_unit, ') and estimated relative spawning biomass (depletion).'), 
+                           caption = paste0('Recent trend in estimated spawning biomass (', fecund_unit, ') and estimated relative spawning biomass.'), 
                            label='tab:SpawningDeplete_mod1',  
                            digits = c(0, 0, 0, 0, 3, 2)) 
 
@@ -512,7 +518,9 @@ align(mngmnt.table) = c('l',
 # Extract OFLs for next 10 years for each model
 #Fore_Table = read.csv('./txt_files/OFL_forecast.csv')
 OFL_mod1 = mod1$derived_quants[grep('OFL',mod1$derived_quants$Label),]
-OFL_mod1 = OFL_mod1[, 2]    
+OFL_mod1 = OFL_mod1[, 2] 
+# Replace the model estimated ofl to the harvest spex ofl values
+OFL_mod1[1:2] = c(3042, 2976)
 
 ACL_mod1 = mod1$derived_quants[grep('ForeCatch_',mod1$derived_quants$Label),]
 ACL_mod1 = ACL_mod1[,2]
@@ -544,7 +552,7 @@ write.csv(Fore_Table, file = './txt_files/OFL_forecast.csv', row.names = FALSE)
 
 # Create the table
 OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
-                                          removals are set at the harvest limits currently set by management of 2908 and 2845 mt per year, respectively.'),
+ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates.'),
                   label = 'tab:OFL_projection',
                   digits = 0)
       
@@ -578,7 +586,7 @@ decision_mod1.table = xtable( decision_mod1,
                               caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on 
                                              an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification 
                                              of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different 
-                                             assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
+                                             assumptions of catch levels. The ABC catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
                               label='tab:Decision_table_mod1_es', 
                               digits = c(0,0,0,0,0,3,0,3,0,3)) 
       
@@ -594,7 +602,7 @@ addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{}
                        & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                        & \\multicolumn{2}{c}{} \\\\\n', 
                        ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.13} 
-                       & \\multicolumn{2}{c}{M = 0.156} 
+                       & \\multicolumn{2}{c}{M = 0.159} 
                        &  \\multicolumn{2}{c}{M = 0.185} \\\\\n')
         
 #=============================================================================

@@ -154,7 +154,7 @@ Index_Summary = cbind(rownames(Index_Summary), Index_Summary)
 hlines = c(-1, 0, nrow(Index_Summary))
 addtorow = list()
 addtorow$pos = list(0,0)
-addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Triennial Early} & \\multicolumn{2}{c}{Triennial Late} & \\multicolumn{2}{c}{NWFSC Combo} \\\\\n",
+addtorow$command = c(" & \\multicolumn{2}{c}{Winter N.} &  \\multicolumn{2}{c}{Winter S.} & \\multicolumn{2}{c}{Triennial Early} & \\multicolumn{2}{c}{Triennial Late} & \\multicolumn{2}{c}{NWFSC} \\\\\n",
                      "Year & Obs & SE & Obs & SE & Obs & SE & Obs & SE & Obs & SE\\\\\n")
 Index_summary.table = xtable(Index_Summary, 
                              caption = c('Summary of the fishery-independent biomass/abundance
@@ -207,7 +207,7 @@ colnames(Strata) = c('Strata',
 
 # Index of abundance summary, create table   
 Strata.table = xtable(Strata, 
-                           caption = c('Description of the strata used to create the indices for the NWFSC Shelf-Slope survey.'),
+                           caption = c('Description of the strata used to create the indices for the NWFSC West Coast Groundfish Bottom Trawl Survey.'),
                            label = 'tab:strata_nwfsc',
                            digits = c(0,0,0,0,1,1))
                           
@@ -247,7 +247,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of NWFSC shelf-slope survey length samples used in the stock assessment.'),
+                           caption = c('Summary of NWFSC West Coast Groundfish Bottom Trawl Survey length samples used in the stock assessment.'),
                            label = 'tab:NWcombo_Lengths',
                            digits = 0)    
 # Add alignment  
@@ -276,7 +276,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of NWFSC shelf-slope survey age samples used in the stock assessment.'),
+                           caption = c('Summary of NWFSC West Coast Groundfish Bottom Trawl Survey age samples used in the stock assessment.'),
                            label = 'tab:NWcombo_Ages',
                            digits = 0)    
 # Add alignment  
@@ -316,7 +316,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of Triennial survey length samples used in the stock assessment.'),
+                           caption = c('Summary of AFSC/NWFSC West Coast Triennial Shelf Survey length samples used in the stock assessment.'),
                            label = 'tab:Triennial_Lengths',
                            digits = 0)    
 # Add alignment  
@@ -356,7 +356,7 @@ colnames(Strata) = c('Strata',
 
 # Index of abundance summary, create table   
 Strata.table = xtable(Strata, 
-                      caption = c('Description of the strata used to create the indices for the Triennial Early (1980 - 1992) survey.'),
+                      caption = c('Description of the strata used to create the indices for the AFSC/NWFSC West Coast Triennial Shelf Survey Early (1980 - 1992) survey.'),
                       label = 'tab:strata_tri_early',
                       digits = c(0,0,0,0,1,1))
                           
@@ -400,7 +400,7 @@ colnames(Strata) = c('Strata',
 
 # Index of abundance summary, create table   
 Strata.table = xtable(Strata, 
-                      caption = c('Description of the strata used to create the indices for the Triennial Late (1995-2004) survey.'),
+                      caption = c('Description of the strata used to create the indices for the AFSC/NWFSC West Coast Triennial Shelf Survey Late (1995-2004) survey.'),
                       label = 'tab:strata_tri_late',
                       digits = c(0,0,0,0,1,1))
                           
@@ -442,8 +442,10 @@ for (i in n){
                                  print.numeric(mod1$discard$Std_in[ind], digits = 3)))
 } 
 
-tmp = c(rep("Pikitch", 3), rep("WGCOP", sum(discard[,2]=="WinterN")-3),
-        rep("Pikitch", 3), rep("WGCOP", sum(discard[,2]=="SummerN")-3))
+tmp = ifelse(discard[,1] %in% c("1985", "1986", "1987"), "Pikitch", "WCGOP")
+
+#tmp = c(rep("Pikitch", 3), rep("WGCOP", sum(discard[,2]=="WinterN")-3),
+#        rep("Pikitch", 3), rep("WGCOP", sum(discard[,2]=="SummerN")-3))
 
 discard = cbind(discard, tmp)
 colnames(discard) = c('Year',
@@ -708,7 +710,7 @@ colnames(harmonic) = c('Fleet',
 
 # Create sensitivities table
 Harmonic.table = xtable(harmonic, 
-                           caption = c('Data weights applied when using harmonic data weighting.'),
+                           caption = c('Data weights applied when using McAllister Ianelli Harmonic Mean data weighting.'),
                            label = 'tab:harm',
                            digits = 3)
 
@@ -728,33 +730,6 @@ print(Harmonic.table,
 <!-- ---------------------------------------------------------------------- -->
  \FloatBarrier 
  
- <!-- ***********JITTER TABLE*********************************************** --> 
-```{r, results = 'asis'}
-# Replace values in file and read in - values for all models in 1 table  
-jitter = read.csv('./txt_files/JitterTable.csv')  
-colnames(jitter) = c("Status", "Jitter = 0.05", "Jitter = 0.10")
-
-# Create model 1 jitter table
-jitter.table = xtable(jitter, 
-                      caption = c('Results from 50 jitters from the base model.'),
-                      label = 'tab:jitter')
-
-align(jitter.table) = c('l',
-                        '>{\\raggedright}p{2in}', 
-                        '>{\\centering}p{1in}',
-                        '>{\\centering}p{1in}')
-
-
-# Print jitter table (all models)    
-print(jitter.table, 
-      include.rownames = FALSE, 
-      caption.placement = 'top')
-```
-<!-- ---------------------------------------------------------------------- -->
-
-\FloatBarrier  
-
-  
   
 <!-- ***********MODEL 1 PARAMETERS***************************************** --> 
 \begin{landscape}
@@ -878,6 +853,32 @@ print(mod_params.table,
 <!-- ---------------------------------------------------------------------- -->
 
 \FloatBarrier
+
+ <!-- ***********JITTER TABLE*********************************************** --> 
+```{r, results = 'asis'}
+# Replace values in file and read in - values for all models in 1 table  
+jitter = read.csv('./txt_files/JitterTable.csv')  
+colnames(jitter) = c("Status", "Jitter = 0.05", "Jitter = 0.10")
+
+# Create model 1 jitter table
+jitter.table = xtable(jitter, 
+                      caption = c('Results from 50 jitters from the base model.'),
+                      label = 'tab:jitter')
+
+align(jitter.table) = c('l',
+                        '>{\\raggedright}p{2in}', 
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}')
+
+
+# Print jitter table (all models)    
+print(jitter.table, 
+      include.rownames = FALSE, 
+      caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\FloatBarrier  
 
 
 
@@ -1109,66 +1110,6 @@ print(Timeseries.table,
   
 \FloatBarrier
 
-
-<!-- ***********MODEL 1 SENSITIVITY TABLE(S)******************************* --> 
-\begin{landscape}
-```{r, results = 'asis'}
-
-# Read in/organize sensitivity file, change column names, caption
-Sens_model1 = read.csv('./txt_files/Sensitivities.csv')
-
-#colnames(Sens_model1) = c('Label', 
-#                          'Base', 
-#                          'Low M',
-#                          'High M',
-#                          'Old M Prior',
-#                          'Fecundity',
-#                          'Sex Ratio',
-#                          'Sex Ratio & Fecund.',
-#                          'Francis',
-#                          'Dirichlet')
-
- colnames(Sens_model1) = rep("", ncol(Sens_model1))
-  
- hlines = c(-1, 0, nrow(Sens_model1))
- addtorow = list()
- addtorow$pos = list(0,0)
- addtorow$command = c("      &      & Low M    & High M   &  Old M  &           &            & Sex Ratio &          &          \\\\\n",
-                      "Label & Base & (female) & (female) &  Prior  & Fecundity &  Sex Ratio & Fecundity & Francis & Dirichlet \\\\\n" )
-
-# Create sensitivities table
-Sens_model1.table = xtable(Sens_model1, 
-                           caption = c('Sensitivity runs relative to the base model.'),
-                           label = 'tab:sens_table',
-                           digits = 3)
-
-
-# Add alignment - this uses centered aligment of .6 inches for all columns 2+,
-# You can change this easily to have variable columns width after you know how many
-# colunns your final table has
-# align(Sens_model1.table) = c('l', 'l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
-align(Sens_model1.table) = c('llrrrrrrrrr')
-
-
-# Print model 1 sensitivity table
-print(Sens_model1.table, 
-      include.rownames = FALSE,             
-      caption.placement = 'top',
-      tabular.environment = 'longtable',
-      floating = FALSE,
-      add.to.row = addtorow,
-      size="\\fontsize{9pt}{10pt}\\selectfont")
-      #floating.environment = 'sidewaystable',
-      #scalebox = .9)
-
-```
-\end{landscape}
-
-\newpage
-
-<!-- ---------------------------------------------------------------------- -->
- \FloatBarrier 
- 
 <!-- ***********Francis Weights Table******************************* --> 
 ```{r, results = 'asis'}
 
@@ -1249,43 +1190,118 @@ print(Harmonic.table,
  \FloatBarrier 
 
 
+<!-- ***********MODEL 1 SENSITIVITY TABLE(S)******************************* --> 
+\begin{landscape}
+```{r, results = 'asis'}
+
+# Read in/organize sensitivity file, change column names, caption
+Sens_model1 = read.csv('./txt_files/Sensitivities.csv')
+
+#colnames(Sens_model1) = c('Label', 
+#                          'Base', 
+#                          'Low M',
+#                          'High M',
+#                          'Old M Prior',
+#                          'Fecundity',
+#                          'Sex Ratio',
+#                          'Sex Ratio & Fecund.',
+#                          'Francis',
+#                          'Dirichlet')
+
+ colnames(Sens_model1) = rep("", ncol(Sens_model1))
+  
+ hlines = c(-1, 0, nrow(Sens_model1))
+ addtorow = list()
+ addtorow$pos = list(0,0)
+ addtorow$command = c("      &      & Low M    & High M   &  Old M  &           &            & Sex Ratio &          &          \\\\\n",
+                      "Label & Base & (female) & (female) &  Prior  & Fecundity &  Sex Ratio & Fecundity & Francis & Dirichlet \\\\\n" )
+
+# Create sensitivities table
+Sens_model1.table = xtable(Sens_model1, 
+                           caption = c('Sensitivity runs compared to the base model.'),
+                           label = 'tab:sens_table',
+                           digits = 3)
+
+
+# Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+# You can change this easily to have variable columns width after you know how many
+# colunns your final table has
+# align(Sens_model1.table) = c('l', 'l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+align(Sens_model1.table) = c('llrrrrrrrrr')
+
+
+# Print model 1 sensitivity table
+print(Sens_model1.table, 
+      include.rownames = FALSE,             
+      caption.placement = 'top',
+      tabular.environment = 'longtable',
+      floating = FALSE,
+      add.to.row = addtorow,
+      size="\\fontsize{9pt}{10pt}\\selectfont")
+      #floating.environment = 'sidewaystable',
+      #scalebox = .9)
+
+```
+\end{landscape}
+
+\newpage
+
+ \FloatBarrier 
+
+
 
 <!-- ***********MODEL 1 HARVEST PROJECTIONS TABLE************************** --> 
 \newpage
 ```{r, results = 'asis'}
-# Pull OFL contribution and subset years
-# Extract OFLs for next 10 years for each model
-Fore_Table = read.csv('./txt_files/OFL_forecast.csv')
+OFL_mod1 = mod1$derived_quants[grep('OFL',mod1$derived_quants$Label),]
+OFL_mod1 = OFL_mod1[, 2] 
+# Replace the model estimated ofl to the harvest spex ofl values
+OFL_mod1[1:2] = c(3042, 2976)
 
+ACL_mod1 = mod1$derived_quants[grep('ForeCatch_',mod1$derived_quants$Label),]
+ACL_mod1 = ACL_mod1[,2]
 
-# Add column names
-Forecast_mod1 = Fore_Table
-colnames(Forecast_mod1)=c('Year',
-                          'OFL (mt)',
-                          'ACL (mt)',
-                          #'Age 3+ biomass (mt)',
-                          'Spawning Biomass',
-                          'Relative Biomass')
+OFL = as.data.frame(cbind(OFL_mod1, ACL_mod1))
+OFL$Year=seq(Project_firstyr,Project_lastyr, 1)
+OFL$Year = as.factor(OFL$Year)
 
-# Make sure year is a factor, so you don't get decimals
-Forecast_mod1$Year = as.factor(Forecast_mod1$Year)
+OFL = OFL[,c(3, 1, 2)]
+OFL[,2] =  print.numeric(OFL$OFL_mod1, digits = 0)
+OFL[,3] =  print.numeric(OFL$ACL_mod1, digits = 0)
 
-# Create the forecast table
-Forecast_mod1.table = xtable(Forecast_mod1,
-                             caption = c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 removals are set at the harvest limits currently set by management of 2908 and 2845 mt per year, respectively.'),
-                             label = 'tab:Forecast_mod1',
-                             digits = c(0,0,0,0,0,3))
+# Extract biomass/output  
+SpawningB = mod$derived_quants[grep('SSB', mod$derived_quants$Label), ]
+SpawningB = SpawningB[c(-1, -2), ]
+Spawn.fore = SpawningB[SpawningB$Label >= paste('SSB_', Project_firstyr, sep='') 
+                         & SpawningB$Label <= paste('SSB_', Project_lastyr,  sep=''), "Value"]  
+Spawn.fore = print(Spawn.fore, digits = 0)
+
+Bratio = mod$derived_quants[grep('Bratio', mod$derived_quants$Label), ]
+Bratio = Bratio[c(-1, -2), ]
+Bratio.fore = Bratio[Bratio$Label >= paste('Bratio_', Project_firstyr, sep='') 
+                       & Bratio$Label <= paste('Bratio_', Project_lastyr,  sep=''), "Value"]
+Bratio.fore = print(Bratio.fore, digits = 3)
+
+Fore_Table = cbind(OFL, Spawn.fore, Bratio.fore)
+colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Biomass") 
+write.csv(Fore_Table, file = './txt_files/OFL_forecast.csv', row.names = FALSE)
+
+# Create the table
+OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
+ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates.'),
+                  label = 'tab:OFL_projection_back',
+                  digits = 0)
+      
 # Add alignment
-align(Forecast_mod1.table) = c('l',
-                               'c',
-                               #'>{\\centering}p{1in}',
-                               '>{\\centering}p{1in}',
-                               '>{\\centering}p{1in}',
-                               '>{\\centering}p{1in}',
-                               '>{\\centering}p{1in}')
+align(OFL.table) = c('l',
+                        '>{\\raggedleft}p{0.5in}',
+                        '>{\\centering}p{1.1in}',
+                        '>{\\centering}p{1.1in}', 
+                        '>{\\centering}p{1.6in}',
+                        '>{\\centering}p{1.1in}')    
 
 # Print model 1 forecast table
-print(Forecast_mod1.table,
+print(OFL.table,
       include.rownames = FALSE,
       caption.placement = 'top')
 ```
@@ -1311,7 +1327,7 @@ colnames(decision_mod1) = c('',
                             'Depletion')
       
 decision_mod1.table = xtable( decision_mod1, 
-                              caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different assumptions of catch levels. The SPR30 catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
+                              caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different assumptions of catch levels. The ABC catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
                               label='tab:Decision_table_mod1', 
                               digits = c(0,0,0,0,0,3,0,3,0,3)) 
       
@@ -1325,8 +1341,8 @@ addtorow$pos[[2]] <- -1
 addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                        & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                        & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.125} 
-                       & \\multicolumn{2}{c}{M = 0.151} 
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.130} 
+                       & \\multicolumn{2}{c}{M = 0.159} 
                        &  \\multicolumn{2}{c}{M = 0.180} \\\\\n')
         
  print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 

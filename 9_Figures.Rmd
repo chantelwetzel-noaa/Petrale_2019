@@ -234,7 +234,7 @@
 <!-- ********************************************************************** -->
 <!-- *****************Maturity and Fecundity FIGURES*********************** --> 
 <!-- ********************************************************************** -->
-![Estimated maturity-at-length for `r spp`. \label{fig:maturity}](r4ss/plots_mod1/bio6_maturity.png)
+![Assumed maturity-at-length for `r spp`. \label{fig:maturity}](r4ss/plots_mod1/bio6_maturity.png)
 
 \FloatBarrier
 
@@ -249,7 +249,7 @@
 <!-- ********************************************************************** -->
 <!-- *****************     Sex Ratio                *********************** --> 
 <!-- ********************************************************************** -->
-![Estimated proportion of female fish collected by the NWFSC shelf-slope survey across all years for `r spp`. \label{fig:sex_ratio}](Figures/NWFSC Groundfish Bottom Trawl Survey_length_fraction_female.png)
+![Estimated proportion of female fish collected by the `r nwfsc` across all years for `r spp`. \label{fig:sex_ratio}](Figures/NWFSC Groundfish Bottom Trawl Survey_length_fraction_female.png)
 
 \FloatBarrier
 
@@ -634,11 +634,11 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
   
 <!-- ***********MODEL 1 Uncertainty and Sensitivity FIGURES**************** --> 
 
-![Estimate spawning biomass for the base model and each sensitivity. \label{fig:sens_ssb}](Figures/ssb_sens.png)
+![Estimated spawning biomass for the base model and each sensitivity. \label{fig:sens_ssb}](Figures/ssb_sens.png)
 
 \FloatBarrier
 
-![Estimate relative spawning biomass for the base model and each sensitivity. \label{fig:sens_depl}](Figures/depl_sens.png)
+![Estimated relative spawning biomass for the base model and each sensitivity. \label{fig:sens_depl}](Figures/depl_sens.png)
 
 \FloatBarrier
   

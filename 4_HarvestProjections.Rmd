@@ -2,3 +2,9 @@
 <!-- **************HARVEST PROJECTIONS AND DECISION TABLE****************** -->
 #Harvest Projections and Decision Tables
 
+The forecast of stock abundance and yield was developed using the base model. The total catches in 2019 and 2020 are set at values provided by the Groundfish Management Team (GMT) of the PFMC at 2908 and 2845 mt, respectively. The management adopted ACL values for these years are 2921 and 2857 mt. The exploitation rate for 2021 and beyond is based upon an SPR of 30% and the 25:5 harvest control rule. The average exploitation rates, across recent years, by fleet as provided by the GMT were used to distribute catches during the forecast period. 
+
+Uncertainty in the forecasts is based upon the three states of nature based on the likelihood profile of female natural mortality ($M$), chosen using a change of 1.2 NLL units (75% interval) from the minimum value to correspond to the midpoints of the lower 25% probability and upper 25% probability regions from the base model and are low (0.130 yr^-1^) and high (0.185 yr^-1^) values for female natural mortality. 
+
+Catches during the projection period under the current harvest control rule are projected to start at 4115 mt and decline over the projection period to 3093 mt, in the base model, as the stock declines towards that target spawning biomass (Table \ref{tab:OFL_projection_back}).  Across the low and high states of nature the under the current harvest control rule, the relative biomass (depletion) ranged between 0.24 - 0.34 by the end of the 12-year projection period (Table \ref{tab:Decision_table_mod1}).
+
