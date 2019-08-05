@@ -164,7 +164,7 @@ The length-at-age was estimated for male and female `r spp`. Figure \ref{fig:len
 
 Historically, `r spp` otoliths have been read by multiple ageing labs using surface and break and burn methods. In order to conduct a comprehensive estimation of ageing bias and imprecision, the 2009 assessment compiled and analyzed all of the available double-read data from the Cooperative Aging Project (CAP) and the Washington Department of Fish and Wildlife (WDFW), as well information from a bomb radiocarbon age validation study for `r spp` off the U.S. West Coast [@haltuch_status_2009, @haltuch_california_2013]. 
 
-The 2013 stock assessment applied read method and lab specific ageing error vectors [@haltuch_status_2013]. The same approach to ageing error based on data source are and reading method was applied in this update stock assessment.  The ageing error vectors are shown in Tables \ref{tab:age_error1} and \ref{tab:age_error2}. For a detailed description please see the 2013 stock assessment [@haltuch_status_2013]. 
+The 2013 stock assessment applied read method and lab specific ageing error vectors [@haltuch_status_2013]. This update assessment did not re-evaluate ageing error and applied the same approach as the 2013 stock assessment.  The ageing error vectors are shown in Tables \ref{tab:age_error1} and \ref{tab:age_error2}. For a detailed description please see the 2013 stock assessment [@haltuch_status_2013]. 
 
 ###Environmental and Ecosystem Data
 

@@ -1,5 +1,5 @@
 ---
-title: 'Status of petrale sole (*Eopsetta jordani*) along the U.S. west coast in 2019'
+title: "Status of petrale sole (*Eopsetta jordani*) along the U.S. west coast in 2019"
 author: ''
 date: ''
 output:
@@ -10,18 +10,21 @@ output:
       before_body: Titlepage.tex
       in_header: header.tex
     keep_tex: yes
-    template: Default_template_modified.tex
     number_sections: yes
+    template: Default_template_modified.tex
     toc: yes
     toc_depth: 4
   html_document:
     toc: yes
+  word_document:
+    toc: yes
+    toc_depth: '4'
 documentclass: article
 fontsize: 12pt
 geometry: margin=1in
+link-citations: yes
 csl: CJFAS.csl
 bibliography: Bib_July09.bib
-link-citations: yes
 ---
 <!-- To remove the figure and table labels comment out the \usepackage[inline]{showlabels} within the header.tex file -->
 
@@ -85,6 +88,8 @@ link-citations: yes
 
 #References{}
 
+\color{black}
+
 <div id = "refs"></div>
 
 ```{r child = "8_Tables.Rmd"}
@@ -93,24 +98,13 @@ link-citations: yes
 ```{r child = "9_Figures.Rmd"}
 ```
 
-
 <!-- ====================================================================== -->
 <!-- ***************************SS FILES*********************************** -->
 <!--*****SS APPENDICES INCLUDED AS A CHILD DOCUMENT TO REMOVE CLUTTER****** -->
 <!-- ====================================================================== -->
 
-<!-- =====================================================================
-====================================================================== 
 ```{r child = "10_Appendices.Rmd"}
 ```
--->
 
-<!-- ====================================================================== -->
-<!-- **********REFERENCES - WILL APPEAR AFTER APPENDICES******************* -->
-<!-- ====================================================================== 
-\color{black}
 
-#References
-\renewcommand{\thepage}{}
--->
-<!-- ********************END OF THE DOCUMENT******************************* -->
+<!-- ********************END OF THE DOCUMENT*******************************-->
