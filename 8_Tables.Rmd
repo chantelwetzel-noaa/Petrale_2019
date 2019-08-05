@@ -29,7 +29,7 @@ colnames(catch) = c('Year',
 
 # Index of abundance summary, create table   
 Catch_AllYrs = xtable(catch, 
-                      caption = c('Landings for each fleet for the modeled years.'),
+                      caption = c('Landings (mt) for each fleet for the modeled years.'),
                       label = 'tab:Comm_Catch',
                       digits = 0)    
 
@@ -200,8 +200,8 @@ Strata[,1] = c("Shallow Vancouver", "Shallow Columbia", "Shallow Eureka", "Shall
                "Deep Van/Col/Eur", "Deep Montery", "Deep Conception")
 
 colnames(Strata) = c('Strata',
-                     'Depth Lower Bound',
-                     'Depth Upper Bound',
+                     'Depth Lower Bound (m)',
+                     'Depth Upper Bound (m)',
                      'Latitude South',
                      'Latitude North')
 
@@ -214,10 +214,10 @@ Strata.table = xtable(Strata,
 # Add alignment  
 align(Strata.table) = c('l',
                         '>{\\raggedright}p{1.5in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}')  
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{0.75in}',
+                        '>{\\centering}p{0.75in}')  
 
 print(Strata.table, 
       include.rownames=FALSE, 
@@ -247,7 +247,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of NWFSC West Coast Groundfish Bottom Trawl Survey length samples used in the stock assessment.'),
+                           caption = c('Summary of the number of NWFSC West Coast Groundfish Bottom Trawl Survey length samples used in the stock assessment.'),
                            label = 'tab:NWcombo_Lengths',
                            digits = 0)    
 # Add alignment  
@@ -276,7 +276,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of NWFSC West Coast Groundfish Bottom Trawl Survey age samples used in the stock assessment.'),
+                           caption = c('Summary of the number of NWFSC West Coast Groundfish Bottom Trawl Survey age samples used in the stock assessment.'),
                            label = 'tab:NWcombo_Ages',
                            digits = 0)    
 # Add alignment  
@@ -316,7 +316,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of AFSC/NWFSC West Coast Triennial Shelf Survey length samples used in the stock assessment.'),
+                           caption = c('Summary of the number of AFSC/NWFSC West Coast Triennial Shelf Survey length samples used in the stock assessment.'),
                            label = 'tab:Triennial_Lengths',
                            digits = 0)    
 # Add alignment  
@@ -348,8 +348,8 @@ Strata[,1] = c("Shallow Van/Col", "Shallow Eureka","Shallow Mon/Con",
                "Deep Van/Col/Eur", "Deep Mon/Con")
 
 colnames(Strata) = c('Strata',
-                     'Depth Lower Bound',
-                     'Depth Upper Bound',
+                     'Depth Lower Bound (m)',
+                     'Depth Upper Bound (m)',
                      'Latitude South',
                      'Latitude North')
 
@@ -363,10 +363,10 @@ Strata.table = xtable(Strata,
 # Add alignment  
 align(Strata.table) = c('l',
                         '>{\\raggedright}p{1.5in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}')  
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{0.75in}',
+                        '>{\\centering}p{0.75in}')  
 
 print(Strata.table, 
       include.rownames=FALSE, 
@@ -391,8 +391,8 @@ Strata[,1] = c("Shallow Van/Col", "Shallow Eureka", "Shallow Mon/Con",
                "Deep Van/Col", "Deep Eureka", "Deep Mon/Con", "Deep Con")
 
 colnames(Strata) = c('Strata',
-                     'Depth Lower Bound',
-                     'Depth Upper Bound',
+                     'Depth Lower Bound (m)',
+                     'Depth Upper Bound (m)',
                      'Latitude South',
                      'Latitude North')
 
@@ -407,10 +407,10 @@ Strata.table = xtable(Strata,
 # Add alignment  
 align(Strata.table) = c('l',
                         '>{\\raggedright}p{1.5in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}',
-                        '>{\\centering}p{0.50in}')  
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{0.75in}',
+                        '>{\\centering}p{0.75in}')  
 
 print(Strata.table, 
       include.rownames=FALSE, 
@@ -460,7 +460,7 @@ Discard.table = xtable(discard,
                        label = 'tab:Discard',
                        digits = 3)    
 # Add alignment  
-align(Discard.table) = c('lccccc')
+align(Discard.table) = c('lcrrrr')
 
 addtorow          <- list()
 addtorow$pos      <- list()
@@ -506,7 +506,7 @@ colnames(Fish_Length) = c('Year',
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of fishery length samples used in the stock assessment (continued on the next page).'),
+                           caption = c('Summary of the number of fishery length samples used in the stock assessment (continued on the next page).'),
                            label = 'tab:Fishery_Lengths',
                            digits = 0)    
 
@@ -998,7 +998,7 @@ print(Like.table,
   Ref_pts.table = xtable(Ref_pts, 
                               caption=c('Summary of reference 
                                         points and management quantities for the 
-                                        base case.'), 
+                                        base model.'), 
                               label='tab:Ref_pts', digits = 3)  
   # Add alignment      
   align(Ref_pts.table) = c('l',
@@ -1051,7 +1051,7 @@ Timeseries = data.frame(Year,
 colnames(Timeseries)=c('Year', 
                        'Total biomass (mt)', 
                        'Spawning biomass (million eggs)',
-                       paste('Summary biomass', min_age),
+                       paste('Summary biomass', min_age, '(mt)'),
                        'Relative biomass', 
                        'Age-0 recruits', 
                        'Estimated total catch (mt)',
