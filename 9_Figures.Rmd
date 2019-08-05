@@ -21,7 +21,7 @@
 <!-- *************************  FIGURE 1  ********************************* -->
 <!-- ********************************************************************** --> 
   
-![Total catches `r spp`. \label{fig:Catch}](r4ss/plots_mod1/catch2 landings stacked.png)
+![Total landings of `r spp`. \label{fig:Catch}](r4ss/plots_mod1/catch2 landings stacked.png)
   
 \FloatBarrier
 
@@ -406,9 +406,6 @@
 
 \FloatBarrier
   
-![Discard rates by fleet for `r spp`. \label{fig:Discard}](r4ss/plots_mod1/catch8 discard fraction.png)
-
-\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- *******************Fits to the Discard MnWt*************************** --> 
