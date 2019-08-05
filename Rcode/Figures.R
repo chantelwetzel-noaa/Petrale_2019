@@ -19,7 +19,8 @@ base.ssb = mod1$timeseries[1:length(yr),"SpawnBio"]
 
 colors = c("black", "red", "blue", "darkgreen", "orange", "purple")
 
-pngfun(wd = 'C:/Assessments/2019/petrale_2019/Data/Assessment_History', file = 'Assessment_History.png', h = 6)
+#pngfun(wd = 'C:/Assessments/2019/petrale_2019/Data/Assessment_History', file = 'Assessment_History.png', h = 6)
+pngfun(wd =  paste0(getwd(), "/Figures"), file = 'Assessment_History.png', h = 6)
 #2019
 plot(yr, base.ssb, type = 'l', lwd = 2, col = colors[1], ylim=c(0, 45000), ylab = "Spawning output", xlab = "Year")
 lines(dat$Year, dat$X2015, lty = 2, col = colors[2], lwd =2)
