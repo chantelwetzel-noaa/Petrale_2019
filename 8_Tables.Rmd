@@ -1327,9 +1327,9 @@ colnames(decision_mod1) = c('',
                             'Depletion')
       
 decision_mod1.table = xtable( decision_mod1, 
-                              caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different assumptions of catch levels. The ABC catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
+                              caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on an axis of uncertainty about female natural mortality for the base model. Columns range over low, mid, and high states of nature, and rows range over different assumptions of catch levels. The ABC catch streams are based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
                               label='tab:Decision_table_mod1', 
-                              digits = c(0,0,0,0,0,3,0,3,0,3)) 
+                              digits = c(0,0,0,1,0,3,0,3,0,3)) 
       
 # Assign alignment and add the header columns
 align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
@@ -1341,13 +1341,13 @@ addtorow$pos[[2]] <- -1
 addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                        & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                        & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.130} 
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.105} 
                        & \\multicolumn{2}{c}{M = 0.159} 
-                       &  \\multicolumn{2}{c}{M = 0.180} \\\\\n')
+                       &  \\multicolumn{2}{c}{M = 0.205} \\\\\n')
         
  print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
        caption.placement = 'top', 
-       hline.after = c(-1, 0, 10, 20, nrow(decision_mod1.table)), 
+       hline.after = c(-1, 0, 12, 24, nrow(decision_mod1.table)), 
        scalebox = .85)
 
 #    label='tab:Decision_table_mod1' 

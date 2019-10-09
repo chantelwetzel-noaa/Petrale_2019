@@ -1,0 +1,37 @@
+<<catcherror, echo = FALSE>>=
+FirstYR = 2007; LastYR = 2016
+Exec_catch_sep = read.csv('C:/Users/Chantel.Wetzel/Documents/GitHub/POP_2017/txt_files/POP2017_PacFIN_catch_forExpansion.csv')
+Exec_catch_sep = Exec_catch_sep [,2:ncol(Exec_catch_sep)]
+Exec_catch_sep = Exec_catch_sep[Exec_catch_sep$Year != LastYR, ]
+
+Exec_catch_summary_sep = Final_Catch_AllYrs[, 2:ncol(Final_Catch_AllYrs)]
+
+# Bind the data frames together
+Exec_catch_summary = cbind(Exec_catch_summary_sep[,1:4], 
+                           Exec_catch_summary_sep$ASHOP, 
+                           apply(Exec_catch_summary_sep[,7:ncol(Exec_catch_summary_sep)], 1, sum),
+                           apply(Exec_catch_summary_sep[,2:ncol(Exec_catch_summary_sep)], 1, sum))
+
+colnames(Exec_catch_summary) = c('Year',
+                                 'California',
+                                 'Oregon',
+                                 'Washington',
+                                 'At-sea hake', 
+                                 'Survey',
+                                 'Total Landings')
+
+Exec_catch_summary = subset(Exec_catch_summary, Year >= FirstYR & Year <= LastYR)
+
+# Make executive summary catch xtable
+Exec_catch.table = xtable(Exec_catch_summary)
+
+align(Exec_catch.table) = c('l', 'l', 
+                            '>{\\centering}p{0.7in}', 
+                            '>{\\centering}p{0.7in}',
+                            '>{\\centering}p{0.7in}', 
+                            '>{\\centering}p{0.7in}',
+                            '>{\\centering}p{0.7in}',
+                            '>{\\centering}p{0.7in}') 
+
+print(Exec_catch.table, include.rownames = FALSE)
+@

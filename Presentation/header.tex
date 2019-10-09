@@ -1,0 +1,41 @@
+\usetheme[compress]{Singapore} %Berkeley, Palo Alto, Singapore, Warsaw
+%\usetheme[compress]{Berlin} 
+%\usetheme[compress]{Madrid} 
+%\usecolortheme{seagull}  %Beaver, dolphin, dove, lily, orchid, seagull, seahorse
+
+%\usefonttheme{serif}
+% font themes: default, professionalfonts, serif, structurebold, structureitalicserif, structuresmallcapsserif
+
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}          %% Used in risk tables
+\usepackage{multirow}          %% Used in decision tables
+\usepackage{multicol}          %% Used in the toc
+\usepackage[T1]{fontenc}  %to use < or > in tables
+
+
+\setbeamersize{text margin left=0.1in}
+\setbeamersize{text margin right=0.1in}
+
+\definecolor{pageCol}{rgb}{0.5,0.5,1.0}
+
+\usepackage{tikz}
+
+\usebackgroundtemplate{
+  \tikz[overlay,remember picture] 
+  \node[opacity=0.3, at=(current page.south east),anchor=south east,inner sep=0pt] {
+    \includegraphics[height=0.5in]{noaalogo.jpg}};
+}
+
+\setbeamertemplate{footline}
+{
+  \begin{beamercolorbox}[wd=.05\paperwidth,ht=0ex,dp=0ex,left]{framenumber in head/foot}%
+    \insertframenumber/\inserttotalframenumber
+    
+  \end{beamercolorbox}%
+}
+\setbeamercolor{footline}{fg=pageCol}
+
+\newcounter{saveenumi}

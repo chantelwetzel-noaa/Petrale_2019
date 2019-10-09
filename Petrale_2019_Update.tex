@@ -163,7 +163,7 @@ Chantel R. Wetzel\textsuperscript{1}\\
 \vspace{1cm}
 
 \vfill
-August 2019
+September 2019
 
 \vspace{1cm}
 
@@ -258,22 +258,23 @@ discarding has historically been low.
 
 \begin{table}[ht]
 \centering
-\caption{Landings (mt) for the past 10 years for petrale sole by source.} 
+\caption{Landings (mt) and total catch (mt) for the past 10 years for petrale sole by source. 
+                                             Total catch reflects the landings plus the model estimated discards based on discard rate data.} 
 \label{tab:Exec_catch}
-\begin{tabular}{l>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}}
+\begin{tabular}{l>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}}
   \hline
-Year & Winter (N) & Summer (N) & Winter (S) & Summer (S) & Total Landings \\ 
+Year & Winter (N) & Summer (N) & Winter (S) & Summer (S) & Total Landings & Total Catch \\ 
   \hline
-2009 & 847 & 642 & 470 & 250 & 2209 \\ 
-  2010 & 264 & 292 & 78 & 121 & 755 \\ 
-  2011 & 224 & 427 & 40 & 78 & 768 \\ 
-  2012 & 410 & 494 & 124 & 108 & 1135 \\ 
-  2013 & 513 & 1045 & 130 & 280 & 1967 \\ 
-  2014 & 853 & 861 & 273 & 386 & 2373 \\ 
-  2015 & 1040 & 1077 & 215 & 354 & 2686 \\ 
-  2016 & 865 & 1168 & 237 & 235 & 2506 \\ 
-  2017 & 1142 & 1271 & 201 & 393 & 3008 \\ 
-  2018 & 957 & 1262 & 218 & 402 & 2840 \\ 
+2009 & 847 & 642 & 470 & 250 & 2209 & 2334 \\ 
+  2010 & 264 & 292 & 78 & 121 & 755 & 869 \\ 
+  2011 & 224 & 427 & 40 & 78 & 768 & 785 \\ 
+  2012 & 410 & 494 & 124 & 108 & 1135 & 1153 \\ 
+  2013 & 513 & 1045 & 130 & 280 & 1967 & 1995 \\ 
+  2014 & 853 & 861 & 273 & 386 & 2373 & 2392 \\ 
+  2015 & 1040 & 1077 & 215 & 354 & 2686 & 2704 \\ 
+  2016 & 865 & 1168 & 237 & 235 & 2506 & 2523 \\ 
+  2017 & 1142 & 1271 & 201 & 393 & 3008 & 3026 \\ 
+  2018 & 957 & 1262 & 218 & 402 & 2840 & 2857 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -351,7 +352,8 @@ catches during rebuilding and in response to above average recruitment
 in 2006, 2007, and 2008. The 2019 estimated spawning biomass relative to
 unfished equilibrium spawning biomass is above the target of 25\% of
 unfished spawning biomass, at 39.1\% (\(\sim\) 95\% asymptotic interval:
-\(\pm\) 28.2\%-50.1\%) (Table \ref{tab:SpawningDeplete_mod1}).
+\(\pm\) 28.2\%-50.1\%) (Table \ref{tab:SpawningDeplete_mod1}). The
+standard deviation of the log of the spawning biomass in 2019 is 0.09.
 
 \begin{figure}
 \centering
@@ -363,10 +365,11 @@ the base assessment model. \label{fig:Spawnbio_all}}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png}
-\caption{Estimated time-series of relative spawning biomass (depletion)
-(circles and line: median; light broken lines: 95\% credibility
-intervals) for the base assessment model. \label{fig:RelDeplete_all}}
+\includegraphics{r4ss/plots_mod1/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of fraction of unfished spawning biomass
+(depletion) (circles and line: median; light broken lines: 95\%
+credibility intervals) for the base assessment model.
+\label{fig:RelDeplete_all}}
 \end{figure}
 
 \begin{table}[ht]
@@ -396,8 +399,8 @@ Year & Spawning Biomass (mt) & \~{} 95\% Confidence Interval & Estimated Relativ
 \subsection*{Recruitment}\label{recruitment}
 \addcontentsline{toc}{subsection}{Recruitment}
 
-Annual recruitment was treated as stochastic, and estimated as annual
-deviations from log-mean recruitment where mean recruitment is the
+Annual recruitment was treated as stochastic and estimated as annual
+deviations from log-mean recruitment, where mean recruitment is the
 fitted Beverton-Holt stock recruitment curve. The time-series of
 estimated recruitments shows a relationship with the decline in spawning
 biomass, punctuated by larger recruitments in 2006, 2007, and 2008
@@ -451,18 +454,17 @@ dropped below the management target (25\%) for the first time in 1965.
 The stock continued to decline and first fell below the minimum stock
 size threshold level of 12.5\% in 1980 (although, at the time the
 management target and thresholds were not set at the current values of
-25\% and 12.5\%). The relative spawning biomass remained around the
-threshold stock size until approximately 2010, with the stock reaching
-its lowest relative spawning biomass level in 1993 at 5.8\%. In 2009
-petrale sole was formally declared overfished. Fishing mortality rates
-sharply declined during the rebuilding period, relative to previous year
-rates, which exceeded the target (Figure \ref{fig:SPR_all}). After
-reduced harvests, the 2015 update stock assessment estimated the stock
-to have rebuilt to the management target (25\%) in 2014. This update
-estimates that the relative spawning biomass exceeded 25\% in 2013 with
-harvest rates in the most recent years remaining under of the target
-rate (Table \ref{tab:SPR_Exploit_mod1} and Figures \ref{fig:SPR_all} and
-\ref{fig:Phase_all}).
+25\% and 12.5\%). The relative spawning biomass reached its lowest level
+in 1993 at 5.8\%, with the stock remaining around the threshold stock
+size until approximately 2010. In 2009 petrale sole was formally
+declared overfished. Fishing mortality rates sharply declined during the
+rebuilding period, relative to rates in previous years, which exceeded
+the target (Figure \ref{fig:SPR_all}). The 2015 update stock assessment
+estimated the stock to have rebuilt to the management target (25\%) in
+2014. This update estimates that the relative spawning biomass exceeded
+25\% in 2013 with harvest rates in the most recent years remaining under
+of the target rate (Table \ref{tab:SPR_Exploit_mod1} and Figures
+\ref{fig:SPR_all} and \ref{fig:Phase_all}).
 
 \begin{table}[ht]
 \centering
@@ -542,30 +544,30 @@ This update stock assessment estimates that the spawning biomass of
 petrale sole is above the management target. Due to reduced landings and
 a series of above average recruitments (2006, 2007, and 2008), an
 increasing trend in spawning biomass was estimated in the base model
-with a decline in the start of the year spawning biomass estimate in
-2019. The estimated relative spawning biomass in 2019 is 39.1\%
-(\(\sim\) 95\% asymptotic interval: \(\pm\) 28.2\%-50.1\%),
-corresponding to an spawning biomass of 13,078 mt (\(\sim\) 95\%
-asymptotic interval: 10,689-15,467 mt) (Table \ref{tab:Ref_pts_mod1}).
-Unfished age 3+ biomass was estimated to be 54,086.6 mt in the base
-model.
+from 2011 - 2017, with a decline in biomass in the most recent years
+(2018 and 2019) as the biomass of the above average cohorts declines.
+The estimated relative spawning biomass in 2019 is 39.1\% (\(\sim\) 95\%
+asymptotic interval: \(\pm\) 28.2\%-50.1\%), corresponding to an
+spawning biomass of 13,078 mt (\(\sim\) 95\% asymptotic interval:
+10,689-15,467 mt) (Table \ref{tab:Ref_pts_mod1}). Unfished age 3+
+biomass was estimated to be 54,086.6 mt in the base model.
 
 The target spawning biomass based on the biomass target (\(SB_{25\%}\))
 is 8,351.5 mt, with an equilibrium catch of 3,148.5 mt (Table
 \ref{tab:Ref_pts_mod1}). Equilibrium yield at the proxy \(F_{MSY}\)
 harvest rate corresponding to \(SPR_{30\%}\) is 3,135.2 mt. Estimated
-MSY catch is at a 3,156.7 spawning biomass of 7,563.3 mt (22.6\%
-relative spawning biomass).
+MSY catch is at 3,156.7 spawning biomass of 7,563.3 mt (22.6\% relative
+spawning biomass).
 
 \begin{table}[ht]
 \centering
 \caption{Summary of reference 
-                                      points and management quantities for the 
+                                      points and and management quantities, including estimated confidence intervals (CI), for the 
                                       base case.} 
 \label{tab:Ref_pts_mod1}
 \begin{tabular}{>{\raggedright}p{4.1in}>{\centering}p{.65in}>{\centering}p{.65in}>{\centering}p{.65in}}
   \hline
-\textbf{Quantity} & \textbf{Estimate} & \textbf{$\sim$2.5\%  Confidence Interval} & \textbf{$\sim$97.5\%  Confidence Interval} \\ 
+\textbf{Quantity} & \textbf{Estimate} & \textbf{$\sim$2.5\%  CI} & \textbf{$\sim$97.5\%  CI} \\ 
   \hline
 Unfished spawning biomass (mt) & 33405.9 & 27188.1 & 39623.7 \\ 
   Unfished age 3+ biomass (mt) & 54086.6 & 45524.9 & 62648.3 \\ 
@@ -616,10 +618,10 @@ relative spawning biomass exceeding the management target.
 \caption{Recent trend in total catch and  
                               landings (mt) relative to the management guidelines. 
                               Estimated total catch reflect the landings 
-                              plus the model estimated discarded biomass based on discard rate data.} 
+                              plus the model estimated discards based on discard rate data.} 
 \label{tab:mnmgt_perform}
 \scalebox{0.9}{
-\begin{tabular}{>{\raggedleft}p{0.5in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}}
+\begin{tabular}{>{\raggedleft}p{0.5in}>{\centering}p{1.2in}>{\centering}p{1.2in}>{\centering}p{1.2in}>{\centering}p{1.2in}}
   \hline
 Year & OFL (mt; ABC prior to 2011) & ACL (mt; OY prior to 2011) & Total Landings (mt) & Estimated Total Catch (mt) \\ 
   \hline
@@ -660,72 +662,75 @@ explorations involved the sensitivity of model estimates to:
 
 \begin{enumerate}
 
-\item The value of natural mortality by sex.
+\item The value of natural mortality by sex.    Natural mortality by sex and steepness are uncertain for petrale sole.  Currently, both natural mortality and steepness are estimated within the model and are negatively correlated.  This provides information regarding these parameters combined values, but there is large uncertainty regarding the value of each parameter individually.
 
-\item The current sex ratio between female and males in the population of petrale sole.
+\item New fecundity data for petrale sole supports a fecundity relationship that differs from the current assumption (fecundity equals body weights) in this update assessment. A sensitivity to the new data results in a less optomistic estimate of relative spawning biomass, declining to 35% from the base model 39%, when the new coast-wide fecundity relationship was included in the model. The new data supports differences in fecundity estimated between petrale sole observed in the north and south off the U.S. west coast.  However, some of the contrast in estimates between the northern and southern fish may be due to sample sizes differences. The next full assessment for petrale sole will want to explore methods of how best to include the new fedundity data. 
 
-\item Fecundity estimates based upon new research for petrale sole and measured differences in fecundity between northern and southern fish.
-
-\item Changes in the model estimates based on alternative data weighting approaches.
+\item Additionally, a reconstructed historical Washington catch history has not been included in the petrale sole stock assessment.  Washington state is currently undergoing efforts to determine historical catches for petrale sole and the next stock assessment is likely to incorporate these new historical catch estimates. 
 
 \end{enumerate}
-
-Additionally, a reconstructed historical Washington catch history has
-not been included in the petrale sole stock assessment. Washington state
-is currently undergoing efforts to determine historical catches for
-petrale sole and the next stock assessment is likely to incorporate
-these new historical catch estimates.
 
 \subsection*{Decision Table}\label{decision-table}
 \addcontentsline{toc}{subsection}{Decision Table}
 
 The forecast of stock abundance and yield was developed using the base
-model. The total catches in 2019 and 2020 are set at values provided by
-the Groundfish Management Team (GMT) of the PFMC at 2908 and 2845 mt,
-respectively. The management adopted ACL values for these years are 2921
-and 2857 mt. The exploitation rate for 2021 and beyond is based upon an
-SPR of 30\% and the 25:5 harvest control rule. The average exploitation
-rates, across recent years, by fleet as provided by the GMT were used to
-distribute catches during the forecast period.
+model. The total catches in 2019 and 2020 are set equal to the ACL each
+year at 2,908 mt and 2,845 mt, respectively. The exploitation rate for
+2021 and beyond is based upon an SPR of 30\% and the 25:5 harvest
+control rule. The average exploitation rates, across recent years, by
+fleet as provided by the GMT were used to distribute catches during the
+forecast period.
 
-Uncertainty in the forecasts is based upon the three states of nature
-based on the likelihood profile of female natural mortality (\(M\)). The
-low and high values for natural mortality were chosen using a change of
-1.2 negative log-likelihood units (75\% interval) from the minimum value
-to correspond midpoints of the lower 25\% probability and upper 25\%
-probability regions from the base model. Based on the profile the range
-of uncertainty around natural mortality were selected at a low value of
-0.130 yr\textsuperscript{-1} and high of 0.185 yr\textsuperscript{-1}.
+The catches during the forecasted period are projected from the base
+model, assuming a P* value of 0.45, start at 4,115 mt in 2021 and
+decline to 3,093 mt in 2030 as the stock declines towards the target
+spawning biomass (Table \ref{tab:OFL_projection}). The projections
+assume full ABC removals.
 
-Catches during the projection period under the current harvest control
-rule are projected to start at 4115 mt and decline over the projection
-period to 3093 mt, in the base model, as the stock declines towards that
-target spawning biomass (Table \ref{tab:OFL_projection}). Across the low
-and high states of nature the under the current harvest control rule,
-the relative biomass (depletion) range between 0.24 - 0.34 by the end of
-the 12-year projection period (Table \ref{tab:Decision_table_mod1_es}).
+Uncertainty in the forecasts is based upon the uncertainty around the
+2019 spawning biomass, \(\sigma\) = 0.09. The low and high values for
+female natural mortality, \(M\), were selected to result in a spawning
+biomass in 2019 that was equal to the 12.5 and 87.5\% quantiles of the
+normal distribution given the maximum likelihood estimate and the
+asymptotic uncertainty. The female natural mortality values the
+corresponded with the lower and upper quantiles were 0.105
+yr\textsuperscript{-1} and 0.205 yr\textsuperscript{-1}.
+
+There alternative catch streams were created for the decision table. The
+first option, ABC values were estimated using a category 1 \(\sigma_y\)
+starting at 0.50 and increasing annually combined with a P\(^*\) value
+of 0.45. The second option, uses the same category \(\sigma_y\) values
+but applies a P\(^*\) of 0.40. Both of the first two options assume full
+attainment of the catch values. The final option, employees a fixed
+catch approach where catches slowly step down during the 12-year
+projection period.
+
+Across the low and high states of nature and across alternative future
+harvest scenarios the relative spawning biomass (depletion) ranges
+between 0.193 - 0.384 by the end of the 12-year projection period (Table
+\ref{tab:Decision_table_mod1_es}).
 
 \begin{table}[ht]
 \centering
-\caption{Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
+\caption{Projections of potential OFLs (mt), ABCs (mt), estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
 ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates.} 
 \label{tab:OFL_projection}
 \begin{tabular}{>{\raggedleft}p{0.5in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.6in}>{\centering}p{1.1in}}
   \hline
 Year & OFL & ABC & Spawning Biomass (mt) & Relative Biomass \\ 
   \hline
-2019 & 3042 & 2908 & 13078 & 0.391 \\ 
-  2020 & 2976 & 2845 & 12558 & 0.376 \\ 
-  2021 & 4402 & 4115 & 12019 & 0.360 \\ 
-  2022 & 3936 & 3660 & 10799 & 0.323 \\ 
-  2023 & 3634 & 3365 & 10038 & 0.300 \\ 
-  2024 & 3470 & 3199 & 9655 & 0.289 \\ 
-  2025 & 3402 & 3120 & 9523 & 0.285 \\ 
-  2026 & 3392 & 3097 & 9527 & 0.285 \\ 
-  2027 & 3406 & 3096 & 9580 & 0.287 \\ 
-  2028 & 3425 & 3097 & 9635 & 0.288 \\ 
-  2029 & 3442 & 3098 & 9677 & 0.290 \\ 
-  2030 & 3452 & 3093 & 9701 & 0.290 \\ 
+2019 & 3042.0 & 2908.0 & 13078 & 0.391 \\ 
+  2020 & 2976.0 & 2845.0 & 12558 & 0.376 \\ 
+  2021 & 4401.5 & 4115.4 & 12019 & 0.360 \\ 
+  2022 & 3935.7 & 3660.2 & 10799 & 0.323 \\ 
+  2023 & 3633.9 & 3365.0 & 10038 & 0.300 \\ 
+  2024 & 3469.7 & 3199.0 & 9655 & 0.289 \\ 
+  2025 & 3402.3 & 3119.9 & 9523 & 0.285 \\ 
+  2026 & 3392.0 & 3096.9 & 9527 & 0.285 \\ 
+  2027 & 3406.2 & 3096.3 & 9580 & 0.287 \\ 
+  2028 & 3425.5 & 3096.6 & 9635 & 0.288 \\ 
+  2029 & 3441.7 & 3097.5 & 9677 & 0.290 \\ 
+  2030 & 3452.1 & 3093.1 & 9701 & 0.290 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -735,8 +740,7 @@ Year & OFL & ABC & Spawning Biomass (mt) & Relative Biomass \\
 \begin{table}[ht]
 \centering
 \caption{Decision table summary of 10-year projections beginning in 2021 for alternate states of nature based on 
-                                             an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification 
-                                             of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different 
+                                             an axis of uncertainty about female natural mortality for the base model. Columns range over low, mid, and high states of nature, and rows range over different 
                                              assumptions of catch levels. The ABC catch stream is based on the equilibrium yield applying the SPR30 harvest rate.} 
 \label{tab:Decision_table_mod1_es}
 \scalebox{0.85}{
@@ -744,44 +748,50 @@ Year & OFL & ABC & Spawning Biomass (mt) & Relative Biomass \\
    \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{} 
                        & \multicolumn{2}{c}{\textbf{States of nature}} 
                        & \multicolumn{2}{c}{} \\
-  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.13} 
+  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.105} 
                        & \multicolumn{2}{c}{M = 0.159} 
-                       &  \multicolumn{2}{c}{M = 0.185} \\
+                       &  \multicolumn{2}{c}{M = 0.205} \\
  \hline
  & Year & Catch & Spawning Biomass & Depletion & Spawning Biomass & Depletion & Spawning Biomass & Depletion \\ 
   \hline
- & 2021 & 4115 & 11517 & 0.308 & 12019 & 0.360 & 12572 & 0.414 \\ 
-   & 2022 & 3660 & 10361 & 0.277 & 10798 & 0.323 & 11279 & 0.371 \\ 
-   & 2023 & 3365 & 9603 & 0.257 & 10039 & 0.301 & 10502 & 0.346 \\ 
-  ABC & 2024 & 3199 & 9179 & 0.246 & 9659 & 0.289 & 10140 & 0.334 \\ 
-   & 2025 & 3120 & 8985 & 0.241 & 9533 & 0.285 & 10046 & 0.331 \\ 
-   & 2026 & 3097 & 8923 & 0.239 & 9545 & 0.286 & 10088 & 0.332 \\ 
-   & 2027 & 3096 & 8918 & 0.239 & 9606 & 0.288 & 10173 & 0.335 \\ 
-   & 2028 & 3097 & 8929 & 0.239 & 9671 & 0.289 & 10249 & 0.337 \\ 
-   & 2029 & 3098 & 8938 & 0.239 & 9720 & 0.291 & 10301 & 0.339 \\ 
-   & 2030 & 3093 & 8939 & 0.239 & 9752 & 0.292 & 10328 & 0.340 \\ 
+ & 2019 & 2908.0 & 11681 & 0.278 & 13078 & 0.391 & 14524 & 0.509 \\ 
+   & 2020 & 2845.0 & 11425 & 0.271 & 12558 & 0.376 & 13729 & 0.481 \\ 
+   & 2021 & 4115.4 & 11110 & 0.264 & 12019 & 0.360 & 12963 & 0.455 \\ 
+   & 2022 & 3660.2 & 10005 & 0.238 & 10799 & 0.323 & 11614 & 0.407 \\ 
+  ABC & 2023 & 3365.0 & 9244 & 0.220 & 10038 & 0.300 & 10820 & 0.379 \\ 
+  P* 0.45 & 2024 & 3199.0 & 8773 & 0.208 & 9655 & 0.289 & 10462 & 0.367 \\ 
+   & 2025 & 3119.9 & 8507 & 0.202 & 9523 & 0.285 & 10381 & 0.364 \\ 
+   & 2026 & 3096.9 & 8362 & 0.199 & 9527 & 0.285 & 10434 & 0.366 \\ 
+   & 2027 & 3096.3 & 8276 & 0.197 & 9580 & 0.287 & 10520 & 0.369 \\ 
+   & 2028 & 3096.6 & 8213 & 0.195 & 9635 & 0.288 & 10588 & 0.371 \\ 
+   & 2029 & 3097.5 & 8158 & 0.194 & 9677 & 0.290 & 10624 & 0.373 \\ 
+   & 2030 & 3093.1 & 8103 & 0.193 & 9701 & 0.290 & 10633 & 0.373 \\ 
    \hline
- & 2021 & 3451 & 11517 & 0.308 & 12019 & 0.360 & 12572 & 0.414 \\ 
-   & 2022 & 3188 & 10764 & 0.288 & 11193 & 0.335 & 11668 & 0.384 \\ 
-   & 2023 & 3017 & 10286 & 0.275 & 10697 & 0.320 & 11140 & 0.367 \\ 
-  SPR  & 2024 & 2927 & 10052 & 0.269 & 10486 & 0.314 & 10928 & 0.360 \\ 
-  target =  & 2025 & 2891 & 9991 & 0.268 & 10470 & 0.313 & 10926 & 0.360 \\ 
-  0.34 & 2026 & 2893 & 10028 & 0.269 & 10556 & 0.316 & 11025 & 0.363 \\ 
-   & 2027 & 2909 & 10103 & 0.271 & 10675 & 0.320 & 11150 & 0.367 \\ 
-   & 2028 & 2924 & 10184 & 0.273 & 10790 & 0.323 & 11260 & 0.371 \\ 
-   & 2029 & 2937 & 10257 & 0.275 & 10886 & 0.326 & 11344 & 0.373 \\ 
-   & 2030 & 2944 & 10318 & 0.276 & 10961 & 0.328 & 11401 & 0.375 \\ 
+ & 2019 & 2908.0 & 11681 & 0.278 & 13078 & 0.391 & 14524 & 0.509 \\ 
+   & 2020 & 2845.0 & 11425 & 0.271 & 12558 & 0.376 & 13729 & 0.481 \\ 
+   & 2021 & 3842.5 & 11110 & 0.264 & 12019 & 0.360 & 12963 & 0.455 \\ 
+  ABC & 2022 & 3454.7 & 10174 & 0.242 & 10961 & 0.328 & 11772 & 0.413 \\ 
+  P* 0.40 & 2023 & 3202.3 & 9540 & 0.227 & 10315 & 0.309 & 11081 & 0.389 \\ 
+   & 2024 & 3059.6 & 9168 & 0.218 & 10012 & 0.300 & 10791 & 0.378 \\ 
+   & 2025 & 2993.9 & 8981 & 0.213 & 9941 & 0.298 & 10755 & 0.377 \\ 
+   & 2026 & 2972.6 & 8906 & 0.212 & 9993 & 0.299 & 10841 & 0.380 \\ 
+   & 2027 & 2970.6 & 8887 & 0.211 & 10091 & 0.302 & 10958 & 0.384 \\ 
+   & 2028 & 2976.1 & 8891 & 0.211 & 10194 & 0.305 & 11058 & 0.388 \\ 
+   & 2029 & 2974.2 & 8900 & 0.211 & 10280 & 0.308 & 11126 & 0.390 \\ 
+   & 2030 & 2967.7 & 8913 & 0.212 & 10351 & 0.310 & 11168 & 0.392 \\ 
    \hline
- & 2021 & 2690 & 11517 & 0.308 & 12019 & 0.360 & 12572 & 0.414 \\ 
-   & 2022 & 2592 & 11228 & 0.301 & 11648 & 0.349 & 12115 & 0.399 \\ 
-   & 2023 & 2537 & 11105 & 0.297 & 11486 & 0.344 & 11906 & 0.392 \\ 
-  SPR  & 2024 & 2522 & 11140 & 0.298 & 11519 & 0.345 & 11916 & 0.392 \\ 
-  target =  & 2025 & 2534 & 11287 & 0.302 & 11680 & 0.350 & 12066 & 0.397 \\ 
-  0.4 & 2026 & 2567 & 11489 & 0.308 & 11900 & 0.356 & 12274 & 0.404 \\ 
-   & 2027 & 2604 & 11702 & 0.313 & 12127 & 0.363 & 12482 & 0.411 \\ 
-   & 2028 & 2636 & 11905 & 0.319 & 12334 & 0.369 & 12663 & 0.417 \\ 
-   & 2029 & 2664 & 12088 & 0.324 & 12513 & 0.375 & 12810 & 0.422 \\ 
-   & 2030 & 2686 & 12248 & 0.328 & 12664 & 0.379 & 12925 & 0.425 \\ 
+ & 2019 & 2908.0 & 11681 & 0.278 & 13078 & 0.391 & 14524 & 0.509 \\ 
+   & 2020 & 2845.0 & 11425 & 0.271 & 12558 & 0.376 & 13729 & 0.481 \\ 
+   & 2021 & 3600.0 & 11110 & 0.264 & 12019 & 0.360 & 12963 & 0.455 \\ 
+   & 2022 & 3600.0 & 10324 & 0.245 & 11105 & 0.332 & 11912 & 0.418 \\ 
+  Step-down & 2023 & 3300.0 & 9602 & 0.228 & 10369 & 0.310 & 11127 & 0.390 \\ 
+  in catch & 2024 & 3300.0 & 9168 & 0.218 & 10008 & 0.300 & 10776 & 0.378 \\ 
+   & 2025 & 3100.0 & 8835 & 0.210 & 9803 & 0.293 & 10608 & 0.372 \\ 
+   & 2026 & 3100.0 & 8692 & 0.207 & 9804 & 0.293 & 10644 & 0.373 \\ 
+   & 2027 & 3000.0 & 8594 & 0.204 & 9846 & 0.295 & 10707 & 0.376 \\ 
+   & 2028 & 3000.0 & 8580 & 0.204 & 9951 & 0.298 & 10812 & 0.379 \\ 
+   & 2029 & 3000.0 & 8576 & 0.204 & 10046 & 0.301 & 10890 & 0.382 \\ 
+   & 2030 & 3000.0 & 8577 & 0.204 & 10124 & 0.303 & 10939 & 0.384 \\ 
    \hline
 \end{tabular}
 }
@@ -841,7 +851,7 @@ OFL (mt) & 2751 & 1021 & 1275 & 2711 & 2774 & 3073 & 3208 & 3208 & 3152 & 3042 \
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
+\includegraphics{r4ss/plots_mod1/yield2_yield_curve_with_refpoints.png}
 \caption{Equilibrium yield curve for the base case model. Values are
 based on the 2018 fishery selectivity and with steepness estimated at
 0.84. \label{fig:Yield_all}}
@@ -2161,7 +2171,7 @@ biomass is above the target of 25\% of unfished spawning biomass at
 39.1\% (Figure \ref{fig:depl}). Approximate confidence intervals based
 on the asymptotic variance estimates show that the uncertainty in the
 estimated spawning biomass is generally low. The standard deviation of
-the log of the spawning output in 2019 is 0.09.
+the log of the spawning biomass in 2019 is 0.09.
 
 Recruitment deviations were estimated for the entire time-series that
 was modeled (Figure \ref{fig:recruits} and discussed in Section
@@ -2357,23 +2367,25 @@ SPR of 30\% and the 25:5 harvest control rule. The average exploitation
 rates, across recent years, by fleet as provided by the GMT were used to
 distribute catches during the forecast period.
 
-Uncertainty in the forecasts is based upon the three states of nature
-based on the likelihood profile of female natural mortality (\(M\)). The
-low and high values for natural mortality were chosen using a change of
-1.2 negative log-likelihood units (75\% interval) from the minimum value
-to correspond midpoints of the lower 25\% probability and upper 25\%
-probability regions from the base model. Based on the profile the range
-of uncertainty around natural mortality were selected at a low value of
-0.130 yr\textsuperscript{-1} and high of 0.185 yr\textsuperscript{-1}.
+Uncertainty in the forecasts is based upon the uncertainty around the
+2019 spawning biomass, \(\sigma\) = 0.09. The low and high values for
+female natural mortality, \(M\), were selected to result in a spawning
+biomass in 2019 that was equal to the 12.5 and 87.5\% quantiles of the
+normal distribution given the maximum likelihood estimate and the
+asymptotic uncertainty. The female natural mortality values the
+corresponded with the lower and upper quantiles were 0.105
+yr\textsuperscript{-1} and 0.205 yr\textsuperscript{-1}.
 
-Catches during the projection period under the current harvest control
-rule are projected to start at 4115 mt and decline over the projection
-period to 3093 mt, in the base model, as the stock declines towards that
-target spawning biomass (Table \ref{tab:OFL_projection_back}). Across
-the low and high states of nature the under the current harvest control
-rule, the relative biomass (depletion) ranged between 0.24 - 0.34 by the
-end of the 12-year projection period (Table
-\ref{tab:Decision_table_mod1}).
+The ABC values were estimated using a category 1 \(\sigma_y\) starting
+at 0.50 and increasing annually combined with a P* value of 0.45. The
+catches during the projection period were set equal to the year-specific
+ABC using the current flatfish harvest control rule, 25:5. The catches
+during the forecasted period are projected from the base model to start
+at 4115 mt in 2021 and decline to 3093 mt in 2030 as the stock declines
+towards the target spawning biomass (Table
+\ref{tab:OFL_projection_back}). Across the low and high states of nature
+the relative biomass (depletion) ranges between 0.193 - 0.373 by the end
+of the 12-year projection period (Table \ref{tab:Decision_table_mod1}).
 
 \section{Regional Management
 Considerations}\label{regional-management-considerations}
@@ -4058,31 +4070,31 @@ Winter North & 6.999 & 6.99629 & 1095 & 1093 & 1 & 1 \\
         &      & Low M    & High M   &  Old M  &           &            & Sex Ratio &          &          \\
  Label & Base & (female) & (female) &  Prior  & Fecundity &  Sex Ratio & Fecundity & Francis & Dirichlet \\
  \hline
-Total Likelihood & 1383.600 & 1385.120 & 1384.920 & 1383.790 & 1394.590 & 1382.630 & 1393.630 & 627.466 & 1391.400 \\ 
-  Survey Likelihood & -74.627 & -74.198 & -74.594 & -74.631 & -74.682 & -74.746 & -74.758 & -75.430 & -74.644 \\ 
-  Discard Likelihood & -228.761 & -228.933 & -228.541 & -228.759 & -228.770 & -228.486 & -228.485 & -229.180 & -228.767 \\ 
-  Discard Mean Body Wt. & -161.155 & -161.242 & -161.074 & -161.153 & -161.168 & -161.120 & -161.125 & -162.310 & -161.173 \\ 
-  Length Likelihood & 769.450 & 771.862 & 767.793 & 769.378 & 770.135 & 769.764 & 769.737 & 480.251 & 772.946 \\ 
-  Age Likelihood & 1093.470 & 1092.010 & 1095.620 & 1093.550 & 1093.440 & 1092.350 & 1092.400 & 633.841 & 1098.340 \\ 
-  Recruitment Likelihood & -22.449 & -22.544 & -22.211 & -22.434 & -22.578 & -22.584 & -22.635 & -25.480 & -22.533 \\ 
-  Forecast Recruitment Likelihood & 0.046 & 0.043 & 0.046 & 0.046 & 0.046 & 0.045 & 0.045 & 0.020 & 0.000 \\ 
-  Parameter Priors Likelihood & 7.587 & 8.078 & 7.845 & 7.751 & 18.126 & 7.365 & 18.410 & 5.714 & 7.111 \\ 
-  log(R0) & 9.921 & 9.582 & 10.198 & 9.934 & 9.900 & 9.906 & 9.914 & 9.878 & 9.884 \\ 
-  SB Virgin & 33405.900 & 37338.500 & 30385.200 & 33273.400 & 34042.400 & 35308.900 & 36065.400 & 33437.300 & 33537.900 \\ 
-  SB 2019 & 13077.700 & 12304.400 & 13907.500 & 13117.900 & 11970.800 & 13114.900 & 12123.000 & 12483.700 & 13004.900 \\ 
-  Depletion 2019 & 0.391 & 0.330 & 0.458 & 0.394 & 0.352 & 0.371 & 0.336 & 0.373 & 0.388 \\ 
-  Total Yield - SPR 30 & 3135.150 & 2995.990 & 3215.000 & 3138.060 & 3043.360 & 3097.490 & 3029.910 & 3081.350 & 3097.050 \\ 
-  Steepness & 0.841 & 0.906 & 0.795 & 0.839 & 0.868 & 0.857 & 0.880 & 0.849 & 0.845 \\ 
-  Natural Mortality - Female & 0.159 & 0.130 & 0.185 & 0.160 & 0.158 & 0.147 & 0.148 & 0.157 & 0.156 \\ 
-  Length at Amin - Female & 15.652 & 15.730 & 15.532 & 15.649 & 15.654 & 15.681 & 15.676 & 15.690 & 15.661 \\ 
-  Length at Amax - Female & 53.117 & 52.972 & 53.234 & 53.122 & 53.113 & 52.956 & 52.956 & 53.490 & 53.094 \\ 
-  Von Bert. k - Female & 0.142 & 0.144 & 0.140 & 0.142 & 0.142 & 0.144 & 0.144 & 0.138 & 0.142 \\ 
-  CV young - Female & 0.186 & 0.185 & 0.188 & 0.186 & 0.186 & 0.185 & 0.185 & 0.184 & 0.186 \\ 
-  CV old - Female & 0.035 & 0.036 & 0.034 & 0.035 & 0.035 & 0.036 & 0.036 & 0.028 & 0.035 \\ 
-  Natural Mortality - Male & 0.164 & 0.133 & 0.193 & 0.166 & 0.163 & 0.175 & 0.176 & 0.162 & 0.161 \\ 
-  Length at Amin - Male & 16.156 & 16.174 & 16.132 & 16.154 & 16.155 & 16.155 & 16.155 & 16.429 & 16.154 \\ 
-  Length at Amax - Male & 40.828 & 40.727 & 40.907 & 40.832 & 40.815 & 40.962 & 40.963 & 41.346 & 40.806 \\ 
-  Von Bert. k - Male & 0.238 & 0.242 & 0.235 & 0.238 & 0.239 & 0.234 & 0.234 & 0.226 & 0.239 \\ 
+Total Likelihood & 1383.600 & 1390.010 & 1387.460 & 1383.790 & 1394.590 & 1382.630 & 1393.630 & 627.466 & 1391.400 \\ 
+  Survey Likelihood & -74.627 & -73.247 & -74.205 & -74.631 & -74.682 & -74.746 & -74.758 & -75.430 & -74.644 \\ 
+  Discard Likelihood & -228.761 & -229.067 & -228.395 & -228.759 & -228.770 & -228.486 & -228.485 & -229.180 & -228.767 \\ 
+  Discard Mean Body Wt. & -161.155 & -161.300 & -161.005 & -161.153 & -161.168 & -161.120 & -161.125 & -162.310 & -161.173 \\ 
+  Length Likelihood & 769.450 & 773.790 & 767.134 & 769.378 & 770.135 & 769.764 & 769.737 & 480.251 & 772.946 \\ 
+  Age Likelihood & 1093.470 & 1091.240 & 1097.250 & 1093.550 & 1093.440 & 1092.350 & 1092.400 & 633.841 & 1098.340 \\ 
+  Recruitment Likelihood & -22.449 & -21.460 & -21.563 & -22.434 & -22.578 & -22.584 & -22.635 & -25.480 & -22.533 \\ 
+  Forecast Recruitment Likelihood & 0.046 & 0.039 & 0.046 & 0.046 & 0.046 & 0.045 & 0.045 & 0.020 & 0.000 \\ 
+  Parameter Priors Likelihood & 7.587 & 9.973 & 8.160 & 7.751 & 18.126 & 7.365 & 18.410 & 5.714 & 7.111 \\ 
+  log(R0) & 9.921 & 9.265 & 10.403 & 9.934 & 9.900 & 9.906 & 9.914 & 9.878 & 9.884 \\ 
+  SB Virgin & 33405.900 & 42089.200 & 28513.700 & 33273.400 & 34042.400 & 35308.900 & 36065.400 & 33437.300 & 33537.900 \\ 
+  SB 2019 & 13077.700 & 11680.900 & 14524.300 & 13117.900 & 11970.800 & 13114.900 & 12123.000 & 12483.700 & 13004.900 \\ 
+  Depletion 2019 & 0.391 & 0.278 & 0.509 & 0.394 & 0.352 & 0.371 & 0.336 & 0.373 & 0.388 \\ 
+  Total Yield - SPR 30 & 3135.150 & 2840.980 & 3232.440 & 3138.060 & 3043.360 & 3097.490 & 3029.910 & 3081.350 & 3097.050 \\ 
+  Steepness & 0.841 & 0.965 & 0.756 & 0.839 & 0.868 & 0.857 & 0.880 & 0.849 & 0.845 \\ 
+  Natural Mortality - Female & 0.159 & 0.105 & 0.205 & 0.160 & 0.158 & 0.147 & 0.148 & 0.157 & 0.156 \\ 
+  Length at Amin - Female & 15.652 & 15.795 & 15.464 & 15.649 & 15.654 & 15.681 & 15.676 & 15.690 & 15.661 \\ 
+  Length at Amax - Female & 53.117 & 52.819 & 53.327 & 53.122 & 53.113 & 52.956 & 52.956 & 53.490 & 53.094 \\ 
+  Von Bert. k - Female & 0.142 & 0.146 & 0.139 & 0.142 & 0.142 & 0.144 & 0.144 & 0.138 & 0.142 \\ 
+  CV young - Female & 0.186 & 0.183 & 0.189 & 0.186 & 0.186 & 0.185 & 0.185 & 0.184 & 0.186 \\ 
+  CV old - Female & 0.035 & 0.037 & 0.034 & 0.035 & 0.035 & 0.036 & 0.036 & 0.028 & 0.035 \\ 
+  Natural Mortality - Male & 0.164 & 0.106 & 0.215 & 0.166 & 0.163 & 0.175 & 0.176 & 0.162 & 0.161 \\ 
+  Length at Amin - Male & 16.156 & 16.188 & 16.111 & 16.154 & 16.155 & 16.155 & 16.155 & 16.429 & 16.154 \\ 
+  Length at Amax - Male & 40.828 & 40.642 & 40.972 & 40.832 & 40.815 & 40.962 & 40.963 & 41.346 & 40.806 \\ 
+  Von Bert. k - Male & 0.238 & 0.245 & 0.233 & 0.238 & 0.239 & 0.234 & 0.234 & 0.226 & 0.239 \\ 
   CV young - Male & 0.136 & 0.136 & 0.137 & 0.136 & 0.136 & 0.137 & 0.137 & 0.127 & 0.136 \\ 
   CV old - Male & 0.060 & 0.060 & 0.060 & 0.060 & 0.060 & 0.059 & 0.059 & 0.059 & 0.060 \\ 
    \hline
@@ -4127,51 +4139,57 @@ Year & OFL & ABC & Spawning Biomass (mt) & Relative Biomass \\
 
 \begin{table}[ht]
 \centering
-\caption{Decision table summary of 10-year projections beginning in 2021 for alternate states of nature based on an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different assumptions of catch levels. The ABC catch stream is based on the equilibrium yield applying the SPR30 harvest rate.} 
+\caption{Decision table summary of 10-year projections beginning in 2021 for alternate states of nature based on an axis of uncertainty about female natural mortality for the base model. Columns range over low, mid, and high states of nature, and rows range over different assumptions of catch levels. The ABC catch streams are based on the equilibrium yield applying the SPR30 harvest rate.} 
 \label{tab:Decision_table_mod1}
 \scalebox{0.85}{
 \begin{tabular}{l|cc|>{\centering}p{.7in}c|>{\centering}p{.7in}c|>{\centering}p{.7in}c}
    \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{} 
                        & \multicolumn{2}{c}{\textbf{States of nature}} 
                        & \multicolumn{2}{c}{} \\
-  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.130} 
+  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{M = 0.105} 
                        & \multicolumn{2}{c}{M = 0.159} 
-                       &  \multicolumn{2}{c}{M = 0.180} \\
+                       &  \multicolumn{2}{c}{M = 0.205} \\
  \hline
  & Year & Catch & Spawning Biomass & Depletion & Spawning Biomass & Depletion & Spawning Biomass & Depletion \\ 
   \hline
- & 2021 & 4115 & 11517 & 0.308 & 12019 & 0.360 & 12572 & 0.414 \\ 
-   & 2022 & 3660 & 10361 & 0.277 & 10798 & 0.323 & 11279 & 0.371 \\ 
-   & 2023 & 3365 & 9603 & 0.257 & 10039 & 0.301 & 10502 & 0.346 \\ 
-  ABC & 2024 & 3199 & 9179 & 0.246 & 9659 & 0.289 & 10140 & 0.334 \\ 
-   & 2025 & 3120 & 8985 & 0.241 & 9533 & 0.285 & 10046 & 0.331 \\ 
-   & 2026 & 3097 & 8923 & 0.239 & 9545 & 0.286 & 10088 & 0.332 \\ 
-   & 2027 & 3096 & 8918 & 0.239 & 9606 & 0.288 & 10173 & 0.335 \\ 
-   & 2028 & 3097 & 8929 & 0.239 & 9671 & 0.289 & 10249 & 0.337 \\ 
-   & 2029 & 3098 & 8938 & 0.239 & 9720 & 0.291 & 10301 & 0.339 \\ 
-   & 2030 & 3093 & 8939 & 0.239 & 9752 & 0.292 & 10328 & 0.340 \\ 
+ & 2019 & 2908.0 & 11681 & 0.278 & 13078 & 0.391 & 14524 & 0.509 \\ 
+   & 2020 & 2845.0 & 11425 & 0.271 & 12558 & 0.376 & 13729 & 0.481 \\ 
+   & 2021 & 4115.4 & 11110 & 0.264 & 12019 & 0.360 & 12963 & 0.455 \\ 
+   & 2022 & 3660.2 & 10005 & 0.238 & 10799 & 0.323 & 11614 & 0.407 \\ 
+  ABC & 2023 & 3365.0 & 9244 & 0.220 & 10038 & 0.300 & 10820 & 0.379 \\ 
+  P* 0.45 & 2024 & 3199.0 & 8773 & 0.208 & 9655 & 0.289 & 10462 & 0.367 \\ 
+   & 2025 & 3119.9 & 8507 & 0.202 & 9523 & 0.285 & 10381 & 0.364 \\ 
+   & 2026 & 3096.9 & 8362 & 0.199 & 9527 & 0.285 & 10434 & 0.366 \\ 
+   & 2027 & 3096.3 & 8276 & 0.197 & 9580 & 0.287 & 10520 & 0.369 \\ 
+   & 2028 & 3096.6 & 8213 & 0.195 & 9635 & 0.288 & 10588 & 0.371 \\ 
+   & 2029 & 3097.5 & 8158 & 0.194 & 9677 & 0.290 & 10624 & 0.373 \\ 
+   & 2030 & 3093.1 & 8103 & 0.193 & 9701 & 0.290 & 10633 & 0.373 \\ 
    \hline
- & 2021 & 3451 & 11517 & 0.308 & 12019 & 0.360 & 12572 & 0.414 \\ 
-   & 2022 & 3188 & 10764 & 0.288 & 11193 & 0.335 & 11668 & 0.384 \\ 
-   & 2023 & 3017 & 10286 & 0.275 & 10697 & 0.320 & 11140 & 0.367 \\ 
-  SPR  & 2024 & 2927 & 10052 & 0.269 & 10486 & 0.314 & 10928 & 0.360 \\ 
-  target =  & 2025 & 2891 & 9991 & 0.268 & 10470 & 0.313 & 10926 & 0.360 \\ 
-  0.34 & 2026 & 2893 & 10028 & 0.269 & 10556 & 0.316 & 11025 & 0.363 \\ 
-   & 2027 & 2909 & 10103 & 0.271 & 10675 & 0.320 & 11150 & 0.367 \\ 
-   & 2028 & 2924 & 10184 & 0.273 & 10790 & 0.323 & 11260 & 0.371 \\ 
-   & 2029 & 2937 & 10257 & 0.275 & 10886 & 0.326 & 11344 & 0.373 \\ 
-   & 2030 & 2944 & 10318 & 0.276 & 10961 & 0.328 & 11401 & 0.375 \\ 
+ & 2019 & 2908.0 & 11681 & 0.278 & 13078 & 0.391 & 14524 & 0.509 \\ 
+   & 2020 & 2845.0 & 11425 & 0.271 & 12558 & 0.376 & 13729 & 0.481 \\ 
+   & 2021 & 3842.5 & 11110 & 0.264 & 12019 & 0.360 & 12963 & 0.455 \\ 
+  ABC & 2022 & 3454.7 & 10174 & 0.242 & 10961 & 0.328 & 11772 & 0.413 \\ 
+  P* 0.40 & 2023 & 3202.3 & 9540 & 0.227 & 10315 & 0.309 & 11081 & 0.389 \\ 
+   & 2024 & 3059.6 & 9168 & 0.218 & 10012 & 0.300 & 10791 & 0.378 \\ 
+   & 2025 & 2993.9 & 8981 & 0.213 & 9941 & 0.298 & 10755 & 0.377 \\ 
+   & 2026 & 2972.6 & 8906 & 0.212 & 9993 & 0.299 & 10841 & 0.380 \\ 
+   & 2027 & 2970.6 & 8887 & 0.211 & 10091 & 0.302 & 10958 & 0.384 \\ 
+   & 2028 & 2976.1 & 8891 & 0.211 & 10194 & 0.305 & 11058 & 0.388 \\ 
+   & 2029 & 2974.2 & 8900 & 0.211 & 10280 & 0.308 & 11126 & 0.390 \\ 
+   & 2030 & 2967.7 & 8913 & 0.212 & 10351 & 0.310 & 11168 & 0.392 \\ 
    \hline
- & 2021 & 2690 & 11517 & 0.308 & 12019 & 0.360 & 12572 & 0.414 \\ 
-   & 2022 & 2592 & 11228 & 0.301 & 11648 & 0.349 & 12115 & 0.399 \\ 
-   & 2023 & 2537 & 11105 & 0.297 & 11486 & 0.344 & 11906 & 0.392 \\ 
-  SPR  & 2024 & 2522 & 11140 & 0.298 & 11519 & 0.345 & 11916 & 0.392 \\ 
-  target =  & 2025 & 2534 & 11287 & 0.302 & 11680 & 0.350 & 12066 & 0.397 \\ 
-  0.4 & 2026 & 2567 & 11489 & 0.308 & 11900 & 0.356 & 12274 & 0.404 \\ 
-   & 2027 & 2604 & 11702 & 0.313 & 12127 & 0.363 & 12482 & 0.411 \\ 
-   & 2028 & 2636 & 11905 & 0.319 & 12334 & 0.369 & 12663 & 0.417 \\ 
-   & 2029 & 2664 & 12088 & 0.324 & 12513 & 0.375 & 12810 & 0.422 \\ 
-   & 2030 & 2686 & 12248 & 0.328 & 12664 & 0.379 & 12925 & 0.425 \\ 
+ & 2019 & 2908.0 & 11681 & 0.278 & 13078 & 0.391 & 14524 & 0.509 \\ 
+   & 2020 & 2845.0 & 11425 & 0.271 & 12558 & 0.376 & 13729 & 0.481 \\ 
+   & 2021 & 3600.0 & 11110 & 0.264 & 12019 & 0.360 & 12963 & 0.455 \\ 
+   & 2022 & 3600.0 & 10324 & 0.245 & 11105 & 0.332 & 11912 & 0.418 \\ 
+  Step-down & 2023 & 3300.0 & 9602 & 0.228 & 10369 & 0.310 & 11127 & 0.390 \\ 
+  in catch & 2024 & 3300.0 & 9168 & 0.218 & 10008 & 0.300 & 10776 & 0.378 \\ 
+   & 2025 & 3100.0 & 8835 & 0.210 & 9803 & 0.293 & 10608 & 0.372 \\ 
+   & 2026 & 3100.0 & 8692 & 0.207 & 9804 & 0.293 & 10644 & 0.373 \\ 
+   & 2027 & 3000.0 & 8594 & 0.204 & 9846 & 0.295 & 10707 & 0.376 \\ 
+   & 2028 & 3000.0 & 8580 & 0.204 & 9951 & 0.298 & 10812 & 0.379 \\ 
+   & 2029 & 3000.0 & 8576 & 0.204 & 10046 & 0.301 & 10890 & 0.382 \\ 
+   & 2030 & 3000.0 & 8577 & 0.204 & 10124 & 0.303 & 10939 & 0.384 \\ 
    \hline
 \end{tabular}
 }
@@ -5063,10 +5081,10 @@ petrale sole. \label{fig:ssb}}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png}
-\caption{Estimated time-series of relative spawning biomass (depletion)
-(circles and line: median; light broken lines: 95\% credibility
-intervals) for petrale sole. \label{fig:depl}}
+\includegraphics{r4ss/plots_mod1/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of fraction of unfished spawning biomass
+(depletion) (circles and line: median; light broken lines: 95\%
+credibility intervals) for petrale sole. \label{fig:depl}}
 \end{figure}
 
 \FloatBarrier
@@ -5244,7 +5262,7 @@ year in the time-series is 2018. \label{fig:SPR_all_fig}}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
+\includegraphics{r4ss/plots_mod1/yield2_yield_curve_with_refpoints.png}
 \caption{Equilibrium yield curve for the base case model. Values are
 based on the 2018 fishery selectivity and with steepness estimated at
 0.84. \label{fig:yield}}

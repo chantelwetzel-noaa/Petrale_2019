@@ -1,0 +1,1 @@
+depletion.print <-function(){ return(mod1$derived_quants[grep('Bratio_2017', mod1$derived_quants$Label), 2]*100 ) }

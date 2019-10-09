@@ -60,7 +60,7 @@ The base assessment model structure is consistent with the 2013 assessment and t
 
 
 ##Stock Biomass{-}
-`r spp.up` were lightly exploited during the early 1900s, but by the 1950s, the fishery was well developed with the stock showing declines in biomass and catches (Figures \ref{fig:Exec_catch1} and \ref{fig:Spawnbio_all}). The rate of decline in spawning biomass accelerated through the 1970s reaching minimums generally around or below 10% of the unexploited levels during the 1980s through the early 2000s (Figure \ref{fig:RelDeplete_all}). The `r spp` spawning stock biomass is estimated to have increased in recent years due to reduced catches during rebuilding and in response to above average recruitment in 2006, 2007, and 2008. The `r LastYR` estimated spawning biomass relative to unfished equilibrium spawning biomass is above the target of 25% of unfished spawning biomass, at `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Table \ref{tab:SpawningDeplete_mod1}).
+`r spp.up` were lightly exploited during the early 1900s, but by the 1950s, the fishery was well developed with the stock showing declines in biomass and catches (Figures \ref{fig:Exec_catch1} and \ref{fig:Spawnbio_all}). The rate of decline in spawning biomass accelerated through the 1970s reaching minimums generally around or below 10% of the unexploited levels during the 1980s through the early 2000s (Figure \ref{fig:RelDeplete_all}). The `r spp` spawning stock biomass is estimated to have increased in recent years due to reduced catches during rebuilding and in response to above average recruitment in 2006, 2007, and 2008. The `r LastYR` estimated spawning biomass relative to unfished equilibrium spawning biomass is above the target of 25% of unfished spawning biomass, at `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Table \ref{tab:SpawningDeplete_mod1}). The standard deviation of the log of the spawning biomass in `r LastYR` is `r round(mod1$Pstar_sigma,2)`.
 
 <!--BEGIN  EXECUTIVE SUMMARY SPAWNING BIOMASS AND DEPLETE TABLES AND FIGURES-->
 ```{r, results='asis'}
@@ -68,14 +68,15 @@ The base assessment model structure is consistent with the 2013 assessment and t
     spawn.file  = ifelse(fecund=='numbers',
                            'r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png',
                            'r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png')
-    Bratio.file = 'r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png' 
+
+    Bratio.file = 'r4ss/plots_mod1/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png' 
 
 ```
 
 ![Estimated time-series of spawning biomass trajectory (circles and line: median; light broken lines: 95% credibility intervals) for the base assessment model.  \label{fig:Spawnbio_all}](`r spawn.file`)
 
 
-![Estimated time-series of relative spawning biomass (depletion) (circles and line: median; light broken lines: 95% credibility intervals) for the base assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
+![Estimated time-series of fraction of unfished spawning biomass (depletion) (circles and line: median; light broken lines: 95% credibility intervals) for the base assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
 
 <!--BEGIN  EXECUTIVE SUMMARY SPAWNING BIOMASS AND DEPLETE TABLES AND FIGURES-->
 ```{r, results='asis'}
@@ -89,7 +90,7 @@ The base assessment model structure is consistent with the 2013 assessment and t
 
 ##Recruitment{-}
 
-Annual recruitment was treated as stochastic, and estimated as annual deviations from log-mean recruitment where mean recruitment is the fitted Beverton-Holt stock recruitment curve. The time-series of estimated recruitments shows a relationship with the decline in spawning biomass, punctuated by larger recruitments in 2006, 2007, and 2008 (Figure \ref{fig:Recruits_all}). However, recruitment in recent years (2013 - 2017) is estimated to be less than the expected mean recruitment indicating an absence of strong incoming recruitment (Table \ref{tab:Recruit_mod1}). 
+Annual recruitment was treated as stochastic and estimated as annual deviations from log-mean recruitment, where mean recruitment is the fitted Beverton-Holt stock recruitment curve. The time-series of estimated recruitments shows a relationship with the decline in spawning biomass, punctuated by larger recruitments in 2006, 2007, and 2008 (Figure \ref{fig:Recruits_all}). However, recruitment in recent years (2013 - 2017) is estimated to be less than the expected mean recruitment indicating an absence of strong incoming recruitment (Table \ref{tab:Recruit_mod1}). 
 
 The five largest estimated recruitments estimated within the model (in ascending order) occurred in `r recdev.highest[1]`, `r recdev.highest[2]`, `r recdev.highest[3]`, `r recdev.highest[4]`, and  `r recdev.highest[5]`. The four lowest recruitments estimated within the model (in ascending order) occurred in `r recdev.lowest[1]`, `r recdev.lowest[2]`, `r recdev.lowest[3]`, and `r recdev.lowest[4]`.  
 
@@ -110,7 +111,7 @@ The five largest estimated recruitments estimated within the model (in ascending
 
 
 ##Exploitation Status{-}
-The relative spawning biomass of `r spp` was estimated to have dropped below the management target (25%) for the first time in `r first.yr.below.target`. The stock continued to decline and first fell below the minimum stock size threshold level of 12.5% in `r first.yr.below.thresh` (although, at the time the management target and thresholds were not set at the current values of 25% and 12.5%).  The relative spawning biomass remained around the threshold stock size until approximately 2010, with the stock reaching its lowest relative spawning biomass level in `r low.ssb` at `r low.dep.value`. In 2009 `r spp` was formally declared overfished. Fishing mortality rates sharply declined during the rebuilding period, relative to previous year rates, which exceeded the target (Figure \ref{fig:SPR_all}). After reduced harvests, the 2015 update stock assessment estimated the stock to have rebuilt to the management target (25%) in 2014.  This update estimates that the relative spawning biomass exceeded 25% in `r yr.rebuilt` with harvest rates in the most recent years remaining under of the target rate (Table \ref{tab:SPR_Exploit_mod1} and Figures \ref{fig:SPR_all} and \ref{fig:Phase_all}).    
+The relative spawning biomass of `r spp` was estimated to have dropped below the management target (25%) for the first time in `r first.yr.below.target`. The stock continued to decline and first fell below the minimum stock size threshold level of 12.5% in `r first.yr.below.thresh` (although, at the time the management target and thresholds were not set at the current values of 25% and 12.5%).  The relative spawning biomass reached its lowest level in `r low.ssb` at `r low.dep.value`, with the stock remaining around the threshold stock size until approximately 2010. In 2009 `r spp` was formally declared overfished. Fishing mortality rates sharply declined during the rebuilding period, relative to rates in previous years, which exceeded the target (Figure \ref{fig:SPR_all}). The 2015 update stock assessment estimated the stock to have rebuilt to the management target (25%) in 2014.  This update estimates that the relative spawning biomass exceeded 25% in `r yr.rebuilt` with harvest rates in the most recent years remaining under of the target rate (Table \ref{tab:SPR_Exploit_mod1} and Figures \ref{fig:SPR_all} and \ref{fig:Phase_all}).    
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY EXPLOITATION AND******************* -->
@@ -140,9 +141,9 @@ Ecosystem factors have not been explicitly modeled in this assessment, but there
 
 ##Reference Points{-}
 
-This update stock assessment estimates that the spawning biomass of `r spp` is `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the management target. Due to reduced landings and a series of above average recruitments (2006, 2007, and 2008), an increasing trend in spawning biomass was estimated in the base model with a decline in the start of the year spawning biomass estimate in 2019. The estimated relative spawning biomass in `r LastYR` is `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`), corresponding to an spawning biomass of `r paste(prettyNum(Spawn_mod1,big.mark=",", digits = 0), fecund_unit,sep=' ')` ($\sim$ 95% asymptotic interval: `r paste(prettyNum(Spawn_mod1_CI,big.mark=","), fecund_unit, sep=' ')`) (Table \ref{tab:Ref_pts_mod1}).  Unfished age `r min_age` biomass was estimated to be `r prettyNum(formatC(Ref_pts_mod1[2,2],0),big.mark=",", drop0trailing = TRUE)` mt in the base model. 
+This update stock assessment estimates that the spawning biomass of `r spp` is `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the management target. Due to reduced landings and a series of above average recruitments (2006, 2007, and 2008), an increasing trend in spawning biomass was estimated in the base model from 2011 - 2017, with a decline in biomass in the most recent years (2018 and 2019) as the biomass of the above average cohorts declines. The estimated relative spawning biomass in `r LastYR` is `r Depl_mod1` ($\sim$ 95% asymptotic interval: $\pm$ `r Depl_mod1_CI`), corresponding to an spawning biomass of `r paste(prettyNum(Spawn_mod1,big.mark=",", digits = 0), fecund_unit,sep=' ')` ($\sim$ 95% asymptotic interval: `r paste(prettyNum(Spawn_mod1_CI,big.mark=","), fecund_unit, sep=' ')`) (Table \ref{tab:Ref_pts_mod1}).  Unfished age `r min_age` biomass was estimated to be `r prettyNum(formatC(Ref_pts_mod1[2,2],0),big.mark=",", drop0trailing = TRUE)` mt in the base model. 
 
-The target spawning biomass based on the biomass target ($SB_{25\%}$) is `r paste(prettyNum(format(Ref_pts_mod1[7,2],0),big.mark=",", digits = 0), fecund_unit,sep=' ')`, with an equilibrium catch of `r prettyNum(format(Ref_pts_mod1[10,2],0),big.mark=",", digits = 0)` mt (Table \ref{tab:Ref_pts_mod1}). Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to $SPR_{30\%}$ is `r prettyNum(format(Ref_pts_mod1[15,2],0),big.mark=",")` mt. Estimated MSY catch is at a `r prettyNum(format(Ref_pts_mod1[20,2],0),big.mark=",", digits = 0)` spawning biomass of `r paste(prettyNum(format(Ref_pts_mod1[17,2],0),big.mark=",", digits = 0), fecund_unit,sep=' ')` (`r paste0(round(100 * as.numeric(Ref_pts_mod1[17,2])/as.numeric(Ref_pts_mod1[1,2]),1), "%")` relative spawning biomass).
+The target spawning biomass based on the biomass target ($SB_{25\%}$) is `r paste(prettyNum(format(Ref_pts_mod1[7,2],0),big.mark=",", digits = 0), fecund_unit,sep=' ')`, with an equilibrium catch of `r prettyNum(format(Ref_pts_mod1[10,2],0),big.mark=",", digits = 0)` mt (Table \ref{tab:Ref_pts_mod1}). Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to $SPR_{30\%}$ is `r prettyNum(format(Ref_pts_mod1[15,2],0),big.mark=",")` mt. Estimated MSY catch is at `r prettyNum(format(Ref_pts_mod1[20,2],0),big.mark=",", digits = 0)` spawning biomass of `r paste(prettyNum(format(Ref_pts_mod1[17,2],0),big.mark=",", digits = 0), fecund_unit,sep=' ')` (`r paste0(round(100 * as.numeric(Ref_pts_mod1[17,2])/as.numeric(Ref_pts_mod1[1,2]),1), "%")` relative spawning biomass).
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY REFERENCE POINT TABLES************* -->
@@ -178,24 +179,25 @@ There are a number of major uncertainties regarding model parameters that have b
 
 \begin{enumerate}
 
-\item The value of natural mortality by sex.
+\item The value of natural mortality by sex.	Natural mortality by sex and steepness are uncertain for `r spp`.  Currently, both natural mortality and steepness are estimated within the model and are negatively correlated.  This provides information regarding these parameters combined values, but there is large uncertainty regarding the value of each parameter individually.
 
-\item The current sex ratio between female and males in the population of `r spp`.
+\item New fecundity data for `r spp` supports a fecundity relationship that differs from the current assumption (fecundity equals body weights) in this update assessment. A sensitivity to the new data results in a less optomistic estimate of relative spawning biomass, declining to 35% from the base model 39%, when the new coast-wide fecundity relationship was included in the model. The new data supports differences in fecundity estimated between `r spp` observed in the north and south off the U.S. west coast.  However, some of the contrast in estimates between the northern and southern fish may be due to sample sizes differences. The next full assessment for `r spp` will want to explore methods of how best to include the new fedundity data. 
 
-\item Fecundity estimates based upon new research for `r spp` and measured differences in fecundity between northern and southern fish.
-
-\item Changes in the model estimates based on alternative data weighting approaches.
+\item Additionally, a reconstructed historical Washington catch history has not been included in the `r spp` stock assessment.  Washington state is currently undergoing efforts to determine historical catches for `r spp` and the next stock assessment is likely to incorporate these new historical catch estimates. 
 
 \end{enumerate}
 
-Additionally, a reconstructed historical Washington catch history has not been included in the `r spp` stock assessment.  Washington state is currently undergoing efforts to determine historical catches for `r spp` and the next stock assessment is likely to incorporate these new historical catch estimates.  
 
 ##Decision Table{-}    
-The forecast of stock abundance and yield was developed using the base model. The total catches in 2019 and 2020 are set at values provided by the Groundfish Management Team (GMT) of the PFMC at 2908 and 2845 mt, respectively. The management adopted ACL values for these years are 2921 and 2857 mt. The exploitation rate for 2021 and beyond is based upon an SPR of 30% and the 25:5 harvest control rule. The average exploitation rates, across recent years, by fleet as provided by the GMT were used to distribute catches during the forecast period. 
+The forecast of stock abundance and yield was developed using the base model. The total catches in 2019 and 2020 are set equal to the ACL each year at `r paste(prettyNum(mod1$derived_quants["ForeCatch_2019", 2], big.mark=",", digits = 1),sep=' ')` mt and `r paste(prettyNum(mod1$derived_quants["ForeCatch_2020", 2], big.mark=",", digits = 1),sep=' ')` mt, respectively. The exploitation rate for 2021 and beyond is based upon an SPR of 30% and the 25:5 harvest control rule. The average exploitation rates, across recent years, by fleet as provided by the GMT were used to distribute catches during the forecast period. 
 
-Uncertainty in the forecasts is based upon the three states of nature based on the likelihood profile of female natural mortality ($M$). The low and high values for natural mortality were chosen using a change of 1.2 negative log-likelihood units (75% interval) from the minimum value to correspond midpoints of the lower 25% probability and upper 25% probability regions from the base model. Based on the profile the range of uncertainty around natural mortality were selected at a low value of 0.130 yr^-1^ and high of 0.185 yr^-1^. 
+The catches during the forecasted period are projected from the base model, assuming a P* value of 0.45, start at `r paste(prettyNum(mod1$derived_quants["ForeCatch_2021", 2], big.mark=",", digits = 1),sep=' ')` mt in 2021 and decline to `r paste(prettyNum(mod1$derived_quants["ForeCatch_2030", 2], big.mark=",", digits = 1),sep=' ')` mt in 2030 as the stock declines towards the target spawning biomass (Table \ref{tab:OFL_projection}).  The projections assume full ABC removals.
 
-Catches during the projection period under the current harvest control rule are projected to start at 4115 mt and decline over the projection period to 3093 mt, in the base model, as the stock declines towards that target spawning biomass (Table \ref{tab:OFL_projection}).  Across the low and high states of nature the under the current harvest control rule, the relative biomass (depletion) range between 0.24 - 0.34 by the end of the 12-year projection period (Table \ref{tab:Decision_table_mod1_es}).
+Uncertainty in the forecasts is based upon the uncertainty around the `r LastYR` spawning biomass, $\sigma$ = `r round(mod1$Pstar_sigma,2)`. The low and high values for female natural mortality, $M$, were selected to result in a spawning biomass in `r LastYR` that was equal to the 12.5 and 87.5% quantiles of the normal distribution given the maximum likelihood estimate and the asymptotic uncertainty. The female natural mortality values the corresponded with the lower and upper quantiles were 0.105 yr^-1^ and 0.205 yr^-1^. 
+
+There alternative catch streams were created for the decision table. The first option, ABC values were estimated using a category 1 $\sigma_y$ starting at 0.50 and increasing annually combined with a P$^*$ value of 0.45. The second option, uses the same category $\sigma_y$ values but applies a P$^*$ of 0.40. Both of the first two options assume full attainment of the catch values. The final option, employees a fixed catch approach where catches slowly step down during the 10-year projection period. 
+
+Across the low and high states of nature and across alternative future harvest scenarios the relative spawning biomass (depletion) ranges between 0.193 - 0.384 by the end of the 10-year projection period (Table \ref{tab:Decision_table_mod1_es}).
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
 
@@ -206,13 +208,13 @@ Catches during the projection period under the current harvest control rule are 
 
 \FloatBarrier
 
+
 ```{r, results='asis'} 
     print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
           caption.placement = 'top', 
-          hline.after = c(-1, 0, 10, 20, nrow(decision_mod1.table)), 
+          hline.after = c(-1, 0, 12, 24, nrow(decision_mod1.table)), 
           scalebox = .85)
 ```
-
 
 \FloatBarrier
 
@@ -245,9 +247,8 @@ Progress on a number of research topics and data issues would substantially impr
        include.rownames = FALSE, 
        caption.placement = 'top',
        tabular.environment = 'longtable', # added
-       floating.environment = FALSE, #'sidewaystable', 
+       floating.environment = FALSE, 
        sanitize.text.function = function(x){x},  
-       #scalebox = .6, 
        size="\\fontsize{8pt}{9pt}\\selectfont",
        align = TRUE)#, 
        #hline.after = c(-1, 0, 4, 5, 7, 9, 11, nrow(base_summary.table)))
@@ -259,7 +260,7 @@ Progress on a number of research topics and data issues would substantially impr
 <!-- ***********Yield curve table****************************************** -->
 ```{r, results='asis'}
    # Select the file to use for the yield curve depending on the number of models
-     yield.file  = 'r4ss/plots_mod1/yield1_yield_curve.png'
+     yield.file  = 'r4ss/plots_mod1/yield2_yield_curve_with_refpoints.png'
     
 ```
 <!-- ***********Edit caption based on fixed params************************* -->

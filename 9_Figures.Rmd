@@ -614,7 +614,7 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
 
 \FloatBarrier
 
-![Estimated time-series of relative spawning biomass (depletion) (circles and line: median; light broken lines: 95% credibility intervals) for `r spp`. \label{fig:depl}](r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png)
+![Estimated time-series of fraction of unfished spawning biomass (depletion) (circles and line: median; light broken lines: 95% credibility intervals) for `r spp`. \label{fig:depl}](r4ss/plots_mod1/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png)
   
 \FloatBarrier
 
@@ -738,7 +738,7 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
   
 \FloatBarrier
 
-![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness estimated at `r print(mod1$parameters[mod1$parameters$Label == "SR_BH_steep","Value"],2)`. \label{fig:yield}](r4ss/plots_mod1/yield1_yield_curve.png)
+![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness estimated at `r print(mod1$parameters[mod1$parameters$Label == "SR_BH_steep","Value"],2)`. \label{fig:yield}](r4ss/plots_mod1/yield2_yield_curve_with_refpoints.png)
 
 \FloatBarrier
   

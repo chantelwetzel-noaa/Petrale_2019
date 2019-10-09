@@ -88,29 +88,39 @@ Plot_catch = function(Catch_df) {
 #==============================================================================
 
 # Read in executive summary catches table
-Exec_catch_summary_sep = Final_Catch_AllYrs[, 1:ncol(Final_Catch_AllYrs)]
-Exec_catch_summary_sep = data.frame(Year = Exec_catch_summary_sep$Years, 
-                            Winter_N = Exec_catch_summary_sep$WA.TRAWL.1+Exec_catch_summary_sep$OR.TRAWL.1,
-                            Summer_N = Exec_catch_summary_sep$WA.TRAWL.2+Exec_catch_summary_sep$OR.TRAWL.2,
-                            Winter_S = Exec_catch_summary_sep$CA.TRAWL.1,
-                            Summer_S = Exec_catch_summary_sep$CA.TRAWL.2)
+#Exec_catch_summary_sep = Final_Catch_AllYrs[, 1:ncol(Final_Catch_AllYrs)]
+#Exec_catch_summary_sep = data.frame(Year = Exec_catch_summary_sep$Years, 
+#                            Winter_N = Exec_catch_summary_sep$WA.TRAWL.1+Exec_catch_summary_sep$OR.TRAWL.1,
+#                            Summer_N = Exec_catch_summary_sep$WA.TRAWL.2+Exec_catch_summary_sep$OR.TRAWL.2,
+#                            Winter_S = Exec_catch_summary_sep$CA.TRAWL.1,
+#                            Summer_S = Exec_catch_summary_sep$CA.TRAWL.2)
+
+Exec_catch_summary     = data.frame( Year = (FirstYR-1):(LastYR-1),
+                                     WinterN = mod1$catch[mod1$catch$Fleet ==1 & mod1$catch$Yr >= FirstYR-1, "Obs"],
+                                     SummerN = mod1$catch[mod1$catch$Fleet ==2 & mod1$catch$Yr >= FirstYR-1, "Obs"],
+                                     WinterS = mod1$catch[mod1$catch$Fleet ==3 & mod1$catch$Yr >= FirstYR-1, "Obs"],
+                                     SummerS = mod1$catch[mod1$catch$Fleet ==4 & mod1$catch$Yr >= FirstYR-1, "Obs"],
+                                     Total   = aggregate(ret_bio ~ Yr, FUN = sum,  mod1$catch[mod1$catch$Yr>= FirstYR-1,])$ret_bio, 
+                                     Dead    = aggregate(kill_bio ~ Yr, FUN = sum, mod1$catch[mod1$catch$Yr>= FirstYR-1,])$kill_bio)
 
 # Bind the data frames together
-Exec_catch_summary = cbind(Exec_catch_summary_sep[,1:5], 
-                           apply(Exec_catch_summary_sep[,2:ncol(Exec_catch_summary_sep)], 1, sum))
+#Exec_catch_summary = cbind(Exec_catch_summary_sep[,1:5], 
+#                           apply(Exec_catch_summary_sep[,2:ncol(Exec_catch_summary_sep)], 1, sum))
 
 colnames(Exec_catch_summary) = c('Year',
                                  'Winter (N)',
                                  'Summer (N)',
                                  'Winter (S)',
                                  'Summer (S)', 
-                                 'Total Landings')
+                                 'Total Landings',
+                                 'Total Catch')
 
-Exec_catch_summary = subset(Exec_catch_summary, Year >= FirstYR-1 & Year <= LastYR-1)
+#Exec_catch_summary = subset(Exec_catch_summary, Year >= FirstYR-1 & Year <= LastYR-1)
     
 # Make executive summary catch xtable
 Exec_catch.table = xtable(Exec_catch_summary, 
-                          caption = c(paste0('Landings (mt) for the past 10 years for ',spp,' by source.')), 
+                          caption = c(paste0('Landings (mt) and total catch (mt) for the past 10 years for ',spp,' by source. 
+                                             Total catch reflects the landings plus the model estimated discards based on discard rate data.')), 
                           label='tab:Exec_catch',
                           digits = 0)
     
@@ -120,6 +130,7 @@ align(Exec_catch.table) = c('l', 'l',
                             '>{\\centering}p{0.7in}', 
                             '>{\\centering}p{0.7in}',
                             '>{\\centering}p{0.7in}', 
+                            '>{\\centering}p{0.7in}',
                             '>{\\centering}p{0.7in}',
                             '>{\\centering}p{0.7in}')  
 
@@ -450,8 +461,8 @@ Quantity = c(paste('Unfished spawning biomass (', fecund_unit, ')', sep = ''),
 Ref_pts = cbind(Quantity, Ref_pts$Value1, Ref_pts$lowerCI1, Ref_pts$upperCI1)
 Ref_pts[c(6, 11, 13, 16), 2:4] = ''
 colnames(Ref_pts) = c('\\textbf{Quantity}', '\\textbf{Estimate}', 
-                      '\\textbf{$\\sim$2.5\\%  Confidence Interval}',
-                      '\\textbf{$\\sim$97.5\\%  Confidence Interval}')
+                      '\\textbf{$\\sim$2.5\\%  CI}',
+                      '\\textbf{$\\sim$97.5\\%  CI}')
 assign(paste('Ref_pts_', mod_area, sep = ''), Ref_pts)
 
 
@@ -461,7 +472,7 @@ assign(paste('Ref_pts_', mod_area, sep = ''), Ref_pts)
 # Model 1 
 Ref_pts_mod1.table = xtable(Ref_pts_mod1, 
                             caption=c('Summary of reference 
-                                      points and management quantities for the 
+                                      points and and management quantities, including estimated confidence intervals (CI), for the 
                                       base case.'), 
                             label='tab:Ref_pts_mod1', digits = dig3)  
 # Add alignment      
@@ -500,15 +511,15 @@ mngmnt.table = xtable(mngmnt,
                       caption=c('Recent trend in total catch and  
                               landings (mt) relative to the management guidelines. 
                               Estimated total catch reflect the landings 
-                              plus the model estimated discarded biomass based on discard rate data.'), 
+                              plus the model estimated discards based on discard rate data.'), 
                       label='tab:mnmgt_perform')
 # Add alignment
 align(mngmnt.table) = c('l',
                         '>{\\raggedleft}p{0.5in}',
-                        '>{\\centering}p{1.1in}',
-                        '>{\\centering}p{1.1in}',
-                        '>{\\centering}p{1.1in}', 
-                        '>{\\centering}p{1.1in}')  
+                        '>{\\centering}p{1.2in}',
+                        '>{\\centering}p{1.2in}',
+                        '>{\\centering}p{1.2in}', 
+                        '>{\\centering}p{1.2in}')  
 
 
 #=============================================================================
@@ -530,8 +541,8 @@ OFL$Year=seq(Project_firstyr,Project_lastyr, 1)
 OFL$Year = as.factor(OFL$Year)
 
 OFL = OFL[,c(3, 1, 2)]
-OFL[,2] =  print.numeric(OFL$OFL_mod1, digits = 0)
-OFL[,3] =  print.numeric(OFL$ACL_mod1, digits = 0)
+OFL[,2] =  print.numeric(OFL$OFL_mod1, digits = 1)
+OFL[,3] =  print.numeric(OFL$ACL_mod1, digits = 1)
 
 # Extract biomass/output  
 SpawningB = mod$derived_quants[grep('SSB', mod$derived_quants$Label), ]
@@ -551,7 +562,7 @@ colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund
 write.csv(Fore_Table, file = './txt_files/OFL_forecast.csv', row.names = FALSE)
 
 # Create the table
-OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
+OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFLs (mt), ABCs (mt), estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
 ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates.'),
                   label = 'tab:OFL_projection',
                   digits = 0)
@@ -584,11 +595,10 @@ colnames(decision_mod1) = c('',
       
 decision_mod1.table = xtable( decision_mod1, 
                               caption = c(paste('Decision table summary of 10-year projections beginning in ', LastYR+2,' for alternate states of nature based on 
-                                             an axis of uncertainty about female natural mortality for the base model. The removals in 2019 and 2020 were set at the defined management specification 
-                                             of 2908 and 2845 mt, respectively, assuming full attainment. Columns range over low, mid, and high states of nature, and rows range over different 
+                                             an axis of uncertainty about female natural mortality for the base model. Columns range over low, mid, and high states of nature, and rows range over different 
                                              assumptions of catch levels. The ABC catch stream is based on the equilibrium yield applying the SPR30 harvest rate.', sep = '')), 
                               label='tab:Decision_table_mod1_es', 
-                              digits = c(0,0,0,0,0,3,0,3,0,3)) 
+                              digits = c(0,0,0,1,0,3,0,3,0,3)) 
       
 # Assign alignment and add the header columns
 align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.6in}','c|','>{\\centering}p{.6in}','c|','>{\\centering}p{.6in}','c') 
@@ -601,9 +611,9 @@ addtorow$pos[[2]] <- -1
 addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                        & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                        & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.13} 
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{M = 0.105} 
                        & \\multicolumn{2}{c}{M = 0.159} 
-                       &  \\multicolumn{2}{c}{M = 0.185} \\\\\n')
+                       &  \\multicolumn{2}{c}{M = 0.205} \\\\\n')
         
 #=============================================================================
 # Executive Summary Table I: Summary of Results
