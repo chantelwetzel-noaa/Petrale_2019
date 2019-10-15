@@ -29,7 +29,8 @@ From the inception of the fishery through the war years, the vast majority of ca
 
 ```
 
-!['Landings of by the Northern and Southern winter and summer fleets off the U.S. west coast.  \label{fig:Exec_catch1}](`r Catch.file`)
+![Landings of by the Northern and Southern winter and summer fleets off the U.S. west coast. The Winter fleets are defined as catches from November - February, 
+  Summer fleets from March - October, with the year starting in November (e.g., catches in November and December were added to the catches occuring in January and February in the    subsequent year).  \label{fig:Exec_catch1}](`r Catch.file`)
 
 \FloatBarrier
 
@@ -179,6 +180,8 @@ There are a number of major uncertainties regarding model parameters that have b
 
 \begin{enumerate}
 
+\item The stocks rapid increase in biomass since 2010 was driven by reduced catches and three strong year-classes, 2006-2008, entering the population.  In recent years, strong recruitments in a single year have been observed leading to sharp increases in biomass in other West Coast groundfish stocks. However, the observation of three subsequent strong recruitments has not been commonly observed in other stocks and the specific mechanisms that led to these three strong-year classess are currently unknown. 
+
 \item The value of natural mortality by sex.	Natural mortality by sex and steepness are uncertain for `r spp`.  Currently, both natural mortality and steepness are estimated within the model and are negatively correlated.  This provides information regarding these parameters combined values, but there is large uncertainty regarding the value of each parameter individually.
 
 \item New fecundity data for `r spp` supports a fecundity relationship that differs from the current assumption (fecundity equals body weights) in this update assessment. A sensitivity to the new data results in a less optomistic estimate of relative spawning biomass, declining to 35% from the base model 39%, when the new coast-wide fecundity relationship was included in the model. The new data supports differences in fecundity estimated between `r spp` observed in the north and south off the U.S. west coast.  However, some of the contrast in estimates between the northern and southern fish may be due to sample sizes differences. The next full assessment for `r spp` will want to explore methods of how best to include the new fedundity data. 
@@ -189,13 +192,13 @@ There are a number of major uncertainties regarding model parameters that have b
 
 
 ##Decision Table{-}    
-The forecast of stock abundance and yield was developed using the base model. The total catches in 2019 and 2020 are set equal to the ACL each year at `r paste(prettyNum(mod1$derived_quants["ForeCatch_2019", 2], big.mark=",", digits = 1),sep=' ')` mt and `r paste(prettyNum(mod1$derived_quants["ForeCatch_2020", 2], big.mark=",", digits = 1),sep=' ')` mt, respectively. The exploitation rate for 2021 and beyond is based upon an SPR of 30% and the 25:5 harvest control rule. The average exploitation rates, across recent years, by fleet as provided by the GMT were used to distribute catches during the forecast period. 
+The forecast of stock abundance and yield was developed using the base model. The total catches in 2019 and 2020 are set equal to the ACL (e.g., for petrale sole the ACL equals the ABC) each year at `r paste(prettyNum(mod1$derived_quants["ForeCatch_2019", 2], big.mark=",", digits = 1),sep=' ')` mt and `r paste(prettyNum(mod1$derived_quants["ForeCatch_2020", 2], big.mark=",", digits = 1),sep=' ')` mt, respectively. The exploitation rate for 2021 and beyond is based upon an SPR of 30% and the 25:5 harvest control rule. The average exploitation rates, across recent years, by fleet as provided by the GMT were used to distribute catches during the forecast period. 
 
 The catches during the forecasted period are projected from the base model, assuming a P* value of 0.45, start at `r paste(prettyNum(mod1$derived_quants["ForeCatch_2021", 2], big.mark=",", digits = 1),sep=' ')` mt in 2021 and decline to `r paste(prettyNum(mod1$derived_quants["ForeCatch_2030", 2], big.mark=",", digits = 1),sep=' ')` mt in 2030 as the stock declines towards the target spawning biomass (Table \ref{tab:OFL_projection}).  The projections assume full ABC removals.
 
-Uncertainty in the forecasts is based upon the uncertainty around the `r LastYR` spawning biomass, $\sigma$ = `r round(mod1$Pstar_sigma,2)`. The low and high values for female natural mortality, $M$, were selected to result in a spawning biomass in `r LastYR` that was equal to the 12.5 and 87.5% quantiles of the normal distribution given the maximum likelihood estimate and the asymptotic uncertainty. The female natural mortality values the corresponded with the lower and upper quantiles were 0.105 yr^-1^ and 0.205 yr^-1^. 
+The 2013 assessment and the 2015 update assessment set the axis-of-uncertainty in the decision tables around the uncertainty about female natural mortality.  This update assessment also explores the uncertainty in female natural mortality in the decision table.  Uncertainty in the forecasts is based upon the uncertainty around the `r LastYR` spawning biomass, $\sigma$ = `r round(mod1$Pstar_sigma,2)`. The low and high values for female natural mortality, $M$, were selected to result in a spawning biomass in `r LastYR` that was equal to the 12.5 and 87.5% quantiles of the normal distribution given the maximum likelihood estimate and the asymptotic uncertainty. The female natural mortality values that corresponded with the lower and upper quantiles were 0.105 yr^-1^ and 0.205 yr^-1^. 
 
-There alternative catch streams were created for the decision table. The first option, ABC values were estimated using a category 1 $\sigma_y$ starting at 0.50 and increasing annually combined with a P$^*$ value of 0.45. The second option, uses the same category $\sigma_y$ values but applies a P$^*$ of 0.40. Both of the first two options assume full attainment of the catch values. The final option, employees a fixed catch approach where catches slowly step down during the 10-year projection period. 
+Three alternative catch streams were created for the decision table. The first option uses ABC values based on a category 1 $\sigma_y$ starting at 0.50 and increasing annually combined with a P$^*$ value of 0.45. The second option uses the same category $\sigma_y$ values but applies a P$^*$ of 0.40. Both of the first two options assume full attainment of the catch values. The final option, employees a fixed catch approach where catches slowly step down during the 10-year projection period. 
 
 Across the low and high states of nature and across alternative future harvest scenarios the relative spawning biomass (depletion) ranges between 0.193 - 0.384 by the end of the 10-year projection period (Table \ref{tab:Decision_table_mod1_es}).
 
@@ -218,6 +221,9 @@ Across the low and high states of nature and across alternative future harvest s
 
 \FloatBarrier
 
+##Scientific Uncertainty{-}
+The estimated uncertainty in the base model around the `r LastYR` spawning biomass is $\sigma$ = `r round(mod1$Pstar_sigma,2)` compared to the uncertainty in the base model around the `r LastYR` OFL of $\sigma$ = `r round(mod1$OFL_sigma,2)`.
+
 ##Research and Data Needs{-} 
 
 Progress on a number of research topics and data issues would substantially improve the ability of this assessment to reliably and precisely model `r spp` population dynamics in the future:
@@ -233,6 +239,8 @@ Progress on a number of research topics and data issues would substantially impr
 \item Studies on stock structure and movement of `r spp`, particularly with regard to the winter-summer spawning migration of `r spp` and the likely trans-boundary movement of `r spp` between U.S. and Canadian waters seasonally.
 
 \item The extent of spatial variability on productivity processes such as growth, recruitment, and maturity is currently unknown and would benefit from further research.
+
+\item The analytical solution for catchability (i.e., observed / predicted biomass) for the `r nwfsc` is well above 1.0 in the base model.  This was also observed in the 2013 full and the 2015 update assessments.  This is not currently well understood and future explorations would be useful to understand the catchability of `r spp` off the West Coast.
 
 \end{enumerate}
 

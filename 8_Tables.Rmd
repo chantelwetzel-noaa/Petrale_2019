@@ -92,7 +92,7 @@ print(Catch_AllYrs,
 
   # Print management performance table - will have to edit the text file and 
   mngmnt.table2 = xtable(mngmnt, 
-                      caption=c('Recent trend in estimated total catch relative to management guidelines. The estimated total catch includes the total landings plus the model estimated discard mortality based upon discard rate data.'), 
+                      caption=c('Recent trend in estimated total catch relative to management guidelines. The estimated total catch includes the total landings plus the model estimated discard mortality based upon discard rate data. The catch values shown here may have minimal differences from the West Coast Groundfish Total Mortality Estimates.'), 
                       label='tab:mnmgt_perform_tables')
     
   # Add alignment
@@ -243,11 +243,11 @@ Fish_Length = Fish_Length[,c("Year", "Tows", "All_Fish", "Sample_Size")]
 colnames(Fish_Length) = c('Year',
                           'Tows',
                           'Fish',
-                          'Sample Size')
+                          'Input Sample Size')
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of the number of NWFSC West Coast Groundfish Bottom Trawl Survey length samples used in the stock assessment.'),
+                           caption = c('Summary of the number tows, fish sampled, and the calculated input sample size for the length data from the NWFSC West Coast Groundfish Bottom Trawl Survey used in the stock assessment.'),
                            label = 'tab:NWcombo_Lengths',
                            digits = 0)    
 # Add alignment  
@@ -272,11 +272,11 @@ Fish_Length = Fish_Length[,c("Year", "Tows", "All_Fish", "Sample_Size")]
 colnames(Fish_Length) = c('Year',
                           'Tows',
                           'Fish',
-                          'Sample Size')
+                          'InputSample Size')
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of the number of NWFSC West Coast Groundfish Bottom Trawl Survey age samples used in the stock assessment.'),
+                           caption = c('Summary of the number tows, fish sampled, and the calculated input sample size for the age data from the NWFSC West Coast Groundfish Bottom Trawl Survey used in the stock assessment.'),
                            label = 'tab:NWcombo_Ages',
                            digits = 0)    
 # Add alignment  
@@ -312,11 +312,11 @@ Fish_Length = Fish_Length[,c("Year", "Tows", "All_Fish", "Sample_Size")]
 colnames(Fish_Length) = c('Year',
                           'Tows',
                           'Fish',
-                          'Sample Size')
+                          'Input Sample Size')
 
 # Index of abundance summary, create table   
 Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of the number of AFSC/NWFSC West Coast Triennial Shelf Survey length samples used in the stock assessment.'),
+                           caption = c('Summary of the number tows, fish sampled, and the calculated input sample size for the length data from the AFSC/NWFSC West Coast Triennial Shelf Survey used in the stock assessment.'),
                            label = 'tab:Triennial_Lengths',
                            digits = 0)    
 # Add alignment  
@@ -1248,6 +1248,48 @@ print(Sens_model1.table,
 
  \FloatBarrier 
 
+<!-- ***********MODEL 1 SENSITIVITY TABLE(S)******************************* --> 
+\begin{landscape}
+```{r, results = 'asis'}
+
+# Read in/organize sensitivity file, change column names, caption
+Sens_model1 = read.csv('./txt_files/bridge_values.csv')
+
+ colnames(Sens_model1) = rep("", ncol(Sens_model1))
+  
+ hlines = c(-1, 0, nrow(Sens_model1))
+ addtorow = list()
+ addtorow$pos = list(0,0)
+ addtorow$command = c("           &       & Conversion + &         &           &           &           &       &      \\\\\n",
+                      "Parameters & 2015  & Priors       & + Catch & + Survey  & + Discard &  + Length & + Age & 2019 \\\\\n" )
+
+# Create sensitivities table
+Sens_model1.table = xtable(Sens_model1, 
+                           caption = c('Data analysis runs where incremental changes were made to the 2015 model.'),
+                           label = 'tab:bridge_table',
+                           digits = 3)
+
+
+align(Sens_model1.table) = c('llrrrrrrrr')
+
+
+# Print model 1 sensitivity table
+print(Sens_model1.table, 
+      include.rownames = FALSE,             
+      caption.placement = 'top',
+      tabular.environment = 'longtable',
+      floating = FALSE,
+      add.to.row = addtorow,
+      size="\\fontsize{9pt}{10pt}\\selectfont")
+      #floating.environment = 'sidewaystable',
+      #scalebox = .9)
+
+```
+\end{landscape}
+
+\newpage
+
+ \FloatBarrier 
 
 
 <!-- ***********MODEL 1 HARVEST PROJECTIONS TABLE************************** --> 
@@ -1266,8 +1308,12 @@ OFL$Year=seq(Project_firstyr,Project_lastyr, 1)
 OFL$Year = as.factor(OFL$Year)
 
 OFL = OFL[,c(3, 1, 2)]
-OFL[,2] =  print.numeric(OFL$OFL_mod1, digits = 0)
-OFL[,3] =  print.numeric(OFL$ACL_mod1, digits = 0)
+OFL[,2] =  print.numeric(OFL$OFL_mod1, digits = 1)
+OFL[,3] =  print.numeric(OFL$ACL_mod1, digits = 1)
+
+sigma =  c(0.5, 0.5 * (1+(1:12-1)*0.075))
+buffer = round(exp(qnorm(0.45, 0, sigma)),3)
+buffer[1:2] = 1
 
 # Extract biomass/output  
 SpawningB = mod$derived_quants[grep('SSB', mod$derived_quants$Label), ]
@@ -1282,23 +1328,25 @@ Bratio.fore = Bratio[Bratio$Label >= paste('Bratio_', Project_firstyr, sep='')
                        & Bratio$Label <= paste('Bratio_', Project_lastyr,  sep=''), "Value"]
 Bratio.fore = print(Bratio.fore, digits = 3)
 
-Fore_Table = cbind(OFL, Spawn.fore, Bratio.fore)
-colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Biomass") 
+Fore_Table = cbind(seq(Project_firstyr,Project_lastyr, 1), round(buffer,3), OFL[,2], OFL[,3], OFL[,3], Spawn.fore, Bratio.fore)
+colnames(Fore_Table) = c('Year', 'Buffer','OFL', "ABC", "Removals", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Biomass") 
 write.csv(Fore_Table, file = './txt_files/OFL_forecast.csv', row.names = FALSE)
 
 # Create the table
-OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFL (mt) and ABC (mt) and the estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
-ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates.'),
-                  label = 'tab:OFL_projection_back',
-                  digits = 0)
+OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFLs (mt), ABCs (mt), estimated spawning biomass and relative spawning biomass. The 2019 and 2020 
+ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates. The ABC and buffer values for 2021-2030 were calculated using a P* value of 0.45.'),
+                  label = 'tab:OFL_projection',
+                  digits = c(0, 0, 3, 1, 1, 1, 0, 3))
       
 # Add alignment
 align(OFL.table) = c('l',
                         '>{\\raggedleft}p{0.5in}',
-                        '>{\\centering}p{1.1in}',
-                        '>{\\centering}p{1.1in}', 
-                        '>{\\centering}p{1.6in}',
-                        '>{\\centering}p{1.1in}')    
+                        '>{\\centering}p{0.8in}',
+                        '>{\\centering}p{0.8in}',
+                        '>{\\centering}p{0.8in}',
+                        '>{\\centering}p{0.8in}',
+                        '>{\\centering}p{0.9in}',
+                        '>{\\centering}p{0.9in}')      
 
 # Print model 1 forecast table
 print(OFL.table,

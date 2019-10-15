@@ -119,8 +119,9 @@ colnames(Exec_catch_summary) = c('Year',
     
 # Make executive summary catch xtable
 Exec_catch.table = xtable(Exec_catch_summary, 
-                          caption = c(paste0('Landings (mt) and total catch (mt) for the past 10 years for ',spp,' by source. 
-                                             Total catch reflects the landings plus the model estimated discards based on discard rate data.')), 
+                          caption = c(paste0('Landings (mt) and total catch (mt) for the past 10 years for ',spp,' by source. The Winter fleets are defined as catches from November - February, 
+                                             Summer fleets from March - October, with the year starting in November (e.g., catches in November and December were added to the catches occuring in January and February in the subsequent year).                                                
+                                             Total catch reflects the landings plus the model estimated discards based on discard rate data with all discarded fish assumed dead.')), 
                           label='tab:Exec_catch',
                           digits = 0)
     
@@ -508,10 +509,9 @@ colnames(mngmnt) = c('Year',
 
 # Create the management performance table
 mngmnt.table = xtable(mngmnt, 
-                      caption=c('Recent trend in total catch and  
-                              landings (mt) relative to the management guidelines. 
-                              Estimated total catch reflect the landings 
-                              plus the model estimated discards based on discard rate data.'), 
+                      caption=c('Recent trend in total catch and landings (mt) relative to the management guidelines. 
+                              Estimated total catch reflect the landings plus the model estimated discards based on discard rate data.
+                              The catch values shown here may have minimal differences from the West Coast Groundfish Total Mortality Estimates.'), 
                       label='tab:mnmgt_perform')
 # Add alignment
 align(mngmnt.table) = c('l',
@@ -544,6 +544,10 @@ OFL = OFL[,c(3, 1, 2)]
 OFL[,2] =  print.numeric(OFL$OFL_mod1, digits = 1)
 OFL[,3] =  print.numeric(OFL$ACL_mod1, digits = 1)
 
+sigma =  c(0.5, 0.5 * (1+(1:12-1)*0.075))
+buffer = round(exp(qnorm(0.45, 0, sigma)),3)
+buffer[1:2] = 1
+
 # Extract biomass/output  
 SpawningB = mod$derived_quants[grep('SSB', mod$derived_quants$Label), ]
 SpawningB = SpawningB[c(-1, -2), ]
@@ -557,23 +561,25 @@ Bratio.fore = Bratio[Bratio$Label >= paste('Bratio_', Project_firstyr, sep='')
                        & Bratio$Label <= paste('Bratio_', Project_lastyr,  sep=''), "Value"]
 Bratio.fore = print(Bratio.fore, digits = 3)
 
-Fore_Table = cbind(OFL, Spawn.fore, Bratio.fore)
-colnames(Fore_Table) = c('Year','OFL', "ABC", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Biomass") 
+Fore_Table = cbind(seq(Project_firstyr,Project_lastyr, 1), round(buffer,3), OFL[,2], OFL[,3], OFL[,3], Spawn.fore, Bratio.fore)
+colnames(Fore_Table) = c('Year', 'Buffer','OFL', "ABC", "Removals", paste0('Spawning Biomass (',fecund_unit,')'), "Relative Biomass") 
 write.csv(Fore_Table, file = './txt_files/OFL_forecast.csv', row.names = FALSE)
 
 # Create the table
-OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFLs (mt), ABCs (mt), estimated spawning biomass and relative spawning biomass based on ABC removals.  The 2019 and 2020 
-ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates.'),
+OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFLs (mt), ABCs (mt), estimated spawning biomass and relative spawning biomass. The 2019 and 2020 
+ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates. The ABC and buffer values for 2021-2030 were calculated using a P* value of 0.45.'),
                   label = 'tab:OFL_projection',
-                  digits = 0)
+                  digits = c(0, 0, 3, 1, 1, 1, 0, 3))
       
 # Add alignment
 align(OFL.table) = c('l',
                         '>{\\raggedleft}p{0.5in}',
-                        '>{\\centering}p{1.1in}',
-                        '>{\\centering}p{1.1in}', 
-                        '>{\\centering}p{1.6in}',
-                        '>{\\centering}p{1.1in}')    
+                        '>{\\centering}p{0.8in}',
+                        '>{\\centering}p{0.8in}',
+                        '>{\\centering}p{0.8in}',
+                        '>{\\centering}p{0.8in}',
+                        '>{\\centering}p{0.9in}',
+                        '>{\\centering}p{0.9in}')    
 
 #=============================================================================
 # Executive Table h: Decision Table
