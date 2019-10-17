@@ -151,18 +151,6 @@
 
 \FloatBarrier
 
-<!-- ****************************************************************************** --> 
-<!-- *****************Commercial CPUE FIGURES************************************** --> 
-<!-- ****************************************************************************** -->
-
-![The Northern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:north_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (N).png)
-
-\FloatBarrier
-
-
-![The Southern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:south_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (S).png)
-
-\FloatBarrier
 
 <!-- ****************************************************************************** --> 
 <!-- ****************    Commercial Bio Samples FIGURES  ************************** --> 
@@ -184,26 +172,11 @@
 
 \FloatBarrier
 
-```{r, results='asis'}
 
-#Discard - Winter North
-#find = grep("comp_lendat_bubflt1mkt1", CompDat_mod1$basename)
-#cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_wn_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
 
-#Discard - Summer North
-#find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
-#cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_sn_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
-
-#Discard - Winter South
-#find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
-#cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_ws_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
-
-#Discard - Summer North
-#find = grep("comp_lendat_bubflt2mkt1", CompDat_mod1$basename)
-#cat('\n![', CompDat_mod1[find,caption_col], ' \\label{fig:discard_ss_len}](r4ss/plots_mod1/', CompDat_mod1[find, path_col], ')\n', sep='')
-```
-
-\FloatBarrier
+<!-- ****************************************************************************** --> 
+<!-- *****************Commercial LENGTH & AGE DATA FIGURES************************* --> 
+<!-- ****************************************************************************** -->
 
 ![Northern, winter and summer fleets, retained and discarded length frequency distributions for `r spp`. \label{fig:north_lengths}](r4ss/plots_mod1/comp_lendat__page1_multi-fleet_comparison.png)
 
@@ -216,6 +189,21 @@
 ![Commercial fishery age frequency distributions for `r spp`. \label{fig:comm_ages}](r4ss/plots_mod1/comp_agedat__multi-fleet_comparison.png)
 
 \FloatBarrier
+
+<!-- ****************************************************************************** --> 
+<!-- *****************Commercial CPUE FIGURES************************************** --> 
+<!-- ****************************************************************************** -->
+
+![The Northern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:north_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (N).png)
+
+\FloatBarrier
+
+
+![The Southern Winter fishery catch-per-unit-effort based on logbook data for `r spp`. \label{fig:south_cpue}](r4ss/plots_mod1/index1_cpuedata_Winter (S).png)
+
+\FloatBarrier
+
+
 
 
 <!-- ====================================================================== -->
@@ -278,15 +266,6 @@
 <!-- ******************                           ************************* -->
 <!-- ====================================================================== -->
 
-
-
-<!-- ********************************************************************** -->
-<!-- *****************    Steepnes      FIGURES     *********************** --> 
-<!-- ********************************************************************** -->
-![Prior distribution for steepness `r spp`. \label{fig:h_prior}](Figures/h_prior.png)
-
-\FloatBarrier
-
 <!-- ********************************************************************** -->
 <!-- *********************Model Bridging Figure**************************** --> 
 <!-- ********************************************************************** -->
@@ -295,6 +274,13 @@
 ![Comparison of model bridging estimates from Stock Synthesis version 3.30.13 and 3.24U for `r spp` for the 2015 assessment. \label{fig:bridge}](Figures/compare1_spawnbio.png)
 
 \FloatBarrier 
+
+<!-- ********************************************************************** -->
+<!-- *****************    Steepnes      FIGURES     *********************** --> 
+<!-- ********************************************************************** -->
+![Prior distribution for steepness `r spp`. \label{fig:h_prior}](Figures/h_prior.png)
+
+\FloatBarrier
 
 
 <!-- ====================================================================== -->
@@ -624,6 +610,20 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
 
   
   
+<!-- ********************************************************************** -->
+<!-- *********************REFERENCE POINTS FIGURES************************* --> 
+<!-- ********************************************************************** -->
+  
+<!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
+
+![Estimated relative spawning potential ratio 1-SPR for the base model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR30% harvest rate. The last year in the time-series is `r Dat_end_mod1`. \label{fig:SPR_all_fig}](r4ss/plots_mod1/SPR2_minusSPRseries.png)
+  
+  
+\FloatBarrier
+
+![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness estimated at `r print(mod1$parameters[mod1$parameters$Label == "SR_BH_steep","Value"],2)`. \label{fig:yield}](r4ss/plots_mod1/yield2_yield_curve_with_refpoints.png)
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ****************Uncertainty and Sensitivity FIGURES******************* -->
@@ -726,21 +726,6 @@ cat('\n![', AALComp_mod1[plot.vec[a],caption_col], ' \\label{fig:nwfsc_combo_pea
 \FloatBarrier  
 
 
-  
-<!-- ********************************************************************** -->
-<!-- *********************REFERENCE POINTS FIGURES************************* --> 
-<!-- ********************************************************************** -->
-  
-<!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
-
-![Estimated relative spawning potential ratio 1-SPR for the base model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR30% harvest rate. The last year in the time-series is `r Dat_end_mod1`. \label{fig:SPR_all_fig}](r4ss/plots_mod1/SPR2_minusSPRseries.png)
-  
-  
-\FloatBarrier
-
-![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness estimated at `r print(mod1$parameters[mod1$parameters$Label == "SR_BH_steep","Value"],2)`. \label{fig:yield}](r4ss/plots_mod1/yield2_yield_curve_with_refpoints.png)
-
-\FloatBarrier
   
   
 <!-- ********************************************************************** --> 

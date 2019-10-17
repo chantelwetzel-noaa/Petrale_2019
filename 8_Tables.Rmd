@@ -190,6 +190,40 @@ print(Index_summary.table,
 \FloatBarrier
 
 
+<!-- ********************************************************************** -->
+<!--  ************Fishery-independent biological sampling TABLES*********** -->
+<!-- ********************************************************************** -->
+
+
+<!-- *******************NWFSC Combo Survey********************************* -->
+```{r, results = 'asis'}
+Fish_Length = read.csv('./txt_files/nwfsc_combo_length_sample_size.csv')
+Fish_Length = Fish_Length[,c("Year", "Tows", "All_Fish", "Sample_Size")]
+colnames(Fish_Length) = c('Year',
+                          'Tows',
+                          'Fish',
+                          'Input Sample Size')
+
+# Index of abundance summary, create table   
+Fish_Length.table = xtable(Fish_Length, 
+                           caption = c('Summary of the number tows, fish sampled, and the calculated input sample size for the length data from the NWFSC West Coast Groundfish Bottom Trawl Survey used in the stock assessment.'),
+                           label = 'tab:NWcombo_Lengths',
+                           digits = 0)    
+# Add alignment  
+align(Fish_Length.table) = c('l',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{.75in}',
+                             '>{\\centering}p{1in}')  
+
+# Print commercial length sample numbers
+print(Fish_Length.table, 
+      include.rownames=FALSE, 
+      caption.placement='top',
+      sanitize.text.function = function(x){x})
+
+```
+
 ```{r, results = 'asis'}
 
 Strata = read.csv('./txt_files/nwfsc_strata.csv')
@@ -228,43 +262,6 @@ print(Strata.table,
 ```
 
 \FloatBarrier
-
-
-
-<!-- ********************************************************************** -->
-<!--  ************Fishery-independent biological sampling TABLES*********** -->
-<!-- ********************************************************************** -->
-
-
-<!-- *******************NWFSC Combo Survey********************************* -->
-```{r, results = 'asis'}
-Fish_Length = read.csv('./txt_files/nwfsc_combo_length_sample_size.csv')
-Fish_Length = Fish_Length[,c("Year", "Tows", "All_Fish", "Sample_Size")]
-colnames(Fish_Length) = c('Year',
-                          'Tows',
-                          'Fish',
-                          'Input Sample Size')
-
-# Index of abundance summary, create table   
-Fish_Length.table = xtable(Fish_Length, 
-                           caption = c('Summary of the number tows, fish sampled, and the calculated input sample size for the length data from the NWFSC West Coast Groundfish Bottom Trawl Survey used in the stock assessment.'),
-                           label = 'tab:NWcombo_Lengths',
-                           digits = 0)    
-# Add alignment  
-align(Fish_Length.table) = c('l',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{.75in}',
-                             '>{\\centering}p{1in}')  
-
-# Print commercial length sample numbers
-print(Fish_Length.table, 
-      include.rownames=FALSE, 
-      caption.placement='top',
-      sanitize.text.function = function(x){x})
-
-```
-
 
 ```{r, results = 'asis'}
 Fish_Length = read.csv('./txt_files/nwfsc_combo_age_sample_size.csv')
@@ -854,33 +851,6 @@ print(mod_params.table,
 
 \FloatBarrier
 
- <!-- ***********JITTER TABLE*********************************************** --> 
-```{r, results = 'asis'}
-# Replace values in file and read in - values for all models in 1 table  
-jitter = read.csv('./txt_files/JitterTable.csv')  
-colnames(jitter) = c("Status", "Jitter = 0.05", "Jitter = 0.10")
-
-# Create model 1 jitter table
-jitter.table = xtable(jitter, 
-                      caption = c('Results from 50 jitters from the base model.'),
-                      label = 'tab:jitter')
-
-align(jitter.table) = c('l',
-                        '>{\\raggedright}p{2in}', 
-                        '>{\\centering}p{1in}',
-                        '>{\\centering}p{1in}')
-
-
-# Print jitter table (all models)    
-print(jitter.table, 
-      include.rownames = FALSE, 
-      caption.placement = 'top')
-```
-<!-- ---------------------------------------------------------------------- -->
-
-\FloatBarrier  
-
-
 
 <!-- ***********Likelihood TABLE*********************************************** -->
 ```{r, results='asis'}
@@ -910,7 +880,7 @@ print(Like.table,
 
 \FloatBarrier
 
-<!-- **********Derived Quantities Table******************************* --> 
+<!-- **********Reference Points Table******************************* --> 
 ```{r, results= 'asis'}
 
 
@@ -1015,6 +985,7 @@ print(Like.table,
 
 \clearpage
 
+
 <!-- *********************TIME SERIES TABLE************************* --> 
 ```{r, results='asis'}
 ind = mod1$timeseries$Yr >= Dat_start_mod1 & mod1$timeseries$Yr <= LastYR
@@ -1110,6 +1081,33 @@ print(Timeseries.table,
   
 \FloatBarrier
 
+
+ <!-- ***********JITTER TABLE*********************************************** --> 
+```{r, results = 'asis'}
+# Replace values in file and read in - values for all models in 1 table  
+jitter = read.csv('./txt_files/JitterTable.csv')  
+colnames(jitter) = c("Status", "Jitter = 0.05", "Jitter = 0.10")
+
+# Create model 1 jitter table
+jitter.table = xtable(jitter, 
+                      caption = c('Results from 50 jitters from the base model.'),
+                      label = 'tab:jitter')
+
+align(jitter.table) = c('l',
+                        '>{\\raggedright}p{2in}', 
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}')
+
+
+# Print jitter table (all models)    
+print(jitter.table, 
+      include.rownames = FALSE, 
+      caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\FloatBarrier
+
 <!-- ***********Francis Weights Table******************************* --> 
 ```{r, results = 'asis'}
 
@@ -1142,6 +1140,7 @@ print(Harmonic.table,
 ```
 <!-- ---------------------------------------------------------------------- -->
  \FloatBarrier 
+ 
  
  <!-- ***********Dirichlet Weights Table******************************* --> 
 ```{r, results = 'asis'}
@@ -1248,7 +1247,7 @@ print(Sens_model1.table,
 
  \FloatBarrier 
 
-<!-- ***********MODEL 1 SENSITIVITY TABLE(S)******************************* --> 
+<!-- ***********MODEL 1 DATA ANALYSIS RUNS******************************* --> 
 \begin{landscape}
 ```{r, results = 'asis'}
 
@@ -1280,7 +1279,7 @@ print(Sens_model1.table,
       tabular.environment = 'longtable',
       floating = FALSE,
       add.to.row = addtorow,
-      size="\\fontsize{9pt}{10pt}\\selectfont")
+      size="\\fontsize{11pt}{12pt}\\selectfont")
       #floating.environment = 'sidewaystable',
       #scalebox = .9)
 
@@ -1288,8 +1287,8 @@ print(Sens_model1.table,
 \end{landscape}
 
 \newpage
-
- \FloatBarrier 
+ 
+\FloatBarrier 
 
 
 <!-- ***********MODEL 1 HARVEST PROJECTIONS TABLE************************** --> 

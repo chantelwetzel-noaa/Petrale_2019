@@ -568,7 +568,7 @@ write.csv(Fore_Table, file = './txt_files/OFL_forecast.csv', row.names = FALSE)
 # Create the table
 OFL.table = xtable(Fore_Table, caption=c('Projections of potential OFLs (mt), ABCs (mt), estimated spawning biomass and relative spawning biomass. The 2019 and 2020 
 ABC and OFL values shown are based on current harvest specifications, rather than the updated model estimates. The ABC and buffer values for 2021-2030 were calculated using a P* value of 0.45.'),
-                  label = 'tab:OFL_projection',
+                  label = 'tab:OFL_projection_es',
                   digits = c(0, 0, 3, 1, 1, 1, 0, 3))
       
 # Add alignment

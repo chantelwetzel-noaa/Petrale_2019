@@ -1,7 +1,57 @@
 <!-- ****************************RESEARCH NEEDS**************************** -->
-#Progress on Research and Data Needs from the Last Assessment
+#Research and Data Needs 
 
-#Research Needs
+##Items Identified in the Last Assessment
+
+The 2013 full assessment of petrale sole included the following list of research and data needs:
+
+\begin{enumerate}
+
+\item In the past many assessments have derived historical catches independently. The states of California and Oregon have completed comprehensive historical catch reconstructions. At the time of this assessment, a comprehensive historical catch reconstruction is not available for Washington. Completion of a Washington catch reconstruction would provide the best possible estimated catch series that accounts for all the catch and better resolves historical catch uncertainty for flatfish as a group.
+
+\begin{enumerate}
+\item Progress: Washington state is currently working on a catch reconstruction for petrale sole that would be included in the next full assessment.  Additionally, the next full assessment should confirm that the California and Oregon catch reconstructions are accounting for the location of removals and where catches were landing in a consistent manner (e.g., fish caught in Oregon waters but landed in California and vice versa).
+\end{enumerate}
+
+\item Due to limited data, new studies on both the maturity and fecundity relationships for petrale sole would be beneficial.
+
+\begin{enumerate}
+\item Progress: A new analysis of fecundity in petrale sole off the West Coast has been conducted and were included in a sensitivity run in this update assessment.
+\end{enumerate}
+
+\item Increased collection of commercial fishery age data as well as re-aging any available historical samples from California would help reduce uncertainty. While some recent age data were made available from California, sample sizes could be increased and this data collection needs to continue into the future. Without good age data, the ability to estimate year-class strength and the extent of variation in recruitment is compromised.
+
+\begin{enumerate}
+\item Progress: This is an ongoing concern.  The amount of otoliths collected from California are less than the amount being collected in Oregon and Washington combined.  Additionally, this update assessment did not include age data from recent years (2015-2018) from California because there were aged in time for inclusion. 
+\end{enumerate}
+
+\item Where possible, historical otolith samples aged using a combination of surface and break-and-burn methods should be re-aged using the break-and-burn method. Early surface read otoliths should also be re-aged using the break and burn method. Historical otoliths aged with a standard method will allow the further evaluation of the potential impacts of consistent under aging using surface methods, changes in selectivity during early periods of time without any composition information, and potential changes in growth.
+
+\begin{enumerate}
+\item Progress: The re-evaluation of historical otolith samples had not been conducted to date.  Given the limited resources (e.g., people, time, and money) for otolith ageing, the will be challenges in carrying out a robust re-evaluation in the foreseeable future.
+\end{enumerate}
+
+\item The effect of the implementation of the IFQ (catch shares) program that began during 2011 on fleet behavior, including impacts on discards, fishery selectivity, and fishing locations would benefit from further study.
+
+\begin{enumerate}
+\item Progress: The behavior of the fishery post-IFQ has now better understood relative to the limited data that was available at the time of the last full assessment of petrale sole.
+\end{enumerate}
+
+\item Studies on stock structure and movement of petrale sole, particularly with regard to the winter summer spawning migration of petrale sole and the likely trans-boundary movement of petrale sole between U.S. and Canadian waters seasonally.
+
+\begin{enumerate}
+\item Progress: Additional analysis is still needed to better understand stock structure and movement of petrale sole.
+\end{enumerate}
+
+\item The extent of spatial variability on productivity processes such as growth, recruitment, and maturity is currently unknown and would benefit from further research.
+
+\begin{enumerate}
+\item Progress: Additional analysis is still needed to better understand growth, recruitment, and maturity of petrale sole along the West Coast.
+\end{enumerate}
+
+\end{enumerate}
+
+##Current Research and Data Needs Identified
 There are many areas of research that could be improved to benefit the understanding and assessment of `r spp`. Below, are issues that are considered of importance.
 
 \begin{enumerate}

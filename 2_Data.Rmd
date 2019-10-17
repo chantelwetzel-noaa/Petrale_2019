@@ -93,15 +93,6 @@ Discard mean body weight data were obtained from the WCGOP data and used in this
 
 Discard length composition data available from the Pikitch study and  WCGOP data were used in this update assessment to estimate retention curves for each of the four fishing fleets.  The discard length data from each fleet are shown in Figures \ref{fig:north_lengths} and \ref{fig:south_lengths}.
 
-###Foreign Landings 
-The impact of landings of `r spp` by foreign fishing fleets prior to the institution of the exclusive economic zone (EEZ) of the U.S. West Coast is currently not quantified and remains an area for research.
-
-###Historical Commercial Catch-Per-Unit Effort/Logbooks
-
-Commercial logbook data for `r spp` was first used to construct CPUE indices of abundance in the 1999 assessment for Oregon fleets from 1987-1997 [@sampson_assessment_1999]. Since the first inclusion in 1999, the commercial CPUE indices were extended and or updated based on management changes and new statistical methods through 2009. For additional information on the use of CPUE indices in the assessment of `r spp` please see the 2013 assessment [@haltuch_status_2013].
-
-CPUE calculations for the Winter fishery on aggregations of `r spp` described in the 2013 assessment were retained for this assessment [@haltuch_status_2013] (Figures \ref{fig:north_cpue} and \ref{fig:south_cpue}). Two CPUE indices from 1987-2009 with catchability modeled as a power function are used in this update assessment, one each for the north and south winter fisheries. These data have not been re-evaluated for this update assessment.
-
 ###Fishery Length and Age Data
 
 The PacFIN BDS database contains data from Oregon Department of Fish and Wildlife (ODFW; 1966-present) and Washington Department of Fish and Wildlife (WDFW; 1955- present), but only 1986-present data from California Department of Fish and Game (CDFG). The CDFG data set for the years 1948-1992 was extracted and provided from CalCOM by Brenda Erwin (CDFG) in 2011. 
@@ -113,6 +104,15 @@ Commercial length-frequency distributions based on the fishing year were develop
 Length and age data collected from commercial landings for each fleet are summarized by the number of trips and fish sampled by year (Tables \ref{tab:Fishery_Lengths} and \ref{tab:Fishery_Ages}). Figures \ref{fig:north_lengths}, \ref{fig:south_lengths}, and \ref{fig:comm_ages} show plots of the commercial length and age composition data across time for each fishery fleet.
 
 The calculation for input sample sizes for the commercial length and age data was done in the same manner as the 2013 assessment which set the input sample size for commercial lengths and ages equal to the number of trips by year for each fleet.
+
+###Historical Commercial Catch-Per-Unit Effort/Logbooks
+
+Commercial logbook data for `r spp` was first used to construct CPUE indices of abundance in the 1999 assessment for Oregon fleets from 1987-1997 [@sampson_assessment_1999]. Since the first inclusion in 1999, the commercial CPUE indices were extended and or updated based on management changes and new statistical methods through 2009. For additional information on the use of CPUE indices in the assessment of `r spp` please see the 2013 assessment [@haltuch_status_2013].
+
+CPUE calculations for the Winter fishery on aggregations of `r spp` described in the 2013 assessment were retained for this assessment [@haltuch_status_2013] (Figures \ref{fig:north_cpue} and \ref{fig:south_cpue}). Two CPUE indices from 1987-2009 with catchability modeled as a power function are used in this update assessment, one each for the north and south winter fisheries. These data have not been re-evaluated for this update assessment.
+
+###Foreign Landings 
+The impact of landings of `r spp` by foreign fishing fleets prior to the institution of the exclusive economic zone (EEZ) of the U.S. West Coast is currently not quantified and remains an area for research.
 
 
 <!--************************************************************************-->
@@ -152,7 +152,7 @@ Past assessments of `r spp` have assumed a 50% sex ratio at birth between female
 
 ###Length-Weight Relationship
 
-The length-weight relationship for `r spp` was estimated outside the model using all biological data available from the `r nwfsc` data consistent with method applied by the 2013 assessment. The female weight-at-length in grams was estimated at `r format(mod1$MGparmAdj$Wtlen_1_Fem[1], scientific = TRUE)`$L$^`r round(mod1$MGparmAdj$Wtlen_2_Fem[1],2)`^ and males at `r format(mod1$MGparmAdj$Wtlen_1_Mal[1], scientific = TRUE)`$L$^`r round(mod1$MGparmAdj$Wtlen_2_Mal[1], 2)`^ where $L$ is length in cm (Figures \ref{fig:wt_length}).  The length-weight relationship estimates from the `r nwfsc` data were consistent with the biological observations available from the fishery data. 
+The length-weight relationship for `r spp` was estimated outside the model using all biological data available from the `r nwfsc` data consistent with method applied by the 2013 assessment. The female weight-at-length in grams was estimated at `r format(mod1$MGparmAdj$Wtlen_1_Fem[1], scientific = TRUE)`$L$^`r round(mod1$MGparmAdj$Wtlen_2_Fem[1],2)`^ and males at `r format(mod1$MGparmAdj$Wtlen_1_Mal[1], scientific = TRUE)`$L$^`r round(mod1$MGparmAdj$Wtlen_2_Mal[1], 2)`^ where $L$ is length in cm (Figure \ref{fig:wt_length}).  The length-weight relationship estimates from the `r nwfsc` data were consistent with the biological observations available from the fishery data. 
 
 
 ###Growth (Length-at-Age)
