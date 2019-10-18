@@ -120,7 +120,7 @@ colnames(Exec_catch_summary) = c('Year',
 # Make executive summary catch xtable
 Exec_catch.table = xtable(Exec_catch_summary, 
                           caption = c(paste0('Landings (mt) and total catch (mt) for the past 10 years for ',spp,' by source. The Winter fleets are defined as catches from November - February, 
-                                             Summer fleets from March - October, with the year starting in November (e.g., catches in November and December were added to the catches occuring in January and February in the subsequent year).                                                
+                                             Summer fleets from March - October, with the year starting in November (e.g., catches in November and December 2008 were added to the catches occuring in January and February 2009).                                                
                                              Total catch reflects the landings plus the model estimated discards based on discard rate data with all discarded fish assumed dead.')), 
                           label='tab:Exec_catch',
                           digits = 0)

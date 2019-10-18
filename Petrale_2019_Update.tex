@@ -184,7 +184,7 @@ October 2019
 
 This report may be cited as:\\
 
-Wetzel, C.R. 2019. Status of petrale sole (\textit{Eopsetta jordani}) along the U.S. west coast in 2019. Pacific Fishery Management Council, 7700 Ambassador Place NE, Suite 200, Portland, OR 97220. 
+Wetzel, C.R. 2019. Status of petrale sole (\textit{Eopsetta jordani}) along the U.S. west coast in 2019. Pacific Fishery Management Council, 7700 Ambassador Place NE, Suite 101, Portland, OR 97220. 
 \end{center}
 
 \vspace{3cm}
@@ -259,7 +259,7 @@ discarding has historically been low.
 \begin{table}[ht]
 \centering
 \caption{Landings (mt) and total catch (mt) for the past 10 years for petrale sole by source. The Winter fleets are defined as catches from November - February, 
-                                             Summer fleets from March - October, with the year starting in November (e.g., catches in November and December were added to the catches occuring in January and February in the subsequent year).                                                
+                                             Summer fleets from March - October, with the year starting in November (e.g., catches in November and December 2008 were added to the catches occuring in January and February 2009).                                                
                                              Total catch reflects the landings plus the model estimated discards based on discard rate data with all discarded fish assumed dead.} 
 \label{tab:Exec_catch}
 \begin{tabular}{l>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}>{\centering}p{0.7in}}
@@ -288,9 +288,9 @@ Year & Winter (N) & Summer (N) & Winter (S) & Summer (S) & Total Landings & Tota
 \caption{Landings of by the Northern and Southern winter and summer
 fleets off the U.S. west coast. The Winter fleets are defined as catches
 from November - February, Summer fleets from March - October, with the
-year starting in November (e.g., catches in November and December were
-added to the catches occurring in January and February in the subsequent
-year). \label{fig:Exec_catch1}}
+year starting in November (e.g., catches in November and December 2008
+were added to the catches occuring in January and February 2009).
+\label{fig:Exec_catch1}}
 \end{figure}
 
 \FloatBarrier
@@ -1225,8 +1225,8 @@ A description of each data source is provided below.
 
 \subsection{Fishery-Independent Data}\label{fishery-independent-data}
 
-\subsubsection{NWFSC West Coast Groundfish Bottom Trawl
-Survey}\label{nwfsc-west-coast-groundfish-bottom-trawl-survey}
+\hypertarget{nwfsc_survey}{\subsubsection{NWFSC West Coast Groundfish
+Bottom Trawl Survey}\label{nwfsc_survey}}
 
 Three sources of information are produced by this survey: an index of
 relative abundance, length-frequency distributions, and age-frequency
@@ -1391,11 +1391,11 @@ The data from the petrale sole was analyzed using a spatio-temporal
 delta model implemented as an R package, VAST (Thorson and Barnett
 \protect\hyperlink{ref-thorson_comparing_2017}{2017}, Thorson
 \protect\hyperlink{ref-thorson_guidance_2019}{2019}), described above in
-Section \ref{nwfsc-west-coast-groundfish-bottom-trawl-survey}. Spatial
-variation was approximated using 250 knots, and the model used the
-bias-correction algorithm (Thorson and Kristensen
-\protect\hyperlink{ref-thorson_implementing_2016}{2016}) in Template
-Model Builder (Kristensen et al.
+\protect\hyperlink{nwfsc_survey}{NWFSC West Coast Groundfish Bottom
+Trawl Survey Section}. Spatial variation was approximated using 250
+knots, and the model used the bias-correction algorithm (Thorson and
+Kristensen \protect\hyperlink{ref-thorson_implementing_2016}{2016}) in
+Template Model Builder (Kristensen et al.
 \protect\hyperlink{ref-kristensen_tmb:_2016}{2016}). The index of
 abundance was estimated using VAST separately for the early and late
 periods of the survey.
@@ -1431,8 +1431,8 @@ There are no petrale sole age data from the Triennial Survey.
 
 The input sample sizes for length data were calculated using the same
 approach for the NWFSC West Coast Groundfish Bottom Trawl Survey data
-described in Section
-\ref{nwfsc-west-coast-groundfish-bottom-trawl-survey}.
+described in the \protect\hyperlink{nwfsc_survey}{NWFSC West Coast
+Groundfish Bottom Trawl Survey Section}.
 
 \subsection{Fishery-Dependent Data}\label{fishery-dependent-data}
 
@@ -1546,8 +1546,8 @@ curves for each of the four fishing fleets. The discard length data from
 each fleet are shown in Figures \ref{fig:north_lengths} and
 \ref{fig:south_lengths}.
 
-\subsubsection{Fishery Length and Age
-Data}\label{fishery-length-and-age-data}
+\hypertarget{fishery_data}{\subsubsection{Fishery Length and Age
+Data}\label{fishery_data}}
 
 The PacFIN BDS database contains data from Oregon Department of Fish and
 Wildlife (ODFW; 1966-present) and Washington Department of Fish and
@@ -1702,7 +1702,8 @@ assumption applied in the 2013 assessment. Using the Hamel et al.
 approach above, the prior value for females in regular space is 0.169
 and for males is 0.186.
 
-\subsubsection{Maturation and Fecundity}\label{maturation-and-fecundity}
+\hypertarget{mat_fecund}{\subsubsection{Maturation and
+Fecundity}\label{mat_fecund}}
 
 Petrale sole maturity-at-length information is generally sparse in space
 and time, has not been collected in a systematic fashion across time, is
@@ -1962,7 +1963,9 @@ in the model (Methot and Wetzel
 along with R version 3.4.3 were used to investigate and plot model fits.
 The exploration of models began by bridging from the 2015 update
 assessment to Stock Synthesis version 3.30.03.13, which produced no
-discernible difference (Figure \ref{fig:bridge}).
+discernible difference (Figure \ref{fig:bridge}). A more detailed
+analysis of changes from the 2015 update assessment are shown in the
+\protect\hyperlink{added_data}{Added Data Analysis Section}.
 
 \subsubsection{Summary of Fleets and
 Areas}\label{summary-of-fleets-and-areas}
@@ -1997,12 +2000,12 @@ Length and conditional-age-at-length compositions from the NWFSC West
 Coast Groundfish Bottom Trawl Survey were fit along with length and
 marginal age compositions from the fishery fleets and the Triennial
 Survey. Length data started with a input sample size determined from the
-approaches described in Sections
-\ref{nwfsc-west-coast-groundfish-bottom-trawl-survey} (survey data) and
-\ref{fishery-length-and-age-data} (fishery data). It was assumed for
-conditional-age-at-length data that each age was a random sample within
-the length bin and the model started with a sample size equal to the
-number of fish in that length bin.
+approaches described in the \protect\hyperlink{nwfsc_survey}{NWFSC West
+Coast Groundfish Bottom Trawl Survey} and
+\protect\hyperlink{fishery_data}{Fishery Length and Age Data} Sections.
+It was assumed for conditional-age-at-length data that each age was a
+random sample within the length bin and the model started with a sample
+size equal to the number of fish in that length bin.
 
 The update assessment model was weighted using the McAllister and
 Ianelli (\protect\hyperlink{ref-mcallister_bayesian_1997}{1997}) method
@@ -2024,10 +2027,10 @@ recruitment deviations (Table \ref{tab:model_params}).
 
 Fixed parameters in the model were as follows. The standard deviation of
 the recruitment deviates was fixed at 0.40. Maturity-at-length and
-fecundity was fixed as described above in Section
-\ref{maturation-and-fecundity}. Length-weight parameters were fixed at
-estimates using all length-weight observations (Figure
-\ref{fig:wt_length}).
+fecundity was fixed as described above in the
+\protect\hyperlink{mat_fecund}{Maturitation and Fecundity} Section.
+Length-weight parameters were fixed at estimates using all length-weight
+observations (Figure \ref{fig:wt_length}).
 
 \subsubsection{Key Assumptions and Structural
 Choices}\label{key-assumptions-and-structural-choices}
@@ -2172,14 +2175,13 @@ uncertainties).
 Fits to the length data are shown based on the proportions of lengths
 observed by year and the Pearson residuals-at-length for all fleets.
 Detailed fits to the length data by year and fleet are provided in
-Appendix A, Section
-\ref{appendix-a.-detailed-fit-to-length-composition-data}. Aggregate
-fits by fleet are shown in Figure \ref{fig:length_agg}. There are a few
-things that stand out when examining the aggregated length composition
-data. First, the sexed discard lengths from the Pikitch study appear to
-be poorly fit by the model but this is related to small sample sizes.
-However, the unsexed discard lengths from the WCGOP data for each fleet
-were fit well by the model.
+\protect\hyperlink{append_a}{Appendix A}. Aggregate fits by fleet are
+shown in Figure \ref{fig:length_agg}. There are a few things that stand
+out when examining the aggregated length composition data. First, the
+sexed discard lengths from the Pikitch study appear to be poorly fit by
+the model but this is related to small sample sizes. However, the
+unsexed discard lengths from the WCGOP data for each fleet were fit well
+by the model.
 
 Discard lengths from WCGOP were fit well by the model and show no
 obvious pattern in the residuals (Figures
@@ -2210,12 +2212,12 @@ generally well for the fishery fleets, however, the peaks of the age
 data were often under fit by the model which was also observed in the
 2013 assessment (Haltuch et al.
 \protect\hyperlink{ref-haltuch_status_2013}{2013}\protect\hyperlink{ref-haltuch_status_2013}{b}).
-Detailed fits to the age data by year and fleet are provided in Appendix
-B, Section \ref{appendix-b.-detailed-fit-to-age-composition-data}. The
-Pearson residuals for the fishery fleets are shown in Figures
-\ref{fig:wn_age_pearson} - \ref{fig:ss_age_pearson}. The age data were
-weighted using the McAllister Ianelli approach and the data weights are
-shown in Table \ref{tab:harm}.
+Detailed fits to the age data by year and fleet are provided in
+\protect\hyperlink{append_b}{Appendix B}. The Pearson residuals for the
+fishery fleets are shown in Figures \ref{fig:wn_age_pearson} -
+\ref{fig:ss_age_pearson}. The age data were weighted using the
+McAllister Ianelli approach and the data weights are shown in Table
+\ref{tab:harm}.
 
 The observed and expected conditional age-at-length fits for NWFSC West
 Coast Groundfish Bottom Trawl Survey are shown in Figures
@@ -2335,7 +2337,7 @@ assumptions and/or data, and were not performed in a cumulative fashion.
   
   \item Estimate the sex ratio at birth between female and male fish within the model. Single parameter estimated for the modeled years.  Future explorations may want to explore blocking of this parameter for pre- and post-development of the spawning ground Winter fishery with the assumption that this may disproportionately impact the numbers of female petrale sole.
   
-  \item Estimate the sex ratio between female and male fish within the model and assume the coastwide fecundity relationship for petrale sole based on Lefebvre et al. in press. Single parameter for the sex ratio estimated across all modeled years. 
+  \item Estimate the sex ratio at birth between female and male fish within the model and assume the coastwide fecundity relationship for petrale sole based on Lefebvre et al. in press. Single parameter for the sex ratio estimated across all modeled years. 
   
   \item Data weighting according to the Francis method using the weighting values shown in Table \ref{tab:francis}. 
   
@@ -2392,7 +2394,8 @@ The initial scale of the spawning biomass trended upward relative to the
 base model. Overall, no alarming patterns were present in the
 retrospective analysis.
 
-\subsubsection{Added Data Analysis}\label{added-data-analysis}
+\hypertarget{added_data}{\subsubsection{Added Data
+Analysis}\label{added_data}}
 
 The changes from the 2015 update assessment based on the addition and
 reprocessing of data was explored. Each data source was added starting
@@ -2411,9 +2414,10 @@ the estimates of spawning biomass between the 1950s and 1970s. This
 update assessment estimates marginally larger spawning biomasses during
 this period relative to the 2015 estimate. The source of this change was
 due to two changes; 1) the removal of non-random samples from Oregon
-from the commercial biological data contained in PacFIN (see Section
-\ref{fishery-length-and-age-data} for additional information), and 2)
-improvements in the processing and expansion of PacFIN data.
+from the commercial biological data contained in PacFIN (see
+\protect\hyperlink{fishery_data}{Fishery Length and Age Data Section}
+for additional information), and 2) improvements in the processing and
+expansion of PacFIN data.
 
 \subsubsection{Historical Analysis}\label{historical-analysis}
 
@@ -5499,8 +5503,8 @@ natural mortality. \label{fig:m_depl_trajectory}}
 \FloatBarrier
 \newpage
 
-\section{Appendix A. Detailed Fit to Length Composition
-Data}\label{appendix-a.-detailed-fit-to-length-composition-data}
+\hypertarget{append_a}{\section{Appendix A. Detailed Fit to Length
+Composition Data}\label{append_a}}
 
 \begin{figure}
 \centering
@@ -5673,8 +5677,8 @@ McAllister\_Iannelli tuning method. \label{fig:length_fits}}
 
 \FloatBarrier
 
-\section{Appendix B. Detailed Fit to Age Composition
-Data}\label{appendix-b.-detailed-fit-to-age-composition-data}
+\hypertarget{append_b}{\section{Appendix B. Detailed Fit to Age
+Composition Data}\label{append_b}}
 
 \begin{figure}
 \centering

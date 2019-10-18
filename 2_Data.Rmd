@@ -18,7 +18,7 @@ A description of each data source is provided below.
 
 ##Fishery-Independent Data
 
-###NWFSC West Coast Groundfish Bottom Trawl Survey
+###NWFSC West Coast Groundfish Bottom Trawl Survey{#nwfsc_survey}
 Three sources of information are produced by this survey: an index of relative abundance, length-frequency distributions, and age-frequency distributions which are used in the model at conditional-age-at-length observations. Only years in which the `r nwfsc` included the continental shelf (55-183 m) are considered (2003-2018), since the highest percent of positive survey tows with `r spp` are found on the continental shelf.
 
 The `r nwfsc` is based on a random-grid design; covering the coastal waters from a depth of 55 m to 1,280 m [@bradburn_2003_2011]. This design generally uses four industry chartered vessels per year, assigned to a roughly equal number of randomly selected grid cells and divided into two 'passes' of the coast that are executed from north to south. Two vessels fish during each pass, which are conducted from late May to early October each year. This design therefore incorporates both vessel-to-vessel differences in catchability as well as variance associated with selecting a relatively small number (~700) of possible cells from a very large set of possible cells spread from the Mexican to the Canadian border. 
@@ -54,7 +54,7 @@ Due to changes in survey timing, the `r tri` data have been split into independe
 
 The `r tri` commonly encounters `r spp` along the U.S West Coast (Figure \ref{fig:tri_map}). The catch-per-unit-effort estimated from the survey is roughly constant across the surveyed latitudes (Figure \ref{fig:tri_cpue_lat}). Additionally, `r spp` were captured across the survey depths between 55-500 m (Figure \ref{fig:tri_cpue_depth}). The observed lengths captured across depths by each survey period are shown in Figure \ref{fig:tri_size_depth}.
 
-The data from the `r spp` was analyzed using a spatio-temporal delta model implemented as an R package, VAST [@thorson_comparing_2017; @thorson_guidance_2019], described above in Section \ref{nwfsc-west-coast-groundfish-bottom-trawl-survey}. Spatial variation was approximated using 250 knots, and the model used the bias-correction algorithm [@thorson_implementing_2016] in Template Model Builder [@kristensen_tmb:_2016]. The index of abundance was estimated using VAST separately for the early and late periods of the survey. 
+The data from the `r spp` was analyzed using a spatio-temporal delta model implemented as an R package, VAST [@thorson_comparing_2017; @thorson_guidance_2019], described above in [NWFSC West Coast Groundfish Bottom Trawl Survey Section](#nwfsc_survey). Spatial variation was approximated using 250 knots, and the model used the bias-correction algorithm [@thorson_implementing_2016] in Template Model Builder [@kristensen_tmb:_2016]. The index of abundance was estimated using VAST separately for the early and late periods of the survey. 
 
 The gamma distribution with random strata-year and vessel effects was chosen as the final model for both the early and late time periods. The Q-Q plots do not show any departures from the assumed distribution (Figures \ref{fig:tri_early_qq} and \ref{fig:tri_late_qq}). The Pearson residuals for the encounter and catch rates for the early and late periods are shown in Figures \ref{fig:tri_early_enc_rate}, \ref{fig:tri_early_catch_rate}, \ref{fig:tri_late_enc_rate}, and \ref{fig:tri_late_catch_rate}.
 
@@ -64,7 +64,7 @@ Length bins from 12 to 62 cm in 2 cm increments were used to summarize the lengt
 
 There are no `r spp` age data from the `r tri`.  
 
-The input sample sizes for length data were calculated using the same approach for the `r nwfsc` data described in Section \ref{nwfsc-west-coast-groundfish-bottom-trawl-survey}. 
+The input sample sizes for length data were calculated using the same approach for the `r nwfsc` data described in the [NWFSC West Coast Groundfish Bottom Trawl Survey Section](#nwfsc_survey). 
 
 
 <!-- ********************************************************************** -->
@@ -93,7 +93,7 @@ Discard mean body weight data were obtained from the WCGOP data and used in this
 
 Discard length composition data available from the Pikitch study and  WCGOP data were used in this update assessment to estimate retention curves for each of the four fishing fleets.  The discard length data from each fleet are shown in Figures \ref{fig:north_lengths} and \ref{fig:south_lengths}.
 
-###Fishery Length and Age Data
+###Fishery Length and Age Data{#fishery_data}
 
 The PacFIN BDS database contains data from Oregon Department of Fish and Wildlife (ODFW; 1966-present) and Washington Department of Fish and Wildlife (WDFW; 1955- present), but only 1986-present data from California Department of Fish and Game (CDFG). The CDFG data set for the years 1948-1992 was extracted and provided from CalCOM by Brenda Erwin (CDFG) in 2011. 
 
@@ -140,7 +140,7 @@ The above is also the median of the prior. The prior is defined as a lognormal d
 The natural mortality prior was updated for this update assessment using the above approach (Figure \ref{fig:m_prior}). Maximum age was assumed to be 32 and 29 years for females and males, respectively, the same assumption applied in the 2013 assessment. Using the Hamel et al. approach above, the prior value for females in regular space is `r round(5.4/32, 3)` and for males is `r round(5.4/29, 3)`. 
 
 
-###Maturation and Fecundity
+###Maturation and Fecundity{#mat_fecund}
 
 `r spp.up` maturity-at-length information is generally sparse in space and time, has not been collected in a systematic fashion across time, is of varying quality, and does not always agree between studies. It is possible that maturity may have changed over time. However, it is not possible to assess this quantitatively owing to differences in when historical samples on which maturity ogives could be based were taken, and how maturity stage (visual vs. histological) was determined. The 2005 `r spp` assessment used the most recent study for the West Coast of the U.S. that was based on observations collected during 2002 from Oregon and Washington [@hannah_length_2002]. The 50% size-at-maturity was estimated at `r mod1$MGparmAdj[1,"Mat50%_Fem_GP_1"]` cm with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}).
 

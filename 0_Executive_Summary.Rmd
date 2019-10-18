@@ -30,7 +30,7 @@ From the inception of the fishery through the war years, the vast majority of ca
 ```
 
 ![Landings of by the Northern and Southern winter and summer fleets off the U.S. west coast. The Winter fleets are defined as catches from November - February, 
-  Summer fleets from March - October, with the year starting in November (e.g., catches in November and December were added to the catches occurring in January and February in the    subsequent year).  \label{fig:Exec_catch1}](`r Catch.file`)
+  Summer fleets from March - October, with the year starting in November (e.g., catches in November and December 2008 were added to the catches occuring in January and February 2009).  \label{fig:Exec_catch1}](`r Catch.file`)
 
 \FloatBarrier
 

@@ -17,7 +17,7 @@ output:
 
 
 <!-- ************************************DATA FITS************************************************--> 
-#Appendix A. Detailed Fit to Length Composition Data 
+#Appendix A. Detailed Fit to Length Composition Data{#append_a} 
 
 
 ```{r, results='asis'}
@@ -34,7 +34,7 @@ for (a in 1:length(plot.vec)){
 
 \FloatBarrier
 
-#Appendix B. Detailed Fit to Age Composition Data 
+#Appendix B. Detailed Fit to Age Composition Data{#append_b} 
 
 ```{r, results='asis'}
 plot.vec = grep("comp_agefit_flt", AgeComp_mod1$basename)
